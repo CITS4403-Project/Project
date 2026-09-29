@@ -1,0 +1,34 @@
+p=0.5: t_cond(N) = 9.8 * N^1.007  (per-N slope)
+n
+50      532.2
+100     925.9
+200    2062.6
+400    4176.2
+p=0.55: t_cond(N) = 8.1 * N^0.967  (per-N slope)
+n
+50      355.2
+100     683.4
+200    1368.8
+400    2630.0
+
+Top-10% share at t=1500 (mean+/-std):
+            mean     std
+topology                
+BA        0.6291  0.0584
+ER        0.5562  0.0285
+WS        0.5432  0.0144
+complete  0.9999  0.0000
+lattice   0.5019  0.0273
+
+collapse test: mean max_share at f^2*t=5:
+  f=0.05: f^2 t=  2000.0 -> max_share=0.0776
+  f=0.1: f^2 t=   500.0 -> max_share=0.0509
+  f=0.2: f^2 t=   125.0 -> max_share=0.0376
+  f=0.3: f^2 t=    55.6 -> max_share=0.0361
+  f=0.5: f^2 t=    20.0 -> max_share=0.0317
+
+gain tax tau=0.2: Gini t=500 0.7124 -> t=2000 0.7737 -> t=4000 0.7939
+
+wealth tax tau=0.2: Gini t=500 0.1345 -> t=2000 0.1320 -> t=4000 0.1365
+
+summary_extra.json: {'gain': {'gini_t1000': 0.8422275327301219, 'gini_tend': 0.9376638020927852, 'max_tend': 0.29224623308115777, 'revenue_t1000': 0.0007523156529894237, 'revenue_tend': 0.00027484129348067656}, 'wealth': {'gini_t1000': 0.19582841802041856, 'gini_tend': 0.19187314596284238, 'max_tend': 0.0054576255190256434, 'revenue_t1000': 0.1, 'revenue_tend': 0.1}}

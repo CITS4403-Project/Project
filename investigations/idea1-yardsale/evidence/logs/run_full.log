@@ -1,0 +1,20 @@
+--- bias_time ---
+    done in 3.5s
+--- p_scan ---
+    done in 6.7s
+--- topology ---
+    done in 10.3s
+--- f_scan ---
+    done in 3.7s
+--- tax ---
+    done in 20.6s
+--- tax_mode ---
+    done in 10.0s
+--- rewiring ---
+    done in 16.5s
+--- finite_size ---
+    done in 3.9s
+--- distributions ---
+    done in 0.8s
+
+All experiments in 76.0s -> /home/foxwhite/Projects/Python/cits4403_project/.worktrees/idea1-yardsale/investigations/idea1-yardsale/results

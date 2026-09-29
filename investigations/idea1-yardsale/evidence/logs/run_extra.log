@@ -1,0 +1,38 @@
+{
+  "rewiring_mechanism": {
+    "0.0": {
+      "max_degree_mean": 6.0,
+      "max_share_mean": 0.02029386708138002,
+      "mean_degree_mean": 4.0,
+      "rich_partners_mean": 3.75
+    },
+    "0.05": {
+      "max_degree_mean": 6.0,
+      "max_share_mean": 0.1827578534670175,
+      "mean_degree_mean": 4.0,
+      "rich_partners_mean": 208.75
+    },
+    "0.2": {
+      "max_degree_mean": 6.0,
+      "max_share_mean": 0.22859793167497955,
+      "mean_degree_mean": 4.0,
+      "rich_partners_mean": 330.5
+    }
+  },
+  "tax_mechanism": {
+    "gain": {
+      "gini_t1000": 0.8422275327301219,
+      "gini_tend": 0.9376638020927852,
+      "max_tend": 0.29224623308115777,
+      "revenue_t1000": 0.0007523156529894237,
+      "revenue_tend": 0.00027484129348067656
+    },
+    "wealth": {
+      "gini_t1000": 0.19582841802041856,
+      "gini_tend": 0.19187314596284238,
+      "max_tend": 0.0054576255190256434,
+      "revenue_t1000": 0.1,
+      "revenue_tend": 0.1
+    }
+  }
+}
