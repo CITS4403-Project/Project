@@ -1,0 +1,13 @@
+# CITS4403 Research Project - Python 3.x dependencies
+# Installed in .venv (Python 3.14)
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+matplotlib==3.11.2
+networkx==3.7
+seaborn==0.13.2
+tqdm==4.70.1
+powerlaw==2.0.0
+jupyterlab==4.6.4
+ipykernel==7.4.0
+nbconvert==7.17.1
