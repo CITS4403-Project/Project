@@ -1,0 +1,20 @@
+                   threshold  n_stations  fraction
+ >=0 bus routes within 400 m          86  1.000000
+ >=1 bus routes within 400 m          83  0.965116
+ >=5 bus routes within 400 m          59  0.686047
+>=10 bus routes within 400 m          33  0.383721
+>=20 bus routes within 400 m           9  0.104651
+
+Parallel bus corridors per line:
+                  line  n_stations  n_parallel_bus_routes  frac_stations_on_parallel_corridor  max_stations_one_bus_route_on_line
+          Airport Line          21                     70                            0.904762                                  12
+         Armadale Line          20                     30                            1.000000                                  20
+        Fremantle Line          19                     68                            0.842105                                   8
+          Yanchep Line          18                     96                            1.000000                                  16
+Thornlie-Cockburn Line          15                     30                            1.000000                                  15
+          Midland Line          15                     27                            1.000000                                  15
+       Ellenbrook Line          13                     25                            1.000000                                  13
+         Mandurah Line          13                     52                            1.000000                                  13
+
+Stations with zero bus routes within 400 m: Showgrounds Stn, Grant Street Stn, Karrakatta Stn
+wrote fig4_bus_coverage.png, bus_replacement.csv, bus_parallel_corridors.csv

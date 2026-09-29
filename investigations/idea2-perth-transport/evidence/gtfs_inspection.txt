@@ -1,0 +1,242 @@
+=== FEED INVENTORY ===
+agency           rows=      41 cols=['agency_id', 'agency_name', 'agency_url', 'agency_timezone', 'agency_lang']
+routes           rows=     430 cols=['route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_desc', 'route_type', 'route_url', 'route_color', 'route_text_color']
+trips            rows=  53,846 cols=['route_id', 'service_id', 'trip_id', 'direction_id', 'trip_headsign', 'shape_id']
+stops            rows=  14,874 cols=['location_type', 'parent_station', 'stop_id', 'stop_code', 'stop_name', 'stop_desc', 'stop_lat', 'stop_lon', 'zone_id', 'supported_modes', 'iptiscode']
+calendar         rows=   1,083 cols=['service_id', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'start_date', 'end_date']
+calendar_dates   rows=   7,099 cols=['service_id', 'date', 'exception_type']
+transfers        rows=   5,012 cols=['from_stop_id', 'to_stop_id', 'transfer_type', 'min_transfer_time']
+
+=== AGENCIES ===
+agency_id          agency_name
+  COL-COL          TransCollie
+  CRS-CAR       TransCarnarvon
+  EBS-EBS       TransEsperance
+  GWB-KAR        TransKarratha
+  LIL-BRO          TransBroome
+  MBC-MPJ Mandurah Bus Charter
+  NIC-NAR        TransNarrogin
+  PAT-CIR           Transperth
+  PAT-KAL           Transperth
+  PAT-MOR           Transperth
+  PAT-RRP           Transperth
+  PAT-SES           Transperth
+  PHN-PTH         TransHedland
+  PTR-GDN       TransGeraldton
+  PWT-FRY           Transperth
+  SCT-CIR           Transperth
+  SCT-FRE           Transperth
+  SCT-PCA           Transperth
+  SCT-ROC           Transperth
+  SCT-RRP           Transperth
+  SCT-SES           Transperth
+  STR-ALB          TransAlbany
+  STR-BBY         TransBunbury
+  STR-BSN       TransBusselton
+  STR-KLG      TransGoldfields
+  SWA-CAN           Transperth
+  SWA-CIR           Transperth
+  SWA-CLA           Transperth
+  SWA-JCA           Transperth
+  SWA-JOO           Transperth
+  SWA-MAR           Transperth
+  SWA-MID           Transperth
+  SWA-MSH           Transperth
+  SWA-RRP           Transperth
+  SWA-SES           Transperth
+  SWA-SRI           Transperth
+  TRA-TRA              Transwa
+  TRI-KUN             2K Tours
+  WES-RAI           Transperth
+  WSB-BRI      TransBridgetown
+  WSB-MAN        TransManjimup
+
+=== ROUTE TYPES ===
+route_type  mode 
+2           rail      13
+3           bus      416
+4           ferry      1
+
+=== AGENCY x MODE route counts ===
+mode       bus  ferry  rail
+agency_id                  
+CRS-CAR      3      0     0
+EBS-EBS      3      0     0
+GWB-KAR      2      0     0
+LIL-BRO      1      0     0
+MBC-MPJ      1      0     0
+PAT-CIR      2      0     0
+PAT-KAL     41      0     0
+PAT-MOR     33      0     0
+PAT-RRP      2      0     0
+PAT-SES      4      0     0
+PHN-PTH      3      0     0
+PTR-GDN      8      0     0
+PWT-FRY      0      1     0
+SCT-CIR      2      0     0
+SCT-FRE     27      0     0
+SCT-PCA      5      0     0
+SCT-ROC     42      0     0
+SCT-RRP      2      0     0
+SCT-SES      2      0     0
+STR-ALB      6      0     0
+STR-BBY     11      0     0
+STR-BSN      3      0     0
+STR-KLG      6      0     0
+SWA-CAN     22      0     0
+SWA-CIR      2      0     0
+SWA-CLA     14      0     0
+SWA-JCA      3      0     0
+SWA-JOO     42      0     0
+SWA-MAR     34      0     0
+SWA-MID     30      0     0
+SWA-MSH      1      0     0
+SWA-RRP      4      0     0
+SWA-SES      6      0     0
+SWA-SRI     31      0     0
+TRA-TRA     18      0     4
+WES-RAI      0      0     9
+
+=== RAIL ROUTES (13) ===
+    route_id agency_id route_short_name        route_long_name route_desc
+ TRA-TRA-137   TRA-TRA              NaN             Australind        NaN
+ TRA-TRA-145   TRA-TRA              NaN             Prospector        NaN
+WES-RAI-1827   WES-RAI              NaN           Yanchep Line        NaN
+WES-RAI-1829   WES-RAI              NaN         Fremantle Line        NaN
+WES-RAI-1830   WES-RAI              NaN          Armadale Line        NaN
+WES-RAI-1831   WES-RAI              NaN Thornlie-Cockburn Line        NaN
+WES-RAI-1865   WES-RAI              NaN          Mandurah Line        NaN
+TRA-TRA-3527   TRA-TRA              NaN           MerredinLink        NaN
+TRA-TRA-3528   TRA-TRA              NaN               AvonLink        NaN
+WES-RAI-3871   WES-RAI              NaN           Midland Line        NaN
+WES-RAI-4106   WES-RAI              NaN           Airport Line        NaN
+WES-RAI-4248   WES-RAI              NaN        Ellenbrook Line        NaN
+WES-RAI-4313   WES-RAI              NaN        Stadium Special        NaN
+
+rail trips: 7,603
+
+=== STOPS ===
+location_type counts:
+location_type
+0    14755
+1      119
+supported_modes counts:
+supported_modes
+Bus                    11464
+Bus;School Bus          3132
+Rail                     206
+Bus;Rail                  39
+Bus;Rail;School Bus       30
+Ferry                      3
+stations (location_type=1): 119
+stops/platforms (location_type=0): 14,755
+fraction with lat/lon: 1.0000
+
+stops appearing in rail stop_times: 250
+their location_type counts:
+location_type
+0    250
+their supported_modes counts:
+supported_modes
+Rail    189
+Bus      61
+unique physical rail stations (parent_station, or stop itself if none): 147
+
+rail parent stations (86):
+stop_id             stop_name             stop_lat           stop_lon
+    148   Airport Central Stn   -31.94410833333340   115.974833888889
+    153           Alkimos Stn             -31.6151     115.6925205550
+     43          Armadale Stn             -32.1536           116.0130
+      7          Ashfield Stn   -31.91281156862750   115.936132156863
+    138       Aubin Grove Stn       -32.1551978012     115.8578771850
+    158         Ballajura Stn -31.8497761682028550 115.92254229200543
+     39        Bassendean Stn             -31.9035           115.9472
+     23         Bayswater Stn           -31.918280           115.9118
+     28         Beckenham Stn           -32.022530     115.9543588890
+     82        Bull Creek Stn   -32.04685986928110   115.854182516340
+     33          Burswood Stn   -31.95989004135350   115.899956109201
+    133            Butler Stn             -31.6354           115.7001
+    164            Byford Stn   -32.21676055555560     116.0072218020
+     83    Canning Bridge Stn     -32.009403277174   115.856144337452
+     84        Cannington Stn         -32.01323110         115.944560
+     58          Carlisle Stn   -31.98024722222220   115.910302222222
+      2           Challis Stn       -32.1263405556     116.0129372220
+     31         City West Stn   -31.94484686978980   115.845502722311
+     72       Claisebrook Stn   -31.94957193700470   115.872187418549
+     30         Claremont Stn   -31.98057326797390   115.781675588235
+     85          Clarkson Stn   -31.69052150920340   115.738003206749
+     86  Cockburn Central Stn   -32.12527763836040   115.858341991888
+     50         Cottesloe Stn   -31.99702078431370   115.760915718954
+      4        Currambine Stn             -31.7249         115.749599
+     36           Daglish Stn   -31.95189859477130   115.813259313726
+     59    East Guildford Stn   -31.89639304306040   115.980065676663
+     26        East Perth Stn           -31.944232         115.877124
+     46         Edgewater Stn   -31.77195991979740   115.778611068003
+    154          Eglinton Stn             -31.5838           115.6725
+    135    Elizabeth Quay Stn     -31.956630844149   115.855488181576
+    160        Ellenbrook Stn       -31.7813235890     115.9633005010
+     87         Fremantle Stn   -32.05192979915240   115.745192259448
+     88       Glendalough Stn   -31.91446011725290   115.823086504746
+     89          Gosnells Stn   -32.07147034479220   115.999901764970
+     19      Grant Street Stn       -31.9865844444     115.7648911110
+      9         Greenwood Stn   -31.81838616519310   115.783220927090
+     24         Guildford Stn     -31.898944248366   115.965990228758
+    149      High Wycombe Stn   -31.95451222222220   115.992497222222
+     90         Joondalup Stn       -31.7454852770       115.76742763
+     76        Karrakatta Stn   -31.96837241830070   115.796145588235
+     91         Kelmscott Stn   -32.11323898322850   116.013248469602
+     92           Kenwick Stn   -32.03584044541940   115.969171848321
+     93           Kwinana Stn     -32.234942254902   115.842646928105
+    150         Lakelands Stn   -32.47368777777780   115.770676666667
+      8       Leederville Stn             -31.9395   115.840207290060
+     42       Loch Street Stn   -31.97172251633990   115.791536013072
+     68        Maddington Stn           -32.049660           115.9834
+     94          Mandurah Stn   -32.52681525960630   115.746858773579
+     49          Maylands Stn       -31.9282811111     115.8918761110
+     22            Mciver Stn       -31.9517538889     115.8664166670
+     37           Meltham Stn   -31.92246166947510   115.900294878119
+     95           Midland Stn             -31.8918           116.0027
+    156            Morley Stn   -31.89597515909142 115.91993499161299
+      5       Mosman Park Stn   -32.00701963091120   115.757384842368
+     44         Mt Lawley Stn       -31.9348561111     115.8808622220
+     96           Murdoch Stn       -32.0661222275     115.8504878250
+    162      Nicholson Rd Stn   -32.06137833333330   115.934645555556
+    157           Noranda Stn             -31.8750           115.9180
+      1   North Fremantle Stn   -32.02954722222220   115.751859705882
+     73       Oats Street Stn           -31.987580           115.9161
+    140     Perth Stadium Stn           -31.950750           115.8928
+     56             Perth Stn           -31.951246         115.859906
+     64 Perth Underground Stn   -31.95146166666670   115.858201241830
+     12       Queens Park Stn       -32.0070044444     115.9383911110
+    163        Ranford Rd Stn             -32.0760           115.8970
+    147         Redcliffe Stn   -31.93356944444450   115.950073888889
+     97        Rockingham Stn     -32.289870751634   115.761335784314
+     67          Seaforth Stn       -32.0846438889     116.0112044440
+     17      Shenton Park Stn   -31.95960091503270   115.805466209150
+     66          Sherwood Stn       -32.1376083333     116.0104605560
+     16       Showgrounds Stn           -31.977085         115.786970
+     98          Stirling Stn   -31.89417106644330   115.804586772753
+      6           Subiaco Stn   -31.94468816993460   115.824100555556
+     34      Success Hill Stn   -31.90020813725490   115.955894019608
+     38        Swanbourne Stn   -31.98264648845560   115.770781188506
+     99          Thornlie Stn             -32.0472           115.9524
+     48     Victoria Park Stn   -31.97156055555560   115.902151666667
+     32   Victoria Street Stn     -32.011718496732         115.754985
+     74           Warnbro Stn     -32.326722746478   115.767902540085
+    100           Warwick Stn       -31.8447190770     115.7963982360
+    101           Wellard Stn   -32.26391895424840   115.817305686274
+     15  West Leederville Stn   -31.94263944444450   115.833045457516
+    159     Whiteman Park Stn   -31.83588944444440   115.963836666667
+    102         Whitfords Stn       -31.7994069520     115.7823322130
+     41        Woodbridge Stn             -31.8915           115.9931
+    155           Yanchep Stn       -31.5322855550         115.643930
+
+bus routes: 416, bus trips: 45,887, bus stop_times rows: 1,456,252
+bus stops used: 14,453
+
+=== FEED PERIOD ===
+calendar dates: 20260922 -> 20261221
+stop_times.txt: 75.9 MB
+shapes.txt: 81.8 MB
+trips.txt: 2.7 MB
+stops.txt: 1.5 MB

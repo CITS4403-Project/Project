@@ -1,0 +1,4 @@
+PASS: large alpha contains cascade
+PASS: GCC after leaf removal is n-1
+PASS: zero-load leaf trigger causes no cascade
+PASS: capacity rule keeps graph metrics sane

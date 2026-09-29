@@ -1,0 +1,6 @@
+threshold,n_stations,fraction
+>=0 bus routes within 400 m,86,1.0
+>=1 bus routes within 400 m,83,0.9651162790697675
+>=5 bus routes within 400 m,59,0.686046511627907
+>=10 bus routes within 400 m,33,0.38372093023255816
+>=20 bus routes within 400 m,9,0.10465116279069768

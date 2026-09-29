@@ -1,0 +1,9 @@
+line,n_stations,n_parallel_bus_routes,frac_stations_on_parallel_corridor,max_stations_one_bus_route_on_line
+Airport Line,21,70,0.9047619047619048,12
+Armadale Line,20,30,1.0,20
+Fremantle Line,19,68,0.8421052631578947,8
+Yanchep Line,18,96,1.0,16
+Thornlie-Cockburn Line,15,30,1.0,15
+Midland Line,15,27,1.0,15
+Ellenbrook Line,13,25,1.0,13
+Mandurah Line,13,52,1.0,13

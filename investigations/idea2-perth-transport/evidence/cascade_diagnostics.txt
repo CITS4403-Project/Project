@@ -1,0 +1,41 @@
+top loads:
+  Perth Stn                    L0=  1646.4 deg=7 cap(a=0.2)=  1975.7
+  Perth Stadium Stn            L0=  1615.3 deg=7 cap(a=0.2)=  1938.4
+  Thornlie Stn                 L0=  1404.8 deg=3 cap(a=0.2)=  1685.8
+  East Perth Stn               L0=  1270.0 deg=4 cap(a=0.2)=  1524.0
+  Bayswater Stn                L0=  1188.0 deg=5 cap(a=0.2)=  1425.6
+  Leederville Stn              L0=  1044.6 deg=4 cap(a=0.2)=  1253.5
+  Glendalough Stn              L0=   876.0 deg=2 cap(a=0.2)=  1051.2
+  Stirling Stn                 L0=   814.0 deg=2 cap(a=0.2)=   976.8
+nodes with L0 == 0: 8
+
+alpha=0.0: failed=16 gcc=21 rounds=3
+  sequence: Perth Stn, Perth Stadium Stn, West Leederville Stn, Shenton Park Stn, City West Stn, Daglish Stn, Loch Street Stn, Subiaco Stn, Perth Underground Stn, Claisebrook Stn, Karrakatta Stn, Queens Park Stn, Victoria Park Stn, Oats Street Stn, Cannington Stn, Murdoch Stn
+
+alpha=0.1: failed=16 gcc=21 rounds=3
+  sequence: Perth Stn, Perth Stadium Stn, West Leederville Stn, Shenton Park Stn, City West Stn, Daglish Stn, Loch Street Stn, Subiaco Stn, Perth Underground Stn, Claisebrook Stn, Karrakatta Stn, Queens Park Stn, Victoria Park Stn, Oats Street Stn, Cannington Stn, Murdoch Stn
+
+alpha=0.2: failed=16 gcc=21 rounds=3
+  sequence: Perth Stn, Perth Stadium Stn, West Leederville Stn, Shenton Park Stn, City West Stn, Daglish Stn, Loch Street Stn, Subiaco Stn, Perth Underground Stn, Claisebrook Stn, Karrakatta Stn, Queens Park Stn, Victoria Park Stn, Oats Street Stn, Cannington Stn, Murdoch Stn
+
+alpha=0.4: failed=19 gcc=21 rounds=3
+  sequence: Perth Stn, Perth Stadium Stn, West Leederville Stn, Shenton Park Stn, City West Stn, Daglish Stn, Loch Street Stn, Subiaco Stn, Claisebrook Stn, Karrakatta Stn, Queens Park Stn, Elizabeth Quay Stn, Victoria Park Stn, Perth Underground Stn, Oats Street Stn, Bull Creek Stn, Canning Bridge Stn, Cannington Stn, Murdoch Stn
+
+alpha=0.6: failed=9 gcc=47 rounds=2
+  sequence: Perth Stn, West Leederville Stn, Shenton Park Stn, City West Stn, Daglish Stn, Loch Street Stn, Subiaco Stn, Claisebrook Stn, Karrakatta Stn
+
+alpha=1.0: failed=9 gcc=47 rounds=2
+  sequence: Perth Stn, West Leederville Stn, Shenton Park Stn, City West Stn, Daglish Stn, Loch Street Stn, Subiaco Stn, Claisebrook Stn, Karrakatta Stn
+
+loads INCREASED after removing Perth Stn : 10 of 85
+                 name          L0     L_after     ratio
+     Shenton Park Stn   18.000000  803.000000 44.611111
+          Daglish Stn   29.000000  864.000000 29.793103
+          Subiaco Stn   94.000000  923.000000  9.819149
+       Karrakatta Stn   76.000000  740.000000  9.736842
+ West Leederville Stn  167.000000  980.000000  5.868263
+      Loch Street Stn  153.000000  675.000000  4.411765
+      Claisebrook Stn  309.250000 1343.000000  4.342765
+        City West Stn  352.583333 1110.333333  3.149137
+    Perth Stadium Stn 1615.333333 2425.166667  1.501341
+Perth Underground Stn  257.833333  340.666667  1.321267

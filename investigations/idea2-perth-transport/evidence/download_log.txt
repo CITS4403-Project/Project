@@ -1,0 +1,9 @@
+Downloading: https://www.transperth.wa.gov.au/LinkClick.aspx?link=%2fTimetablePDFs%2fGoogleTransit%2fProduction%2fgoogle_transit.zip&tabid=267&portalid=0&mid=1470
+Started: 2026-09-30T04:57:08+08:00
+/usr/bin/bash: 行 6: /usr/bin/time: 没有那个文件或目录
+## Download attempt 2 (2026-09-30T04:57:12+08:00)
+http_code=200
+size_download=27814548 bytes
+time_total=2.754383s
+url_effective=https://www.transperth.wa.gov.au/TimetablePDFs/GoogleTransit/Production/google_transit.zip
+content_type=application/x-zip-compressed
