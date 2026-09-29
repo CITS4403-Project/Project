@@ -1,5 +1,5 @@
 # Raw/large data downloads for this investigation (keep access instructions and
 # small samples instead). The Transperth GTFS zip is ~28 MB and extracts to
-# ~162 MB; re-download with: python prototype/download_data.sh
+# ~162 MB; re-download with: bash prototype/download_data.sh
 data/raw/
 *.zip
