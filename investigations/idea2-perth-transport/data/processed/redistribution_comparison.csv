@@ -1,0 +1,9 @@
+dynamic,rule,load_mode,alpha,failed,gcc,gcc_fraction
+True,capacity,betweenness,0.2,14,27,0.313953488372093
+True,capacity,betweenness_plus_trips,0.2,14,27,0.313953488372093
+True,equal,betweenness,0.2,14,27,0.313953488372093
+True,equal,betweenness_plus_trips,0.2,14,27,0.313953488372093
+False,capacity,betweenness,0.2,86,0,0.0
+False,capacity,betweenness_plus_trips,0.2,86,0,0.0
+False,equal,betweenness,0.2,86,0,0.0
+False,equal,betweenness_plus_trips,0.2,86,0,0.0

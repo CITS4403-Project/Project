@@ -1,0 +1,17 @@
+FAIL: path betweenness middle=6
+FAIL: path betweenness second=4
+PASS: path betweenness end=0
+FAIL: freq-weighted equals plain when trips equal
+PASS: GCC of split path is 2
+PASS: path alpha=0: at least trigger fails
+PASS: path alpha=0: GCC < n
+PASS: leaf trigger with alpha=0 causes only the leaf to fail
+PASS: perth graph has 86 nodes, 96 edges
+PASS: perth graph is connected
+PASS: Perth removal does not disconnect the network
+PASS: random trigger deterministic given seed
+PASS: fractions within [0,1]
+PASS: failed + remaining = n
+PASS: alpha=0 dynamic on perth: finite cascade
+
+12/15 checks passed

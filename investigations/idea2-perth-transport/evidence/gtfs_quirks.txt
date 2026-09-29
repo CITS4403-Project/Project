@@ -1,0 +1,45 @@
+Perth suburban rail route_ids: ['WES-RAI-1827', 'WES-RAI-1829', 'WES-RAI-1830', 'WES-RAI-1831', 'WES-RAI-1865', 'WES-RAI-3871', 'WES-RAI-4106', 'WES-RAI-4248', 'WES-RAI-4313']
+Transwa route_ids: ['TRA-TRA-137', 'TRA-TRA-145', 'TRA-TRA-2146', 'TRA-TRA-2147', 'TRA-TRA-2148', 'TRA-TRA-2149', 'TRA-TRA-2150', 'TRA-TRA-2160', 'TRA-TRA-2164', 'TRA-TRA-2173', 'TRA-TRA-2174', 'TRA-TRA-2176', 'TRA-TRA-2177', 'TRA-TRA-2178', 'TRA-TRA-2179', 'TRA-TRA-2180', 'TRA-TRA-3527', 'TRA-TRA-3528', 'TRA-TRA-3611', 'TRA-TRA-3826', 'TRA-TRA-4126', 'TRA-TRA-4178']
+
+Perth rail stop_times rows: 106,885; distinct platform stops: 189
+supported_modes
+Rail    189
+
+Non-'Rail' stops in Perth rail stop_times:
+Empty DataFrame
+Columns: [stop_id, stop_name, supported_modes, parent_station, location_type]
+Index: []
+
+Perth rail platform parent coverage: 1.0
+
+Perth rail parent stations: 86
+shared with Bus-supported?  69 parents of other kinds
+supported_modes
+Bus;Rail               39
+Bus;Rail;School Bus    30
+Rail                   17
+
+Stops per route (distinct platforms in stop_times):
+  Airport Line                 trips= 1357 platforms= 45
+  Armadale Line                trips=  820 platforms= 44
+  Ellenbrook Line              trips=  845 platforms= 28
+  Fremantle Line               trips= 1666 platforms= 40
+  Mandurah Line                trips=  848 platforms= 26
+  Midland Line                 trips=  495 platforms= 31
+  Stadium Special              trips=   17 platforms= 29
+  Thornlie-Cockburn Line       trips=  693 platforms= 30
+  Yanchep Line                 trips=  844 platforms= 37
+
+location_type=1 stations: 119 | supported_modes: {'Bus;Rail': 39, 'Bus;Rail;School Bus': 30, 'Bus': 19, 'Rail': 17, 'Bus;School Bus': 14}
+how many have iptiscode populated: 1.0
+
+sg2tpn.txt:
+1 605
+2 618
+3 625
+4 641
+5 607
+6 614
+cols: ['1', '605'] rows: 134
+
+transfers transfer_type counts: {'2': 5012}

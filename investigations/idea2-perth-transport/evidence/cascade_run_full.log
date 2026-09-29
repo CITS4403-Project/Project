@@ -1,0 +1,33 @@
+graph: 86 nodes, 96 edges
+alpha sweep (static) done
+alpha sweep (dynamic) done
+alpha* (static ML, max-load trigger contained) = 0.35
+ dynamic     rule              load_mode  alpha  failed  gcc  gcc_fraction
+    True capacity            betweenness    0.2      14   27      0.313953
+    True capacity betweenness_plus_trips    0.2      14   27      0.313953
+    True    equal            betweenness    0.2      14   27      0.313953
+    True    equal betweenness_plus_trips    0.2      14   27      0.313953
+   False capacity            betweenness    0.2      86    0      0.000000
+   False capacity betweenness_plus_trips    0.2      86    0      0.000000
+   False    equal            betweenness    0.2      86    0      0.000000
+   False    equal betweenness_plus_trips    0.2      86    0      0.000000
+ alpha    mean  max  p_no_cascade    n  largest_avalanche
+  0.10 71.7435   86        0.1625 2000                 86
+  0.15 68.5295   86        0.2005 2000                 86
+  0.20 68.1745   86        0.2050 2000                 86
+  0.30 56.8415   86        0.3090 2000                 86
+
+Line-closure (exclusive stations removed):
+                  line  n_stations  n_exclusive  gcc_frac_after  frac_stations_lost  rail_trips_at_lost_stations
+          Airport Line          21            3        0.965116            0.034884                         3402
+         Armadale Line          20            9        0.895349            0.104651                         6786
+        Fremantle Line          19            7        0.918605            0.081395                         9625
+          Yanchep Line          18           14        0.837209            0.162791                         9488
+Thornlie-Cockburn Line          15            3        0.965116            0.034884                         2073
+          Midland Line          15            7        0.918605            0.081395                         3444
+       Ellenbrook Line          13            5        0.941860            0.058140                         4225
+         Mandurah Line          13           10        0.883721            0.116279                         6137
+
+Validation: ['PASS', 'PASS', 'PASS', 'PASS']
+
+wrote figures fig1_alpha_sweep.png, fig2_avalanche.png, fig3_cascade_map.png

@@ -1,0 +1,32 @@
+Perth suburban rail routes: 8 (Yanchep Line, Fremantle Line, Armadale Line, Thornlie-Cockburn Line, Mandurah Line, Midland Line, Airport Line, Ellenbrook Line)
+rail stations: 86, edges: 96, components: 1
+total rail trips: 7,568, total edge-traversals: 99,093
+bus routes: 416, bus trips: 45,887
+bus stops in Perth bbox used by trips: 12,364
+rail stations with >=1 bus stop within 400 m: 96.5% (83/86)
+rail stations with >=10 bus routes within 400 m: 38.4%
+stations with NO bus stop within 400 m: Showgrounds Stn, Grant Street Stn, Karrakatta Stn
+
+Top-10 stations by betweenness:
+  Perth Stn                    btw=0.489 degree=7 trips=5507 lines=Yanchep Line;Fremantle Line;Armadale Line;Thornlie-Cockburn Line;Midland Line;Airport Line;Ellenbrook Line
+  East Perth Stn               btw=0.356 degree=4 trips=2476 lines=Midland Line;Airport Line;Ellenbrook Line
+  Leederville Stn              btw=0.340 degree=4 trips=844 lines=Yanchep Line
+  Bayswater Stn                btw=0.333 degree=5 trips=2488 lines=Midland Line;Airport Line;Ellenbrook Line
+  Perth Stadium Stn            btw=0.294 degree=6 trips=1427 lines=Yanchep Line;Fremantle Line;Armadale Line;Thornlie-Cockburn Line
+  Carlisle Stn                 btw=0.251 degree=3 trips=1360 lines=Armadale Line;Thornlie-Cockburn Line
+  Glendalough Stn              btw=0.245 degree=2 trips=844 lines=Yanchep Line
+  Beckenham Stn                btw=0.234 degree=3 trips=1445 lines=Armadale Line;Thornlie-Cockburn Line
+  Oats Street Stn              btw=0.230 degree=2 trips=1360 lines=Armadale Line;Thornlie-Cockburn Line
+  Stirling Stn                 btw=0.228 degree=2 trips=844 lines=Yanchep Line
+
+Top-10 by trips served:
+  Perth Stn                    trips=5507 degree=7
+  Claisebrook Stn              trips=3323 degree=4
+  Mciver Stn                   trips=3292 degree=2
+  West Leederville Stn         trips=2568 degree=2
+  City West Stn                trips=2568 degree=4
+  Subiaco Stn                  trips=2568 degree=2
+  Daglish Stn                  trips=2568 degree=2
+  Loch Street Stn              trips=2568 degree=3
+  Karrakatta Stn               trips=2568 degree=2
+  Shenton Park Stn             trips=2568 degree=2

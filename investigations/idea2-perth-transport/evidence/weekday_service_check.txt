@@ -1,0 +1,16 @@
+Wednesday 20261014: active services=250, rail trips=1427 (all services=7585)
+
+per line (weekday trips):
+route_long_name
+Mandurah Line             254
+Yanchep Line              251
+Fremantle Line            165
+Airport Line              156
+Midland Line              156
+Ellenbrook Line           155
+Armadale Line             150
+Thornlie-Cockburn Line    140
+
+weekday stops(platforms): 182 stations: 85
+
+stations present only in non-weekday services: ['Fremantle Stn Platform 2', 'Perth Stadium Stn Platform 1', 'Perth Stadium Stn Platform 3', 'Perth Stadium Stn Platform 4', 'Perth Stadium Stn Platform 5', 'Showgrounds Stn Platform 1', 'Showgrounds Stn Platform 2']
