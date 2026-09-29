@@ -1,0 +1,23 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python caches and build artefacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Raw/large data downloads (keep access instructions and small samples instead)
+data/raw/
+*.zip
+
+# Git worktrees used during the investigation phase
+.worktrees/
+
+# OS / editor files
+.DS_Store
+.idea/
+.vscode/
