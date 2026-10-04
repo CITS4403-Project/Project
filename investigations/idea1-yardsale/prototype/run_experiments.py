@@ -183,7 +183,7 @@ def expt_p_scan(quick=False):
             axes[1].errorbar(p, lam.mean(), yerr=lam.std(), fmt="o", capsize=3, color="C1")
     axes[1].set(xlabel="bias p", ylabel="early growth rate $\\lambda$ of max share",
                 title="Early exponential growth of the oligarch")
-    axes[0].annotate("x = censored\n(no condensation in 5000 sweeps)", xy=(0.5, sweeps * 0.75),
+    axes[0].annotate("x = censored\n(no condensation in 5000 sweeps)", xy=(0.8, sweeps * 0.9),
                      fontsize=7, ha="center")
     fig.tight_layout()
     fig.savefig(os.path.join(FIGURES, "fig2_bias_scan.png"))
@@ -509,7 +509,7 @@ def main():
         bad = [c for c in checks if not c[1]]
         sys.exit(1 if bad else 0)
 
-    names = args.only or list(EXPTS)
+    names = ["p_scan"]
     t_start = time.perf_counter()
     for name in names:
         t0 = time.perf_counter()

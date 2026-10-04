@@ -127,10 +127,10 @@ def rewiring_mechanism(sweeps=1500, seeds=4, rs=(0.0, 0.05, 0.2)):
     for ax, key, title in zip(axes, keys, titles):
         stat = df.groupby("r")[key].agg(["mean", "std"])
         ax.errorbar(stat.index, stat["mean"], yerr=stat["std"], fmt="o-", capsize=3)
-        ax.set(xlabel="rewiring rate r", ylabel=title, xscale="symlog")
+        ax.set(xlabel="rewiring rate r", ylabel=title)
     axes[2].axhline(df.mean_degree.mean(), color="k", ls="--", lw=0.8, label="mean degree")
     axes[2].legend(fontsize=8)
-    fig.suptitle("Rewiring does not create hubs - it multiplies trading partners")
+    fig.suptitle("Rewiring multiplies trading partners")
     fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.94))
     fig.savefig(os.path.join(FIGURES, "fig11_rewiring_mechanism.png"))
     plt.close(fig)
