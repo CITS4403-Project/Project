@@ -1,0 +1,866 @@
+target,target_name,alpha,scenario,round,station_id,name,initial_load,load,capacity,load_ratio,overloaded,closes_next_round
+56,Perth Stn,0.2,rail_only,0,26,East Perth Stn,1339.0,1319.0,1606.8,0.8208862335075927,False,False
+56,Perth Stn,0.2,rail_only,0,8,Leederville Stn,1021.0,1007.0,1225.2,0.8219066274893895,False,False
+56,Perth Stn,0.2,rail_only,0,23,Bayswater Stn,1206.0,1190.0,1447.2,0.822277501381979,False,False
+56,Perth Stn,0.2,rail_only,0,140,Perth Stadium Stn,1156.0,2082.0,1387.2,1.5008650519031141,True,True
+56,Perth Stn,0.2,rail_only,0,58,Carlisle Stn,1046.0,1029.0,1255.2,0.8197896749521988,False,False
+56,Perth Stn,0.2,rail_only,0,88,Glendalough Stn,961.0,948.0,1153.2,0.8220603537981269,False,False
+56,Perth Stn,0.2,rail_only,0,28,Beckenham Stn,1005.0,992.0,1206.0,0.8225538971807629,False,False
+56,Perth Stn,0.2,rail_only,0,73,Oats Street Stn,1008.0,992.0,1209.6,0.8201058201058201,False,False
+56,Perth Stn,0.2,rail_only,0,98,Stirling Stn,899.0,887.0,1078.8,0.8222098628105302,False,False
+56,Perth Stn,0.2,rail_only,0,12,Queens Park Stn,969.0,954.0,1162.8,0.8204334365325078,False,False
+56,Perth Stn,0.2,rail_only,0,64,Perth Underground Stn,876.0,989.0,1051.2,0.9408295281582952,False,False
+56,Perth Stn,0.2,rail_only,0,16,Showgrounds Stn,541.0,84.0,649.1999999999999,0.12939001848428835,False,False
+56,Perth Stn,0.2,rail_only,0,100,Warwick Stn,835.0,824.0,1002.0,0.8223552894211577,False,False
+56,Perth Stn,0.2,rail_only,0,84,Cannington Stn,929.0,915.0,1114.8,0.8207750269106566,False,False
+56,Perth Stn,0.2,rail_only,0,135,Elizabeth Quay Stn,717.0,705.0,860.4,0.8193863319386332,False,False
+56,Perth Stn,0.2,rail_only,0,9,Greenwood Stn,769.0,759.0,922.8,0.8224967490247075,False,False
+56,Perth Stn,0.2,rail_only,0,86,Cockburn Central Stn,662.0,654.0,794.4,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,83,Canning Bridge Stn,656.0,645.0,787.1999999999999,0.8193597560975611,False,False
+56,Perth Stn,0.2,rail_only,0,82,Bull Creek Stn,605.0,595.0,726.0,0.8195592286501377,False,False
+56,Perth Stn,0.2,rail_only,0,102,Whitfords Stn,701.0,692.0,841.1999999999999,0.8226343319067999,False,False
+56,Perth Stn,0.2,rail_only,0,92,Kenwick Stn,701.0,692.0,841.1999999999999,0.8226343319067999,False,False
+56,Perth Stn,0.2,rail_only,0,96,Murdoch Stn,565.0,556.0,678.0,0.8200589970501475,False,False
+56,Perth Stn,0.2,rail_only,0,46,Edgewater Stn,631.0,623.0,757.1999999999999,0.8227680929741152,False,False
+56,Perth Stn,0.2,rail_only,0,30,Claremont Stn,631.0,623.0,757.1999999999999,0.8227680929741152,False,False
+56,Perth Stn,0.2,rail_only,0,68,Maddington Stn,631.0,623.0,757.1999999999999,0.8227680929741152,False,False
+56,Perth Stn,0.2,rail_only,0,31,City West Stn,998.0,1482.0,1197.6,1.2374749498997997,True,True
+56,Perth Stn,0.2,rail_only,0,89,Gosnells Stn,559.0,552.0,670.8,0.8228980322003578,False,False
+56,Perth Stn,0.2,rail_only,0,90,Joondalup Stn,559.0,552.0,670.8,0.8228980322003578,False,False
+56,Perth Stn,0.2,rail_only,0,38,Swanbourne Stn,559.0,552.0,670.8,0.8228980322003578,False,False
+56,Perth Stn,0.2,rail_only,0,7,Ashfield Stn,559.0,552.0,670.8,0.8228980322003578,False,False
+56,Perth Stn,0.2,rail_only,0,138,Aubin Grove Stn,559.0,552.0,670.8,0.8228980322003578,False,False
+56,Perth Stn,0.2,rail_only,0,19,Grant Street Stn,485.0,479.0,582.0,0.8230240549828178,False,False
+56,Perth Stn,0.2,rail_only,0,4,Currambine Stn,485.0,479.0,582.0,0.8230240549828178,False,False
+56,Perth Stn,0.2,rail_only,0,67,Seaforth Stn,485.0,479.0,582.0,0.8230240549828178,False,False
+56,Perth Stn,0.2,rail_only,0,39,Bassendean Stn,485.0,479.0,582.0,0.8230240549828178,False,False
+56,Perth Stn,0.2,rail_only,0,93,Kwinana Stn,485.0,479.0,582.0,0.8230240549828178,False,False
+56,Perth Stn,0.2,rail_only,0,34,Success Hill Stn,409.0,404.0,490.79999999999995,0.8231458842705788,False,False
+56,Perth Stn,0.2,rail_only,0,101,Wellard Stn,409.0,404.0,490.79999999999995,0.8231458842705788,False,False
+56,Perth Stn,0.2,rail_only,0,91,Kelmscott Stn,409.0,404.0,490.79999999999995,0.8231458842705788,False,False
+56,Perth Stn,0.2,rail_only,0,85,Clarkson Stn,409.0,404.0,490.79999999999995,0.8231458842705788,False,False
+56,Perth Stn,0.2,rail_only,0,156,Morley Stn,409.0,404.0,490.79999999999995,0.8231458842705788,False,False
+56,Perth Stn,0.2,rail_only,0,50,Cottesloe Stn,409.0,404.0,490.79999999999995,0.8231458842705788,False,False
+56,Perth Stn,0.2,rail_only,0,97,Rockingham Stn,331.0,327.0,397.2,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,133,Butler Stn,331.0,327.0,397.2,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,24,Guildford Stn,331.0,327.0,397.2,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,5,Mosman Park Stn,331.0,327.0,397.2,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,2,Challis Stn,331.0,327.0,397.2,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,157,Noranda Stn,331.0,327.0,397.2,0.823262839879154,False,False
+56,Perth Stn,0.2,rail_only,0,99,Thornlie Stn,378.0,375.0,453.59999999999997,0.8267195767195767,False,False
+56,Perth Stn,0.2,rail_only,0,72,Claisebrook Stn,525.0,1427.0,630.0,2.265079365079365,True,True
+56,Perth Stn,0.2,rail_only,0,163,Ranford Rd Stn,256.0,255.0,307.2,0.830078125,False,False
+56,Perth Stn,0.2,rail_only,0,162,Nicholson Rd Stn,317.0,315.0,380.4,0.8280757097791799,False,False
+56,Perth Stn,0.2,rail_only,0,15,West Leederville Stn,566.0,1064.0,679.1999999999999,1.5665488810365138,True,True
+56,Perth Stn,0.2,rail_only,0,59,East Guildford Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,158,Ballajura Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,74,Warnbro Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,66,Sherwood Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,153,Alkimos Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,32,Victoria Street Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,147,Redcliffe Stn,251.0,248.0,301.2,0.8233731739707836,False,False
+56,Perth Stn,0.2,rail_only,0,42,Loch Street Stn,256.0,759.0,307.2,2.470703125,True,True
+56,Perth Stn,0.2,rail_only,0,6,Subiaco Stn,508.0,1007.0,609.6,1.6519028871391075,True,True
+56,Perth Stn,0.2,rail_only,0,154,Eglinton Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,159,Whiteman Park Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,1,North Fremantle Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,150,Lakelands Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,41,Woodbridge Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,148,Airport Central Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,43,Armadale Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,76,Karrakatta Stn,322.0,824.0,386.4,2.132505175983437,True,True
+56,Perth Stn,0.2,rail_only,0,44,Mt Lawley Stn,219.0,216.0,262.8,0.821917808219178,False,False
+56,Perth Stn,0.2,rail_only,0,36,Daglish Stn,448.0,948.0,537.6,1.763392857142857,True,True
+56,Perth Stn,0.2,rail_only,0,33,Burswood Stn,144.0,142.0,172.79999999999998,0.8217592592592593,False,False
+56,Perth Stn,0.2,rail_only,0,17,Shenton Park Stn,386.0,887.0,463.2,1.9149395509499136,True,True
+56,Perth Stn,0.2,rail_only,0,37,Meltham Stn,117.0,116.0,140.4,0.8262108262108262,False,False
+56,Perth Stn,0.2,rail_only,0,48,Victoria Park Stn,110.0,109.0,132.0,0.8257575757575758,False,False
+56,Perth Stn,0.2,rail_only,0,49,Maylands Stn,169.0,167.0,202.79999999999998,0.8234714003944774,False,False
+56,Perth Stn,0.2,rail_only,0,22,Mciver Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,87,Fremantle Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,95,Midland Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,94,Mandurah Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,155,Yanchep Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,149,High Wycombe Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,160,Ellenbrook Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,0,164,Byford Stn,85.0,84.0,102.0,0.8235294117647058,False,False
+56,Perth Stn,0.2,rail_only,1,26,East Perth Stn,1339.0,19.0,1606.8,0.011824744834453572,False,False
+56,Perth Stn,0.2,rail_only,1,8,Leederville Stn,1021.0,461.0,1225.2,0.37626509957557946,False,False
+56,Perth Stn,0.2,rail_only,1,23,Bayswater Stn,1206.0,150.0,1447.2,0.10364842454394693,False,False
+56,Perth Stn,0.2,rail_only,1,58,Carlisle Stn,1046.0,131.0,1255.2,0.10436583811344806,False,False
+56,Perth Stn,0.2,rail_only,1,88,Glendalough Stn,961.0,441.0,1153.2,0.38241415192507805,False,False
+56,Perth Stn,0.2,rail_only,1,28,Beckenham Stn,1005.0,549.0,1206.0,0.4552238805970149,False,False
+56,Perth Stn,0.2,rail_only,1,73,Oats Street Stn,1008.0,171.0,1209.6,0.14136904761904762,False,False
+56,Perth Stn,0.2,rail_only,1,98,Stirling Stn,899.0,419.0,1078.8,0.38839451242120876,False,False
+56,Perth Stn,0.2,rail_only,1,12,Queens Park Stn,969.0,209.0,1162.8,0.17973856209150327,False,False
+56,Perth Stn,0.2,rail_only,1,64,Perth Underground Stn,876.0,479.0,1051.2,0.4556697108066971,False,False
+56,Perth Stn,0.2,rail_only,1,16,Showgrounds Stn,541.0,8.0,649.1999999999999,0.012322858903265559,False,False
+56,Perth Stn,0.2,rail_only,1,100,Warwick Stn,835.0,395.0,1002.0,0.39421157684630737,False,False
+56,Perth Stn,0.2,rail_only,1,84,Cannington Stn,929.0,245.0,1114.8,0.2197703623968425,False,False
+56,Perth Stn,0.2,rail_only,1,135,Elizabeth Quay Stn,717.0,495.0,860.4,0.5753138075313807,False,False
+56,Perth Stn,0.2,rail_only,1,9,Greenwood Stn,769.0,369.0,922.8,0.3998699609882965,False,False
+56,Perth Stn,0.2,rail_only,1,86,Cockburn Central Stn,662.0,672.0,794.4,0.8459214501510575,False,False
+56,Perth Stn,0.2,rail_only,1,83,Canning Bridge Stn,656.0,509.0,787.1999999999999,0.6465955284552846,False,False
+56,Perth Stn,0.2,rail_only,1,82,Bull Creek Stn,605.0,521.0,726.0,0.7176308539944903,False,False
+56,Perth Stn,0.2,rail_only,1,102,Whitfords Stn,701.0,341.0,841.1999999999999,0.40537327627199243,False,False
+56,Perth Stn,0.2,rail_only,1,92,Kenwick Stn,701.0,341.0,841.1999999999999,0.40537327627199243,False,False
+56,Perth Stn,0.2,rail_only,1,96,Murdoch Stn,565.0,531.0,678.0,0.7831858407079646,False,False
+56,Perth Stn,0.2,rail_only,1,46,Edgewater Stn,631.0,311.0,757.1999999999999,0.41072371896460647,False,False
+56,Perth Stn,0.2,rail_only,1,30,Claremont Stn,631.0,15.0,757.1999999999999,0.019809825673534075,False,False
+56,Perth Stn,0.2,rail_only,1,68,Maddington Stn,631.0,311.0,757.1999999999999,0.41072371896460647,False,False
+56,Perth Stn,0.2,rail_only,1,89,Gosnells Stn,559.0,279.0,670.8,0.4159212880143113,False,False
+56,Perth Stn,0.2,rail_only,1,90,Joondalup Stn,559.0,279.0,670.8,0.4159212880143113,False,False
+56,Perth Stn,0.2,rail_only,1,38,Swanbourne Stn,559.0,20.0,670.8,0.029815146094215865,False,False
+56,Perth Stn,0.2,rail_only,1,7,Ashfield Stn,559.0,97.0,670.8,0.14460345855694695,False,False
+56,Perth Stn,0.2,rail_only,1,138,Aubin Grove Stn,559.0,279.0,670.8,0.4159212880143113,False,False
+56,Perth Stn,0.2,rail_only,1,19,Grant Street Stn,485.0,23.0,582.0,0.03951890034364261,False,False
+56,Perth Stn,0.2,rail_only,1,4,Currambine Stn,485.0,245.0,582.0,0.4209621993127148,False,False
+56,Perth Stn,0.2,rail_only,1,67,Seaforth Stn,485.0,245.0,582.0,0.4209621993127148,False,False
+56,Perth Stn,0.2,rail_only,1,39,Bassendean Stn,485.0,89.0,582.0,0.15292096219931273,False,False
+56,Perth Stn,0.2,rail_only,1,93,Kwinana Stn,485.0,245.0,582.0,0.4209621993127148,False,False
+56,Perth Stn,0.2,rail_only,1,34,Success Hill Stn,409.0,79.0,490.79999999999995,0.16096169519152406,False,False
+56,Perth Stn,0.2,rail_only,1,101,Wellard Stn,409.0,209.0,490.79999999999995,0.42583537082314593,False,False
+56,Perth Stn,0.2,rail_only,1,91,Kelmscott Stn,409.0,209.0,490.79999999999995,0.42583537082314593,False,False
+56,Perth Stn,0.2,rail_only,1,85,Clarkson Stn,409.0,209.0,490.79999999999995,0.42583537082314593,False,False
+56,Perth Stn,0.2,rail_only,1,156,Morley Stn,409.0,79.0,490.79999999999995,0.16096169519152406,False,False
+56,Perth Stn,0.2,rail_only,1,50,Cottesloe Stn,409.0,24.0,490.79999999999995,0.0488997555012225,False,False
+56,Perth Stn,0.2,rail_only,1,97,Rockingham Stn,331.0,171.0,397.2,0.43051359516616317,False,False
+56,Perth Stn,0.2,rail_only,1,133,Butler Stn,331.0,171.0,397.2,0.43051359516616317,False,False
+56,Perth Stn,0.2,rail_only,1,24,Guildford Stn,331.0,67.0,397.2,0.1686807653575025,False,False
+56,Perth Stn,0.2,rail_only,1,5,Mosman Park Stn,331.0,23.0,397.2,0.057905337361530716,False,False
+56,Perth Stn,0.2,rail_only,1,2,Challis Stn,331.0,171.0,397.2,0.43051359516616317,False,False
+56,Perth Stn,0.2,rail_only,1,157,Noranda Stn,331.0,67.0,397.2,0.1686807653575025,False,False
+56,Perth Stn,0.2,rail_only,1,99,Thornlie Stn,378.0,509.0,453.59999999999997,1.1221340388007055,True,True
+56,Perth Stn,0.2,rail_only,1,163,Ranford Rd Stn,256.0,531.0,307.2,1.728515625,True,True
+56,Perth Stn,0.2,rail_only,1,162,Nicholson Rd Stn,317.0,521.0,380.4,1.3696109358569928,True,True
+56,Perth Stn,0.2,rail_only,1,59,East Guildford Stn,251.0,53.0,301.2,0.1759628154050465,False,False
+56,Perth Stn,0.2,rail_only,1,158,Ballajura Stn,251.0,53.0,301.2,0.1759628154050465,False,False
+56,Perth Stn,0.2,rail_only,1,74,Warnbro Stn,251.0,131.0,301.2,0.4349269588313413,False,False
+56,Perth Stn,0.2,rail_only,1,66,Sherwood Stn,251.0,131.0,301.2,0.4349269588313413,False,False
+56,Perth Stn,0.2,rail_only,1,153,Alkimos Stn,251.0,131.0,301.2,0.4349269588313413,False,False
+56,Perth Stn,0.2,rail_only,1,32,Victoria Street Stn,251.0,20.0,301.2,0.06640106241699867,False,False
+56,Perth Stn,0.2,rail_only,1,147,Redcliffe Stn,251.0,53.0,301.2,0.1759628154050465,False,False
+56,Perth Stn,0.2,rail_only,1,154,Eglinton Stn,169.0,89.0,202.79999999999998,0.4388560157790927,False,False
+56,Perth Stn,0.2,rail_only,1,159,Whiteman Park Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,1,1,North Fremantle Stn,169.0,15.0,202.79999999999998,0.07396449704142012,False,False
+56,Perth Stn,0.2,rail_only,1,150,Lakelands Stn,169.0,89.0,202.79999999999998,0.4388560157790927,False,False
+56,Perth Stn,0.2,rail_only,1,41,Woodbridge Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,1,148,Airport Central Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,1,43,Armadale Stn,169.0,89.0,202.79999999999998,0.4388560157790927,False,False
+56,Perth Stn,0.2,rail_only,1,44,Mt Lawley Stn,219.0,21.0,262.8,0.07990867579908675,False,False
+56,Perth Stn,0.2,rail_only,1,33,Burswood Stn,144.0,45.0,172.79999999999998,0.2604166666666667,False,False
+56,Perth Stn,0.2,rail_only,1,37,Meltham Stn,117.0,51.0,140.4,0.36324786324786323,False,False
+56,Perth Stn,0.2,rail_only,1,48,Victoria Park Stn,110.0,89.0,132.0,0.6742424242424242,False,False
+56,Perth Stn,0.2,rail_only,1,49,Maylands Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,1,22,Mciver Stn,85.0,0.0,102.0,0.0,False,False
+56,Perth Stn,0.2,rail_only,1,87,Fremantle Stn,85.0,8.0,102.0,0.0784313725490196,False,False
+56,Perth Stn,0.2,rail_only,1,95,Midland Stn,85.0,19.0,102.0,0.18627450980392157,False,False
+56,Perth Stn,0.2,rail_only,1,94,Mandurah Stn,85.0,45.0,102.0,0.4411764705882353,False,False
+56,Perth Stn,0.2,rail_only,1,155,Yanchep Stn,85.0,45.0,102.0,0.4411764705882353,False,False
+56,Perth Stn,0.2,rail_only,1,149,High Wycombe Stn,85.0,19.0,102.0,0.18627450980392157,False,False
+56,Perth Stn,0.2,rail_only,1,160,Ellenbrook Stn,85.0,19.0,102.0,0.18627450980392157,False,False
+56,Perth Stn,0.2,rail_only,1,164,Byford Stn,85.0,45.0,102.0,0.4411764705882353,False,False
+56,Perth Stn,0.2,rail_only,2,26,East Perth Stn,1339.0,19.0,1606.8,0.011824744834453572,False,False
+56,Perth Stn,0.2,rail_only,2,8,Leederville Stn,1021.0,195.0,1225.2,0.1591576885406464,False,False
+56,Perth Stn,0.2,rail_only,2,23,Bayswater Stn,1206.0,150.0,1447.2,0.10364842454394693,False,False
+56,Perth Stn,0.2,rail_only,2,58,Carlisle Stn,1046.0,41.0,1255.2,0.032664117272147866,False,False
+56,Perth Stn,0.2,rail_only,2,88,Glendalough Stn,961.0,194.0,1153.2,0.16822754075615678,False,False
+56,Perth Stn,0.2,rail_only,2,28,Beckenham Stn,1005.0,69.0,1206.0,0.05721393034825871,False,False
+56,Perth Stn,0.2,rail_only,2,73,Oats Street Stn,1008.0,51.0,1209.6,0.042162698412698416,False,False
+56,Perth Stn,0.2,rail_only,2,98,Stirling Stn,899.0,191.0,1078.8,0.17704857248794958,False,False
+56,Perth Stn,0.2,rail_only,2,12,Queens Park Stn,969.0,59.0,1162.8,0.05073959408324734,False,False
+56,Perth Stn,0.2,rail_only,2,64,Perth Underground Stn,876.0,194.0,1051.2,0.1845509893455099,False,False
+56,Perth Stn,0.2,rail_only,2,16,Showgrounds Stn,541.0,8.0,649.1999999999999,0.012322858903265559,False,False
+56,Perth Stn,0.2,rail_only,2,100,Warwick Stn,835.0,186.0,1002.0,0.18562874251497005,False,False
+56,Perth Stn,0.2,rail_only,2,84,Cannington Stn,929.0,65.0,1114.8,0.058306422676713314,False,False
+56,Perth Stn,0.2,rail_only,2,135,Elizabeth Quay Stn,717.0,191.0,860.4,0.22198977219897723,False,False
+56,Perth Stn,0.2,rail_only,2,9,Greenwood Stn,769.0,179.0,922.8,0.193974859124404,False,False
+56,Perth Stn,0.2,rail_only,2,86,Cockburn Central Stn,662.0,159.0,794.4,0.2001510574018127,False,False
+56,Perth Stn,0.2,rail_only,2,83,Canning Bridge Stn,656.0,186.0,787.1999999999999,0.23628048780487806,False,False
+56,Perth Stn,0.2,rail_only,2,82,Bull Creek Stn,605.0,179.0,726.0,0.2465564738292011,False,False
+56,Perth Stn,0.2,rail_only,2,102,Whitfords Stn,701.0,170.0,841.1999999999999,0.20209224916785545,False,False
+56,Perth Stn,0.2,rail_only,2,92,Kenwick Stn,701.0,71.0,841.1999999999999,0.08440323347598669,False,False
+56,Perth Stn,0.2,rail_only,2,96,Murdoch Stn,565.0,170.0,678.0,0.25073746312684364,False,False
+56,Perth Stn,0.2,rail_only,2,46,Edgewater Stn,631.0,159.0,757.1999999999999,0.2099841521394612,False,False
+56,Perth Stn,0.2,rail_only,2,30,Claremont Stn,631.0,15.0,757.1999999999999,0.019809825673534075,False,False
+56,Perth Stn,0.2,rail_only,2,68,Maddington Stn,631.0,71.0,757.1999999999999,0.09376650818806129,False,False
+56,Perth Stn,0.2,rail_only,2,89,Gosnells Stn,559.0,69.0,670.8,0.10286225402504473,False,False
+56,Perth Stn,0.2,rail_only,2,90,Joondalup Stn,559.0,146.0,670.8,0.2176505664877758,False,False
+56,Perth Stn,0.2,rail_only,2,38,Swanbourne Stn,559.0,20.0,670.8,0.029815146094215865,False,False
+56,Perth Stn,0.2,rail_only,2,7,Ashfield Stn,559.0,97.0,670.8,0.14460345855694695,False,False
+56,Perth Stn,0.2,rail_only,2,138,Aubin Grove Stn,559.0,146.0,670.8,0.2176505664877758,False,False
+56,Perth Stn,0.2,rail_only,2,19,Grant Street Stn,485.0,23.0,582.0,0.03951890034364261,False,False
+56,Perth Stn,0.2,rail_only,2,4,Currambine Stn,485.0,131.0,582.0,0.22508591065292097,False,False
+56,Perth Stn,0.2,rail_only,2,67,Seaforth Stn,485.0,65.0,582.0,0.11168384879725086,False,False
+56,Perth Stn,0.2,rail_only,2,39,Bassendean Stn,485.0,89.0,582.0,0.15292096219931273,False,False
+56,Perth Stn,0.2,rail_only,2,93,Kwinana Stn,485.0,131.0,582.0,0.22508591065292097,False,False
+56,Perth Stn,0.2,rail_only,2,34,Success Hill Stn,409.0,79.0,490.79999999999995,0.16096169519152406,False,False
+56,Perth Stn,0.2,rail_only,2,101,Wellard Stn,409.0,114.0,490.79999999999995,0.23227383863080686,False,False
+56,Perth Stn,0.2,rail_only,2,91,Kelmscott Stn,409.0,59.0,490.79999999999995,0.12021189894050531,False,False
+56,Perth Stn,0.2,rail_only,2,85,Clarkson Stn,409.0,114.0,490.79999999999995,0.23227383863080686,False,False
+56,Perth Stn,0.2,rail_only,2,156,Morley Stn,409.0,79.0,490.79999999999995,0.16096169519152406,False,False
+56,Perth Stn,0.2,rail_only,2,50,Cottesloe Stn,409.0,24.0,490.79999999999995,0.0488997555012225,False,False
+56,Perth Stn,0.2,rail_only,2,97,Rockingham Stn,331.0,95.0,397.2,0.2391742195367573,False,False
+56,Perth Stn,0.2,rail_only,2,133,Butler Stn,331.0,95.0,397.2,0.2391742195367573,False,False
+56,Perth Stn,0.2,rail_only,2,24,Guildford Stn,331.0,67.0,397.2,0.1686807653575025,False,False
+56,Perth Stn,0.2,rail_only,2,5,Mosman Park Stn,331.0,23.0,397.2,0.057905337361530716,False,False
+56,Perth Stn,0.2,rail_only,2,2,Challis Stn,331.0,51.0,397.2,0.1283987915407855,False,False
+56,Perth Stn,0.2,rail_only,2,157,Noranda Stn,331.0,67.0,397.2,0.1686807653575025,False,False
+56,Perth Stn,0.2,rail_only,2,59,East Guildford Stn,251.0,53.0,301.2,0.1759628154050465,False,False
+56,Perth Stn,0.2,rail_only,2,158,Ballajura Stn,251.0,53.0,301.2,0.1759628154050465,False,False
+56,Perth Stn,0.2,rail_only,2,74,Warnbro Stn,251.0,74.0,301.2,0.2456839309428951,False,False
+56,Perth Stn,0.2,rail_only,2,66,Sherwood Stn,251.0,41.0,301.2,0.1361221779548473,False,False
+56,Perth Stn,0.2,rail_only,2,153,Alkimos Stn,251.0,74.0,301.2,0.2456839309428951,False,False
+56,Perth Stn,0.2,rail_only,2,32,Victoria Street Stn,251.0,20.0,301.2,0.06640106241699867,False,False
+56,Perth Stn,0.2,rail_only,2,147,Redcliffe Stn,251.0,53.0,301.2,0.1759628154050465,False,False
+56,Perth Stn,0.2,rail_only,2,154,Eglinton Stn,169.0,51.0,202.79999999999998,0.2514792899408284,False,False
+56,Perth Stn,0.2,rail_only,2,159,Whiteman Park Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,2,1,North Fremantle Stn,169.0,15.0,202.79999999999998,0.07396449704142012,False,False
+56,Perth Stn,0.2,rail_only,2,150,Lakelands Stn,169.0,51.0,202.79999999999998,0.2514792899408284,False,False
+56,Perth Stn,0.2,rail_only,2,41,Woodbridge Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,2,148,Airport Central Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,2,43,Armadale Stn,169.0,29.0,202.79999999999998,0.14299802761341224,False,False
+56,Perth Stn,0.2,rail_only,2,44,Mt Lawley Stn,219.0,21.0,262.8,0.07990867579908675,False,False
+56,Perth Stn,0.2,rail_only,2,33,Burswood Stn,144.0,15.0,172.79999999999998,0.08680555555555557,False,False
+56,Perth Stn,0.2,rail_only,2,37,Meltham Stn,117.0,51.0,140.4,0.36324786324786323,False,False
+56,Perth Stn,0.2,rail_only,2,48,Victoria Park Stn,110.0,29.0,132.0,0.2196969696969697,False,False
+56,Perth Stn,0.2,rail_only,2,49,Maylands Stn,169.0,37.0,202.79999999999998,0.1824457593688363,False,False
+56,Perth Stn,0.2,rail_only,2,22,Mciver Stn,85.0,0.0,102.0,0.0,False,False
+56,Perth Stn,0.2,rail_only,2,87,Fremantle Stn,85.0,8.0,102.0,0.0784313725490196,False,False
+56,Perth Stn,0.2,rail_only,2,95,Midland Stn,85.0,19.0,102.0,0.18627450980392157,False,False
+56,Perth Stn,0.2,rail_only,2,94,Mandurah Stn,85.0,26.0,102.0,0.2549019607843137,False,False
+56,Perth Stn,0.2,rail_only,2,155,Yanchep Stn,85.0,26.0,102.0,0.2549019607843137,False,False
+56,Perth Stn,0.2,rail_only,2,149,High Wycombe Stn,85.0,19.0,102.0,0.18627450980392157,False,False
+56,Perth Stn,0.2,rail_only,2,160,Ellenbrook Stn,85.0,19.0,102.0,0.18627450980392157,False,False
+56,Perth Stn,0.2,rail_only,2,164,Byford Stn,85.0,15.0,102.0,0.14705882352941177,False,False
+56,Perth Stn,0.2,existing_bus,0,26,East Perth Stn,1339.0,1320.0,1606.8,0.8215085884988798,False,False
+56,Perth Stn,0.2,existing_bus,0,8,Leederville Stn,1021.0,1029.0,1225.2,0.8398628795298726,False,False
+56,Perth Stn,0.2,existing_bus,0,23,Bayswater Stn,1206.0,1209.0,1447.2,0.8354063018242123,False,False
+56,Perth Stn,0.2,existing_bus,0,140,Perth Stadium Stn,1156.0,2085.0,1387.2,1.5030276816608996,True,True
+56,Perth Stn,0.2,existing_bus,0,58,Carlisle Stn,1046.0,1054.0,1255.2,0.8397068196303378,False,False
+56,Perth Stn,0.2,existing_bus,0,88,Glendalough Stn,961.0,982.0,1153.2,0.8515435310440513,False,False
+56,Perth Stn,0.2,existing_bus,0,28,Beckenham Stn,1005.0,1013.0,1206.0,0.8399668325041459,False,False
+56,Perth Stn,0.2,existing_bus,0,73,Oats Street Stn,1008.0,1016.0,1209.6,0.83994708994709,False,False
+56,Perth Stn,0.2,existing_bus,0,98,Stirling Stn,899.0,899.0,1078.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,12,Queens Park Stn,969.0,977.0,1162.8,0.8402132782937737,False,False
+56,Perth Stn,0.2,existing_bus,0,64,Perth Underground Stn,876.0,1010.0,1051.2,0.9608066971080669,False,False
+56,Perth Stn,0.2,existing_bus,0,16,Showgrounds Stn,541.0,85.0,649.1999999999999,0.13093037584719655,False,False
+56,Perth Stn,0.2,existing_bus,0,100,Warwick Stn,835.0,835.0,1002.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,84,Cannington Stn,929.0,937.0,1114.8,0.8405095084320058,False,False
+56,Perth Stn,0.2,existing_bus,0,135,Elizabeth Quay Stn,717.0,709.0,860.4,0.8240353324035332,False,False
+56,Perth Stn,0.2,existing_bus,0,9,Greenwood Stn,769.0,769.0,922.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,86,Cockburn Central Stn,662.0,662.0,794.4,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,83,Canning Bridge Stn,656.0,648.0,787.1999999999999,0.8231707317073171,False,False
+56,Perth Stn,0.2,existing_bus,0,82,Bull Creek Stn,605.0,597.0,726.0,0.8223140495867769,False,False
+56,Perth Stn,0.2,existing_bus,0,102,Whitfords Stn,701.0,701.0,841.1999999999999,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,92,Kenwick Stn,701.0,701.0,841.1999999999999,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,96,Murdoch Stn,565.0,557.0,678.0,0.8215339233038348,False,False
+56,Perth Stn,0.2,existing_bus,0,46,Edgewater Stn,631.0,631.0,757.1999999999999,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,30,Claremont Stn,631.0,631.0,757.1999999999999,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,68,Maddington Stn,631.0,631.0,757.1999999999999,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,31,City West Stn,998.0,1498.0,1197.6,1.2508350033400135,True,True
+56,Perth Stn,0.2,existing_bus,0,89,Gosnells Stn,559.0,559.0,670.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,90,Joondalup Stn,559.0,559.0,670.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,38,Swanbourne Stn,559.0,559.0,670.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,7,Ashfield Stn,559.0,559.0,670.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,138,Aubin Grove Stn,559.0,559.0,670.8,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,19,Grant Street Stn,485.0,485.0,582.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,4,Currambine Stn,485.0,485.0,582.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,67,Seaforth Stn,485.0,485.0,582.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,39,Bassendean Stn,485.0,485.0,582.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,93,Kwinana Stn,485.0,485.0,582.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,34,Success Hill Stn,409.0,409.0,490.79999999999995,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,101,Wellard Stn,409.0,409.0,490.79999999999995,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,91,Kelmscott Stn,409.0,409.0,490.79999999999995,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,85,Clarkson Stn,409.0,409.0,490.79999999999995,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,156,Morley Stn,409.0,409.0,490.79999999999995,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,50,Cottesloe Stn,409.0,409.0,490.79999999999995,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,97,Rockingham Stn,331.0,331.0,397.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,133,Butler Stn,331.0,331.0,397.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,24,Guildford Stn,331.0,331.0,397.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,5,Mosman Park Stn,331.0,331.0,397.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,2,Challis Stn,331.0,331.0,397.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,157,Noranda Stn,331.0,331.0,397.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,99,Thornlie Stn,378.0,386.0,453.59999999999997,0.8509700176366843,False,False
+56,Perth Stn,0.2,existing_bus,0,72,Claisebrook Stn,525.0,1429.0,630.0,2.268253968253968,True,True
+56,Perth Stn,0.2,existing_bus,0,163,Ranford Rd Stn,256.0,264.0,307.2,0.859375,False,False
+56,Perth Stn,0.2,existing_bus,0,162,Nicholson Rd Stn,317.0,325.0,380.4,0.8543638275499474,False,False
+56,Perth Stn,0.2,existing_bus,0,15,West Leederville Stn,566.0,1079.0,679.1999999999999,1.588633686690224,True,True
+56,Perth Stn,0.2,existing_bus,0,59,East Guildford Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,158,Ballajura Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,74,Warnbro Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,66,Sherwood Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,153,Alkimos Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,32,Victoria Street Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,147,Redcliffe Stn,251.0,251.0,301.2,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,42,Loch Street Stn,256.0,769.0,307.2,2.5032552083333335,True,True
+56,Perth Stn,0.2,existing_bus,0,6,Subiaco Stn,508.0,1021.0,609.6,1.6748687664041995,True,True
+56,Perth Stn,0.2,existing_bus,0,154,Eglinton Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,159,Whiteman Park Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,1,North Fremantle Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,150,Lakelands Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,41,Woodbridge Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,148,Airport Central Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,43,Armadale Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,76,Karrakatta Stn,322.0,835.0,386.4,2.1609730848861286,True,True
+56,Perth Stn,0.2,existing_bus,0,44,Mt Lawley Stn,219.0,217.0,262.8,0.8257229832572298,False,False
+56,Perth Stn,0.2,existing_bus,0,36,Daglish Stn,448.0,961.0,537.6,1.7875744047619047,True,True
+56,Perth Stn,0.2,existing_bus,0,33,Burswood Stn,144.0,146.0,172.79999999999998,0.8449074074074074,False,False
+56,Perth Stn,0.2,existing_bus,0,17,Shenton Park Stn,386.0,899.0,463.2,1.940846286701209,True,True
+56,Perth Stn,0.2,existing_bus,0,37,Meltham Stn,117.0,119.0,140.4,0.8475783475783475,False,False
+56,Perth Stn,0.2,existing_bus,0,48,Victoria Park Stn,110.0,138.0,132.0,1.0454545454545454,True,True
+56,Perth Stn,0.2,existing_bus,0,49,Maylands Stn,169.0,169.0,202.79999999999998,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,22,Mciver Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,87,Fremantle Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,95,Midland Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,94,Mandurah Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,155,Yanchep Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,149,High Wycombe Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,160,Ellenbrook Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,0,164,Byford Stn,85.0,85.0,102.0,0.8333333333333334,False,False
+56,Perth Stn,0.2,existing_bus,1,26,East Perth Stn,1339.0,65.0,1606.8,0.040453074433656956,False,False
+56,Perth Stn,0.2,existing_bus,1,8,Leederville Stn,1021.0,1115.0,1225.2,0.9100555011426705,False,False
+56,Perth Stn,0.2,existing_bus,1,23,Bayswater Stn,1206.0,1024.0,1447.2,0.7075732448866777,False,False
+56,Perth Stn,0.2,existing_bus,1,58,Carlisle Stn,1046.0,65.0,1255.2,0.05178457616316125,False,False
+56,Perth Stn,0.2,existing_bus,1,88,Glendalough Stn,961.0,1361.0,1153.2,1.1801942421089142,True,True
+56,Perth Stn,0.2,existing_bus,1,28,Beckenham Stn,1005.0,699.0,1206.0,0.5796019900497512,False,False
+56,Perth Stn,0.2,existing_bus,1,73,Oats Street Stn,1008.0,90.0,1209.6,0.0744047619047619,False,False
+56,Perth Stn,0.2,existing_bus,1,98,Stirling Stn,899.0,659.0,1078.8,0.6108639228772711,False,False
+56,Perth Stn,0.2,existing_bus,1,12,Queens Park Stn,969.0,113.0,1162.8,0.09717922256621947,False,False
+56,Perth Stn,0.2,existing_bus,1,64,Perth Underground Stn,876.0,1109.0,1051.2,1.0549847792998477,True,True
+56,Perth Stn,0.2,existing_bus,1,16,Showgrounds Stn,541.0,8.0,649.1999999999999,0.012322858903265559,False,False
+56,Perth Stn,0.2,existing_bus,1,100,Warwick Stn,835.0,615.0,1002.0,0.6137724550898204,False,False
+56,Perth Stn,0.2,existing_bus,1,84,Cannington Stn,929.0,173.0,1114.8,0.15518478650879083,False,False
+56,Perth Stn,0.2,existing_bus,1,135,Elizabeth Quay Stn,717.0,1101.0,860.4,1.2796373779637378,True,True
+56,Perth Stn,0.2,existing_bus,1,9,Greenwood Stn,769.0,569.0,922.8,0.6166016471608149,False,False
+56,Perth Stn,0.2,existing_bus,1,86,Cockburn Central Stn,662.0,1090.0,794.4,1.3721047331319236,True,True
+56,Perth Stn,0.2,existing_bus,1,83,Canning Bridge Stn,656.0,1089.0,787.1999999999999,1.3833841463414636,True,True
+56,Perth Stn,0.2,existing_bus,1,82,Bull Creek Stn,605.0,1001.0,726.0,1.378787878787879,True,True
+56,Perth Stn,0.2,existing_bus,1,102,Whitfords Stn,701.0,521.0,841.1999999999999,0.6193533048026629,False,False
+56,Perth Stn,0.2,existing_bus,1,92,Kenwick Stn,701.0,521.0,841.1999999999999,0.6193533048026629,False,False
+56,Perth Stn,0.2,existing_bus,1,96,Murdoch Stn,565.0,987.0,678.0,1.4557522123893805,True,True
+56,Perth Stn,0.2,existing_bus,1,46,Edgewater Stn,631.0,471.0,757.1999999999999,0.62202852614897,False,False
+56,Perth Stn,0.2,existing_bus,1,30,Claremont Stn,631.0,15.0,757.1999999999999,0.019809825673534075,False,False
+56,Perth Stn,0.2,existing_bus,1,68,Maddington Stn,631.0,471.0,757.1999999999999,0.62202852614897,False,False
+56,Perth Stn,0.2,existing_bus,1,89,Gosnells Stn,559.0,419.0,670.8,0.6246273106738224,False,False
+56,Perth Stn,0.2,existing_bus,1,90,Joondalup Stn,559.0,419.0,670.8,0.6246273106738224,False,False
+56,Perth Stn,0.2,existing_bus,1,38,Swanbourne Stn,559.0,20.0,670.8,0.029815146094215865,False,False
+56,Perth Stn,0.2,existing_bus,1,7,Ashfield Stn,559.0,419.0,670.8,0.6246273106738224,False,False
+56,Perth Stn,0.2,existing_bus,1,138,Aubin Grove Stn,559.0,419.0,670.8,0.6246273106738224,False,False
+56,Perth Stn,0.2,existing_bus,1,19,Grant Street Stn,485.0,23.0,582.0,0.03951890034364261,False,False
+56,Perth Stn,0.2,existing_bus,1,4,Currambine Stn,485.0,365.0,582.0,0.627147766323024,False,False
+56,Perth Stn,0.2,existing_bus,1,67,Seaforth Stn,485.0,365.0,582.0,0.627147766323024,False,False
+56,Perth Stn,0.2,existing_bus,1,39,Bassendean Stn,485.0,365.0,582.0,0.627147766323024,False,False
+56,Perth Stn,0.2,existing_bus,1,93,Kwinana Stn,485.0,365.0,582.0,0.627147766323024,False,False
+56,Perth Stn,0.2,existing_bus,1,34,Success Hill Stn,409.0,309.0,490.79999999999995,0.6295843520782397,False,False
+56,Perth Stn,0.2,existing_bus,1,101,Wellard Stn,409.0,309.0,490.79999999999995,0.6295843520782397,False,False
+56,Perth Stn,0.2,existing_bus,1,91,Kelmscott Stn,409.0,309.0,490.79999999999995,0.6295843520782397,False,False
+56,Perth Stn,0.2,existing_bus,1,85,Clarkson Stn,409.0,309.0,490.79999999999995,0.6295843520782397,False,False
+56,Perth Stn,0.2,existing_bus,1,156,Morley Stn,409.0,309.0,490.79999999999995,0.6295843520782397,False,False
+56,Perth Stn,0.2,existing_bus,1,50,Cottesloe Stn,409.0,24.0,490.79999999999995,0.0488997555012225,False,False
+56,Perth Stn,0.2,existing_bus,1,97,Rockingham Stn,331.0,251.0,397.2,0.6319234642497482,False,False
+56,Perth Stn,0.2,existing_bus,1,133,Butler Stn,331.0,251.0,397.2,0.6319234642497482,False,False
+56,Perth Stn,0.2,existing_bus,1,24,Guildford Stn,331.0,251.0,397.2,0.6319234642497482,False,False
+56,Perth Stn,0.2,existing_bus,1,5,Mosman Park Stn,331.0,23.0,397.2,0.057905337361530716,False,False
+56,Perth Stn,0.2,existing_bus,1,2,Challis Stn,331.0,251.0,397.2,0.6319234642497482,False,False
+56,Perth Stn,0.2,existing_bus,1,157,Noranda Stn,331.0,251.0,397.2,0.6319234642497482,False,False
+56,Perth Stn,0.2,existing_bus,1,99,Thornlie Stn,378.0,701.0,453.59999999999997,1.5454144620811288,True,True
+56,Perth Stn,0.2,existing_bus,1,163,Ranford Rd Stn,256.0,771.0,307.2,2.509765625,True,True
+56,Perth Stn,0.2,existing_bus,1,162,Nicholson Rd Stn,317.0,737.0,380.4,1.9374342797055732,True,True
+56,Perth Stn,0.2,existing_bus,1,59,East Guildford Stn,251.0,191.0,301.2,0.6341301460823373,False,False
+56,Perth Stn,0.2,existing_bus,1,158,Ballajura Stn,251.0,191.0,301.2,0.6341301460823373,False,False
+56,Perth Stn,0.2,existing_bus,1,74,Warnbro Stn,251.0,191.0,301.2,0.6341301460823373,False,False
+56,Perth Stn,0.2,existing_bus,1,66,Sherwood Stn,251.0,191.0,301.2,0.6341301460823373,False,False
+56,Perth Stn,0.2,existing_bus,1,153,Alkimos Stn,251.0,191.0,301.2,0.6341301460823373,False,False
+56,Perth Stn,0.2,existing_bus,1,32,Victoria Street Stn,251.0,20.0,301.2,0.06640106241699867,False,False
+56,Perth Stn,0.2,existing_bus,1,147,Redcliffe Stn,251.0,191.0,301.2,0.6341301460823373,False,False
+56,Perth Stn,0.2,existing_bus,1,154,Eglinton Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,159,Whiteman Park Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,1,North Fremantle Stn,169.0,15.0,202.79999999999998,0.07396449704142012,False,False
+56,Perth Stn,0.2,existing_bus,1,150,Lakelands Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,41,Woodbridge Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,148,Airport Central Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,43,Armadale Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,44,Mt Lawley Stn,219.0,67.0,262.8,0.2549467275494673,False,False
+56,Perth Stn,0.2,existing_bus,1,33,Burswood Stn,144.0,0.0,172.79999999999998,0.0,False,False
+56,Perth Stn,0.2,existing_bus,1,37,Meltham Stn,117.0,189.0,140.4,1.346153846153846,True,True
+56,Perth Stn,0.2,existing_bus,1,49,Maylands Stn,169.0,129.0,202.79999999999998,0.636094674556213,False,False
+56,Perth Stn,0.2,existing_bus,1,22,Mciver Stn,85.0,0.0,102.0,0.0,False,False
+56,Perth Stn,0.2,existing_bus,1,87,Fremantle Stn,85.0,8.0,102.0,0.0784313725490196,False,False
+56,Perth Stn,0.2,existing_bus,1,95,Midland Stn,85.0,65.0,102.0,0.6372549019607843,False,False
+56,Perth Stn,0.2,existing_bus,1,94,Mandurah Stn,85.0,65.0,102.0,0.6372549019607843,False,False
+56,Perth Stn,0.2,existing_bus,1,155,Yanchep Stn,85.0,65.0,102.0,0.6372549019607843,False,False
+56,Perth Stn,0.2,existing_bus,1,149,High Wycombe Stn,85.0,65.0,102.0,0.6372549019607843,False,False
+56,Perth Stn,0.2,existing_bus,1,160,Ellenbrook Stn,85.0,65.0,102.0,0.6372549019607843,False,False
+56,Perth Stn,0.2,existing_bus,1,164,Byford Stn,85.0,65.0,102.0,0.6372549019607843,False,False
+56,Perth Stn,0.2,existing_bus,2,26,East Perth Stn,1339.0,59.0,1606.8,0.036718944485934775,False,False
+56,Perth Stn,0.2,existing_bus,2,8,Leederville Stn,1021.0,0.0,1225.2,0.0,False,False
+56,Perth Stn,0.2,existing_bus,2,23,Bayswater Stn,1206.0,188.0,1447.2,0.12990602542841348,False,False
+56,Perth Stn,0.2,existing_bus,2,58,Carlisle Stn,1046.0,14.0,1255.2,0.011153601019757807,False,False
+56,Perth Stn,0.2,existing_bus,2,28,Beckenham Stn,1005.0,59.0,1206.0,0.04892205638474295,False,False
+56,Perth Stn,0.2,existing_bus,2,73,Oats Street Stn,1008.0,38.0,1209.6,0.03141534391534392,False,False
+56,Perth Stn,0.2,existing_bus,2,98,Stirling Stn,899.0,11.0,1078.8,0.010196514645902856,False,False
+56,Perth Stn,0.2,existing_bus,2,12,Queens Park Stn,969.0,47.0,1162.8,0.04041967664258686,False,False
+56,Perth Stn,0.2,existing_bus,2,16,Showgrounds Stn,541.0,8.0,649.1999999999999,0.012322858903265559,False,False
+56,Perth Stn,0.2,existing_bus,2,100,Warwick Stn,835.0,21.0,1002.0,0.020958083832335328,False,False
+56,Perth Stn,0.2,existing_bus,2,84,Cannington Stn,929.0,54.0,1114.8,0.04843918191603876,False,False
+56,Perth Stn,0.2,existing_bus,2,9,Greenwood Stn,769.0,29.0,922.8,0.03142609449501517,False,False
+56,Perth Stn,0.2,existing_bus,2,102,Whitfords Stn,701.0,35.0,841.1999999999999,0.041607227769852595,False,False
+56,Perth Stn,0.2,existing_bus,2,92,Kenwick Stn,701.0,62.0,841.1999999999999,0.07370423204945317,False,False
+56,Perth Stn,0.2,existing_bus,2,46,Edgewater Stn,631.0,39.0,757.1999999999999,0.0515055467511886,False,False
+56,Perth Stn,0.2,existing_bus,2,30,Claremont Stn,631.0,15.0,757.1999999999999,0.019809825673534075,False,False
+56,Perth Stn,0.2,existing_bus,2,68,Maddington Stn,631.0,63.0,757.1999999999999,0.08320126782884311,False,False
+56,Perth Stn,0.2,existing_bus,2,89,Gosnells Stn,559.0,62.0,670.8,0.09242695289206918,False,False
+56,Perth Stn,0.2,existing_bus,2,90,Joondalup Stn,559.0,41.0,670.8,0.061121049493142524,False,False
+56,Perth Stn,0.2,existing_bus,2,38,Swanbourne Stn,559.0,20.0,670.8,0.029815146094215865,False,False
+56,Perth Stn,0.2,existing_bus,2,7,Ashfield Stn,559.0,111.0,670.8,0.16547406082289803,False,False
+56,Perth Stn,0.2,existing_bus,2,138,Aubin Grove Stn,559.0,6.0,670.8,0.00894454382826476,False,False
+56,Perth Stn,0.2,existing_bus,2,19,Grant Street Stn,485.0,23.0,582.0,0.03951890034364261,False,False
+56,Perth Stn,0.2,existing_bus,2,4,Currambine Stn,485.0,41.0,582.0,0.070446735395189,False,False
+56,Perth Stn,0.2,existing_bus,2,67,Seaforth Stn,485.0,59.0,582.0,0.1013745704467354,False,False
+56,Perth Stn,0.2,existing_bus,2,39,Bassendean Stn,485.0,101.0,582.0,0.17353951890034364,False,False
+56,Perth Stn,0.2,existing_bus,2,93,Kwinana Stn,485.0,11.0,582.0,0.018900343642611683,False,False
+56,Perth Stn,0.2,existing_bus,2,34,Success Hill Stn,409.0,89.0,490.79999999999995,0.18133659331703345,False,False
+56,Perth Stn,0.2,existing_bus,2,101,Wellard Stn,409.0,14.0,490.79999999999995,0.028524857375713124,False,False
+56,Perth Stn,0.2,existing_bus,2,91,Kelmscott Stn,409.0,54.0,490.79999999999995,0.11002444987775062,False,False
+56,Perth Stn,0.2,existing_bus,2,85,Clarkson Stn,409.0,39.0,490.79999999999995,0.07946210268948656,False,False
+56,Perth Stn,0.2,existing_bus,2,156,Morley Stn,409.0,89.0,490.79999999999995,0.18133659331703345,False,False
+56,Perth Stn,0.2,existing_bus,2,50,Cottesloe Stn,409.0,24.0,490.79999999999995,0.0488997555012225,False,False
+56,Perth Stn,0.2,existing_bus,2,97,Rockingham Stn,331.0,15.0,397.2,0.0377643504531722,False,False
+56,Perth Stn,0.2,existing_bus,2,133,Butler Stn,331.0,35.0,397.2,0.08811681772406849,False,False
+56,Perth Stn,0.2,existing_bus,2,24,Guildford Stn,331.0,75.0,397.2,0.18882175226586104,False,False
+56,Perth Stn,0.2,existing_bus,2,5,Mosman Park Stn,331.0,23.0,397.2,0.057905337361530716,False,False
+56,Perth Stn,0.2,existing_bus,2,2,Challis Stn,331.0,47.0,397.2,0.11832829808660625,False,False
+56,Perth Stn,0.2,existing_bus,2,157,Noranda Stn,331.0,75.0,397.2,0.18882175226586104,False,False
+56,Perth Stn,0.2,existing_bus,2,59,East Guildford Stn,251.0,59.0,301.2,0.1958831341301461,False,False
+56,Perth Stn,0.2,existing_bus,2,158,Ballajura Stn,251.0,59.0,301.2,0.1958831341301461,False,False
+56,Perth Stn,0.2,existing_bus,2,74,Warnbro Stn,251.0,14.0,301.2,0.04648074369189907,False,False
+56,Perth Stn,0.2,existing_bus,2,66,Sherwood Stn,251.0,38.0,301.2,0.12616201859229748,False,False
+56,Perth Stn,0.2,existing_bus,2,153,Alkimos Stn,251.0,29.0,301.2,0.09628154050464807,False,False
+56,Perth Stn,0.2,existing_bus,2,32,Victoria Street Stn,251.0,20.0,301.2,0.06640106241699867,False,False
+56,Perth Stn,0.2,existing_bus,2,147,Redcliffe Stn,251.0,59.0,301.2,0.1958831341301461,False,False
+56,Perth Stn,0.2,existing_bus,2,154,Eglinton Stn,169.0,21.0,202.79999999999998,0.10355029585798818,False,False
+56,Perth Stn,0.2,existing_bus,2,159,Whiteman Park Stn,169.0,41.0,202.79999999999998,0.20216962524654833,False,False
+56,Perth Stn,0.2,existing_bus,2,1,North Fremantle Stn,169.0,15.0,202.79999999999998,0.07396449704142012,False,False
+56,Perth Stn,0.2,existing_bus,2,150,Lakelands Stn,169.0,11.0,202.79999999999998,0.05424063116370809,False,False
+56,Perth Stn,0.2,existing_bus,2,41,Woodbridge Stn,169.0,41.0,202.79999999999998,0.20216962524654833,False,False
+56,Perth Stn,0.2,existing_bus,2,148,Airport Central Stn,169.0,41.0,202.79999999999998,0.20216962524654833,False,False
+56,Perth Stn,0.2,existing_bus,2,43,Armadale Stn,169.0,27.0,202.79999999999998,0.13313609467455623,False,False
+56,Perth Stn,0.2,existing_bus,2,44,Mt Lawley Stn,219.0,41.0,262.8,0.15601217656012176,False,False
+56,Perth Stn,0.2,existing_bus,2,33,Burswood Stn,144.0,0.0,172.79999999999998,0.0,False,False
+56,Perth Stn,0.2,existing_bus,2,49,Maylands Stn,169.0,21.0,202.79999999999998,0.10355029585798818,False,False
+56,Perth Stn,0.2,existing_bus,2,22,Mciver Stn,85.0,0.0,102.0,0.0,False,False
+56,Perth Stn,0.2,existing_bus,2,87,Fremantle Stn,85.0,8.0,102.0,0.0784313725490196,False,False
+56,Perth Stn,0.2,existing_bus,2,95,Midland Stn,85.0,21.0,102.0,0.20588235294117646,False,False
+56,Perth Stn,0.2,existing_bus,2,94,Mandurah Stn,85.0,6.0,102.0,0.058823529411764705,False,False
+56,Perth Stn,0.2,existing_bus,2,155,Yanchep Stn,85.0,11.0,102.0,0.10784313725490197,False,False
+56,Perth Stn,0.2,existing_bus,2,149,High Wycombe Stn,85.0,21.0,102.0,0.20588235294117646,False,False
+56,Perth Stn,0.2,existing_bus,2,160,Ellenbrook Stn,85.0,21.0,102.0,0.20588235294117646,False,False
+56,Perth Stn,0.2,existing_bus,2,164,Byford Stn,85.0,14.0,102.0,0.13725490196078433,False,False
+56,Perth Stn,1.0,rail_only,0,26,East Perth Stn,1339.0,1319.0,2678.0,0.49253174010455564,False,False
+56,Perth Stn,1.0,rail_only,0,8,Leederville Stn,1021.0,1007.0,2042.0,0.4931439764936337,False,False
+56,Perth Stn,1.0,rail_only,0,23,Bayswater Stn,1206.0,1190.0,2412.0,0.49336650082918737,False,False
+56,Perth Stn,1.0,rail_only,0,140,Perth Stadium Stn,1156.0,2082.0,2312.0,0.9005190311418685,False,False
+56,Perth Stn,1.0,rail_only,0,58,Carlisle Stn,1046.0,1029.0,2092.0,0.49187380497131933,False,False
+56,Perth Stn,1.0,rail_only,0,88,Glendalough Stn,961.0,948.0,1922.0,0.49323621227887615,False,False
+56,Perth Stn,1.0,rail_only,0,28,Beckenham Stn,1005.0,992.0,2010.0,0.4935323383084577,False,False
+56,Perth Stn,1.0,rail_only,0,73,Oats Street Stn,1008.0,992.0,2016.0,0.49206349206349204,False,False
+56,Perth Stn,1.0,rail_only,0,98,Stirling Stn,899.0,887.0,1798.0,0.4933259176863181,False,False
+56,Perth Stn,1.0,rail_only,0,12,Queens Park Stn,969.0,954.0,1938.0,0.49226006191950467,False,False
+56,Perth Stn,1.0,rail_only,0,64,Perth Underground Stn,876.0,989.0,1752.0,0.5644977168949772,False,False
+56,Perth Stn,1.0,rail_only,0,16,Showgrounds Stn,541.0,84.0,1082.0,0.07763401109057301,False,False
+56,Perth Stn,1.0,rail_only,0,100,Warwick Stn,835.0,824.0,1670.0,0.4934131736526946,False,False
+56,Perth Stn,1.0,rail_only,0,84,Cannington Stn,929.0,915.0,1858.0,0.492465016146394,False,False
+56,Perth Stn,1.0,rail_only,0,135,Elizabeth Quay Stn,717.0,705.0,1434.0,0.4916317991631799,False,False
+56,Perth Stn,1.0,rail_only,0,9,Greenwood Stn,769.0,759.0,1538.0,0.49349804941482445,False,False
+56,Perth Stn,1.0,rail_only,0,86,Cockburn Central Stn,662.0,654.0,1324.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,83,Canning Bridge Stn,656.0,645.0,1312.0,0.4916158536585366,False,False
+56,Perth Stn,1.0,rail_only,0,82,Bull Creek Stn,605.0,595.0,1210.0,0.49173553719008267,False,False
+56,Perth Stn,1.0,rail_only,0,102,Whitfords Stn,701.0,692.0,1402.0,0.49358059914407987,False,False
+56,Perth Stn,1.0,rail_only,0,92,Kenwick Stn,701.0,692.0,1402.0,0.49358059914407987,False,False
+56,Perth Stn,1.0,rail_only,0,96,Murdoch Stn,565.0,556.0,1130.0,0.4920353982300885,False,False
+56,Perth Stn,1.0,rail_only,0,46,Edgewater Stn,631.0,623.0,1262.0,0.4936608557844691,False,False
+56,Perth Stn,1.0,rail_only,0,30,Claremont Stn,631.0,623.0,1262.0,0.4936608557844691,False,False
+56,Perth Stn,1.0,rail_only,0,68,Maddington Stn,631.0,623.0,1262.0,0.4936608557844691,False,False
+56,Perth Stn,1.0,rail_only,0,31,City West Stn,998.0,1482.0,1996.0,0.7424849699398798,False,False
+56,Perth Stn,1.0,rail_only,0,89,Gosnells Stn,559.0,552.0,1118.0,0.4937388193202147,False,False
+56,Perth Stn,1.0,rail_only,0,90,Joondalup Stn,559.0,552.0,1118.0,0.4937388193202147,False,False
+56,Perth Stn,1.0,rail_only,0,38,Swanbourne Stn,559.0,552.0,1118.0,0.4937388193202147,False,False
+56,Perth Stn,1.0,rail_only,0,7,Ashfield Stn,559.0,552.0,1118.0,0.4937388193202147,False,False
+56,Perth Stn,1.0,rail_only,0,138,Aubin Grove Stn,559.0,552.0,1118.0,0.4937388193202147,False,False
+56,Perth Stn,1.0,rail_only,0,19,Grant Street Stn,485.0,479.0,970.0,0.49381443298969074,False,False
+56,Perth Stn,1.0,rail_only,0,4,Currambine Stn,485.0,479.0,970.0,0.49381443298969074,False,False
+56,Perth Stn,1.0,rail_only,0,67,Seaforth Stn,485.0,479.0,970.0,0.49381443298969074,False,False
+56,Perth Stn,1.0,rail_only,0,39,Bassendean Stn,485.0,479.0,970.0,0.49381443298969074,False,False
+56,Perth Stn,1.0,rail_only,0,93,Kwinana Stn,485.0,479.0,970.0,0.49381443298969074,False,False
+56,Perth Stn,1.0,rail_only,0,34,Success Hill Stn,409.0,404.0,818.0,0.4938875305623472,False,False
+56,Perth Stn,1.0,rail_only,0,101,Wellard Stn,409.0,404.0,818.0,0.4938875305623472,False,False
+56,Perth Stn,1.0,rail_only,0,91,Kelmscott Stn,409.0,404.0,818.0,0.4938875305623472,False,False
+56,Perth Stn,1.0,rail_only,0,85,Clarkson Stn,409.0,404.0,818.0,0.4938875305623472,False,False
+56,Perth Stn,1.0,rail_only,0,156,Morley Stn,409.0,404.0,818.0,0.4938875305623472,False,False
+56,Perth Stn,1.0,rail_only,0,50,Cottesloe Stn,409.0,404.0,818.0,0.4938875305623472,False,False
+56,Perth Stn,1.0,rail_only,0,97,Rockingham Stn,331.0,327.0,662.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,133,Butler Stn,331.0,327.0,662.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,24,Guildford Stn,331.0,327.0,662.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,5,Mosman Park Stn,331.0,327.0,662.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,2,Challis Stn,331.0,327.0,662.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,157,Noranda Stn,331.0,327.0,662.0,0.49395770392749244,False,False
+56,Perth Stn,1.0,rail_only,0,99,Thornlie Stn,378.0,375.0,756.0,0.49603174603174605,False,False
+56,Perth Stn,1.0,rail_only,0,72,Claisebrook Stn,525.0,1427.0,1050.0,1.359047619047619,True,True
+56,Perth Stn,1.0,rail_only,0,163,Ranford Rd Stn,256.0,255.0,512.0,0.498046875,False,False
+56,Perth Stn,1.0,rail_only,0,162,Nicholson Rd Stn,317.0,315.0,634.0,0.4968454258675079,False,False
+56,Perth Stn,1.0,rail_only,0,15,West Leederville Stn,566.0,1064.0,1132.0,0.9399293286219081,False,False
+56,Perth Stn,1.0,rail_only,0,59,East Guildford Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,158,Ballajura Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,74,Warnbro Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,66,Sherwood Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,153,Alkimos Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,32,Victoria Street Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,147,Redcliffe Stn,251.0,248.0,502.0,0.4940239043824701,False,False
+56,Perth Stn,1.0,rail_only,0,42,Loch Street Stn,256.0,759.0,512.0,1.482421875,True,True
+56,Perth Stn,1.0,rail_only,0,6,Subiaco Stn,508.0,1007.0,1016.0,0.9911417322834646,False,False
+56,Perth Stn,1.0,rail_only,0,154,Eglinton Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,159,Whiteman Park Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,1,North Fremantle Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,150,Lakelands Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,41,Woodbridge Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,148,Airport Central Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,43,Armadale Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,76,Karrakatta Stn,322.0,824.0,644.0,1.279503105590062,True,True
+56,Perth Stn,1.0,rail_only,0,44,Mt Lawley Stn,219.0,216.0,438.0,0.4931506849315068,False,False
+56,Perth Stn,1.0,rail_only,0,36,Daglish Stn,448.0,948.0,896.0,1.0580357142857142,True,True
+56,Perth Stn,1.0,rail_only,0,33,Burswood Stn,144.0,142.0,288.0,0.4930555555555556,False,False
+56,Perth Stn,1.0,rail_only,0,17,Shenton Park Stn,386.0,887.0,772.0,1.1489637305699483,True,True
+56,Perth Stn,1.0,rail_only,0,37,Meltham Stn,117.0,116.0,234.0,0.49572649572649574,False,False
+56,Perth Stn,1.0,rail_only,0,48,Victoria Park Stn,110.0,109.0,220.0,0.4954545454545455,False,False
+56,Perth Stn,1.0,rail_only,0,49,Maylands Stn,169.0,167.0,338.0,0.4940828402366864,False,False
+56,Perth Stn,1.0,rail_only,0,22,Mciver Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,87,Fremantle Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,95,Midland Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,94,Mandurah Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,155,Yanchep Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,149,High Wycombe Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,160,Ellenbrook Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,0,164,Byford Stn,85.0,84.0,170.0,0.49411764705882355,False,False
+56,Perth Stn,1.0,rail_only,1,26,East Perth Stn,1339.0,19.0,2678.0,0.007094846900672144,False,False
+56,Perth Stn,1.0,rail_only,1,8,Leederville Stn,1021.0,517.0,2042.0,0.2531831537708129,False,False
+56,Perth Stn,1.0,rail_only,1,23,Bayswater Stn,1206.0,150.0,2412.0,0.06218905472636816,False,False
+56,Perth Stn,1.0,rail_only,1,140,Perth Stadium Stn,1156.0,436.0,2312.0,0.18858131487889274,False,False
+56,Perth Stn,1.0,rail_only,1,58,Carlisle Stn,1046.0,434.0,2092.0,0.2074569789674952,False,False
+56,Perth Stn,1.0,rail_only,1,88,Glendalough Stn,961.0,493.0,1922.0,0.2565036420395421,False,False
+56,Perth Stn,1.0,rail_only,1,28,Beckenham Stn,1005.0,537.0,2010.0,0.2671641791044776,False,False
+56,Perth Stn,1.0,rail_only,1,73,Oats Street Stn,1008.0,432.0,2016.0,0.21428571428571427,False,False
+56,Perth Stn,1.0,rail_only,1,98,Stirling Stn,899.0,467.0,1798.0,0.25973303670745274,False,False
+56,Perth Stn,1.0,rail_only,1,12,Queens Park Stn,969.0,429.0,1938.0,0.22136222910216719,False,False
+56,Perth Stn,1.0,rail_only,1,64,Perth Underground Stn,876.0,352.0,1752.0,0.2009132420091324,False,False
+56,Perth Stn,1.0,rail_only,1,16,Showgrounds Stn,541.0,8.0,1082.0,0.0073937153419593345,False,False
+56,Perth Stn,1.0,rail_only,1,100,Warwick Stn,835.0,439.0,1670.0,0.262874251497006,False,False
+56,Perth Stn,1.0,rail_only,1,84,Cannington Stn,929.0,425.0,1858.0,0.22874058127018299,False,False
+56,Perth Stn,1.0,rail_only,1,135,Elizabeth Quay Stn,717.0,285.0,1434.0,0.19874476987447698,False,False
+56,Perth Stn,1.0,rail_only,1,9,Greenwood Stn,769.0,409.0,1538.0,0.2659297789336801,False,False
+56,Perth Stn,1.0,rail_only,1,86,Cockburn Central Stn,662.0,374.0,1324.0,0.2824773413897281,False,False
+56,Perth Stn,1.0,rail_only,1,83,Canning Bridge Stn,656.0,260.0,1312.0,0.19817073170731708,False,False
+56,Perth Stn,1.0,rail_only,1,82,Bull Creek Stn,605.0,245.0,1210.0,0.2024793388429752,False,False
+56,Perth Stn,1.0,rail_only,1,102,Whitfords Stn,701.0,377.0,1402.0,0.2689015691868759,False,False
+56,Perth Stn,1.0,rail_only,1,92,Kenwick Stn,701.0,377.0,1402.0,0.2689015691868759,False,False
+56,Perth Stn,1.0,rail_only,1,96,Murdoch Stn,565.0,241.0,1130.0,0.21327433628318584,False,False
+56,Perth Stn,1.0,rail_only,1,46,Edgewater Stn,631.0,343.0,1262.0,0.27179080824088747,False,False
+56,Perth Stn,1.0,rail_only,1,30,Claremont Stn,631.0,15.0,1262.0,0.011885895404120444,False,False
+56,Perth Stn,1.0,rail_only,1,68,Maddington Stn,631.0,343.0,1262.0,0.27179080824088747,False,False
+56,Perth Stn,1.0,rail_only,1,31,City West Stn,998.0,220.0,1996.0,0.11022044088176353,False,False
+56,Perth Stn,1.0,rail_only,1,89,Gosnells Stn,559.0,307.0,1118.0,0.2745974955277281,False,False
+56,Perth Stn,1.0,rail_only,1,90,Joondalup Stn,559.0,307.0,1118.0,0.2745974955277281,False,False
+56,Perth Stn,1.0,rail_only,1,38,Swanbourne Stn,559.0,20.0,1118.0,0.017889087656529516,False,False
+56,Perth Stn,1.0,rail_only,1,7,Ashfield Stn,559.0,97.0,1118.0,0.08676207513416816,False,False
+56,Perth Stn,1.0,rail_only,1,138,Aubin Grove Stn,559.0,307.0,1118.0,0.2745974955277281,False,False
+56,Perth Stn,1.0,rail_only,1,19,Grant Street Stn,485.0,23.0,970.0,0.023711340206185566,False,False
+56,Perth Stn,1.0,rail_only,1,4,Currambine Stn,485.0,269.0,970.0,0.277319587628866,False,False
+56,Perth Stn,1.0,rail_only,1,67,Seaforth Stn,485.0,269.0,970.0,0.277319587628866,False,False
+56,Perth Stn,1.0,rail_only,1,39,Bassendean Stn,485.0,89.0,970.0,0.09175257731958762,False,False
+56,Perth Stn,1.0,rail_only,1,93,Kwinana Stn,485.0,269.0,970.0,0.277319587628866,False,False
+56,Perth Stn,1.0,rail_only,1,34,Success Hill Stn,409.0,79.0,818.0,0.09657701711491443,False,False
+56,Perth Stn,1.0,rail_only,1,101,Wellard Stn,409.0,229.0,818.0,0.27995110024449876,False,False
+56,Perth Stn,1.0,rail_only,1,91,Kelmscott Stn,409.0,229.0,818.0,0.27995110024449876,False,False
+56,Perth Stn,1.0,rail_only,1,85,Clarkson Stn,409.0,229.0,818.0,0.27995110024449876,False,False
+56,Perth Stn,1.0,rail_only,1,156,Morley Stn,409.0,79.0,818.0,0.09657701711491443,False,False
+56,Perth Stn,1.0,rail_only,1,50,Cottesloe Stn,409.0,24.0,818.0,0.029339853300733496,False,False
+56,Perth Stn,1.0,rail_only,1,97,Rockingham Stn,331.0,187.0,662.0,0.2824773413897281,False,False
+56,Perth Stn,1.0,rail_only,1,133,Butler Stn,331.0,187.0,662.0,0.2824773413897281,False,False
+56,Perth Stn,1.0,rail_only,1,24,Guildford Stn,331.0,67.0,662.0,0.10120845921450151,False,False
+56,Perth Stn,1.0,rail_only,1,5,Mosman Park Stn,331.0,23.0,662.0,0.03474320241691843,False,False
+56,Perth Stn,1.0,rail_only,1,2,Challis Stn,331.0,187.0,662.0,0.2824773413897281,False,False
+56,Perth Stn,1.0,rail_only,1,157,Noranda Stn,331.0,67.0,662.0,0.10120845921450151,False,False
+56,Perth Stn,1.0,rail_only,1,99,Thornlie Stn,378.0,270.0,756.0,0.35714285714285715,False,False
+56,Perth Stn,1.0,rail_only,1,163,Ranford Rd Stn,256.0,220.0,512.0,0.4296875,False,False
+56,Perth Stn,1.0,rail_only,1,162,Nicholson Rd Stn,317.0,245.0,634.0,0.3864353312302839,False,False
+56,Perth Stn,1.0,rail_only,1,15,West Leederville Stn,566.0,97.0,1132.0,0.08568904593639576,False,False
+56,Perth Stn,1.0,rail_only,1,59,East Guildford Stn,251.0,53.0,502.0,0.10557768924302789,False,False
+56,Perth Stn,1.0,rail_only,1,158,Ballajura Stn,251.0,53.0,502.0,0.10557768924302789,False,False
+56,Perth Stn,1.0,rail_only,1,74,Warnbro Stn,251.0,143.0,502.0,0.2848605577689243,False,False
+56,Perth Stn,1.0,rail_only,1,66,Sherwood Stn,251.0,143.0,502.0,0.2848605577689243,False,False
+56,Perth Stn,1.0,rail_only,1,153,Alkimos Stn,251.0,143.0,502.0,0.2848605577689243,False,False
+56,Perth Stn,1.0,rail_only,1,32,Victoria Street Stn,251.0,20.0,502.0,0.0398406374501992,False,False
+56,Perth Stn,1.0,rail_only,1,147,Redcliffe Stn,251.0,53.0,502.0,0.10557768924302789,False,False
+56,Perth Stn,1.0,rail_only,1,6,Subiaco Stn,508.0,49.0,1016.0,0.04822834645669291,False,False
+56,Perth Stn,1.0,rail_only,1,154,Eglinton Stn,169.0,97.0,338.0,0.2869822485207101,False,False
+56,Perth Stn,1.0,rail_only,1,159,Whiteman Park Stn,169.0,37.0,338.0,0.10946745562130178,False,False
+56,Perth Stn,1.0,rail_only,1,1,North Fremantle Stn,169.0,15.0,338.0,0.04437869822485207,False,False
+56,Perth Stn,1.0,rail_only,1,150,Lakelands Stn,169.0,97.0,338.0,0.2869822485207101,False,False
+56,Perth Stn,1.0,rail_only,1,41,Woodbridge Stn,169.0,37.0,338.0,0.10946745562130178,False,False
+56,Perth Stn,1.0,rail_only,1,148,Airport Central Stn,169.0,37.0,338.0,0.10946745562130178,False,False
+56,Perth Stn,1.0,rail_only,1,43,Armadale Stn,169.0,97.0,338.0,0.2869822485207101,False,False
+56,Perth Stn,1.0,rail_only,1,44,Mt Lawley Stn,219.0,21.0,438.0,0.04794520547945205,False,False
+56,Perth Stn,1.0,rail_only,1,33,Burswood Stn,144.0,72.0,288.0,0.25,False,False
+56,Perth Stn,1.0,rail_only,1,37,Meltham Stn,117.0,51.0,234.0,0.21794871794871795,False,False
+56,Perth Stn,1.0,rail_only,1,48,Victoria Park Stn,110.0,74.0,220.0,0.33636363636363636,False,False
+56,Perth Stn,1.0,rail_only,1,49,Maylands Stn,169.0,37.0,338.0,0.10946745562130178,False,False
+56,Perth Stn,1.0,rail_only,1,22,Mciver Stn,85.0,0.0,170.0,0.0,False,False
+56,Perth Stn,1.0,rail_only,1,87,Fremantle Stn,85.0,8.0,170.0,0.047058823529411764,False,False
+56,Perth Stn,1.0,rail_only,1,95,Midland Stn,85.0,19.0,170.0,0.11176470588235295,False,False
+56,Perth Stn,1.0,rail_only,1,94,Mandurah Stn,85.0,49.0,170.0,0.28823529411764703,False,False
+56,Perth Stn,1.0,rail_only,1,155,Yanchep Stn,85.0,49.0,170.0,0.28823529411764703,False,False
+56,Perth Stn,1.0,rail_only,1,149,High Wycombe Stn,85.0,19.0,170.0,0.11176470588235295,False,False
+56,Perth Stn,1.0,rail_only,1,160,Ellenbrook Stn,85.0,19.0,170.0,0.11176470588235295,False,False
+56,Perth Stn,1.0,rail_only,1,164,Byford Stn,85.0,49.0,170.0,0.28823529411764703,False,False
+56,Perth Stn,1.0,existing_bus,0,26,East Perth Stn,1339.0,1320.0,2678.0,0.49290515309932786,False,False
+56,Perth Stn,1.0,existing_bus,0,8,Leederville Stn,1021.0,1029.0,2042.0,0.5039177277179236,False,False
+56,Perth Stn,1.0,existing_bus,0,23,Bayswater Stn,1206.0,1209.0,2412.0,0.5012437810945274,False,False
+56,Perth Stn,1.0,existing_bus,0,140,Perth Stadium Stn,1156.0,2085.0,2312.0,0.9018166089965398,False,False
+56,Perth Stn,1.0,existing_bus,0,58,Carlisle Stn,1046.0,1054.0,2092.0,0.5038240917782026,False,False
+56,Perth Stn,1.0,existing_bus,0,88,Glendalough Stn,961.0,982.0,1922.0,0.5109261186264308,False,False
+56,Perth Stn,1.0,existing_bus,0,28,Beckenham Stn,1005.0,1013.0,2010.0,0.5039800995024876,False,False
+56,Perth Stn,1.0,existing_bus,0,73,Oats Street Stn,1008.0,1016.0,2016.0,0.503968253968254,False,False
+56,Perth Stn,1.0,existing_bus,0,98,Stirling Stn,899.0,899.0,1798.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,12,Queens Park Stn,969.0,977.0,1938.0,0.5041279669762642,False,False
+56,Perth Stn,1.0,existing_bus,0,64,Perth Underground Stn,876.0,1010.0,1752.0,0.5764840182648402,False,False
+56,Perth Stn,1.0,existing_bus,0,16,Showgrounds Stn,541.0,85.0,1082.0,0.07855822550831792,False,False
+56,Perth Stn,1.0,existing_bus,0,100,Warwick Stn,835.0,835.0,1670.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,84,Cannington Stn,929.0,937.0,1858.0,0.5043057050592035,False,False
+56,Perth Stn,1.0,existing_bus,0,135,Elizabeth Quay Stn,717.0,709.0,1434.0,0.49442119944211993,False,False
+56,Perth Stn,1.0,existing_bus,0,9,Greenwood Stn,769.0,769.0,1538.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,86,Cockburn Central Stn,662.0,662.0,1324.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,83,Canning Bridge Stn,656.0,648.0,1312.0,0.49390243902439024,False,False
+56,Perth Stn,1.0,existing_bus,0,82,Bull Creek Stn,605.0,597.0,1210.0,0.4933884297520661,False,False
+56,Perth Stn,1.0,existing_bus,0,102,Whitfords Stn,701.0,701.0,1402.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,92,Kenwick Stn,701.0,701.0,1402.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,96,Murdoch Stn,565.0,557.0,1130.0,0.4929203539823009,False,False
+56,Perth Stn,1.0,existing_bus,0,46,Edgewater Stn,631.0,631.0,1262.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,30,Claremont Stn,631.0,631.0,1262.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,68,Maddington Stn,631.0,631.0,1262.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,31,City West Stn,998.0,1498.0,1996.0,0.750501002004008,False,False
+56,Perth Stn,1.0,existing_bus,0,89,Gosnells Stn,559.0,559.0,1118.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,90,Joondalup Stn,559.0,559.0,1118.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,38,Swanbourne Stn,559.0,559.0,1118.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,7,Ashfield Stn,559.0,559.0,1118.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,138,Aubin Grove Stn,559.0,559.0,1118.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,19,Grant Street Stn,485.0,485.0,970.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,4,Currambine Stn,485.0,485.0,970.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,67,Seaforth Stn,485.0,485.0,970.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,39,Bassendean Stn,485.0,485.0,970.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,93,Kwinana Stn,485.0,485.0,970.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,34,Success Hill Stn,409.0,409.0,818.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,101,Wellard Stn,409.0,409.0,818.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,91,Kelmscott Stn,409.0,409.0,818.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,85,Clarkson Stn,409.0,409.0,818.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,156,Morley Stn,409.0,409.0,818.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,50,Cottesloe Stn,409.0,409.0,818.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,97,Rockingham Stn,331.0,331.0,662.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,133,Butler Stn,331.0,331.0,662.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,24,Guildford Stn,331.0,331.0,662.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,5,Mosman Park Stn,331.0,331.0,662.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,2,Challis Stn,331.0,331.0,662.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,157,Noranda Stn,331.0,331.0,662.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,99,Thornlie Stn,378.0,386.0,756.0,0.5105820105820106,False,False
+56,Perth Stn,1.0,existing_bus,0,72,Claisebrook Stn,525.0,1429.0,1050.0,1.360952380952381,True,True
+56,Perth Stn,1.0,existing_bus,0,163,Ranford Rd Stn,256.0,264.0,512.0,0.515625,False,False
+56,Perth Stn,1.0,existing_bus,0,162,Nicholson Rd Stn,317.0,325.0,634.0,0.5126182965299685,False,False
+56,Perth Stn,1.0,existing_bus,0,15,West Leederville Stn,566.0,1079.0,1132.0,0.9531802120141343,False,False
+56,Perth Stn,1.0,existing_bus,0,59,East Guildford Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,158,Ballajura Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,74,Warnbro Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,66,Sherwood Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,153,Alkimos Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,32,Victoria Street Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,147,Redcliffe Stn,251.0,251.0,502.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,42,Loch Street Stn,256.0,769.0,512.0,1.501953125,True,True
+56,Perth Stn,1.0,existing_bus,0,6,Subiaco Stn,508.0,1021.0,1016.0,1.0049212598425197,True,True
+56,Perth Stn,1.0,existing_bus,0,154,Eglinton Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,159,Whiteman Park Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,1,North Fremantle Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,150,Lakelands Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,41,Woodbridge Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,148,Airport Central Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,43,Armadale Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,76,Karrakatta Stn,322.0,835.0,644.0,1.296583850931677,True,True
+56,Perth Stn,1.0,existing_bus,0,44,Mt Lawley Stn,219.0,217.0,438.0,0.4954337899543379,False,False
+56,Perth Stn,1.0,existing_bus,0,36,Daglish Stn,448.0,961.0,896.0,1.0725446428571428,True,True
+56,Perth Stn,1.0,existing_bus,0,33,Burswood Stn,144.0,146.0,288.0,0.5069444444444444,False,False
+56,Perth Stn,1.0,existing_bus,0,17,Shenton Park Stn,386.0,899.0,772.0,1.1645077720207253,True,True
+56,Perth Stn,1.0,existing_bus,0,37,Meltham Stn,117.0,119.0,234.0,0.5085470085470085,False,False
+56,Perth Stn,1.0,existing_bus,0,48,Victoria Park Stn,110.0,138.0,220.0,0.6272727272727273,False,False
+56,Perth Stn,1.0,existing_bus,0,49,Maylands Stn,169.0,169.0,338.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,22,Mciver Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,87,Fremantle Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,95,Midland Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,94,Mandurah Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,155,Yanchep Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,149,High Wycombe Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,160,Ellenbrook Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,0,164,Byford Stn,85.0,85.0,170.0,0.5,False,False
+56,Perth Stn,1.0,existing_bus,1,26,East Perth Stn,1339.0,69.0,2678.0,0.025765496639283045,False,False
+56,Perth Stn,1.0,existing_bus,1,8,Leederville Stn,1021.0,671.0,2042.0,0.32859941234084233,False,False
+56,Perth Stn,1.0,existing_bus,1,23,Bayswater Stn,1206.0,1100.0,2412.0,0.4560530679933665,False,False
+56,Perth Stn,1.0,existing_bus,1,140,Perth Stadium Stn,1156.0,437.0,2312.0,0.18901384083044984,False,False
+56,Perth Stn,1.0,existing_bus,1,58,Carlisle Stn,1046.0,942.0,2092.0,0.4502868068833652,False,False
+56,Perth Stn,1.0,existing_bus,1,88,Glendalough Stn,961.0,900.0,1922.0,0.46826222684703434,False,False
+56,Perth Stn,1.0,existing_bus,1,28,Beckenham Stn,1005.0,965.0,2010.0,0.48009950248756217,False,False
+56,Perth Stn,1.0,existing_bus,1,73,Oats Street Stn,1008.0,920.0,2016.0,0.45634920634920634,False,False
+56,Perth Stn,1.0,existing_bus,1,98,Stirling Stn,899.0,707.0,1798.0,0.3932146829810901,False,False
+56,Perth Stn,1.0,existing_bus,1,12,Queens Park Stn,969.0,897.0,1938.0,0.4628482972136223,False,False
+56,Perth Stn,1.0,existing_bus,1,64,Perth Underground Stn,876.0,472.0,1752.0,0.2694063926940639,False,False
+56,Perth Stn,1.0,existing_bus,1,16,Showgrounds Stn,541.0,8.0,1082.0,0.0073937153419593345,False,False
+56,Perth Stn,1.0,existing_bus,1,100,Warwick Stn,835.0,659.0,1670.0,0.39461077844311376,False,False
+56,Perth Stn,1.0,existing_bus,1,84,Cannington Stn,929.0,873.0,1858.0,0.4698600645855759,False,False
+56,Perth Stn,1.0,existing_bus,1,135,Elizabeth Quay Stn,717.0,357.0,1434.0,0.2489539748953975,False,False
+56,Perth Stn,1.0,existing_bus,1,9,Greenwood Stn,769.0,609.0,1538.0,0.39596879063719115,False,False
+56,Perth Stn,1.0,existing_bus,1,86,Cockburn Central Stn,662.0,534.0,1324.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,1,83,Canning Bridge Stn,656.0,312.0,1312.0,0.23780487804878048,False,False
+56,Perth Stn,1.0,existing_bus,1,82,Bull Creek Stn,605.0,277.0,1210.0,0.22892561983471074,False,False
+56,Perth Stn,1.0,existing_bus,1,102,Whitfords Stn,701.0,557.0,1402.0,0.39728958630527816,False,False
+56,Perth Stn,1.0,existing_bus,1,92,Kenwick Stn,701.0,557.0,1402.0,0.39728958630527816,False,False
+56,Perth Stn,1.0,existing_bus,1,96,Murdoch Stn,565.0,253.0,1130.0,0.22389380530973452,False,False
+56,Perth Stn,1.0,existing_bus,1,46,Edgewater Stn,631.0,503.0,1262.0,0.39857369255150554,False,False
+56,Perth Stn,1.0,existing_bus,1,30,Claremont Stn,631.0,15.0,1262.0,0.011885895404120444,False,False
+56,Perth Stn,1.0,existing_bus,1,68,Maddington Stn,631.0,503.0,1262.0,0.39857369255150554,False,False
+56,Perth Stn,1.0,existing_bus,1,31,City West Stn,998.0,214.0,1996.0,0.10721442885771543,False,False
+56,Perth Stn,1.0,existing_bus,1,89,Gosnells Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,1,90,Joondalup Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,1,38,Swanbourne Stn,559.0,20.0,1118.0,0.017889087656529516,False,False
+56,Perth Stn,1.0,existing_bus,1,7,Ashfield Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,1,138,Aubin Grove Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,1,19,Grant Street Stn,485.0,23.0,970.0,0.023711340206185566,False,False
+56,Perth Stn,1.0,existing_bus,1,4,Currambine Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,1,67,Seaforth Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,1,39,Bassendean Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,1,93,Kwinana Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,1,34,Success Hill Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,1,101,Wellard Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,1,91,Kelmscott Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,1,85,Clarkson Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,1,156,Morley Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,1,50,Cottesloe Stn,409.0,24.0,818.0,0.029339853300733496,False,False
+56,Perth Stn,1.0,existing_bus,1,97,Rockingham Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,1,133,Butler Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,1,24,Guildford Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,1,5,Mosman Park Stn,331.0,23.0,662.0,0.03474320241691843,False,False
+56,Perth Stn,1.0,existing_bus,1,2,Challis Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,1,157,Noranda Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,1,99,Thornlie Stn,378.0,498.0,756.0,0.6587301587301587,False,False
+56,Perth Stn,1.0,existing_bus,1,163,Ranford Rd Stn,256.0,408.0,512.0,0.796875,False,False
+56,Perth Stn,1.0,existing_bus,1,162,Nicholson Rd Stn,317.0,453.0,634.0,0.7145110410094637,False,False
+56,Perth Stn,1.0,existing_bus,1,15,West Leederville Stn,566.0,69.0,1132.0,0.060954063604240286,False,False
+56,Perth Stn,1.0,existing_bus,1,59,East Guildford Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,1,158,Ballajura Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,1,74,Warnbro Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,1,66,Sherwood Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,1,153,Alkimos Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,1,32,Victoria Street Stn,251.0,20.0,502.0,0.0398406374501992,False,False
+56,Perth Stn,1.0,existing_bus,1,147,Redcliffe Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,1,154,Eglinton Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,159,Whiteman Park Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,1,North Fremantle Stn,169.0,15.0,338.0,0.04437869822485207,False,False
+56,Perth Stn,1.0,existing_bus,1,150,Lakelands Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,41,Woodbridge Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,148,Airport Central Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,43,Armadale Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,44,Mt Lawley Stn,219.0,71.0,438.0,0.16210045662100456,False,False
+56,Perth Stn,1.0,existing_bus,1,33,Burswood Stn,144.0,112.0,288.0,0.3888888888888889,False,False
+56,Perth Stn,1.0,existing_bus,1,37,Meltham Stn,117.0,201.0,234.0,0.8589743589743589,False,False
+56,Perth Stn,1.0,existing_bus,1,48,Victoria Park Stn,110.0,640.0,220.0,2.909090909090909,True,True
+56,Perth Stn,1.0,existing_bus,1,49,Maylands Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,1,22,Mciver Stn,85.0,0.0,170.0,0.0,False,False
+56,Perth Stn,1.0,existing_bus,1,87,Fremantle Stn,85.0,8.0,170.0,0.047058823529411764,False,False
+56,Perth Stn,1.0,existing_bus,1,95,Midland Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,1,94,Mandurah Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,1,155,Yanchep Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,1,149,High Wycombe Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,1,160,Ellenbrook Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,1,164,Byford Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,2,26,East Perth Stn,1339.0,69.0,2678.0,0.025765496639283045,False,False
+56,Perth Stn,1.0,existing_bus,2,8,Leederville Stn,1021.0,1259.0,2042.0,0.6165523996082273,False,False
+56,Perth Stn,1.0,existing_bus,2,23,Bayswater Stn,1206.0,1100.0,2412.0,0.4560530679933665,False,False
+56,Perth Stn,1.0,existing_bus,2,140,Perth Stadium Stn,1156.0,837.0,2312.0,0.3620242214532872,False,False
+56,Perth Stn,1.0,existing_bus,2,58,Carlisle Stn,1046.0,758.0,2092.0,0.36233269598470363,False,False
+56,Perth Stn,1.0,existing_bus,2,88,Glendalough Stn,961.0,1501.0,1922.0,0.7809573361082206,False,False
+56,Perth Stn,1.0,existing_bus,2,28,Beckenham Stn,1005.0,781.0,2010.0,0.38855721393034826,False,False
+56,Perth Stn,1.0,existing_bus,2,73,Oats Street Stn,1008.0,736.0,2016.0,0.36507936507936506,False,False
+56,Perth Stn,1.0,existing_bus,2,98,Stirling Stn,899.0,707.0,1798.0,0.3932146829810901,False,False
+56,Perth Stn,1.0,existing_bus,2,12,Queens Park Stn,969.0,713.0,1938.0,0.36790505675954593,False,False
+56,Perth Stn,1.0,existing_bus,2,64,Perth Underground Stn,876.0,658.0,1752.0,0.3755707762557078,False,False
+56,Perth Stn,1.0,existing_bus,2,16,Showgrounds Stn,541.0,8.0,1082.0,0.0073937153419593345,False,False
+56,Perth Stn,1.0,existing_bus,2,100,Warwick Stn,835.0,659.0,1670.0,0.39461077844311376,False,False
+56,Perth Stn,1.0,existing_bus,2,84,Cannington Stn,929.0,689.0,1858.0,0.37082884822389667,False,False
+56,Perth Stn,1.0,existing_bus,2,135,Elizabeth Quay Stn,717.0,541.0,1434.0,0.3772663877266388,False,False
+56,Perth Stn,1.0,existing_bus,2,9,Greenwood Stn,769.0,609.0,1538.0,0.39596879063719115,False,False
+56,Perth Stn,1.0,existing_bus,2,86,Cockburn Central Stn,662.0,534.0,1324.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,2,83,Canning Bridge Stn,656.0,496.0,1312.0,0.3780487804878049,False,False
+56,Perth Stn,1.0,existing_bus,2,82,Bull Creek Stn,605.0,461.0,1210.0,0.38099173553719007,False,False
+56,Perth Stn,1.0,existing_bus,2,102,Whitfords Stn,701.0,557.0,1402.0,0.39728958630527816,False,False
+56,Perth Stn,1.0,existing_bus,2,92,Kenwick Stn,701.0,557.0,1402.0,0.39728958630527816,False,False
+56,Perth Stn,1.0,existing_bus,2,96,Murdoch Stn,565.0,437.0,1130.0,0.38672566371681416,False,False
+56,Perth Stn,1.0,existing_bus,2,46,Edgewater Stn,631.0,503.0,1262.0,0.39857369255150554,False,False
+56,Perth Stn,1.0,existing_bus,2,30,Claremont Stn,631.0,15.0,1262.0,0.011885895404120444,False,False
+56,Perth Stn,1.0,existing_bus,2,68,Maddington Stn,631.0,503.0,1262.0,0.39857369255150554,False,False
+56,Perth Stn,1.0,existing_bus,2,31,City West Stn,998.0,217.0,1996.0,0.10871743486973948,False,False
+56,Perth Stn,1.0,existing_bus,2,89,Gosnells Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,2,90,Joondalup Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,2,38,Swanbourne Stn,559.0,20.0,1118.0,0.017889087656529516,False,False
+56,Perth Stn,1.0,existing_bus,2,7,Ashfield Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,2,138,Aubin Grove Stn,559.0,447.0,1118.0,0.3998211091234347,False,False
+56,Perth Stn,1.0,existing_bus,2,19,Grant Street Stn,485.0,23.0,970.0,0.023711340206185566,False,False
+56,Perth Stn,1.0,existing_bus,2,4,Currambine Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,2,67,Seaforth Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,2,39,Bassendean Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,2,93,Kwinana Stn,485.0,389.0,970.0,0.40103092783505156,False,False
+56,Perth Stn,1.0,existing_bus,2,34,Success Hill Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,2,101,Wellard Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,2,91,Kelmscott Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,2,85,Clarkson Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,2,156,Morley Stn,409.0,329.0,818.0,0.402200488997555,False,False
+56,Perth Stn,1.0,existing_bus,2,50,Cottesloe Stn,409.0,24.0,818.0,0.029339853300733496,False,False
+56,Perth Stn,1.0,existing_bus,2,97,Rockingham Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,2,133,Butler Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,2,24,Guildford Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,2,5,Mosman Park Stn,331.0,23.0,662.0,0.03474320241691843,False,False
+56,Perth Stn,1.0,existing_bus,2,2,Challis Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,2,157,Noranda Stn,331.0,267.0,662.0,0.4033232628398791,False,False
+56,Perth Stn,1.0,existing_bus,2,99,Thornlie Stn,378.0,314.0,756.0,0.41534391534391535,False,False
+56,Perth Stn,1.0,existing_bus,2,163,Ranford Rd Stn,256.0,224.0,512.0,0.4375,False,False
+56,Perth Stn,1.0,existing_bus,2,162,Nicholson Rd Stn,317.0,269.0,634.0,0.4242902208201893,False,False
+56,Perth Stn,1.0,existing_bus,2,15,West Leederville Stn,566.0,69.0,1132.0,0.060954063604240286,False,False
+56,Perth Stn,1.0,existing_bus,2,59,East Guildford Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,2,158,Ballajura Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,2,74,Warnbro Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,2,66,Sherwood Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,2,153,Alkimos Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,2,32,Victoria Street Stn,251.0,20.0,502.0,0.0398406374501992,False,False
+56,Perth Stn,1.0,existing_bus,2,147,Redcliffe Stn,251.0,203.0,502.0,0.4043824701195219,False,False
+56,Perth Stn,1.0,existing_bus,2,154,Eglinton Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,159,Whiteman Park Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,1,North Fremantle Stn,169.0,15.0,338.0,0.04437869822485207,False,False
+56,Perth Stn,1.0,existing_bus,2,150,Lakelands Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,41,Woodbridge Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,148,Airport Central Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,43,Armadale Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,44,Mt Lawley Stn,219.0,71.0,438.0,0.16210045662100456,False,False
+56,Perth Stn,1.0,existing_bus,2,33,Burswood Stn,144.0,69.0,288.0,0.23958333333333334,False,False
+56,Perth Stn,1.0,existing_bus,2,37,Meltham Stn,117.0,201.0,234.0,0.8589743589743589,False,False
+56,Perth Stn,1.0,existing_bus,2,49,Maylands Stn,169.0,137.0,338.0,0.40532544378698226,False,False
+56,Perth Stn,1.0,existing_bus,2,22,Mciver Stn,85.0,0.0,170.0,0.0,False,False
+56,Perth Stn,1.0,existing_bus,2,87,Fremantle Stn,85.0,8.0,170.0,0.047058823529411764,False,False
+56,Perth Stn,1.0,existing_bus,2,95,Midland Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,2,94,Mandurah Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,2,155,Yanchep Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,2,149,High Wycombe Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,2,160,Ellenbrook Stn,85.0,69.0,170.0,0.40588235294117647,False,False
+56,Perth Stn,1.0,existing_bus,2,164,Byford Stn,85.0,69.0,170.0,0.40588235294117647,False,False

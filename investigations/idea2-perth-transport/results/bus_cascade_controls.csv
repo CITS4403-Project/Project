@@ -1,0 +1,3 @@
+target,target_name,scenario,n_failed,n_secondary,failed_fraction,cascade_rounds,failed_ids,reachable_pairs,original_pairs,unmet_fraction,mean_time_change_reachable_min
+56,Perth Stn,rail_only,1,0,0.011627906976744186,0,56,3570,3655,0.023255813953488413,1.7704939521531513
+56,Perth Stn,existing_bus,1,0,0.011627906976744186,0,56,3655,3655,0.0,2.5475905460814556

@@ -1,0 +1,14 @@
+{
+  "zip_crc": "passed during download",
+  "both_modes_present": true,
+  "date_services_checked_with_exceptions": true,
+  "trip_route_service_stop_foreign_keys": "passed",
+  "duplicate_trip_stop_sequences": "none",
+  "stop_sequences_increasing": "passed",
+  "window_bounds": "passed",
+  "full_sequences_preserved": true,
+  "rail_stops_missing_parent": 0,
+  "shape_foreign_keys": "passed",
+  "previous_service_day_window_overlap": "none",
+  "gtfs_24_plus_time_parsing": "passed"
+}

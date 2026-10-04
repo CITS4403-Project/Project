@@ -1,0 +1,173 @@
+{
+  "service_date": "2026-10-05",
+  "timezone": "Australia/Perth",
+  "window_start": "07:00:00",
+  "window_end_exclusive": "09:00:00",
+  "selection_rule": "Active GTFS service-day trips with at least one scheduled stop departure in [07:00:00,09:00:00); full trip stop sequences retained separately",
+  "agency_rule": "agency_name == 'Transperth' and route_type in {2,3}",
+  "excluded_event_route_ids": [
+    "WES-RAI-4313"
+  ],
+  "raw_feed_calendar_envelope": {
+    "start": "20260929",
+    "end": "20261228"
+  },
+  "active_service_count_feed_wide": 184,
+  "regular_service_count_feed_wide": 284,
+  "added_exceptions_feed_wide": 10,
+  "removed_exceptions_feed_wide": 110,
+  "selected_service_count": 58,
+  "selected_route_count": 323,
+  "rail_route_count": 8,
+  "bus_route_count": 315,
+  "rail_trips": 271,
+  "bus_trips": 4324,
+  "rail_window_departures": 2940,
+  "bus_window_departures": 111971,
+  "selected_full_stop_times_rows": 146149,
+  "raw_stop_times_rows": 1540525,
+  "selected_stops_with_parents": 11908,
+  "rail_parent_station_count": 85,
+  "rail_stops_missing_parent": 0,
+  "active_transperth_max_departure_seconds": 92400,
+  "active_transperth_missing_departure_times": 0,
+  "download": {
+    "source_url": "https://www.transperth.wa.gov.au/LinkClick.aspx?link=%2fTimetablePDFs%2fGoogleTransit%2fProduction%2fgoogle_transit.zip&tabid=267&portalid=0&mid=1470",
+    "resolved_url": "https://www.transperth.wa.gov.au/TimetablePDFs/GoogleTransit/Production/google_transit.zip",
+    "source_page": "https://www.transperth.wa.gov.au/About/Spatial-Data-Access",
+    "download_started_utc": "2026-10-04T10:32:25.259457+00:00",
+    "download_completed_utc": "2026-10-04T10:33:05.509854+00:00",
+    "download_completed_perth": "2026-10-04T18:33:05.509854+08:00",
+    "http_headers": {
+      "Content-Type": "application/x-zip-compressed",
+      "Last-Modified": "Wed, 30 Sep 2026 23:44:18 GMT",
+      "ETag": "\"998ce19b3551dd1:0\"",
+      "Content-Length": "27517148"
+    },
+    "attribution": "This data is available free of charge from www.transperth.wa.gov.au.",
+    "license_url": "https://www.transperth.wa.gov.au/About/Spatial-Data-Access",
+    "zip_bytes": 27517148,
+    "zip_sha256": "9f4482331fb37dbd71708ccdd187f092be42ad7f2e3536e798416bf99422b9fa",
+    "files": [
+      {
+        "name": "agency.txt",
+        "bytes": 3833
+      },
+      {
+        "name": "calendar.txt",
+        "bytes": 41695
+      },
+      {
+        "name": "calendar_dates.txt",
+        "bytes": 142979
+      },
+      {
+        "name": "routes.txt",
+        "bytes": 19426
+      },
+      {
+        "name": "sg2tpn.txt",
+        "bytes": 1149
+      },
+      {
+        "name": "shapes.txt",
+        "bytes": 81114206
+      },
+      {
+        "name": "stops.txt",
+        "bytes": 1451394
+      },
+      {
+        "name": "stop_times.txt",
+        "bytes": 74817323
+      },
+      {
+        "name": "transfers.txt",
+        "bytes": 93863
+      },
+      {
+        "name": "trips.txt",
+        "bytes": 2617389
+      }
+    ]
+  },
+  "prepared_utc": "2026-10-04T10:35:48.194855+00:00",
+  "limitations": [
+    "Scheduled service, not measured passengers or traffic.",
+    "This subset does not validate physical rail adjacency.",
+    "Previous service-day overnight trips are not included; the analysis window is expressed relative to the selected GTFS service day.",
+    "Maps normal timetable and GTFS feed may differ even with the same date."
+  ],
+  "prepared_files": [
+    {
+      "name": "agency.txt",
+      "bytes": 1198,
+      "sha256": "6375e8175a2fef64f1e9bbc2ed960c56df4a744ecdb383f57d82781944ae3bb3"
+    },
+    {
+      "name": "bus_trips.csv",
+      "bytes": 214519,
+      "sha256": "54d09ce3c57ec5a18f14c6ab946f76653ddb9e5c85c93ed5015c729ea471ac1b"
+    },
+    {
+      "name": "calendar.txt",
+      "bytes": 2547,
+      "sha256": "7dbced20b07eb44bfbcb34cd3fcf627e73eab35a97fd16afff97c6e7f49e99d8"
+    },
+    {
+      "name": "calendar_dates.txt",
+      "bytes": 2496,
+      "sha256": "30d8ab2d54a3e9971a2f1828c3b14045fedd1b7497c6e456524c00219e42b106"
+    },
+    {
+      "name": "rail_trips.csv",
+      "bytes": 13609,
+      "sha256": "b3bc2f90d8006bd60e79403b736f9cc718c2b6aee8f448221cce8def6531f15c"
+    },
+    {
+      "name": "routes.txt",
+      "bytes": 14731,
+      "sha256": "e245ce76ddd44623bb6aa8c6b8e42c8525505e99feafc0ac4236ddba2e276649"
+    },
+    {
+      "name": "service_selection.csv",
+      "bytes": 12636,
+      "sha256": "13aa267109b49a133aad58d95d0313afc3fa613a42e75b79fda5c2938dc81de3"
+    },
+    {
+      "name": "shapes.txt",
+      "bytes": 19037184,
+      "sha256": "7e7535c1724717144c15771f7b9a7d30ce4aeb998904ac29318358b7b5b79878"
+    },
+    {
+      "name": "stop_times.txt",
+      "bytes": 7104130,
+      "sha256": "2f412239b875f97e5a2eb505f57634aadb401ec5bd68b50fd68953f6bda2377a"
+    },
+    {
+      "name": "stops.txt",
+      "bytes": 1089419,
+      "sha256": "b24742783454842adc6277f5753e7733ded592d1224c14ce88b393c6a844bfbf"
+    },
+    {
+      "name": "transfers.txt",
+      "bytes": 77721,
+      "sha256": "33c1b5c0770d891035d70b1a57e277ac07cd7897f27628a805f1aa8240f6946f"
+    },
+    {
+      "name": "trips.txt",
+      "bytes": 228063,
+      "sha256": "09d9153dffaabf48d010ab4144fe69e8ea66a3a82c39609b29963b28a46b9889"
+    },
+    {
+      "name": "window_departures.csv",
+      "bytes": 8595279,
+      "sha256": "2dbf21651bb7a1b96a8deb48969e56a204324dc87f2d7e6df3aff812f64ab70e"
+    }
+  ],
+  "previous_service_day_check": {
+    "service_date": "2026-10-04",
+    "max_transperth_departure_seconds": 92640,
+    "events_overlapping_selected_window": 0
+  }
+}
