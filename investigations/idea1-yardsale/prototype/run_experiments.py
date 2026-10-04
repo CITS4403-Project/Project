@@ -349,8 +349,8 @@ def expt_tax_mode(quick=False):
     axes[0].set(xlabel="sweeps", ylabel="Gini", title="Wealth tax (Boghosian-style)")
     axes[1].set(xlabel="sweeps", title="Tax on trade gains only")
     axes[1].legend(fontsize=7)
-    fig.suptitle("Fair model (p=0.5, f=0.2): which tax stops condensation?", y=1.02)
-    fig.tight_layout()
+    fig.suptitle("Fair model (p=0.5, f=0.2): which tax stops condensation?")
+    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.94))
     fig.savefig(os.path.join(FIGURES, "fig6_tax_mode.png"))
     plt.close(fig)
 
@@ -422,7 +422,7 @@ def expt_finite_size(quick=False):
             if np.isnan(row["mean"]):
                 ax.plot(n, sweeps, "x", color=plt.gca().lines[-1].get_color())
     ax.set(xlabel="number of agents N", ylabel="sweeps to 50% share", xscale="log", yscale="log",
-           title="Fair model condensation is slow and N-dependent (f=0.3)")
+           title="Fair model condensation is slow\nand N-dependent (f=0.3)")
     ax.legend(fontsize=8)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGURES, "fig8_finite_size.png"))
