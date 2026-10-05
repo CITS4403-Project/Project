@@ -35,9 +35,23 @@ project-root/
 +-- data/           % Datasets or data samples (large raw downloads are git-ignored)
 +-- notebooks/      % Jupyter notebooks (analysis, results, demonstrations)
 +-- investigations/ % Investigation-phase material, one directory per candidate idea
++-- report/         % Report LaTeX sources (git submodule)
 +-- requirements.txt
 +-- README.md
 ```
+
+## Report
+
+The written report is a LaTeX project kept in the `report/` submodule
+([CITS4403-Project/report](https://github.com/CITS4403-Project/report)).
+
+```bash
+git submodule update --init report   # after cloning this repository
+cd report
+make                                 # builds build/report.pdf
+```
+
+See `report/README.md` for the template layout and contribution workflow.
 
 ## Workflow
 
