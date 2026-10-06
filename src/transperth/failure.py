@@ -54,7 +54,7 @@ from __future__ import annotations
 
 import math
 from collections.abc import Sequence
-from typing import Union
+from typing import TypeVar, Union
 
 import networkx as nx
 import numpy as np
@@ -104,6 +104,7 @@ _EDGE_ATTACKS = frozenset({"random_edge", "targeted_edge"})
 _TARGETED_ATTACKS = frozenset({"targeted", "targeted_edge"})
 
 Target = Union[str, tuple[str, str]]
+_T = TypeVar("_T")
 
 
 def _validate_attack(attack: str) -> None:
@@ -164,7 +165,7 @@ def _edge_scores(graph: nx.Graph, measure: str) -> dict[tuple[str, str], float]:
     return {_edge_key(u, v): float(value) for (u, v), value in centrality.items()}
 
 
-def _random_order(items: Sequence, seed: int) -> list:
+def _random_order(items: Sequence[_T], seed: int) -> list[_T]:
     """Return a deterministic random permutation of ``items`` for ``seed``."""
     rng = np.random.default_rng(seed)
     order = rng.permutation(len(items))
@@ -394,8 +395,11 @@ def percolation_curve(
         Master seed, a non-negative integer.
     static:
         ``True`` (frozen default) computes the targeted ranking once and
-        removes it in order. ``False`` recomputes the ranking with
-        :func:`target_order` after every single removal.
+        removes it in order. ``False`` recomputes it through the shared path
+        (:func:`removal_batch` to :func:`rank_targets` or
+        :func:`rank_edge_targets`) after every single removal;
+        :func:`target_order` is the public one-shot wrapper around the node
+        ranking.
 
     Returns
     -------

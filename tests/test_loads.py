@@ -34,6 +34,34 @@ def test_betweenness_freq_uses_inverse_trips_as_edge_length():
     assert initial_loads(graph, "betweenness_freq") == pytest.approx(expected)
 
 
+def test_betweenness_freq_concentrates_flow_on_the_shorter_weighted_path():
+    # A 4-cycle carries no unweighted signal: every node scores 0.5 whatever
+    # the edge weights, so only a genuinely weighted computation can move the
+    # 0-1-2 flow onto node 1 and off node 3.
+    graph = nx.Graph()
+    graph.add_edges_from([(0, 1), (1, 2), (2, 3), (3, 0)])
+    for edge, trips in (
+        ((0, 1), 4.0),
+        ((1, 2), 4.0),
+        ((2, 3), 1.0),
+        ((3, 0), 1.0),
+    ):
+        graph.edges[edge]["trips"] = trips
+    weighted = nx.Graph()
+    weighted.add_edge(0, 1, length=0.25)
+    weighted.add_edge(1, 2, length=0.25)
+    weighted.add_edge(2, 3, length=1.0)
+    weighted.add_edge(3, 0, length=1.0)
+    expected = nx.betweenness_centrality(weighted, weight="length", normalized=False)
+
+    loads = initial_loads(graph, "betweenness_freq")
+    assert loads == pytest.approx(expected)
+    unweighted = initial_loads(graph, "betweenness")
+    assert any(not math.isclose(loads[node], unweighted[node]) for node in graph)
+    assert loads[1] > unweighted[1]
+    assert loads[3] < unweighted[3]
+
+
 def test_betweenness_freq_does_not_mutate_the_input_graph():
     graph = _uniform_trips(nx.path_graph(4))
     before = {(u, v): dict(data) for u, v, data in graph.edges(data=True)}
