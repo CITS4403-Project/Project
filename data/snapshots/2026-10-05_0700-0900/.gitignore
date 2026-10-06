@@ -1,0 +1,5 @@
+*
+!.gitignore
+!snapshot_manifest.json
+!validation.json
+!README.md

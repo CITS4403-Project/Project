@@ -1,0 +1,87 @@
+station_id,name,lat,lon,modes,degree,trips_served,am_peak_stops,betweenness,lines
+1,North Fremantle Stn,-32.0295472222,115.751859706,Bus;Rail;School Bus,2,28,22,0.0235294117647,Fremantle Line
+100,Warwick Stn,-31.844719077,115.796398236,Bus;Rail;School Bus,2,60,45,0.210084033613,Yanchep Line
+101,Wellard Stn,-32.2639189542,115.817305686,Bus;Rail,2,39,25,0.090756302521,Mandurah Line
+102,Whitfords Stn,-31.799406952,115.782332213,Bus;Rail;School Bus,2,60,45,0.172549019608,Yanchep Line
+12,Queens Park Stn,-32.0070044444,115.938391111,Bus;Rail,2,48,36,0.505322128852,Armadale Line;Thornlie-Cockburn Line
+133,Butler Stn,-31.6354,115.7001,Bus;Rail,2,41,27,0.0689075630252,Yanchep Line
+135,Elizabeth Quay Stn,-31.9566308441,115.855488182,Rail,2,121,92,0.294117647059,Mandurah Line;Yanchep Line
+138,Aubin Grove Stn,-32.1551978012,115.857877185,Bus;Rail,2,39,26,0.132773109244,Mandurah Line
+140,Perth Stadium Stn,-31.95075,115.8928,Rail,2,48,36,0.502521008403,Armadale Line;Thornlie-Cockburn Line
+147,Redcliffe Stn,-31.9335694444,115.950073889,Bus;Rail,2,26,20,0.0464985994398,Airport Line
+148,Airport Central Stn,-31.9441083333,115.974833889,Rail,2,26,20,0.0235294117647,Airport Line
+149,High Wycombe Stn,-31.9545122222,115.992497222,Bus;Rail,1,26,20,0,Airport Line
+15,West Leederville Stn,-31.9426394444,115.833045458,Bus;Rail;School Bus,2,52,40,0.278431372549,Airport Line;Fremantle Line
+150,Lakelands Stn,-32.4736877778,115.770676667,Bus;Rail;School Bus,2,39,25,0.0235294117647,Mandurah Line
+153,Alkimos Stn,-31.6151,115.692520555,Bus;Rail,2,41,26,0.0464985994398,Yanchep Line
+154,Eglinton Stn,-31.5838,115.6725,Bus;Rail,2,41,25,0.0235294117647,Yanchep Line
+155,Yanchep Stn,-31.532285555,115.64393,Bus;Rail,1,41,25,0,Yanchep Line
+156,Morley Stn,-31.8959751591,115.919934992,Bus;Rail,2,24,20,0.090756302521,Ellenbrook Line
+157,Noranda Stn,-31.875,115.918,Rail,2,24,20,0.0689075630252,Ellenbrook Line
+158,Ballajura Stn,-31.8497761682,115.922542292,Bus;Rail;School Bus,2,24,20,0.0464985994398,Ellenbrook Line
+159,Whiteman Park Stn,-31.8358894444,115.963836667,Bus;Rail,2,24,20,0.0235294117647,Ellenbrook Line
+16,Showgrounds Stn,-31.977085,115.78697,Rail,2,0,0,0.172549019608,Airport Line;Fremantle Line
+160,Ellenbrook Stn,-31.781323589,115.963300501,Bus;Rail;School Bus,1,24,20,0,Ellenbrook Line
+162,Nicholson Rd Stn,-32.0613783333,115.934645556,Bus;Rail,2,22,16,0.447058823529,Thornlie-Cockburn Line
+163,Ranford Rd Stn,-32.076,115.897,Bus;Rail;School Bus,2,22,16,0.438655462185,Thornlie-Cockburn Line
+164,Byford Stn,-32.2167605556,116.007221802,Bus;Rail,1,26,18,0,Armadale Line
+17,Shenton Park Stn,-31.959600915,115.805466209,Bus;Rail;School Bus,2,52,40,0.228011204482,Airport Line;Fremantle Line
+19,Grant Street Stn,-31.9865844444,115.764891111,Bus;Rail,2,28,22,0.112044817927,Fremantle Line
+2,Challis Stn,-32.1263405556,116.012937222,Bus;Rail,2,26,18,0.0689075630252,Armadale Line
+22,Mciver Stn,-31.9517538889,115.866416667,Rail,2,122,96,0.32380952381,Airport Line;Armadale Line;Ellenbrook Line;Midland Line;Thornlie-Cockburn Line
+23,Bayswater Stn,-31.91828,115.9118,Bus;Rail,4,74,60,0.314005602241,Airport Line;Ellenbrook Line;Midland Line
+24,Guildford Stn,-31.8989442484,115.965990229,Bus;Rail,2,24,20,0.0689075630252,Midland Line
+26,East Perth Stn,-31.944232,115.877124,Bus;Rail,2,74,60,0.351260504202,Airport Line;Ellenbrook Line;Midland Line
+28,Beckenham Stn,-32.02253,115.954358889,Bus;Rail,3,48,36,0.578151260504,Armadale Line;Thornlie-Cockburn Line
+30,Claremont Stn,-31.980573268,115.781675588,Bus;Rail;School Bus,2,54,42,0.152941176471,Airport Line;Fremantle Line
+31,City West Stn,-31.9448468698,115.845502722,Bus;Rail,2,52,40,0.294117647059,Airport Line;Fremantle Line
+32,Victoria Street Stn,-32.0117184967,115.754985,Bus;Rail;School Bus,2,28,22,0.0464985994398,Fremantle Line
+33,Burswood Stn,-31.9598900414,115.899956109,Rail,2,48,36,0.504201680672,Armadale Line;Thornlie-Cockburn Line
+34,Success Hill Stn,-31.9002081373,115.95589402,Rail,2,24,20,0.090756302521,Midland Line
+36,Daglish Stn,-31.9518985948,115.813259314,Bus;Rail,2,52,40,0.245378151261,Airport Line;Fremantle Line
+37,Meltham Stn,-31.9224616695,115.900294878,Bus;Rail,2,74,60,0.309243697479,Airport Line;Ellenbrook Line;Midland Line
+38,Swanbourne Stn,-31.9826464885,115.770781189,Rail,2,28,22,0.132773109244,Fremantle Line
+39,Bassendean Stn,-31.9035,115.9472,Bus;Rail;School Bus,2,24,20,0.112044817927,Midland Line
+4,Currambine Stn,-31.7249,115.749599,Bus;Rail,2,44,27,0.112044817927,Yanchep Line
+41,Woodbridge Stn,-31.8915,115.9931,Bus;Rail;School Bus,2,24,20,0.0235294117647,Midland Line
+42,Loch Street Stn,-31.9717225163,115.791536013,Bus;Rail,2,52,40,0.191596638655,Airport Line;Fremantle Line
+43,Armadale Stn,-32.1536,116.013,Bus;Rail,2,26,19,0.0235294117647,Armadale Line
+44,Mt Lawley Stn,-31.9348561111,115.880862222,Rail,2,74,60,0.33781512605,Airport Line;Ellenbrook Line;Midland Line
+46,Edgewater Stn,-31.7719599198,115.778611068,Rail,2,44,28,0.152941176471,Yanchep Line
+48,Victoria Park Stn,-31.9715605556,115.902151667,Bus;Rail,2,48,36,0.505322128852,Armadale Line;Thornlie-Cockburn Line
+49,Maylands Stn,-31.9282811111,115.891876111,Bus;Rail;School Bus,2,74,60,0.32380952381,Airport Line;Ellenbrook Line;Midland Line
+5,Mosman Park Stn,-32.0070196309,115.757384842,Rail,2,28,22,0.0689075630252,Fremantle Line
+50,Cottesloe Stn,-31.9970207843,115.760915719,Bus;Rail,2,28,22,0.090756302521,Fremantle Line
+56,Perth Stn,-31.951246,115.859906,Rail,2,148,116,0.309243697479,Airport Line;Armadale Line;Ellenbrook Line;Fremantle Line;Midland Line;Thornlie-Cockburn Line
+58,Carlisle Stn,-31.9802472222,115.910302222,Bus;Rail,2,48,36,0.505882352941,Armadale Line;Thornlie-Cockburn Line
+59,East Guildford Stn,-31.8963930431,115.980065677,Rail,2,24,20,0.0464985994398,Midland Line
+6,Subiaco Stn,-31.9446881699,115.824100556,Bus;Rail,2,52,40,0.26218487395,Airport Line;Fremantle Line
+64,Perth Underground Stn,-31.9514616667,115.858201242,Rail,2,121,92,0.278431372549,Mandurah Line;Yanchep Line
+66,Sherwood Stn,-32.1376083333,116.010460556,Bus;Rail,2,26,18,0.0464985994398,Armadale Line
+67,Seaforth Stn,-32.0846438889,116.011204444,Bus;Rail,2,26,19,0.112044817927,Armadale Line
+68,Maddington Stn,-32.04966,115.9834,Bus;Rail,2,26,20,0.152941176471,Armadale Line
+7,Ashfield Stn,-31.9128115686,115.936132157,Bus;Rail,2,24,20,0.132773109244,Midland Line
+72,Claisebrook Stn,-31.949571937,115.872187419,Rail,3,122,96,0.601120448179,Airport Line;Armadale Line;Ellenbrook Line;Midland Line;Thornlie-Cockburn Line
+73,Oats Street Stn,-31.98758,115.9161,Bus;Rail;School Bus,2,48,36,0.505882352941,Armadale Line;Thornlie-Cockburn Line
+74,Warnbro Stn,-32.3267227465,115.76790254,Bus;Rail;School Bus,2,39,25,0.0464985994398,Mandurah Line
+76,Karrakatta Stn,-31.9683724183,115.796145588,Bus;Rail,2,52,40,0.210084033613,Airport Line;Fremantle Line
+8,Leederville Stn,-31.9395,115.84020729,Bus;Rail;School Bus,2,60,46,0.26218487395,Yanchep Line
+82,Bull Creek Stn,-32.0468598693,115.854182516,Bus;Rail,2,61,47,0.32380952381,Mandurah Line
+83,Canning Bridge Stn,-32.0094032772,115.856144337,Bus;Rail;School Bus,2,61,47,0.309243697479,Mandurah Line
+84,Cannington Stn,-32.0132311,115.94456,Bus;Rail;School Bus,2,48,36,0.504201680672,Armadale Line;Thornlie-Cockburn Line
+85,Clarkson Stn,-31.6905215092,115.738003207,Bus;Rail;School Bus,2,44,27,0.090756302521,Yanchep Line
+86,Cockburn Central Stn,-32.1252776384,115.858341992,Bus;Rail;School Bus,3,83,62,0.466946778711,Mandurah Line;Thornlie-Cockburn Line
+87,Fremantle Stn,-32.0519297992,115.745192259,Bus;Rail;School Bus,1,28,22,0,Fremantle Line
+88,Glendalough Stn,-31.9144601173,115.823086505,Bus;Rail;School Bus,2,60,46,0.245378151261,Yanchep Line
+89,Gosnells Stn,-32.0714703448,115.999901765,Bus;Rail,2,26,19,0.132773109244,Armadale Line
+9,Greenwood Stn,-31.8183861652,115.783220927,Bus;Rail,2,60,45,0.191596638655,Yanchep Line
+90,Joondalup Stn,-31.745485277,115.76742763,Bus;Rail;School Bus,2,44,28,0.132773109244,Yanchep Line
+91,Kelmscott Stn,-32.1132389832,116.01324847,Bus;Rail;School Bus,2,26,19,0.090756302521,Armadale Line
+92,Kenwick Stn,-32.0358404454,115.969171848,Rail,2,26,19,0.172549019608,Armadale Line
+93,Kwinana Stn,-32.2349422549,115.842646928,Bus;Rail,2,39,26,0.112044817927,Mandurah Line
+94,Mandurah Stn,-32.5268152596,115.746858774,Bus;Rail;School Bus,1,39,25,0,Mandurah Line
+95,Midland Stn,-31.8918,116.0027,Bus;Rail;School Bus,1,24,20,0,Midland Line
+96,Murdoch Stn,-32.0661222275,115.850487825,Bus;Rail,2,61,47,0.33781512605,Mandurah Line
+97,Rockingham Stn,-32.2898707516,115.761335784,Bus;Rail;School Bus,2,39,26,0.0689075630252,Mandurah Line
+98,Stirling Stn,-31.8941710664,115.804586773,Bus;Rail;School Bus,2,60,46,0.228011204482,Yanchep Line
+99,Thornlie Stn,-32.0472,115.9524,Bus;Rail;School Bus,2,22,16,0.454901960784,Thornlie-Cockburn Line
