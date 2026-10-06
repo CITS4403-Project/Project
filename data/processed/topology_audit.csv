@@ -1,0 +1,97 @@
+station_a,station_b,name_a,name_b,status,replacement_station_ids,note
+1,32,North Fremantle Stn,Victoria Street Stn,verified_adjacent,1;32,Retained as mapped station adjacency; service counts regenerated for the window.
+1,87,North Fremantle Stn,Fremantle Stn,verified_adjacent,1;87,Retained as mapped station adjacency; service counts regenerated for the window.
+12,73,Queens Park Stn,Oats Street Stn,verified_adjacent,12;73,Retained as mapped station adjacency; service counts regenerated for the window.
+12,84,Queens Park Stn,Cannington Stn,verified_adjacent,12;84,Retained as mapped station adjacency; service counts regenerated for the window.
+133,153,Butler Stn,Alkimos Stn,verified_adjacent,133;153,Retained as mapped station adjacency; service counts regenerated for the window.
+147,148,Redcliffe Stn,Airport Central Stn,verified_adjacent,147;148,Retained as mapped station adjacency; service counts regenerated for the window.
+148,149,Airport Central Stn,High Wycombe Stn,verified_adjacent,148;149,Retained as mapped station adjacency; service counts regenerated for the window.
+15,31,West Leederville Stn,City West Stn,verified_adjacent,15;31,Retained as mapped station adjacency; service counts regenerated for the window.
+153,154,Alkimos Stn,Eglinton Stn,verified_adjacent,153;154,Retained as mapped station adjacency; service counts regenerated for the window.
+154,155,Eglinton Stn,Yanchep Stn,verified_adjacent,154;155,Retained as mapped station adjacency; service counts regenerated for the window.
+156,157,Morley Stn,Noranda Stn,verified_adjacent,156;157,Retained as mapped station adjacency; service counts regenerated for the window.
+157,158,Noranda Stn,Ballajura Stn,verified_adjacent,157;158,Retained as mapped station adjacency; service counts regenerated for the window.
+158,159,Ballajura Stn,Whiteman Park Stn,verified_adjacent,158;159,Retained as mapped station adjacency; service counts regenerated for the window.
+159,160,Whiteman Park Stn,Ellenbrook Stn,verified_adjacent,159;160,Retained as mapped station adjacency; service counts regenerated for the window.
+16,30,Showgrounds Stn,Claremont Stn,verified_adjacent,16;30,Retained as mapped station adjacency; service counts regenerated for the window.
+16,42,Showgrounds Stn,Loch Street Stn,verified_adjacent,16;42,Retained as mapped station adjacency; service counts regenerated for the window.
+16,56,Showgrounds Stn,Perth Stn,expand_skipped_stations,16;42;76;17;36;6;15;31;56,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+162,163,Nicholson Rd Stn,Ranford Rd Stn,verified_adjacent,162;163,Retained as mapped station adjacency; service counts regenerated for the window.
+17,36,Shenton Park Stn,Daglish Stn,verified_adjacent,17;36,Retained as mapped station adjacency; service counts regenerated for the window.
+17,76,Shenton Park Stn,Karrakatta Stn,verified_adjacent,17;76,Retained as mapped station adjacency; service counts regenerated for the window.
+19,38,Grant Street Stn,Swanbourne Stn,verified_adjacent,19;38,Retained as mapped station adjacency; service counts regenerated for the window.
+19,50,Grant Street Stn,Cottesloe Stn,verified_adjacent,19;50,Retained as mapped station adjacency; service counts regenerated for the window.
+2,66,Challis Stn,Sherwood Stn,verified_adjacent,2;66,Retained as mapped station adjacency; service counts regenerated for the window.
+2,91,Challis Stn,Kelmscott Stn,verified_adjacent,2;91,Retained as mapped station adjacency; service counts regenerated for the window.
+22,56,Mciver Stn,Perth Stn,verified_adjacent,22;56,Retained as mapped station adjacency; service counts regenerated for the window.
+22,72,Mciver Stn,Claisebrook Stn,verified_adjacent,22;72,Retained as mapped station adjacency; service counts regenerated for the window.
+23,147,Bayswater Stn,Redcliffe Stn,verified_adjacent,23;147,Retained as mapped station adjacency; service counts regenerated for the window.
+23,156,Bayswater Stn,Morley Stn,verified_adjacent,23;156,Retained as mapped station adjacency; service counts regenerated for the window.
+23,26,Bayswater Stn,East Perth Stn,expand_skipped_stations,23;37;49;44;26,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+23,37,Bayswater Stn,Meltham Stn,verified_adjacent,23;37,Retained as mapped station adjacency; service counts regenerated for the window.
+24,34,Guildford Stn,Success Hill Stn,verified_adjacent,24;34,Retained as mapped station adjacency; service counts regenerated for the window.
+24,59,Guildford Stn,East Guildford Stn,verified_adjacent,24;59,Retained as mapped station adjacency; service counts regenerated for the window.
+26,44,East Perth Stn,Mt Lawley Stn,verified_adjacent,26;44,Retained as mapped station adjacency; service counts regenerated for the window.
+26,56,East Perth Stn,Perth Stn,expand_skipped_stations,26;72;22;56,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+26,72,East Perth Stn,Claisebrook Stn,verified_adjacent,26;72,Retained as mapped station adjacency; service counts regenerated for the window.
+28,84,Beckenham Stn,Cannington Stn,verified_adjacent,28;84,Retained as mapped station adjacency; service counts regenerated for the window.
+28,92,Beckenham Stn,Kenwick Stn,verified_adjacent,28;92,Retained as mapped station adjacency; service counts regenerated for the window.
+28,99,Beckenham Stn,Thornlie Stn,verified_adjacent,28;99,Retained as mapped station adjacency; service counts regenerated for the window.
+30,38,Claremont Stn,Swanbourne Stn,verified_adjacent,30;38,Retained as mapped station adjacency; service counts regenerated for the window.
+30,42,Claremont Stn,Loch Street Stn,expand_skipped_stations,30;16;42,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+31,140,City West Stn,Perth Stadium Stn,expand_skipped_stations,31;56;22;72;140,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+31,56,City West Stn,Perth Stn,verified_adjacent,31;56,Retained as mapped station adjacency; service counts regenerated for the window.
+31,64,City West Stn,Perth Underground Stn,exclude_off_map_connection,,"Not drawn as a regular rail connection on the official map; excluded, not assumed physically impossible."
+33,140,Burswood Stn,Perth Stadium Stn,verified_adjacent,33;140,Retained as mapped station adjacency; service counts regenerated for the window.
+33,48,Burswood Stn,Victoria Park Stn,verified_adjacent,33;48,Retained as mapped station adjacency; service counts regenerated for the window.
+34,39,Success Hill Stn,Bassendean Stn,verified_adjacent,34;39,Retained as mapped station adjacency; service counts regenerated for the window.
+37,49,Meltham Stn,Maylands Stn,verified_adjacent,37;49,Retained as mapped station adjacency; service counts regenerated for the window.
+4,85,Currambine Stn,Clarkson Stn,verified_adjacent,4;85,Retained as mapped station adjacency; service counts regenerated for the window.
+4,90,Currambine Stn,Joondalup Stn,verified_adjacent,4;90,Retained as mapped station adjacency; service counts regenerated for the window.
+41,59,Woodbridge Stn,East Guildford Stn,verified_adjacent,41;59,Retained as mapped station adjacency; service counts regenerated for the window.
+41,95,Woodbridge Stn,Midland Stn,verified_adjacent,41;95,Retained as mapped station adjacency; service counts regenerated for the window.
+42,76,Loch Street Stn,Karrakatta Stn,verified_adjacent,42;76,Retained as mapped station adjacency; service counts regenerated for the window.
+43,164,Armadale Stn,Byford Stn,verified_adjacent,43;164,Retained as mapped station adjacency; service counts regenerated for the window.
+43,66,Armadale Stn,Sherwood Stn,verified_adjacent,43;66,Retained as mapped station adjacency; service counts regenerated for the window.
+44,49,Mt Lawley Stn,Maylands Stn,verified_adjacent,44;49,Retained as mapped station adjacency; service counts regenerated for the window.
+46,102,Edgewater Stn,Whitfords Stn,verified_adjacent,46;102,Retained as mapped station adjacency; service counts regenerated for the window.
+46,90,Edgewater Stn,Joondalup Stn,verified_adjacent,46;90,Retained as mapped station adjacency; service counts regenerated for the window.
+48,58,Victoria Park Stn,Carlisle Stn,verified_adjacent,48;58,Retained as mapped station adjacency; service counts regenerated for the window.
+5,32,Mosman Park Stn,Victoria Street Stn,verified_adjacent,5;32,Retained as mapped station adjacency; service counts regenerated for the window.
+5,50,Mosman Park Stn,Cottesloe Stn,verified_adjacent,5;50,Retained as mapped station adjacency; service counts regenerated for the window.
+56,140,Perth Stn,Perth Stadium Stn,expand_skipped_stations,56;22;72;140,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+56,72,Perth Stn,Claisebrook Stn,expand_skipped_stations,56;22;72,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+58,140,Carlisle Stn,Perth Stadium Stn,expand_skipped_stations,58;48;33;140,Consecutive stopping points are not adjacent physical stations; replace shortcut by mapped path.
+58,73,Carlisle Stn,Oats Street Stn,verified_adjacent,58;73,Retained as mapped station adjacency; service counts regenerated for the window.
+6,15,Subiaco Stn,West Leederville Stn,verified_adjacent,6;15,Retained as mapped station adjacency; service counts regenerated for the window.
+6,36,Subiaco Stn,Daglish Stn,verified_adjacent,6;36,Retained as mapped station adjacency; service counts regenerated for the window.
+64,135,Perth Underground Stn,Elizabeth Quay Stn,verified_adjacent,64;135,Retained as mapped station adjacency; service counts regenerated for the window.
+67,89,Seaforth Stn,Gosnells Stn,verified_adjacent,67;89,Retained as mapped station adjacency; service counts regenerated for the window.
+67,91,Seaforth Stn,Kelmscott Stn,verified_adjacent,67;91,Retained as mapped station adjacency; service counts regenerated for the window.
+68,89,Maddington Stn,Gosnells Stn,verified_adjacent,68;89,Retained as mapped station adjacency; service counts regenerated for the window.
+68,92,Maddington Stn,Kenwick Stn,verified_adjacent,68;92,Retained as mapped station adjacency; service counts regenerated for the window.
+7,23,Ashfield Stn,Bayswater Stn,verified_adjacent,7;23,Retained as mapped station adjacency; service counts regenerated for the window.
+7,39,Ashfield Stn,Bassendean Stn,verified_adjacent,7;39,Retained as mapped station adjacency; service counts regenerated for the window.
+72,140,Claisebrook Stn,Perth Stadium Stn,verified_adjacent,72;140,Retained as mapped station adjacency; service counts regenerated for the window.
+74,150,Warnbro Stn,Lakelands Stn,verified_adjacent,74;150,Retained as mapped station adjacency; service counts regenerated for the window.
+74,97,Warnbro Stn,Rockingham Stn,verified_adjacent,74;97,Retained as mapped station adjacency; service counts regenerated for the window.
+8,140,Leederville Stn,Perth Stadium Stn,exclude_off_map_connection,,"Not drawn as a regular rail connection on the official map; excluded, not assumed physically impossible."
+8,56,Leederville Stn,Perth Stn,exclude_off_map_connection,,"Not drawn as a regular rail connection on the official map; excluded, not assumed physically impossible."
+8,64,Leederville Stn,Perth Underground Stn,verified_adjacent,8;64,Retained as mapped station adjacency; service counts regenerated for the window.
+8,88,Leederville Stn,Glendalough Stn,verified_adjacent,8;88,Retained as mapped station adjacency; service counts regenerated for the window.
+82,83,Bull Creek Stn,Canning Bridge Stn,verified_adjacent,82;83,Retained as mapped station adjacency; service counts regenerated for the window.
+82,96,Bull Creek Stn,Murdoch Stn,verified_adjacent,82;96,Retained as mapped station adjacency; service counts regenerated for the window.
+83,135,Canning Bridge Stn,Elizabeth Quay Stn,verified_adjacent,83;135,Retained as mapped station adjacency; service counts regenerated for the window.
+85,133,Clarkson Stn,Butler Stn,verified_adjacent,85;133,Retained as mapped station adjacency; service counts regenerated for the window.
+86,138,Cockburn Central Stn,Aubin Grove Stn,verified_adjacent,86;138,Retained as mapped station adjacency; service counts regenerated for the window.
+86,163,Cockburn Central Stn,Ranford Rd Stn,verified_adjacent,86;163,Retained as mapped station adjacency; service counts regenerated for the window.
+86,96,Cockburn Central Stn,Murdoch Stn,verified_adjacent,86;96,Retained as mapped station adjacency; service counts regenerated for the window.
+88,98,Glendalough Stn,Stirling Stn,verified_adjacent,88;98,Retained as mapped station adjacency; service counts regenerated for the window.
+9,100,Greenwood Stn,Warwick Stn,verified_adjacent,9;100,Retained as mapped station adjacency; service counts regenerated for the window.
+9,102,Greenwood Stn,Whitfords Stn,verified_adjacent,9;102,Retained as mapped station adjacency; service counts regenerated for the window.
+93,101,Kwinana Stn,Wellard Stn,verified_adjacent,93;101,Retained as mapped station adjacency; service counts regenerated for the window.
+93,138,Kwinana Stn,Aubin Grove Stn,verified_adjacent,93;138,Retained as mapped station adjacency; service counts regenerated for the window.
+94,150,Mandurah Stn,Lakelands Stn,verified_adjacent,94;150,Retained as mapped station adjacency; service counts regenerated for the window.
+97,101,Rockingham Stn,Wellard Stn,verified_adjacent,97;101,Retained as mapped station adjacency; service counts regenerated for the window.
+98,100,Stirling Stn,Warwick Stn,verified_adjacent,98;100,Retained as mapped station adjacency; service counts regenerated for the window.
+99,162,Thornlie Stn,Nicholson Rd Stn,verified_adjacent,99;162,Retained as mapped station adjacency; service counts regenerated for the window.

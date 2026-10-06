@@ -13,6 +13,7 @@ __pycache__/
 # Raw/large data downloads (keep access instructions and small samples instead)
 data/raw/
 *.zip
+data/.pipeline-*/
 
 # Git worktrees used during the investigation phase
 .worktrees/

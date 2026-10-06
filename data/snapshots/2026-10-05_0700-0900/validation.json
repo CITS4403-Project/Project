@@ -1,0 +1,11 @@
+{
+  "raw_file_sha256": "passed against pinned acquisition manifest",
+  "both_modes_present": true,
+  "date_services_checked_with_exceptions": true,
+  "trip_route_service_stop_foreign_keys": "passed",
+  "duplicate_trip_stop_sequences": "none",
+  "stop_sequences_increasing": "passed",
+  "window_bounds": "passed",
+  "full_sequences_preserved": true,
+  "rail_stops_missing_parent": 0
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "source_sha256": "passed",
+  "snapshot_sha256": "passed",
+  "processed_sha256": "passed",
+  "calendar_exceptions_and_foreign_keys": "passed",
+  "rail_parents": "passed",
+  "service_day_times_and_half_open_window": "passed",
+  "mapped_station_adjacency_and_metrics": "passed",
+  "window_bus_coverage": "passed",
+  "legacy_edges_audited": 96,
+  "manual_backup_evidence": "passed",
+  "stations": 86,
+  "rail_edges": 85
+}
