@@ -13,20 +13,26 @@ and conventions are below.
 
 The rail layer is an undirected simple graph G = (V, E).
 
-V is the set of 86 suburban rail stations. Each node carries `station_id`
-(string), `name`, `lat`, `lon`, `modes`, `degree`, `trips_served`,
-`am_peak_stops`, `betweenness` and `lines`.
+V is the set of 86 mapped suburban rail stations. 85 of them have scheduled
+weekday service in the frozen window; Showgrounds sits on the mapped corridor
+but has no weekday stop event. Each node carries `station_id` (string), `name`,
+`lat`, `lon`, `modes`, `degree`, `trips_served`, `am_peak_stops`,
+`betweenness` and `lines`.
 
-E is the set of 96 track segments between consecutive stations on regular
-weekday services. Each edge carries `trips`, the number of scheduled
+E is the set of 85 verified adjacent segments between consecutive stations on
+the mapped corridors. Each edge carries `trips`, the number of scheduled
 traversals in the snapshot, and `distance_m`, the great-circle length in
 metres.
 
-The graph is connected. The regression anchor frozen from the GTFS snapshot is
-86 stations, 96 edges, 8 suburban lines and 7,568 weekday rail trips; a
-different count means the data changed and needs a documented fix (P0.2). The
-Stadium event-only route WES-RAI-4313 is excluded from the baseline and kept as
-an optional event-day variant.
+The graph is connected and a tree: 86 mapped stations, 85 edges. The prototype
+had 96 edges; P0.2 audited each against the official October 2025 map and
+recorded the outcome in `data/processed/topology_audit.csv`: 85 verified
+adjacent edges retained, 8 skipped-station shortcuts removed with their trips
+expanded onto the corridor segments, and 3 off-map connections excluded. The
+frozen regression counts for the 2026-10-05 07:00-09:00 window are 86 stations,
+85 edges, 8 rail routes, 271 rail trips and 4,324 bus trips. The Stadium
+event-only route WES-RAI-4313 is excluded from the baseline and kept as an
+optional event-day variant.
 
 Frozen tables live in `data/processed/`: `stations.csv` and `rail_edges.csv`
 for the rail layer, `bus_coverage.csv` for bus stops and routes within 400 m
