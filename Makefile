@@ -16,7 +16,7 @@ check:
 	$(PYTHON) -m pytest -q
 
 data:
-	$(PYTHON) scripts/prepare_gtfs_7_1.py
+	$(PYTHON) scripts/run_data.py
 
 figures:
 	$(PYTHON) -m transperth.plotting
