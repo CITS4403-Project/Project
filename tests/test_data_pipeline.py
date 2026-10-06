@@ -222,6 +222,12 @@ class IntegrityTests(unittest.TestCase):
         )
         for name, digest in manifest["manual_provenance"].items():
             self.assertEqual(sha256(ROOT / "data/manual" / name), digest)
+            baseline = (
+                ROOT / "investigations/idea2-perth-transport/data/processed" / name
+            )
+            self.assertEqual(
+                (ROOT / "data/manual" / name).read_bytes(), baseline.read_bytes()
+            )
         self.assertEqual(
             manifest["legacy_edge_audit_counts"],
             {

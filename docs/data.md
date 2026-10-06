@@ -207,8 +207,10 @@ The four frozen pairs in the CSV are Perth–Glendalough,
 Perth–Bayswater, Perth–Victoria Park and Oats Street–Canning Bridge (the last
 uses a bus transfer). Their weights are 38, 38, 38 and 42 minutes.
 
-These two files are copied **byte for byte** from the original investigation
-via versioned `data/manual/` inputs. The processed manifest records hashes;
+These two files are copied **byte for byte** from the committed investigation
+files via versioned `data/manual/` inputs. `.gitattributes` disables automatic
+checkout newline conversion for the baseline and these evidence files, so a
+Windows checkout cannot change their recorded bytes. The processed manifest records hashes;
 validation checks endpoints, both directions and the maximum effective time.
 They cannot be regenerated from GTFS alone, are not globally optimized, and
 are not proof of disruption-time capacity. P1.5 builds GTFS candidates separately.
