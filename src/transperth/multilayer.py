@@ -170,8 +170,8 @@ def build_layers(
     """
     speed = _positive_float(speed_kmh, label="speed_kmh")
     access = _positive_float(access_minutes, label="access_minutes")
-    if not isinstance(rail, nx.Graph):
-        raise TypeError("rail must be a networkx.Graph")
+    if isinstance(rail, (nx.DiGraph, nx.MultiGraph)) or not isinstance(rail, nx.Graph):
+        raise TypeError("rail must be an undirected simple networkx.Graph")
 
     layered = nx.Graph()
     nodes: dict[str, Any] = {}
@@ -413,16 +413,17 @@ def derive_gtfs_candidates(
 ) -> pd.DataFrame:
     """Derive single-trip bus backup candidates from a frozen GTFS snapshot.
 
-    Bus stops (``location_type=0`` with finite coordinates) are mapped to the
-    nearest mapped rail station within ``radius_m`` of the great-circle
-    distance (Earth radius 6,371,000 m); ties are broken by sorted station id.
-    Only the selected bus trips of ``bus_trips.csv`` are inspected, and their
-    full ``stop_times.txt`` sequences are read with GTFS service-day seconds
-    (hours past 24 are valid). Every ordered stop pair that belongs to two
-    different rail stations contributes the scheduled arrival at the
-    destination stop minus the scheduled departure from the origin stop
-    (falling back to the other timestamp on a row) when the difference is
-    positive.
+    Every stop location in ``stops.txt`` with ``location_type=0`` and finite
+    coordinates, including rail platforms, is mapped to the nearest mapped
+    rail station within ``radius_m`` of the great-circle distance (Earth
+    radius 6,371,000 m); ties are broken by sorted station id. Only the
+    selected bus trips of ``bus_trips.csv`` are inspected, so rail platform
+    stops can never contribute a pair. The trips' full ``stop_times.txt``
+    sequences are read with GTFS service-day seconds (hours past 24 are
+    valid). Every ordered stop pair that belongs to two different rail
+    stations contributes the scheduled arrival at the destination stop minus
+    the scheduled departure from the origin stop (falling back to the other
+    timestamp on a row) when the difference is positive.
 
     Each undirected station pair appears once, sorted by
     ``(station_a, station_b)``, with the fastest observed time, the sorted

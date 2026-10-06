@@ -117,6 +117,15 @@ class TestBuildLayers:
         layered = build_layers(path_rail(), speed_kmh=80.0)
         assert layered["R:A"]["R:B"]["minutes"] == pytest.approx(0.75)
 
+    def test_directed_and_multigraph_inputs_are_rejected(self):
+        directed = nx.DiGraph()
+        directed.add_edge("A", "B", distance_m=1000.0)
+        multigraph = nx.MultiGraph()
+        multigraph.add_edge("A", "B", distance_m=1000.0)
+        for graph in (directed, multigraph):
+            with pytest.raises(TypeError, match="undirected simple"):
+                build_layers(graph)
+
     def test_same_inputs_give_the_same_graph(self):
         first = build_layers(path_rail())
         second = build_layers(path_rail())
