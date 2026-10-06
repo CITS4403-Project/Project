@@ -1,0 +1,7 @@
+# Tooling configuration for the CITS4403 project.
+# The package is used through PYTHONPATH=src; there is no build backend yet.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]
+addopts = "-ra"
