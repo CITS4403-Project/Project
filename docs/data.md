@@ -127,10 +127,10 @@ radius. The old circular query in latitude/longitude degrees understated
 east/west coverage. Complete sorted route IDs are retained without truncation.
 
 These are intentional fixes; neither the baseline tables nor prototype
-experiments are overwritten. P0.1's draft `docs/model.md` regression anchor
-86/96/7,568 needs its owner's review to align with 86/85/271 before M0. The
-only shared Makefile change in this PR is the `data` recipe; P0.1 owns review
-of that integration.
+experiments are overwritten. P1.7 aligned the `docs/model.md` regression anchor
+with the frozen 86/85/271 counts after the P0.2 review. The only shared
+Makefile change in this PR is the `data` recipe; P0.1 owns review of that
+integration.
 
 ## Optional event-day variant
 
