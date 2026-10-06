@@ -1,0 +1,73 @@
+{
+  "source_url": "https://www.transperth.wa.gov.au/LinkClick.aspx?link=%2fTimetablePDFs%2fGoogleTransit%2fProduction%2fgoogle_transit.zip&tabid=267&portalid=0&mid=1470",
+  "resolved_url": "https://www.transperth.wa.gov.au/TimetablePDFs/GoogleTransit/Production/google_transit.zip",
+  "source_page": "https://www.transperth.wa.gov.au/About/Spatial-Data-Access",
+  "download_started_utc": "2026-10-04T10:32:25.259457+00:00",
+  "download_completed_utc": "2026-10-04T10:33:05.509854+00:00",
+  "download_completed_perth": "2026-10-04T18:33:05.509854+08:00",
+  "http_headers": {
+    "Content-Type": "application/x-zip-compressed",
+    "Last-Modified": "Wed, 30 Sep 2026 23:44:18 GMT",
+    "ETag": "\"998ce19b3551dd1:0\"",
+    "Content-Length": "27517148"
+  },
+  "attribution": "This data is available free of charge from www.transperth.wa.gov.au.",
+  "license_url": "https://www.transperth.wa.gov.au/About/Spatial-Data-Access",
+  "zip_bytes": 27517148,
+  "zip_sha256": "9f4482331fb37dbd71708ccdd187f092be42ad7f2e3536e798416bf99422b9fa",
+  "files": [
+    {
+      "name": "agency.txt",
+      "bytes": 3833,
+      "sha256": "11699990988f773a940eb3ec857bba131f013487445f726aa5cb4a4e8a9ae753"
+    },
+    {
+      "name": "calendar.txt",
+      "bytes": 41695,
+      "sha256": "d427a167ed5e6919f637574c736b39918e29f28f09f87d08021d3107c5c515bc"
+    },
+    {
+      "name": "calendar_dates.txt",
+      "bytes": 142979,
+      "sha256": "42f09b3d772ec2adea9a43af1c276165cc5c0d99a69e087dc85178a0c1b53317"
+    },
+    {
+      "name": "routes.txt",
+      "bytes": 19426,
+      "sha256": "af158a47c7896da16e70de6733f7766b32cd070d8441ec1d6e1e5785983be14c"
+    },
+    {
+      "name": "sg2tpn.txt",
+      "bytes": 1149,
+      "sha256": "f38766054318744675020b28e5aa990155aa892471f2dadc745e9e61a40aa6c1"
+    },
+    {
+      "name": "shapes.txt",
+      "bytes": 81114206,
+      "sha256": "8940ab03d503865503957a49bc7cddb0fc2ba425c3a830f992df65bbc15ef379"
+    },
+    {
+      "name": "stops.txt",
+      "bytes": 1451394,
+      "sha256": "f43a2bd2336be432c4f3d824323e37ba52db5049e5c939e7d5bbb725ca104b78"
+    },
+    {
+      "name": "stop_times.txt",
+      "bytes": 74817323,
+      "sha256": "332203587612a69f210757f5e5ae5e4741f586af9c3ff6e06fa3ea98ae71f192"
+    },
+    {
+      "name": "transfers.txt",
+      "bytes": 93863,
+      "sha256": "04ec01b07b48bb70b4ef1a9e720d198d24788f3496840b81eb77e1edc0190e80"
+    },
+    {
+      "name": "trips.txt",
+      "bytes": 2617389,
+      "sha256": "e941ebe04510be636dd5d1c66dac8f25ed9d674b3d0235ed93569468824b69e8"
+    }
+  ],
+  "service_date": "2026-10-05",
+  "window_start": "07:00:00",
+  "window_end_exclusive": "09:00:00"
+}

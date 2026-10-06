@@ -1,0 +1,69 @@
+{
+  "dataset": "transperth-2026-10-05-0700-0900-map-v1",
+  "service_date": "2026-10-05",
+  "window_start": "07:00:00",
+  "window_end_exclusive": "09:00:00",
+  "timezone": "Australia/Perth",
+  "event_variant": false,
+  "stations": 86,
+  "rail_edges": 85,
+  "rail_trips": 271,
+  "bus_trips": 4324,
+  "bus_radius_m": 400,
+  "topology_source": "https://www.transperth.wa.gov.au/Portals/0/SYSTEM%20MAP%20OCTOBER%202025.pdf",
+  "topology_source_sha256": "95e6f37a6e806d13ba557309f43109a857c9c265c64cb1ffa9c1d0cc18d837a1",
+  "inputs": {
+    "source_manifest": "7202d41e0526a6f36f14d70e2b10320712c864055f9a9271a472bec9db5b9787",
+    "verified_topology": "72dc427f61e352d2c3af105b91593dbc97cad84b48ae4fbaa43a37fc25efb21b",
+    "snapshot_manifest": "d2cfa38911a1c00e715a1aa50257894c14932cad3ab4796b1ae60774429c1a91",
+    "legacy_stations": "d16553d8bbdd28e5d504ff159e872b6429eedd0694523dd2e8036db536ea6b34",
+    "legacy_rail_edges": "8223005ebec10b3b2a014e84556f00971e25d0781f641655950a68032155bc5d"
+  },
+  "legacy_edge_audit_counts": {
+    "exclude_off_map_connection": 3,
+    "expand_skipped_stations": 8,
+    "verified_adjacent": 85
+  },
+  "unmapped_event_trips": 0,
+  "manual_provenance": {
+    "backup_edges.csv": "f75ad5336e5f9d18d6f4b4288df46febaaf36c6c70c9f99f239f07ed65ff0a4d",
+    "backup_edges_google_maps_evidence.json": "75d33105fd337e935805ad0c0119d48b5aba2c746dad684c044eef5845ece042"
+  },
+  "files": [
+    {
+      "name": "backup_edges.csv",
+      "bytes": 4576,
+      "sha256": "f75ad5336e5f9d18d6f4b4288df46febaaf36c6c70c9f99f239f07ed65ff0a4d"
+    },
+    {
+      "name": "backup_edges_google_maps_evidence.json",
+      "bytes": 8460,
+      "sha256": "75d33105fd337e935805ad0c0119d48b5aba2c746dad684c044eef5845ece042"
+    },
+    {
+      "name": "bus_coverage.csv",
+      "bytes": 10943,
+      "sha256": "6098a392e118b844996ecc92732f682b05c2cc96404c833d39b58bf759b24ce9"
+    },
+    {
+      "name": "rail_edges.csv",
+      "bytes": 2013,
+      "sha256": "c6ddabf7ae89f47c58d3b3ef42a16a8a83d8f49b8552a413ba2b3dc4c44bb8e8"
+    },
+    {
+      "name": "stations.csv",
+      "bytes": 8761,
+      "sha256": "b31a1ffa087baeb2e546359367a515747ec4381d229b4b4664f37fe4f1b720b3"
+    },
+    {
+      "name": "topology_audit.csv",
+      "bytes": 13933,
+      "sha256": "f8b16fac3b308cbd3e9809f66fd87d8460c32dfb611d56325f75fa5339881054"
+    },
+    {
+      "name": "unmapped_event_trips.csv",
+      "bytes": 15,
+      "sha256": "63c3cb1bc23155663d74365e12d67d7dbc23cedff6754e27e24fcd800c9c949b"
+    }
+  ]
+}

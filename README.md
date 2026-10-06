@@ -35,8 +35,17 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 `make reproduce` is the documented path from raw data to the figures and
 notebooks used in the report. The `data` stage reads the Transperth GTFS feed
 from the git-ignored `data/raw/` and writes the frozen tables to
-`data/processed/`; the fetch and preparation scripts are added by P0.2 and
+`data/processed/`; the fetch and preparation scripts from P0.2 are
 documented in `docs/data.md`.
+
+## Frozen transport data
+
+Run `make data PYTHON=python` (or `python scripts/run_data.py` without Make)
+to download/verify the pinned GTFS archive, prepare the 2026-10-05 07:00–09:00
+snapshot, build the map-verified 86-station/85-edge graph, and validate hashes.
+The canonical inputs are in project-root `data/processed/`; the investigation
+copy stays unchanged. See [the data dictionary and reproducibility notes](docs/data.md)
+for topology corrections, manual bus provenance and the mutable-source limitation.
 
 ## Repository structure
 
@@ -86,3 +95,6 @@ its issue with `Closes #N`, lists its acceptance criteria and needs the other
 member's review before merging. Commits are small, single-purpose and use
 imperative subjects. The investigation-phase branches remain for reference;
 only the Perth transport investigation is developed further.
+
+Investigation work happens on `investigation/*` branches and is merged into
+`main` through pull requests when complete.
