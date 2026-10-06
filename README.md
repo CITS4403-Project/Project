@@ -25,6 +25,15 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+## Frozen transport data
+
+Run `make data PYTHON=python` (or `python scripts/run_data.py` without Make)
+to download/verify the pinned GTFS archive, prepare the 2026-10-05 07:00–09:00
+snapshot, build the map-verified 86-station/85-edge graph, and validate hashes.
+The canonical inputs are in project-root `data/processed/`; the investigation
+copy stays unchanged. See [the data dictionary and reproducibility notes](docs/data.md)
+for topology corrections, manual bus provenance and the mutable-source limitation.
+
 ## Repository structure
 
 ```
