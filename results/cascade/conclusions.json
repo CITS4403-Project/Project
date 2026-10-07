@@ -5,6 +5,6 @@
   "dynamic_interpretation": "forest removal cannot create alternative paths; supported betweenness-based routing loads cannot increase on survivors, so containment does not establish tolerance in a redundant network",
   "prototype_regression": "same named targets on 86/85 audited tree and corrected synchronous rounds; old 96-edge values are historical, not numerical equality targets",
   "random_seeds": 300,
-  "unique_cached_runs": 23148,
-  "unique_outcomes": 848
+  "unique_cached_runs": 23088,
+  "unique_outcomes": 830
 }

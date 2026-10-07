@@ -1,181 +1,97 @@
 line,alpha,rule,dynamic,load_mode,trigger,seed,target,outcome_id,n_initial,n_initial_failed,n_failed,post_trigger_size,failed_fraction,gcc,gcc_fraction,rounds,geographic_span_km
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,equal,False,betweenness,closed_set,0,,9818a4e3c147de333706,86,1,86,85,1.0,0,0.0,33,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,equal,True,betweenness,closed_set,0,,78f6d3068567c6ae07d7,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,capacity,False,betweenness,closed_set,0,,9818a4e3c147de333706,86,1,86,85,1.0,0,0.0,33,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,capacity,True,betweenness,closed_set,0,,78f6d3068567c6ae07d7,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,equal,False,betweenness,closed_set,0,,9818a4e3c147de333706,86,1,86,85,1.0,0,0.0,33,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,equal,True,betweenness,closed_set,0,,78f6d3068567c6ae07d7,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,capacity,False,betweenness,closed_set,0,,9818a4e3c147de333706,86,1,86,85,1.0,0,0.0,33,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,capacity,True,betweenness,closed_set,0,,78f6d3068567c6ae07d7,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,equal,False,betweenness,closed_set,0,,de81a86a84971ae51dce,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,equal,True,betweenness,closed_set,0,,78f6d3068567c6ae07d7,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,capacity,False,betweenness,closed_set,0,,de81a86a84971ae51dce,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Fremantle Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,capacity,True,betweenness,closed_set,0,,78f6d3068567c6ae07d7,86,1,1,0,0.011627906976744186,69,0.8023255813953488,0,0.0
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,equal,False,betweenness,closed_set,0,,4add3663f546d8b24a1f,86,2,86,84,1.0,0,0.0,31,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,equal,True,betweenness,closed_set,0,,8ffa62d189a86eae5844,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,capacity,False,betweenness,closed_set,0,,9ec0eee1644c94f2860a,86,2,86,84,1.0,0,0.0,31,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.0,capacity,True,betweenness,closed_set,0,,8ffa62d189a86eae5844,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,equal,False,betweenness,closed_set,0,,4add3663f546d8b24a1f,86,2,86,84,1.0,0,0.0,31,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,equal,True,betweenness,closed_set,0,,8ffa62d189a86eae5844,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,capacity,False,betweenness,closed_set,0,,9ec0eee1644c94f2860a,86,2,86,84,1.0,0,0.0,31,111.01148694935618
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",0.2,capacity,True,betweenness,closed_set,0,,8ffa62d189a86eae5844,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,equal,False,betweenness,closed_set,0,,96a240513ea2384eb921,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,equal,True,betweenness,closed_set,0,,8ffa62d189a86eae5844,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,capacity,False,betweenness,closed_set,0,,96a240513ea2384eb921,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Armadale Line', 'Ellenbrook Line', 'Midland Line', 'Thornlie-Cockburn Line']",2.0,capacity,True,betweenness,closed_set,0,,8ffa62d189a86eae5844,86,2,2,0,0.023255813953488372,47,0.5465116279069767,0,0.5960783633743011
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.0,equal,False,betweenness,closed_set,0,,5b410adaaafae455b55a,86,5,86,81,1.0,0,0.0,32,111.01148694935618
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.0,equal,True,betweenness,closed_set,0,,46a4457e0311725b0764,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.0,capacity,False,betweenness,closed_set,0,,5b410adaaafae455b55a,86,5,86,81,1.0,0,0.0,32,111.01148694935618
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.0,capacity,True,betweenness,closed_set,0,,46a4457e0311725b0764,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.2,equal,False,betweenness,closed_set,0,,5b410adaaafae455b55a,86,5,86,81,1.0,0,0.0,32,111.01148694935618
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.2,equal,True,betweenness,closed_set,0,,46a4457e0311725b0764,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.2,capacity,False,betweenness,closed_set,0,,5b410adaaafae455b55a,86,5,86,81,1.0,0,0.0,32,111.01148694935618
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",0.2,capacity,True,betweenness,closed_set,0,,46a4457e0311725b0764,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",2.0,equal,False,betweenness,closed_set,0,,7a25d075363457f21eec,86,5,8,3,0.09302325581395349,66,0.7674418604651163,3,10.94539622858938
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",2.0,equal,True,betweenness,closed_set,0,,46a4457e0311725b0764,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",2.0,capacity,False,betweenness,closed_set,0,,76c5c63c626caad54408,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Ellenbrook Line', 'Midland Line']",2.0,capacity,True,betweenness,closed_set,0,,46a4457e0311725b0764,86,5,5,0,0.05813953488372093,66,0.7674418604651163,0,4.362993175171218
-"['Airport Line', 'Fremantle Line']",0.0,equal,False,betweenness,closed_set,0,,725bd3d3d32f6a2810ba,86,9,86,77,1.0,0,0.0,34,111.01148694935618
-"['Airport Line', 'Fremantle Line']",0.0,equal,True,betweenness,closed_set,0,,a16bd39304e9c5742b0b,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",0.0,capacity,False,betweenness,closed_set,0,,725bd3d3d32f6a2810ba,86,9,86,77,1.0,0,0.0,34,111.01148694935618
-"['Airport Line', 'Fremantle Line']",0.0,capacity,True,betweenness,closed_set,0,,a16bd39304e9c5742b0b,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",0.2,equal,False,betweenness,closed_set,0,,725bd3d3d32f6a2810ba,86,9,86,77,1.0,0,0.0,34,111.01148694935618
-"['Airport Line', 'Fremantle Line']",0.2,equal,True,betweenness,closed_set,0,,a16bd39304e9c5742b0b,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",0.2,capacity,False,betweenness,closed_set,0,,725bd3d3d32f6a2810ba,86,9,86,77,1.0,0,0.0,34,111.01148694935618
-"['Airport Line', 'Fremantle Line']",0.2,capacity,True,betweenness,closed_set,0,,a16bd39304e9c5742b0b,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",2.0,equal,False,betweenness,closed_set,0,,559d1c973c03c2a37d05,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",2.0,equal,True,betweenness,closed_set,0,,a16bd39304e9c5742b0b,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",2.0,capacity,False,betweenness,closed_set,0,,559d1c973c03c2a37d05,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-"['Airport Line', 'Fremantle Line']",2.0,capacity,True,betweenness,closed_set,0,,a16bd39304e9c5742b0b,86,9,9,0,0.10465116279069768,70,0.813953488372093,0,7.213671652751165
-['Airport Line'],0.0,equal,False,betweenness,closed_set,0,,cdf10be5bdc1eb191b15,86,3,86,83,1.0,0,0.0,37,111.01148694935618
-['Airport Line'],0.0,equal,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],0.0,capacity,False,betweenness,closed_set,0,,cdf10be5bdc1eb191b15,86,3,86,83,1.0,0,0.0,37,111.01148694935618
-['Airport Line'],0.0,capacity,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],0.2,equal,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],0.2,equal,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],0.2,capacity,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],0.2,capacity,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],2.0,equal,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],2.0,equal,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],2.0,capacity,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-['Airport Line'],2.0,capacity,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.0,equal,False,betweenness,closed_set,0,,8b53411928926f6fa21b,86,8,86,78,1.0,0,0.0,23,111.01148694935618
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.0,equal,True,betweenness,closed_set,0,,a7bff24a31df4d20e1ae,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.0,capacity,False,betweenness,closed_set,0,,8b53411928926f6fa21b,86,8,86,78,1.0,0,0.0,23,111.01148694935618
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.0,capacity,True,betweenness,closed_set,0,,a7bff24a31df4d20e1ae,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.2,equal,False,betweenness,closed_set,0,,8b53411928926f6fa21b,86,8,86,78,1.0,0,0.0,23,111.01148694935618
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.2,equal,True,betweenness,closed_set,0,,a7bff24a31df4d20e1ae,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.2,capacity,False,betweenness,closed_set,0,,8b53411928926f6fa21b,86,8,86,78,1.0,0,0.0,23,111.01148694935618
-"['Armadale Line', 'Thornlie-Cockburn Line']",0.2,capacity,True,betweenness,closed_set,0,,a7bff24a31df4d20e1ae,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",2.0,equal,False,betweenness,closed_set,0,,f4d7cdf4669b46b83cac,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",2.0,equal,True,betweenness,closed_set,0,,a7bff24a31df4d20e1ae,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",2.0,capacity,False,betweenness,closed_set,0,,f4d7cdf4669b46b83cac,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-"['Armadale Line', 'Thornlie-Cockburn Line']",2.0,capacity,True,betweenness,closed_set,0,,a7bff24a31df4d20e1ae,86,8,8,0,0.09302325581395349,39,0.45348837209302323,0,9.869771614289911
-['Armadale Line'],0.0,equal,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
-['Armadale Line'],0.0,equal,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],0.0,capacity,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
-['Armadale Line'],0.0,capacity,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],0.2,equal,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
-['Armadale Line'],0.2,equal,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],0.2,capacity,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
-['Armadale Line'],0.2,capacity,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],2.0,equal,False,betweenness,closed_set,0,,8b8f1b0cf8b6ee446e9b,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],2.0,equal,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],2.0,capacity,False,betweenness,closed_set,0,,8b8f1b0cf8b6ee446e9b,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Armadale Line'],2.0,capacity,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
-['Ellenbrook Line'],0.0,equal,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
-['Ellenbrook Line'],0.0,equal,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],0.0,capacity,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
-['Ellenbrook Line'],0.0,capacity,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],0.2,equal,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
-['Ellenbrook Line'],0.2,equal,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],0.2,capacity,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
-['Ellenbrook Line'],0.2,capacity,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],2.0,equal,False,betweenness,closed_set,0,,deb87d16fc850c85dd3a,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],2.0,equal,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],2.0,capacity,False,betweenness,closed_set,0,,deb87d16fc850c85dd3a,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Ellenbrook Line'],2.0,capacity,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
-['Fremantle Line'],0.0,equal,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
-['Fremantle Line'],0.0,equal,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],0.0,capacity,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
-['Fremantle Line'],0.0,capacity,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],0.2,equal,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
-['Fremantle Line'],0.2,equal,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],0.2,capacity,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
-['Fremantle Line'],0.2,capacity,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],2.0,equal,False,betweenness,closed_set,0,,5f3cc3f935a2c3e1ef07,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],2.0,equal,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],2.0,capacity,False,betweenness,closed_set,0,,5f3cc3f935a2c3e1ef07,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-['Fremantle Line'],2.0,capacity,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.0,equal,False,betweenness,closed_set,0,,f69c86be42c3877cbdcf,86,1,86,85,1.0,0,0.0,30,111.01148694935618
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.0,equal,True,betweenness,closed_set,0,,59af307f2634888ca46f,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.0,capacity,False,betweenness,closed_set,0,,f69c86be42c3877cbdcf,86,1,86,85,1.0,0,0.0,30,111.01148694935618
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.0,capacity,True,betweenness,closed_set,0,,59af307f2634888ca46f,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.2,equal,False,betweenness,closed_set,0,,f69c86be42c3877cbdcf,86,1,86,85,1.0,0,0.0,30,111.01148694935618
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.2,equal,True,betweenness,closed_set,0,,59af307f2634888ca46f,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.2,capacity,False,betweenness,closed_set,0,,f69c86be42c3877cbdcf,86,1,86,85,1.0,0,0.0,30,111.01148694935618
-"['Mandurah Line', 'Thornlie-Cockburn Line']",0.2,capacity,True,betweenness,closed_set,0,,59af307f2634888ca46f,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",2.0,equal,False,betweenness,closed_set,0,,4d1eac3eca8c2d73c929,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",2.0,equal,True,betweenness,closed_set,0,,59af307f2634888ca46f,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",2.0,capacity,False,betweenness,closed_set,0,,4d1eac3eca8c2d73c929,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Thornlie-Cockburn Line']",2.0,capacity,True,betweenness,closed_set,0,,59af307f2634888ca46f,86,1,1,0,0.011627906976744186,59,0.686046511627907,0,0.0
-"['Mandurah Line', 'Yanchep Line']",0.0,equal,False,betweenness,closed_set,0,,852f09d39df611b6e2f0,86,2,86,84,1.0,0,0.0,34,111.01148694935618
-"['Mandurah Line', 'Yanchep Line']",0.0,equal,True,betweenness,closed_set,0,,7e25b1b9f7ac23aec1a5,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",0.0,capacity,False,betweenness,closed_set,0,,5c7e7d1e5f0cdcb5b138,86,2,86,84,1.0,0,0.0,34,111.01148694935618
-"['Mandurah Line', 'Yanchep Line']",0.0,capacity,True,betweenness,closed_set,0,,7e25b1b9f7ac23aec1a5,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",0.2,equal,False,betweenness,closed_set,0,,852f09d39df611b6e2f0,86,2,86,84,1.0,0,0.0,34,111.01148694935618
-"['Mandurah Line', 'Yanchep Line']",0.2,equal,True,betweenness,closed_set,0,,7e25b1b9f7ac23aec1a5,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",0.2,capacity,False,betweenness,closed_set,0,,852f09d39df611b6e2f0,86,2,86,84,1.0,0,0.0,34,111.01148694935618
-"['Mandurah Line', 'Yanchep Line']",0.2,capacity,True,betweenness,closed_set,0,,7e25b1b9f7ac23aec1a5,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",2.0,equal,False,betweenness,closed_set,0,,1cbd196e179757583543,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",2.0,equal,True,betweenness,closed_set,0,,7e25b1b9f7ac23aec1a5,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",2.0,capacity,False,betweenness,closed_set,0,,1cbd196e179757583543,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-"['Mandurah Line', 'Yanchep Line']",2.0,capacity,True,betweenness,closed_set,0,,7e25b1b9f7ac23aec1a5,86,2,2,0,0.023255813953488372,70,0.813953488372093,0,0.6292041770668022
-['Mandurah Line'],0.0,equal,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
-['Mandurah Line'],0.0,equal,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],0.0,capacity,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
-['Mandurah Line'],0.0,capacity,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],0.2,equal,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
-['Mandurah Line'],0.2,equal,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],0.2,capacity,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
-['Mandurah Line'],0.2,capacity,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],2.0,equal,False,betweenness,closed_set,0,,7399da65916b727390c3,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],2.0,equal,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],2.0,capacity,False,betweenness,closed_set,0,,7399da65916b727390c3,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Mandurah Line'],2.0,capacity,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
-['Midland Line'],0.0,equal,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
-['Midland Line'],0.0,equal,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],0.0,capacity,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
-['Midland Line'],0.0,capacity,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],0.2,equal,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
-['Midland Line'],0.2,equal,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],0.2,capacity,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
-['Midland Line'],0.2,capacity,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],2.0,equal,False,betweenness,closed_set,0,,dcb68c8839208f2ee445,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],2.0,equal,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],2.0,capacity,False,betweenness,closed_set,0,,dcb68c8839208f2ee445,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Midland Line'],2.0,capacity,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
-['Thornlie-Cockburn Line'],0.0,equal,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
-['Thornlie-Cockburn Line'],0.0,equal,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],0.0,capacity,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
-['Thornlie-Cockburn Line'],0.0,capacity,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],0.2,equal,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
-['Thornlie-Cockburn Line'],0.2,equal,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],0.2,capacity,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
-['Thornlie-Cockburn Line'],0.2,capacity,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],2.0,equal,False,betweenness,closed_set,0,,ff426b124f428f94c748,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],2.0,equal,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],2.0,capacity,False,betweenness,closed_set,0,,ff426b124f428f94c748,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Thornlie-Cockburn Line'],2.0,capacity,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
-['Yanchep Line'],0.0,equal,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
-['Yanchep Line'],0.0,equal,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],0.0,capacity,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
-['Yanchep Line'],0.0,capacity,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],0.2,equal,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
-['Yanchep Line'],0.2,equal,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],0.2,capacity,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
-['Yanchep Line'],0.2,capacity,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],2.0,equal,False,betweenness,closed_set,0,,b7b93063f295809d45f6,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],2.0,equal,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],2.0,capacity,False,betweenness,closed_set,0,,b7b93063f295809d45f6,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
-['Yanchep Line'],2.0,capacity,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Airport Line,0.0,equal,False,betweenness,closed_set,0,,cdf10be5bdc1eb191b15,86,3,86,83,1.0,0,0.0,37,111.01148694935618
+Airport Line,0.0,equal,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,0.0,capacity,False,betweenness,closed_set,0,,cdf10be5bdc1eb191b15,86,3,86,83,1.0,0,0.0,37,111.01148694935618
+Airport Line,0.0,capacity,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,0.2,equal,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,0.2,equal,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,0.2,capacity,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,0.2,capacity,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,2.0,equal,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,2.0,equal,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,2.0,capacity,False,betweenness,closed_set,0,,85371499c7e97e4b6053,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Airport Line,2.0,capacity,True,betweenness,closed_set,0,,90653250ce26d87b7961,86,3,3,0,0.03488372093023256,83,0.9651162790697675,0,4.6310056583732235
+Armadale Line,0.0,equal,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
+Armadale Line,0.0,equal,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,0.0,capacity,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
+Armadale Line,0.0,capacity,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,0.2,equal,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
+Armadale Line,0.2,equal,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,0.2,capacity,False,betweenness,closed_set,0,,a2b12eb63f61a601c384,86,9,86,77,1.0,0,0.0,27,111.01148694935618
+Armadale Line,0.2,capacity,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,2.0,equal,False,betweenness,closed_set,0,,8b8f1b0cf8b6ee446e9b,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,2.0,equal,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,2.0,capacity,False,betweenness,closed_set,0,,8b8f1b0cf8b6ee446e9b,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Armadale Line,2.0,capacity,True,betweenness,closed_set,0,,7f91c6e2544bfa5f36e5,86,9,9,0,0.10465116279069768,77,0.8953488372093024,0,20.434000046361486
+Ellenbrook Line,0.0,equal,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
+Ellenbrook Line,0.0,equal,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,0.0,capacity,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
+Ellenbrook Line,0.0,capacity,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,0.2,equal,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
+Ellenbrook Line,0.2,equal,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,0.2,capacity,False,betweenness,closed_set,0,,e32203f36453a9c3f2ba,86,5,86,81,1.0,0,0.0,37,111.01148694935618
+Ellenbrook Line,0.2,capacity,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,2.0,equal,False,betweenness,closed_set,0,,deb87d16fc850c85dd3a,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,2.0,equal,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,2.0,capacity,False,betweenness,closed_set,0,,deb87d16fc850c85dd3a,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Ellenbrook Line,2.0,capacity,True,betweenness,closed_set,0,,6ef2f040e8bcd1f6ad81,86,5,5,0,0.05813953488372093,81,0.9418604651162791,0,13.39066342641704
+Fremantle Line,0.0,equal,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
+Fremantle Line,0.0,equal,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,0.0,capacity,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
+Fremantle Line,0.0,capacity,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,0.2,equal,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
+Fremantle Line,0.2,equal,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,0.2,capacity,False,betweenness,closed_set,0,,d9a8a38482311fb37599,86,7,86,79,1.0,0,0.0,43,111.01148694935618
+Fremantle Line,0.2,capacity,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,2.0,equal,False,betweenness,closed_set,0,,5f3cc3f935a2c3e1ef07,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,2.0,equal,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,2.0,capacity,False,betweenness,closed_set,0,,5f3cc3f935a2c3e1ef07,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Fremantle Line,2.0,capacity,True,betweenness,closed_set,0,,c3bc2bc578ec7ea458ec,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,8.07287215979282
+Mandurah Line,0.0,equal,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
+Mandurah Line,0.0,equal,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,0.0,capacity,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
+Mandurah Line,0.0,capacity,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,0.2,equal,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
+Mandurah Line,0.2,equal,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,0.2,capacity,False,betweenness,closed_set,0,,dc9b99bd8f36446216d1,86,10,86,76,1.0,0,0.0,31,111.01148694935618
+Mandurah Line,0.2,capacity,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,2.0,equal,False,betweenness,closed_set,0,,7399da65916b727390c3,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,2.0,equal,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,2.0,capacity,False,betweenness,closed_set,0,,7399da65916b727390c3,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Mandurah Line,2.0,capacity,True,betweenness,closed_set,0,,a7cccc0a357c0f6b2307,86,10,10,0,0.11627906976744186,60,0.6976744186046512,0,58.44392648803054
+Midland Line,0.0,equal,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
+Midland Line,0.0,equal,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,0.0,capacity,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
+Midland Line,0.0,capacity,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,0.2,equal,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
+Midland Line,0.2,equal,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,0.2,capacity,False,betweenness,closed_set,0,,ca373d15cf7b266a69d9,86,7,86,79,1.0,0,0.0,37,111.01148694935618
+Midland Line,0.2,capacity,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,2.0,equal,False,betweenness,closed_set,0,,dcb68c8839208f2ee445,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,2.0,equal,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,2.0,capacity,False,betweenness,closed_set,0,,dcb68c8839208f2ee445,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Midland Line,2.0,capacity,True,betweenness,closed_set,0,,ad139c4194add0562f49,86,7,7,0,0.08139534883720931,79,0.9186046511627907,0,6.7042170303250375
+Thornlie-Cockburn Line,0.0,equal,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
+Thornlie-Cockburn Line,0.0,equal,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,0.0,capacity,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
+Thornlie-Cockburn Line,0.0,capacity,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,0.2,equal,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
+Thornlie-Cockburn Line,0.2,equal,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,0.2,capacity,False,betweenness,closed_set,0,,4f2a492755438b150ddf,86,3,86,83,1.0,0,0.0,27,111.01148694935618
+Thornlie-Cockburn Line,0.2,capacity,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,2.0,equal,False,betweenness,closed_set,0,,ff426b124f428f94c748,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,2.0,equal,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,2.0,capacity,False,betweenness,closed_set,0,,ff426b124f428f94c748,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Thornlie-Cockburn Line,2.0,capacity,True,betweenness,closed_set,0,,d94f21f5d88d18f9159f,86,3,3,0,0.03488372093023256,56,0.6511627906976745,0,6.124577919707371
+Yanchep Line,0.0,equal,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
+Yanchep Line,0.0,equal,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,0.0,capacity,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
+Yanchep Line,0.0,capacity,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,0.2,equal,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
+Yanchep Line,0.2,equal,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,0.2,capacity,False,betweenness,closed_set,0,,d65ee7cce0e176b29cec,86,14,86,72,1.0,0,0.0,36,111.01148694935618
+Yanchep Line,0.2,capacity,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,2.0,equal,False,betweenness,closed_set,0,,b7b93063f295809d45f6,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,2.0,equal,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,2.0,capacity,False,betweenness,closed_set,0,,b7b93063f295809d45f6,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408
+Yanchep Line,2.0,capacity,True,betweenness,closed_set,0,,837cf75c2c16a14b0ad9,86,14,14,0,0.16279069767441862,72,0.8372093023255814,0,48.93701922671408

@@ -22,9 +22,9 @@ def fixture():
             lat=0.0,
             lon=float(node),
             trips_served=1,
-            lines="A" if node != "1" else "A;B",
+            lines=["A"] if node != "1" else ["A", "B"],
         )
-    graph.nodes["3"]["lines"] = "B"
+    graph.nodes["3"]["lines"] = ["B"]
     for a, b in graph.edges:
         graph.edges[a, b].update(trips=1, travel_time=1)
     return graph

@@ -52,15 +52,18 @@ def geographic_span_km(graph: nx.Graph, failed: tuple[str, ...]) -> float:
     return float(6371 * 2 * np.arcsin(np.sqrt(np.clip(haversine, 0, 1))).max())
 
 
+def station_lines(graph: nx.Graph, node: str) -> set[str]:
+    """The production loader exposes lists; CSV-like fixtures may use semicolons."""
+    raw = graph.nodes[node].get("lines", [])
+    labels = raw.split(";") if isinstance(raw, str) else raw
+    return {line.strip() for line in labels if line.strip()}
+
+
 def exclusive_line_stations(graph: nx.Graph) -> dict[str, tuple[str, ...]]:
     """Close only stations belonging to exactly one line, as in the prototype."""
     result: dict[str, list[str]] = {}
     for node in sorted(graph):
-        lines = {
-            line.strip()
-            for line in str(graph.nodes[node].get("lines", "")).split(";")
-            if line.strip()
-        }
+        lines = station_lines(graph, node)
         for line in lines:
             result.setdefault(line, [])
         if len(lines) == 1:
@@ -416,9 +419,7 @@ def run_cascade_experiments(
     for line, closed in exclusive_line_stations(graph).items():
         remaining = graph.copy()
         remaining.remove_nodes_from(closed)
-        members = [
-            node for node in graph if line in str(graph.nodes[node]["lines"]).split(";")
-        ]
+        members = [node for node in graph if line in station_lines(graph, node)]
         closure_rows.append(
             {
                 "line": line,

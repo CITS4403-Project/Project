@@ -56,3 +56,16 @@ def test_seeded_rows_join_auditable_outcomes_and_initial_batches():
     map_rows = pd.read_csv(directory / "map_scenarios.csv")
     assert map_rows.n_failed.tolist() == [86, 1]
     assert map_rows["rounds"].tolist() == [33, 0]
+
+
+def test_real_closures_use_eight_lines_and_keep_shared_stations_open():
+    from transperth.cascade_experiments import exclusive_line_stations
+    from transperth.network import load_rail_graph
+
+    closures = exclusive_line_stations(load_rail_graph())
+    table = pd.read_csv(PROJECT_ROOT / "results/cascade/line_closure_scenarios.csv")
+    assert len(closures) == len(table) == 8
+    assert set(table.line) == set(closures)
+    for row in table.itertuples():
+        assert row.n_exclusive == len(closures[row.line])
+        assert "56" not in closures[row.line]
