@@ -281,3 +281,19 @@ on:
 
 Module ownership follows section 6 of the implementation plan (`PLAN.md`);
 shared files have one named owner and change by pull request.
+
+## 10. Deployment policy conventions (P1.6)
+
+`Strategy.deploy` returns up to `budget` undirected terminal backup pairs,
+expressed as raw station IDs. The budget is a selected-link count, not a
+physical fleet size. Policies preserve active baseline buses and skip direct
+links already at least as fast. Candidate constructors preserve evidence;
+`selected_table(pairs)` supplies the rows to P1.5's backup-edge writer.
+
+`ExistingBus` selects inactive existing/GTFS links by time. `ShuttleBridging`
+maximises newly reachable terminal-pair counts across components.
+`CorridorReinforcement` prioritises disrupted lines by scheduled station
+throughput, and `DemandAdaptive` recomputes restored weighted OD gain after
+each selection. Missing demand uses unit terminal-pair weights; explicit zero
+demand selects nothing adaptively. Stable lexical ties make runs deterministic.
+Detailed constructors, score rules and evidence handling are in `docs/strategies.md`.

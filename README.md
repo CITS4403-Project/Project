@@ -7,13 +7,6 @@ in the Perth public transport network.
 
 ## Setup
 
-
-P1.2 metrics and seeded bootstrap examples are documented in
-[docs/metrics.md](docs/metrics.md). P1.4 cascade rules and examples are documented in 
-[docs/cascade.md](docs/cascade.md). With `PYTHONPATH=src`, run 
-`python -m transperth.metrics_example --seed 0 --n-runs 20` to generate
-`results/metrics/` tables and provenance sidecars.
-
 The project uses a local virtual environment; no global packages are required.
 Python 3.14 is the tested version.
 
@@ -80,6 +73,11 @@ project-root/
 synchronous failure rule, the redistribution rules, the metric definitions and
 the frozen API that the implementation issues code against. `docs/data.md`
 (P0.2) holds the column dictionary and checksums of the frozen inputs.
+
+Phase notes: `docs/metrics.md` (P1.2) covers the damage metrics and seeded
+runs, `docs/cascade.md` (P1.4) the cascade rules and examples, and
+`docs/strategies.md` (P1.6) the budgeted bus deployment policies. Each
+document includes its own `PYTHONPATH=src` example command.
 
 ## Report
 
