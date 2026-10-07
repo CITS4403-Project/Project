@@ -78,3 +78,24 @@ def test_json_serialization_failure_keeps_old_outputs(tmp_path):
     with pytest.raises(ValueError):
         save_json({"sizes": [float("nan")]}, path, meta)
     assert before == (result.read_bytes(), sidecar.read_bytes())
+
+
+@pytest.mark.parametrize("dynamic", [False, True])
+def test_batch_composes_with_independent_reference_capacity(dynamic):
+    rail = graph()
+    base = {node: 1.0 for node in rail}
+    reference = {node: 10.0 for node in rail}
+    result = simulate_cascade(
+        rail,
+        CascadeConfig(target="ignored", dynamic=dynamic),
+        baseline_loads=base,
+        reference_capacities=reference,
+        load_function=lambda current: {node: 1.0 for node in current},
+        initial_failed=["2", "1"],
+    )
+    assert result.failed == ("1", "2") and result.rounds == 0
+    if not dynamic:
+        assert (
+            result.initial_total_load == result.remaining_load + result.lost_load == 4
+        )
+    assert len(rail) == 4 and reference == {node: 10.0 for node in rail}

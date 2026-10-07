@@ -2,11 +2,10 @@
 
 `simulate_cascade` uses `CascadeConfig`, `CascadeResult` and the shared P1.3
 load/capacity and removal helpers. Supported modes are unweighted,
-frequency-weighted, and betweenness plus station throughput. `demand` raises
-unless the caller supplies an explicit `load_function`. All baseline loads must
-be finite, non-negative and cover exactly the graph nodes; capacity overflow is
-rejected. Stations have string IDs; graphs must be undirected, simple and
-loop-free.
+frequency-weighted, betweenness plus station throughput, and the P2.4 demand
+mode (AM-peak boardings proxy). All baseline loads must be finite,
+non-negative and cover exactly the graph nodes; capacity overflow is rejected.
+Stations have string IDs; graphs must be undirected, simple and loop-free.
 
 The trigger is removed before round 1. Load triggers rank the selected initial
 load mode (or explicitly supplied baseline), descending with lexical ID ties.
@@ -34,9 +33,15 @@ and for every dynamic recomputation. It receives the current graph, must not
 modify it, and must return one finite non-negative load per current station; a
 subset loader such as `multilayer.terminal_loads` is wrapped as
 `{node: loads.get(node, 0.0) for node in graph}`. `baseline_loads` still
-overrides the initial loads. Capacities stay fixed from those initial loads,
-so a layered or demand-weighted model can recompute loads while keeping the
+overrides the initial loads. Capacities stay fixed from the intact baseline, so
+a layered or demand-weighted model can recompute loads while keeping the
 intact-graph capacity law.
+
+An optional `reference_capacities` mapping supplies `K_i` for the general law
+`C_i = (1 + alpha) * K_i`. The default `K = L0` is the frozen law; the demand
+experiment passes `loads.demand_reference_capacities`, the frequency-scaled
+reference capacity. The mapping must cover exactly the graph stations and is
+validated like `baseline_loads`.
 
 `failed` starts with the trigger and then sorted batches. `avalanche_sizes`
 excludes the trigger; its sum equals `n_failed - 1` on a nonempty graph.

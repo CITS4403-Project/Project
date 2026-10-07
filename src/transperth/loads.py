@@ -17,9 +17,13 @@ Load modes:
 ``betweenness_plus_trips``
                 unnormalised betweenness plus ``0.1 * trips_served``, a
                 throughput proxy that gives leaf stations a positive baseline.
-``demand``      AM-peak boardings proxy; implemented by P2.4, so it raises
-                :class:`NotImplementedError` until then.
+``demand``      AM-peak boardings proxy: ``am_peak_stops``, the number of
+                scheduled departure events at the station inside the frozen
+                [07:00, 09:00) window (P2.4).
 ============== =============================================================
+
+:func:`demand_reference_capacities` builds the frequency-scaled reference
+capacity ``K`` for the demand experiment from ``trips_served``.
 
 Ownership: P1.3. The public names are frozen; see ``docs/model.md`` section 8.
 """
@@ -32,7 +36,7 @@ import networkx as nx
 
 from transperth.config import LoadMode
 
-__all__ = ["capacities", "initial_loads"]
+__all__ = ["capacities", "demand_reference_capacities", "initial_loads"]
 
 _MODES: tuple[LoadMode, ...] = (
     "betweenness",
@@ -63,24 +67,25 @@ def _edge_trips(graph: nx.Graph, u: str, v: str, data: Mapping[str, object]) -> 
     return trips
 
 
-def _node_trips_served(graph: nx.Graph, node: str) -> float:
-    """Return ``trips_served`` of one node, defaulting to 0.0 when absent.
+def _node_count(graph: nx.Graph, node: str, attribute: str) -> float:
+    """Return ``attribute`` of one node, defaulting to 0.0 when absent.
 
-    A missing attribute (or an explicit ``None``) counts as zero throughput;
-    a present value must be finite and non-negative.
+    A missing attribute (or an explicit ``None``) counts as zero; a present
+    value must be finite and non-negative. The error names the station and the
+    attribute so a bad frozen column is traceable to its source.
     """
-    raw = graph.nodes[node].get("trips_served", 0.0)
+    raw = graph.nodes[node].get(attribute, 0.0)
     if raw is None:
         return 0.0
     try:
         value = float(raw)  # type: ignore[arg-type]
     except (TypeError, ValueError):
         raise ValueError(
-            f"node {node!r} has a non-numeric 'trips_served' attribute: {raw!r}"
+            f"node {node!r} has a non-numeric {attribute!r} attribute: {raw!r}"
         ) from None
     if not math.isfinite(value) or value < 0.0:
         raise ValueError(
-            f"node {node!r} has a negative or non-finite trips_served={value!r}"
+            f"node {node!r} has a negative or non-finite {attribute}={value!r}"
         )
     return value
 
@@ -92,10 +97,10 @@ def initial_loads(graph: nx.Graph, mode: LoadMode = "betweenness") -> dict[str, 
     ----------
     graph:
         Intact rail graph; it is never mutated. For ``betweenness_freq`` every
-        edge must carry a finite ``trips > 0`` attribute.
+        edge must carry a finite ``trips > 0`` attribute, and for ``demand``
+        every station should carry ``am_peak_stops`` (missing counts as zero).
     mode:
-        One of the :data:`transperth.config.LoadMode` values. ``demand`` is
-        reserved for P2.4 and raises :class:`NotImplementedError`.
+        One of the :data:`transperth.config.LoadMode` values.
 
     Returns
     -------
@@ -119,14 +124,14 @@ def initial_loads(graph: nx.Graph, mode: LoadMode = "betweenness") -> dict[str, 
     if mode == "betweenness_plus_trips":
         base = nx.betweenness_centrality(graph, normalized=False)
         return {
-            node: float(base[node]) + 0.1 * _node_trips_served(graph, node)
+            node: float(base[node]) + 0.1 * _node_count(graph, node, "trips_served")
             for node in graph.nodes
         }
 
     if mode == "demand":
-        raise NotImplementedError(
-            "load mode 'demand' is implemented by P2.4; use 'betweenness' until then"
-        )
+        return {
+            node: _node_count(graph, node, "am_peak_stops") for node in graph.nodes
+        }
 
     raise ValueError(f"unknown load mode {mode!r}; expected one of {_MODES!r}")
 
@@ -169,4 +174,67 @@ def capacities(loads: Mapping[str, float], alpha: float) -> dict[str, float]:
                 f"load of station {node!r} must be finite and non-negative, got {load!r}"
             )
         result[node] = (1.0 + alpha) * value
+    return result
+
+
+def demand_reference_capacities(graph: nx.Graph) -> dict[str, float]:
+    """Return the frequency-scaled reference capacity ``K_i`` per station.
+
+    The demand experiment replaces the hidden default ``K = L0`` of
+    :func:`capacities` with a capacity derived from the full-day service
+    frequency ``f_i = trips_served``. The uniform scale ``c`` is the smallest
+    peak share that covers every station's AM-peak load on the graph passed in::
+
+        c   = max_i (L0_i / f_i) over stations with f_i > 0
+        K_i = c * f_i
+
+    so ``K_i >= L0_i`` for every station, with equality only at the station
+    that attains the maximum. A station with ``f_i = 0`` gets ``K_i = 0``; if
+    it also carries a positive demand load the calibration is undefined and the
+    function raises instead of inventing capacity.
+
+    This is the scenario assumption of the P2.4 experiment, not a measured
+    boarding capacity: one scheduled service is a frequency unit, and the
+    scale is calibrated on the frozen graph so ``alpha = 0`` cannot overload a
+    station before the trigger.
+
+    Parameters
+    ----------
+    graph:
+        Rail graph carrying ``am_peak_stops`` (via
+        :func:`initial_loads`) and ``trips_served``. Missing counts are zero;
+        present values must be finite and non-negative. The graph is never
+        mutated.
+
+    Returns
+    -------
+    dict[str, float]
+        Reference capacity per station, in graph node order.
+
+    Raises
+    ------
+    ValueError
+        If a station carries a positive demand load but has zero service
+        frequency, or if a count is negative, non-finite or non-numeric.
+    """
+    loads = initial_loads(graph, "demand")
+    frequency = {
+        node: _node_count(graph, node, "trips_served") for node in graph.nodes
+    }
+    for node in graph.nodes:
+        if frequency[node] == 0.0 and loads[node] > 0.0:
+            raise ValueError(
+                f"station {node!r} has demand load {loads[node]!r} "
+                "but zero trips_served"
+            )
+    active = [node for node in graph.nodes if frequency[node] > 0.0]
+    scale = max((loads[node] / frequency[node] for node in active), default=0.0)
+    result: dict[str, float] = {}
+    for node in graph.nodes:
+        value = scale * frequency[node]
+        if value < loads[node]:
+            # Only floating-point rounding can break the calibration on a
+            # graph where every demand station has positive frequency.
+            value = loads[node]
+        result[node] = value
     return result

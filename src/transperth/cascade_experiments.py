@@ -23,9 +23,9 @@ from transperth.experiments import (
     save_table,
 )
 from transperth.failure import random_target_order
-from transperth.loads import initial_loads
+from transperth.loads import demand_reference_capacities, initial_loads
 
-MODES = ("betweenness", "betweenness_freq", "betweenness_plus_trips")
+MODES = ("betweenness", "betweenness_freq", "betweenness_plus_trips", "demand")
 RULES = ("equal", "capacity")
 REDUCED_GRID = (0.0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.6, 1.0, 1.5, 2.0)
 
@@ -97,6 +97,7 @@ class CascadeCache:
     def __init__(self, graph: nx.Graph):
         self.graph = graph
         self.baselines = {mode: initial_loads(graph, mode) for mode in MODES}
+        self.demand_reference = demand_reference_capacities(graph)
         self.cache: dict[tuple, tuple[str, dict]] = {}
         self.outcomes: dict[str, dict] = {}
 
@@ -139,6 +140,9 @@ class CascadeCache:
                 self.graph,
                 config,
                 baseline_loads=self.baselines[mode],
+                reference_capacities=self.demand_reference
+                if mode == "demand"
+                else None,
                 initial_failed=initial_failed,
             )
             outcome = {
@@ -325,6 +329,7 @@ def run_cascade_experiments(
         "legacy_grid": legacy_grid,
         "rules": list(RULES),
         "load_modes": list(MODES),
+        "capacity_reference": "Demand uses P2.4 frequency-scaled K; betweenness modes use K=L0; capacities fixed from intact graph.",
         "quick": quick,
         "graph_nodes": len(graph),
         "graph_edges": graph.number_of_edges(),
@@ -338,6 +343,9 @@ def run_cascade_experiments(
         PROJECT_ROOT / "src/transperth/config.py",
         PROJECT_ROOT / "src/transperth/loads.py",
         PROJECT_ROOT / "src/transperth/failure.py",
+        PROJECT_ROOT / "src/transperth/network.py",
+        PROJECT_ROOT / "src/transperth/experiments.py",
+        PROJECT_ROOT / "src/transperth/plotting.py",
         PROJECT_ROOT / "src/transperth/cascade_figures.py",
         PROJECT_ROOT / "scripts/run_cascades.py",
     ]

@@ -1,16 +1,19 @@
 {
-  "created_utc": "2026-10-07T15:16:05+00:00",
+  "created_utc": "2026-10-07T15:29:11+00:00",
   "experiment": "cascade",
   "inputs": {
     "data/processed/rail_edges.csv": "c6ddabf7ae89f47c58d3b3ef42a16a8a83d8f49b8552a413ba2b3dc4c44bb8e8",
     "data/processed/stations.csv": "b31a1ffa087baeb2e546359367a515747ec4381d229b4b4664f37fe4f1b720b3",
     "scripts/run_cascades.py": "143c7ad9d98eb3a754213c400ef2caed2b0898a6746faf728a30925f79003665",
-    "src/transperth/cascade.py": "1098420eff4337e8f3188a68a99a35d9cd53a96c87969500b3b20d9d6884ed35",
-    "src/transperth/cascade_experiments.py": "ed5f072e77704dbc7360782b4087368ccbf81f4c430101aadfef83c5dc53a331",
+    "src/transperth/cascade.py": "086d57bb8b1d1c7bdc5b2a54f4186f72f5e27b9f3683bea672cfa36adf34ea56",
+    "src/transperth/cascade_experiments.py": "d7afbe168609a91e3507091904e4044edeeb304033322814310ef4a177ba7cdd",
     "src/transperth/cascade_figures.py": "b14edd4930d5b5b7fd35634a64b610b4cf787d47f6624c16021d75e1fc338c12",
     "src/transperth/config.py": "04aa9ff71f2623c105b68034e9988594c1f3e8d13fe042648690a38f5636ed6a",
-    "src/transperth/failure.py": "362151468f915ef6906849eaabf50f98f51d0c7c28fb38adff03e2e7f5265fe3",
-    "src/transperth/loads.py": "0ba6d6630382dd58b4f58618db3328433cc513d94a47311a86529eeab8b72584"
+    "src/transperth/experiments.py": "638d23fa0568a8e889fbcc8bea1a0e18eb8cb0ef3414a68c49720424cdcf3038",
+    "src/transperth/failure.py": "3577026f1f1389ef722316d3e00fff288f0c3694984c2fe6f2775b1dccaa26c7",
+    "src/transperth/loads.py": "c75e6e4eb04369f480e2c038916a6f2bf30c8b6aee1d8866ee936839fbaebda3",
+    "src/transperth/network.py": "db2a119e8bc2b358a52a8af5a91e6dbec93eb97e15947724bcd2b6efb3d0c771",
+    "src/transperth/plotting.py": "6702b0f78a3bac39f142039f5c9af366516bfca94c98d3c7a93c2fbc65f1a1ba"
   },
   "package_version": "0.1.0",
   "params": {
@@ -97,6 +100,7 @@
       1.975,
       2.0
     ],
+    "capacity_reference": "Demand uses P2.4 frequency-scaled K; betweenness modes use K=L0; capacities fixed from intact graph.",
     "graph_edges": 85,
     "graph_nodes": 86,
     "initial_batch": "exclusive-line stations; synchronous; omitted from secondary avalanche sizes",
@@ -130,7 +134,8 @@
     "load_modes": [
       "betweenness",
       "betweenness_freq",
-      "betweenness_plus_trips"
+      "betweenness_plus_trips",
+      "demand"
     ],
     "master_seed": 0,
     "n_avalanche": 2000,

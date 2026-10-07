@@ -20,8 +20,10 @@ those outputs are a smoke test and are not the report dataset.
   and capacity-weighted redistribution. Each setting has maximum-load and
   maximum-degree triggers plus 300 uniformly sampled station triggers.
 - Reduced sensitivity grid: 0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.6, 1, 1.5, 2;
-  both rules, static and dynamic modes, all three supported betweenness-based
-  load definitions. Demand scenarios are P2.4's separate experiment.
+  both rules, static and dynamic modes, the three betweenness-based load
+  definitions and P2.4's demand proxy. Demand uses AM-peak stop counts as
+  loads and the intact frequency-scaled reference capacities; the other
+  modes use K=L0. These are model proxies, not observed passenger demand.
 - Avalanche family: 2,000 random triggers per alpha (0.1, 0.15, 0.2, 0.3),
   static and dynamic, capacity rule. One observation is the **total secondary
   failures after one independent trigger**, not an individual round. Duration
