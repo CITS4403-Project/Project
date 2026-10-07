@@ -12,6 +12,7 @@ from transperth import failure
 from transperth.failure import (
     CURVE_COLUMNS,
     critical_fraction,
+    gcc_threshold_crossing,
     percolation_curve,
     random_edge_order,
     random_target_order,
@@ -379,3 +380,36 @@ def test_critical_fraction_validates_its_inputs():
         critical_fraction(_synthetic_curve([0.0], [1.0], [0]), threshold=1.5)
     with pytest.raises(ValueError, match="missing or non-numeric"):
         critical_fraction(_synthetic_curve([0.0, math.nan], [1.0, 1.0], [0, 0]))
+
+
+def test_gcc_threshold_crossing_interpolates_the_collapse_point():
+    curve = _synthetic_curve(
+        fractions=[0.0, 0.25, 0.5, 1.0],
+        gcc=[1.0, 0.9, 0.6, 0.2],
+        lcc=[0, 0, 0, 0],
+    )
+    # The susceptibility peak is degenerate here (chi is zero), so the
+    # crossing is the collapse estimate of critical_fraction: between
+    # (0.5, 0.6) and (1.0, 0.2).
+    assert gcc_threshold_crossing(curve, threshold=0.5) == pytest.approx(0.625)
+    assert critical_fraction(curve, threshold=0.5) == pytest.approx(0.625)
+
+
+def test_gcc_threshold_crossing_handles_collapsed_and_flat_curves():
+    collapsed = _synthetic_curve(fractions=[0.0, 0.5], gcc=[0.4, 0.1], lcc=[0, 0])
+    assert gcc_threshold_crossing(collapsed, threshold=0.5) == 0.0
+    flat = _synthetic_curve(fractions=[0.0, 0.5, 1.0], gcc=[1.0, 1.0, 1.0], lcc=[0, 0, 0])
+    assert math.isnan(gcc_threshold_crossing(flat, threshold=0.5))
+
+
+def test_gcc_threshold_crossing_validates_its_inputs():
+    with pytest.raises(TypeError, match="DataFrame"):
+        gcc_threshold_crossing("not a curve")
+    with pytest.raises(ValueError, match="missing"):
+        gcc_threshold_crossing(pd.DataFrame({"fraction": [0.0]}))
+    with pytest.raises(ValueError, match="threshold"):
+        gcc_threshold_crossing(
+            _synthetic_curve([0.0], [1.0], [0]), threshold=-0.1
+        )
+    with pytest.raises(ValueError, match="missing or non-numeric"):
+        gcc_threshold_crossing(_synthetic_curve([0.0, math.nan], [1.0, 1.0], [0, 0]))

@@ -1,0 +1,9 @@
+slug,attack,measure,dynamic,critical_fraction,gcc_threshold_fraction,threshold,n_seeds,n_fractions,fraction_min,fraction_max,n_nodes,n_edges,gcc_fraction_at_estimate,isolated_at_estimate
+random_degree,random,degree,False,0.06,0.06315868263473054,0.5,9200,92,0.0,1.0,86,85,0.5245348837209303,0.73
+random_edge_degree,random_edge,degree,False,0.03,0.06523076923076924,0.5,9200,92,0.0,1.0,86,85,0.665813953488372,0.41
+targeted_degree,targeted,degree,False,0.02,0.01675,0.5,9200,92,0.0,1.0,86,85,0.34883720930232553,0.0
+targeted_betweenness,targeted,betweenness,False,0.01,0.012352941176470587,0.5,9200,92,0.0,1.0,86,85,0.5465116279069767,0.0
+targeted_flow,targeted,flow,False,0.03,0.0425,0.5,9200,92,0.0,1.0,86,85,0.5465116279069767,0.0
+targeted_edge_degree,targeted_edge,degree,False,0.07,0.06869565217391305,0.5,9200,92,0.0,1.0,86,85,0.46511627906976744,1.0
+targeted_edge_betweenness,targeted_edge,betweenness,False,0.01,0.01,0.5,9200,92,0.0,1.0,86,85,0.5,0.0
+targeted_edge_flow,targeted_edge,flow,False,0.01,0.01,0.5,9200,92,0.0,1.0,86,85,0.5,0.0

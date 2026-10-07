@@ -210,6 +210,7 @@ metric. Without that argument the current graph's pairs are the denominator.
 | `alpha_star` | smallest grid tolerance at which the max-load trigger stays contained, failed_fraction <= 1 / n |
 | `served_od_fraction` | reachable undirected terminal pairs / original pairs |
 | critical fraction | removal fraction at the susceptibility peak of the second-largest component (mean(lcc_size**2) / n_initial); falls back to the first fraction at or below the chosen GCC threshold when the peak is degenerate |
+| GCC threshold crossing | first fraction where the seed-mean `gcc_fraction` reaches the chosen threshold, linearly interpolated between the surrounding grid fractions; the companion collapse estimate for topologies whose susceptibility peak is not the phase transition, such as the frozen tree |
 
 `MetricsBundle` carries the matching fields: `n_nodes`, `n_edges`, `gcc_size`,
 `gcc_fraction`, `lcc_size`, `lcc_fraction`, `isolated`, `aspl`, `efficiency`,
@@ -261,6 +262,8 @@ percolation_curve(graph, *, attack: str = "random", measure: str = "degree",
                   fractions: Sequence[float], n_seeds: int = 100, seed: int = 0) -> pandas.DataFrame
 critical_fraction(curve: pandas.DataFrame, *, threshold: float = 0.5,
                   column: str = "gcc_fraction") -> float
+gcc_threshold_crossing(curve: pandas.DataFrame, *, threshold: float = 0.5,
+                       column: str = "gcc_fraction") -> float
 
 # cascade.py (P1.4)
 simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None,
