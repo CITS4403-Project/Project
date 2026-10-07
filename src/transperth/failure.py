@@ -68,6 +68,7 @@ __all__ = [
     "EDGE_MEASURES",
     "NODE_MEASURES",
     "critical_fraction",
+    "gcc_threshold_crossing",
     "percolation_curve",
     "random_edge_order",
     "random_target_order",
@@ -486,6 +487,97 @@ def percolation_curve(
     return pd.DataFrame(rows, columns=list(CURVE_COLUMNS))
 
 
+def _curve_frame(curve: pd.DataFrame, columns: Sequence[str]) -> pd.DataFrame:
+    """Validate a curve table and return the requested float columns."""
+    if not isinstance(curve, pd.DataFrame):
+        raise TypeError(f"curve must be a pandas.DataFrame, got {type(curve).__name__}")
+    missing = [name for name in columns if name not in curve.columns]
+    if missing:
+        raise ValueError(f"curve is missing the columns {missing!r}")
+    frame = curve[list(columns)].astype(float)
+    if frame.isna().any().any():
+        raise ValueError("curve contains missing or non-numeric values")
+    if not frame["fraction"].between(0.0, 1.0).all():
+        raise ValueError("curve fractions must lie in [0, 1]")
+    return frame
+
+
+def _validated_threshold(threshold: float) -> float:
+    """Return ``threshold`` as a finite float in ``[0, 1]``."""
+    value = float(threshold)
+    if not math.isfinite(value) or not 0.0 <= value <= 1.0:
+        raise ValueError(f"threshold must lie in [0, 1], got {threshold!r}")
+    return value
+
+
+def _threshold_crossing(
+    fractions: np.ndarray, values: np.ndarray, threshold: float
+) -> float:
+    """First crossing of ``values`` at or below ``threshold``, interpolated."""
+    below = np.flatnonzero(values <= threshold)
+    if below.size == 0:
+        return float("nan")  # documented sentinel: the curve never crosses
+    first = int(below[0])
+    if first == 0:
+        return float(fractions[0])
+    f0, f1 = float(fractions[first - 1]), float(fractions[first])
+    v0, v1 = float(values[first - 1]), float(values[first])
+    crossing = f1 if v1 == v0 else f0 + (threshold - v0) * (f1 - f0) / (v1 - v0)
+    return min(max(crossing, 0.0), 1.0)
+
+
+def gcc_threshold_crossing(
+    curve: pd.DataFrame,
+    *,
+    threshold: float = 0.5,
+    column: str = "gcc_fraction",
+) -> float:
+    """Estimate where the seed-mean curve falls to ``threshold``.
+
+    This is the threshold rule of :func:`critical_fraction`, exposed on its
+    own because the susceptibility peak of the second-largest component is not
+    a phase transition on every topology. On the frozen rail tree the largest
+    component collapses between two grid fractions while ``chi`` peaks
+    earlier, where the second-largest component is widest, so RQ1 reports both
+    estimates and the threshold crossing answers "where does the largest
+    component halve".
+
+    Parameters
+    ----------
+    curve:
+        Table with ``fraction`` and ``column``; the mean of ``column`` over the
+        seeds is compared with ``threshold`` at every fraction.
+    threshold:
+        Crossing level in ``[0, 1]``.
+    column:
+        Column whose mean crossing is returned, ``gcc_fraction`` by default.
+
+    Returns
+    -------
+    float
+        The first crossing in ``[0, 1]``, linearly interpolated between the
+        surrounding fractions; the first fraction when the curve is already at
+        or below ``threshold`` there; or ``float("nan")`` when the mean stays
+        above ``threshold`` at every fraction.
+
+    Raises
+    ------
+    TypeError
+        If ``curve`` is not a :class:`pandas.DataFrame`.
+    ValueError
+        If a required column is missing, a value is NaN, or ``threshold`` lies
+        outside ``[0, 1]``.
+    """
+    frame = _curve_frame(curve, ("fraction", column))
+    level = _validated_threshold(threshold)
+    grouped = frame.groupby("fraction", sort=True)[column].mean()
+    return _threshold_crossing(
+        grouped.index.to_numpy(dtype=float),
+        grouped.to_numpy(dtype=float),
+        level,
+    )
+
+
 def critical_fraction(
     curve: pd.DataFrame,
     *,
@@ -505,7 +597,8 @@ def critical_fraction(
     degenerate (all zero or constant, so it has no peak), is the first fraction
     where the mean of ``column`` is at most ``threshold``, linearly
     interpolated between the surrounding two fractions. The result is clamped
-    to ``[0, 1]``.
+    to ``[0, 1]``. :func:`gcc_threshold_crossing` exposes that crossing on its
+    own for topologies whose susceptibility peak is not the collapse point.
 
     Parameters
     ----------
@@ -533,21 +626,8 @@ def critical_fraction(
         If a required column is missing, a value is NaN, or ``threshold`` lies
         outside ``[0, 1]``.
     """
-    if not isinstance(curve, pd.DataFrame):
-        raise TypeError(f"curve must be a pandas.DataFrame, got {type(curve).__name__}")
-    required = ("fraction", column, "lcc_size", "n_initial")
-    missing = [name for name in required if name not in curve.columns]
-    if missing:
-        raise ValueError(f"curve is missing the columns {missing!r}")
-    threshold = float(threshold)
-    if not math.isfinite(threshold) or not 0.0 <= threshold <= 1.0:
-        raise ValueError(f"threshold must lie in [0, 1], got {threshold!r}")
-
-    frame = curve[list(required)].astype(float)
-    if frame.isna().any().any():
-        raise ValueError("curve contains missing or non-numeric values")
-    if not frame["fraction"].between(0.0, 1.0).all():
-        raise ValueError("curve fractions must lie in [0, 1]")
+    frame = _curve_frame(curve, ("fraction", column, "lcc_size", "n_initial"))
+    level = _validated_threshold(threshold)
 
     grouped = frame.groupby("fraction", sort=True).agg(
         value=(column, "mean"),
@@ -567,18 +647,7 @@ def critical_fraction(
         where=sizes > 0.0,
     )
 
-    below = np.flatnonzero(values <= threshold)
-    if below.size == 0:
-        return float("nan")  # documented sentinel: the curve never collapses
-    first = int(below[0])
-    if first == 0:
-        crossing = float(fractions[0])
-    else:
-        f0, f1 = float(fractions[first - 1]), float(fractions[first])
-        v0, v1 = float(values[first - 1]), float(values[first])
-        crossing = f1 if v1 == v0 else f0 + (threshold - v0) * (f1 - f0) / (v1 - v0)
-        crossing = min(max(crossing, 0.0), 1.0)
-
+    crossing = _threshold_crossing(fractions, values, level)
     peak_usable = (
         chi.size > 0
         and np.isfinite(chi).all()

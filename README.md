@@ -28,6 +28,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make check` | run the pytest suite in `tests/` |
 | `make data` | rebuild `data/processed/` from the raw GTFS snapshot |
 | `make demand` | regenerate the P2.4 demand load and capacity tables and figures |
+| `make percolation` | regenerate the P2.1 percolation and critical-node tables and figures |
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |
@@ -37,6 +38,12 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 AM-peak demand load rankings and sweeps the frozen tolerance grid with the
 frequency-scaled reference capacity, writing `results/demand/` tables with
 sidecars and the two `figures/fig_demand_*.png` figures.
+
+`make percolation` runs `scripts/run_percolation.py --all` for the RQ1 removal
+curves (node and edge, random and targeted by degree, betweenness and demand
+flow) and `scripts/run_vulnerability.py` for every single-station trigger over
+the tolerance grid, writing `results/percolation/` tables with sidecars and the
+`figures/fig_percolation_*.png` and `figures/fig_vulnerability_*.png` figures.
 
 `make reproduce` is the documented path from raw data to the figures and
 notebooks used in the report. The `data` stage reads the Transperth GTFS feed
