@@ -29,6 +29,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make data` | rebuild `data/processed/` from the raw GTFS snapshot |
 | `make demand` | regenerate the P2.4 demand load and capacity tables and figures |
 | `make percolation` | regenerate the P2.1 percolation and critical-node tables and figures |
+| `make cascade` | regenerate the P2.2 cascade, avalanche and line-closure tables and figures |
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |
@@ -44,6 +45,11 @@ curves (node and edge, random and targeted by degree, betweenness and demand
 flow) and `scripts/run_vulnerability.py` for every single-station trigger over
 the tolerance grid, writing `results/percolation/` tables with sidecars and the
 `figures/fig_percolation_*.png` and `figures/fig_vulnerability_*.png` figures.
+
+`make cascade` runs `scripts/run_cascades.py`: it sweeps the frozen tolerance
+grid with maximum-load, maximum-degree and seeded random triggers, runs the
+avalanche and line-closure scenarios, and writes `results/cascade/` tables and
+JSON outcomes with sidecars plus the five `figures/cascade/*.png` figures.
 
 `make reproduce` is the documented path from raw data to the figures and
 notebooks used in the report. The `data` stage reads the Transperth GTFS feed
