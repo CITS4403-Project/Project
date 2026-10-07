@@ -1,0 +1,22 @@
+scenario,kind,label,n_failed,failed_ids
+line_closure:Airport Line,line_closure,Airport Line,3,147;148;149
+line_closure:Armadale Line,line_closure,Armadale Line,9,164;2;43;66;67;68;89;91;92
+line_closure:Ellenbrook Line,line_closure,Ellenbrook Line,5,156;157;158;159;160
+line_closure:Fremantle Line,line_closure,Fremantle Line,7,1;19;32;38;5;50;87
+line_closure:Mandurah Line,line_closure,Mandurah Line,10,101;138;150;74;82;83;93;94;96;97
+line_closure:Midland Line,line_closure,Midland Line,7,24;34;39;41;59;7;95
+line_closure:Thornlie-Cockburn Line,line_closure,Thornlie-Cockburn Line,3,162;163;99
+line_closure:Yanchep Line,line_closure,Yanchep Line,14,100;102;133;153;154;155;4;46;8;85;88;9;90;98
+interchange:22,interchange,Mciver Stn,1,22
+interchange:23,interchange,Bayswater Stn,1,23
+interchange:26,interchange,East Perth Stn,1,26
+interchange:37,interchange,Meltham Stn,1,37
+interchange:44,interchange,Mt Lawley Stn,1,44
+interchange:49,interchange,Maylands Stn,1,49
+interchange:56,interchange,Perth Stn,1,56
+interchange:72,interchange,Claisebrook Stn,1,72
+random:0,random,seeded set 0,5,30;38;85;87;99
+random:1,random,seeded set 1,5,140;59;8;89;91
+random:2,random,seeded set 2,5,148;149;156;164;50
+random:3,random,seeded set 3,5,147;2;72;92;99
+random:4,random,seeded set 4,5,135;150;41;43;76
