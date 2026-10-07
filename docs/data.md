@@ -47,7 +47,7 @@ outputs. Restore the exact archived ZIP with:
 python scripts/run_data.py --archive /path/to/original/google_transit.zip
 ```
 
-There is no immutable hosted mirror in this PR; future availability of the
+There is no immutable hosted mirror; future availability of the
 old ZIP is a limitation, not a promise that a live feed will remain unchanged.
 A new feed requires reviewed source, snapshot, topology and checksum changes.
 `data/frozen_checksums.json` covers the tracked snapshot metadata and all
@@ -113,10 +113,12 @@ between Loch Street and Claremont pass through its two physical segments.
 There are **85 served parent stations** and **86 mapped stations**; these
 counts answer different questions.
 
-The old 7,568 rail-trip count pooled the entire feed without applying a service
-date; it is not the new morning-window count. `trips_served` now counts full
-stop visits of the 271 selected trips. `am_peak_stops` changes from the old
-06:00–09:00/all-feed proxy to actual 07:00–09:00 events on the selected day.
+The old 7,568 rail-trip count pooled every service day on the pre-freeze
+prototype feed (downloaded 2026-09-30); it is not reproducible from the pinned
+ZIP, which gives 6,465 trips for the same route filter. `trips_served` now
+counts full stop visits of the 271 selected trips. `am_peak_stops` changes from
+the old 06:00–09:00/all-feed proxy to actual 07:00–09:00 events on the selected
+day.
 Degrees and descriptive normalized betweenness are recomputed on the corrected
 graph. For example, Perth's degree changes from 7 to 2. The prototype's cascade
 load calculations should still compute their own **unnormalized** betweenness.
@@ -152,9 +154,11 @@ has no omitted trips; unverified regular pairs raise an error.
 
 ## Processed data dictionary
 
-IDs are UTF-8 strings, even when they look numeric. CSVs are sorted by string
-station IDs; edge endpoints are an unordered pair stored in lexical order.
-Blank semicolon lists mean no members. Coordinates are WGS84 decimal degrees.
+IDs are UTF-8 strings, even when they look numeric. Regenerated CSVs are sorted
+by string station IDs, and `rail_edges.csv` stores each unordered endpoint pair
+in lexical order. The byte-preserved topology audit and manual evidence files
+keep the orientation of their legacy inputs. Blank semicolon lists mean no
+members. Coordinates are WGS84 decimal degrees.
 
 ### stations.csv — one row per mapped parent station
 
@@ -166,7 +170,7 @@ Blank semicolon lists mean no members. Coordinates are WGS84 decimal degrees.
 | `modes` | semicolon list | GTFS extension `supported_modes`; descriptive, not a capacity |
 | `degree` | integer edges | Degree on the 86/85 mapped rail graph |
 | `trips_served` | integer stop visits | Full-sequence rail visits of selected trips, including outside-window visits; zero for unserved stations |
-| `am_peak_stops` | integer stop events | Rail departure events strictly inside [07:00,09:00) on the selected day |
+| `am_peak_stops` | integer stop events | Rail departure events inside the half-open window [07:00,09:00) on the selected day |
 | `betweenness` | dimensionless [0,1] | NetworkX normalized, unweighted node betweenness; descriptive only |
 | `lines` | semicolon list | Sorted names of mapped corridors containing this station |
 
