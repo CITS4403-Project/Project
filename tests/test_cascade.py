@@ -147,3 +147,71 @@ def test_weighted_mode_and_tolerance():
     )
     assert result.failed == ("1",)
     assert result.remaining_load == 1
+
+
+def test_load_function_drives_baseline_and_dynamic_recompute():
+    graph = path()
+    calls: list[list[str]] = []
+
+    def loader(current):
+        calls.append(sorted(current))
+        return {node: 0.0 for node in current}
+
+    result = simulate_cascade(
+        graph, CascadeConfig(target="1", dynamic=True), load_function=loader
+    )
+    assert result.failed == ("1",)
+    assert calls == [["0", "1", "2"], ["0", "2"]]
+
+
+def test_baseline_loads_override_the_initial_load_function_call():
+    graph = path()
+    calls: list[list[str]] = []
+
+    def loader(current):
+        calls.append(sorted(current))
+        return {node: 0.0 for node in current}
+
+    result = simulate_cascade(
+        graph,
+        CascadeConfig(target="1", dynamic=True),
+        baseline_loads={"0": 0.0, "1": 1.0, "2": 0.0},
+        load_function=loader,
+    )
+    assert result.failed == ("1",)
+    assert calls == [["0", "2"]]
+
+
+def test_load_function_allows_demand_mode():
+    demand = lambda current: {node: 1.0 for node in current}
+    result = simulate_cascade(
+        path(),
+        CascadeConfig(target="1", load_mode="demand", alpha=1.0),
+        load_function=demand,
+    )
+    assert result.failed == ("1",)
+    assert result.remaining_load + result.lost_load == pytest.approx(
+        result.initial_total_load
+    )
+
+
+@pytest.mark.parametrize(
+    "bad",
+    [
+        {"0": 1.0},
+        {"0": math.nan, "1": 1.0, "2": 0.0},
+        {"0": -1.0, "1": 1.0, "2": 0.0},
+    ],
+)
+def test_invalid_load_function(bad):
+    with pytest.raises(ValueError):
+        simulate_cascade(path(), CascadeConfig(), load_function=lambda current: bad)
+
+
+def test_load_function_must_be_callable_and_return_a_mapping():
+    with pytest.raises(TypeError):
+        simulate_cascade(path(), CascadeConfig(), load_function=object())
+    with pytest.raises(TypeError):
+        simulate_cascade(
+            path(), CascadeConfig(), load_function=lambda current: [1.0, 2.0, 3.0]
+        )

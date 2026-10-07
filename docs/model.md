@@ -99,7 +99,9 @@ shortest path is recomputed.
 
 Dynamic mode (`dynamic=True`). After each removal round, loads are recomputed
 as betweenness on the surviving graph, which models full shortest-path
-rerouting. The redistribution rules do not apply in this mode.
+rerouting. The redistribution rules do not apply in this mode. An additive
+``load_function`` may replace this recomputation (and the intact baseline) with
+caller-supplied loads; capacities stay fixed from the initial loads.
 
 Redistribution rules (`RedistributionRule`):
 
@@ -210,7 +212,8 @@ critical_fraction(curve: pandas.DataFrame, *, threshold: float = 0.5,
                   column: str = "gcc_fraction") -> float
 
 # cascade.py (P1.4)
-simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None) -> CascadeResult
+simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None,
+                 load_function=None) -> CascadeResult
 
 # multilayer.py (P1.5)
 build_layers(rail, *, speed_kmh: float = 40.0, access_minutes: float = 1.0) -> networkx.Graph

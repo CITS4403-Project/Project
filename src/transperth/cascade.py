@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import math
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 from numbers import Integral
 
 import networkx as nx
@@ -30,11 +30,34 @@ def _ordered_graph(graph: nx.Graph) -> nx.Graph:
     return ordered
 
 
+def _checked_loads(
+    values: Mapping[str, float], graph: nx.Graph, *, label: str
+) -> dict[str, float]:
+    """Return ``values`` as finite non-negative loads covering exactly ``graph``."""
+    if not isinstance(values, Mapping):
+        raise TypeError(f"{label} must return a mapping of station loads")
+    loads: dict[str, float] = {}
+    for node, raw in values.items():
+        try:
+            value = float(raw)
+        except (TypeError, ValueError):
+            raise ValueError(
+                f"{label} returned a non-numeric load for {node!r}"
+            ) from None
+        if not math.isfinite(value) or value < 0.0:
+            raise ValueError(f"{label} must return finite non-negative loads")
+        loads[node] = value
+    if set(loads) != set(graph):
+        raise ValueError(f"{label} must return exactly the graph station IDs")
+    return loads
+
+
 def simulate_cascade(
     graph: nx.Graph,
     config: CascadeConfig,
     *,
     baseline_loads: Mapping[str, float] | None = None,
+    load_function: Callable[[nx.Graph], Mapping[str, float]] | None = None,
 ) -> CascadeResult:
     """Remove a trigger then fail overloaded stations in synchronous rounds.
 
@@ -42,6 +65,11 @@ def simulate_cascade(
     ``remaining_load`` plus ``lost_load`` equals ``initial_total_load``.
     Dynamic mode recomputes the selected load mode after removals; these two
     conservation fields are None because routing betweenness is not conserved.
+    ``load_function`` is an additive hook that replaces the load mode for the
+    intact baseline and for every dynamic recomputation; it receives the
+    current graph, must not modify it, and must return one finite non-negative
+    load per current station. ``baseline_loads`` still overrides the initial
+    loads, and capacities stay fixed from those initial loads.
     The input graph and baseline mapping remain unchanged.
     """
     current = _ordered_graph(graph)
@@ -52,27 +80,33 @@ def simulate_cascade(
         raise ValueError("unknown cascade trigger or redistribution rule")
     if not isinstance(config.dynamic, bool):
         raise ValueError("dynamic must be a bool")
+    if load_function is not None and not callable(load_function):
+        raise TypeError("load_function must be callable")
     if (
         isinstance(config.seed, bool)
         or not isinstance(config.seed, Integral)
         or config.seed < 0
     ):
         raise ValueError("seed must be a non-negative integer")
-    if config.load_mode == "demand":
-        raise NotImplementedError("demand loads require the P2.4 inputs")
     if config.load_mode not in (
         "betweenness",
         "betweenness_freq",
         "betweenness_plus_trips",
+        "demand",
     ):
         raise ValueError("unknown cascade load mode")
+    if config.load_mode == "demand" and load_function is None:
+        raise NotImplementedError(
+            "demand loads require the P2.4 inputs or an explicit load_function"
+        )
     if config.target is not None and config.target not in current:
         raise ValueError(f"unknown target station {config.target!r}")
-    base = (
-        initial_loads(current, config.load_mode)
-        if baseline_loads is None
-        else dict(baseline_loads)
-    )
+    if baseline_loads is not None:
+        base = dict(baseline_loads)
+    elif load_function is None:
+        base = initial_loads(current, config.load_mode)
+    else:
+        base = _checked_loads(load_function(current), current, label="load_function")
     if set(base) != set(current):
         raise ValueError("baseline_loads must contain exactly the graph station IDs")
     limits = capacities(base, config.alpha)
@@ -101,7 +135,13 @@ def simulate_cascade(
         current.remove_nodes_from(batch)
         failed.extend(batch)
         if config.dynamic:
-            loads = initial_loads(current, config.load_mode)
+            loads = (
+                initial_loads(current, config.load_mode)
+                if load_function is None
+                else _checked_loads(
+                    load_function(current), current, label="load_function"
+                )
+            )
             return
         increments: dict[str, list[float]] = {node: [] for node in current}
         losses = []
