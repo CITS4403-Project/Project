@@ -8,6 +8,7 @@ redistribution rules, the metrics and the frozen API.
 Ownership: P0.1. After gate M0 the public names in this module change only
 additively, through a reviewed pull request.
 """
+
 from __future__ import annotations
 
 import math
@@ -71,7 +72,9 @@ BACKUP_EDGES_CSV = PROCESSED_DATA_DIR / "backup_edges.csv"
 # ---------------------------------------------------------------------------
 # Model vocabulary and defaults
 # ---------------------------------------------------------------------------
-LoadMode = Literal["betweenness", "betweenness_freq", "betweenness_plus_trips", "demand"]
+LoadMode = Literal[
+    "betweenness", "betweenness_freq", "betweenness_plus_trips", "demand"
+]
 RedistributionRule = Literal["equal", "capacity"]
 TriggerMode = Literal["load", "degree", "random"]
 
@@ -122,6 +125,16 @@ class CascadeResult:
     initial_total_load: float | None = None
     remaining_load: float | None = None
     lost_load: float | None = None
+    initial_failed: tuple[str, ...] | None = None
+
+    @property
+    def n_initial_failed(self) -> int:
+        """Count the initial closed set, falling back to the legacy single trigger."""
+        return (
+            len(self.initial_failed)
+            if self.initial_failed is not None
+            else min(len(self.failed), 1)
+        )
 
     @property
     def n_failed(self) -> int:
@@ -142,6 +155,7 @@ class CascadeResult:
             "initial_total_load": self.initial_total_load,
             "remaining_load": self.remaining_load,
             "lost_load": self.lost_load,
+            "n_initial_failed": self.n_initial_failed,
         }
 
 

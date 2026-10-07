@@ -8,3 +8,6 @@ data/manual/** -text
 data/processed/backup_edges.csv -text
 data/processed/backup_edges_google_maps_evidence.json -text
 investigations/idea2-perth-transport/data/processed/** -text
+# Experiment code and outputs also need stable cross-platform fingerprints.
+src/transperth/*.py text eol=lf
+results/** text eol=lf

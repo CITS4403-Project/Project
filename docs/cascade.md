@@ -7,11 +7,12 @@ mode (AM-peak boardings proxy). All baseline loads must be finite,
 non-negative and cover exactly the graph nodes; capacity overflow is rejected.
 Stations have string IDs; graphs must be undirected, simple and loop-free.
 
-The trigger is removed before round 1. Load triggers rank the selected initial
-load mode (or explicitly supplied baseline), descending with lexical ID ties.
-Degree and random triggers use P1.3's removal generator. An explicit target
-overrides the trigger. The engine sorts its working copy so insertion order
-does not affect shortest-path calculation or simultaneous redistribution.
+The trigger, or the optional `initial_failed` batch, is removed before round 1.
+Load triggers rank the selected initial load mode (or explicitly supplied
+baseline), descending with lexical ID ties. Degree and random triggers use
+P1.3's removal generator. An explicit target overrides the trigger. The engine
+sorts its working copy so insertion order does not affect shortest-path
+calculation or simultaneous redistribution.
 
 Static rounds collect all overloads first, remove them together, then distribute
 each failed station's carried load only to neighbours surviving that round.
@@ -43,9 +44,19 @@ experiment passes `loads.demand_reference_capacities`, the frequency-scaled
 reference capacity. The mapping must cover exactly the graph stations and is
 validated like `baseline_loads`.
 
-`failed` starts with the trigger and then sorted batches. `avalanche_sizes`
-excludes the trigger; its sum equals `n_failed - 1` on a nonempty graph.
-`rounds` is the number of recorded failure batches. A trigger-only run has zero
+An optional `initial_failed` collection replaces the single trigger with one
+sorted synchronous initial batch. `None` keeps the single-trigger behaviour and
+an empty collection removes nothing; IDs must be unique strings in the graph,
+and unknown, duplicate or non-string entries are rejected. The batch composes
+with `reference_capacities`, and capacities still come from the intact
+baseline. See [the P2.2 experiment design](cascade_experiments.md).
+
+`failed` starts with the trigger or `initial_failed` batch and then the sorted
+secondary batches; `CascadeResult.initial_failed` records that initial set and
+`n_initial_failed` counts it. `avalanche_sizes` excludes the set; its sum
+equals `n_failed - n_initial_failed` on a nonempty graph, which reduces to
+`n_failed - 1` for the default single trigger. `rounds` is the number of
+recorded secondary failure batches. A run with no secondary failure has zero
 rounds. An empty graph returns zero fractions and no failures. Result dataclass
 audit fields are optional additions, preserving existing construction calls.
 
