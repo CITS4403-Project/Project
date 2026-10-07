@@ -90,6 +90,12 @@ five figures regenerate with `PYTHONPATH=src python scripts/run_cascades.py`.
 See [the cascade experiment design](docs/cascade_experiments.md) for seeds,
 grid definitions, provenance and interpretation of the frozen tree.
 
+P2.5's bootstrap intervals, seed convergence, paired model sensitivity and
+discrete tail diagnostics regenerate with
+`PYTHONPATH=src python scripts/run_uncertainty.py`, using the saved full P2.2
+samples. See [the uncertainty analysis](docs/uncertainty.md) for recommended
+defaults and the limits of the power-law hypothesis.
+
 ## Report
 
 The written report is a LaTeX project kept in the `report/` submodule

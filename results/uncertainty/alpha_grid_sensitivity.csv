@@ -1,0 +1,13 @@
+rule,step,points,alpha_star,status,max_interpolation_error
+capacity,0.025,81,0.525,observed_on_grid,0.0
+capacity,0.05,41,0.55,observed_on_grid,0.3382170542635659
+capacity,0.1,21,0.6,observed_on_grid,0.5139147286821704
+capacity,0.2,11,0.6,observed_on_grid,0.30596899224806196
+capacity,0.25,9,0.75,observed_on_grid,0.6193333333333333
+capacity,0.5,5,1.0,observed_on_grid,0.6544728682170543
+equal,0.025,81,0.625,observed_on_grid,0.0
+equal,0.05,41,0.65,observed_on_grid,0.048313953488372086
+equal,0.1,21,0.7,observed_on_grid,0.06433139534883725
+equal,0.2,11,0.8,observed_on_grid,0.1936240310077519
+equal,0.25,9,0.75,observed_on_grid,0.2293798449612403
+equal,0.5,5,1.0,observed_on_grid,0.38798449612403096
