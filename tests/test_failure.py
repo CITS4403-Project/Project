@@ -61,6 +61,15 @@ def test_target_order_flow_matches_the_initial_load_ranking():
     assert target_order(graph, "flow") == rank_targets(graph, "flow")
 
 
+def test_flow_measure_ranks_by_the_demand_load():
+    graph = _star_graph()
+    for node, stops in (("hub", 2), ("a", 9), ("b", 5)):
+        graph.nodes[node]["am_peak_stops"] = stops
+    assert target_order(graph, "flow") == ["a", "b", "hub"]
+    # the demand load breaks the degree/betweenness order (the hub is last)
+    assert target_order(graph, "flow") != target_order(graph, "betweenness")
+
+
 def test_target_order_rejects_unknown_measure():
     with pytest.raises(ValueError, match="unknown measure"):
         target_order(_star_graph(), "closeness")
