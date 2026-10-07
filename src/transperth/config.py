@@ -119,6 +119,9 @@ class CascadeResult:
     failed_fraction: float
     avalanche_sizes: tuple[int, ...]
     rounds: int
+    initial_total_load: float | None = None
+    remaining_load: float | None = None
+    lost_load: float | None = None
 
     @property
     def n_failed(self) -> int:
@@ -136,6 +139,9 @@ class CascadeResult:
             "rounds": self.rounds,
             "failed": ";".join(self.failed),
             "avalanche_sizes": ";".join(str(size) for size in self.avalanche_sizes),
+            "initial_total_load": self.initial_total_load,
+            "remaining_load": self.remaining_load,
+            "lost_load": self.lost_load,
         }
 
 
