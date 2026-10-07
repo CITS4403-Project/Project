@@ -7,9 +7,12 @@ in the Perth public transport network.
 
 ## Setup
 
-P1.4 cascade rules and examples are documented in [docs/cascade.md](docs/cascade.md).
-With P1.1/P1.3 available and `PYTHONPATH=src`, run
-`python -m transperth.cascade_example --alpha 0.2 --seed 0`.
+
+P1.2 metrics and seeded bootstrap examples are documented in
+[docs/metrics.md](docs/metrics.md). P1.4 cascade rules and examples are documented in 
+[docs/cascade.md](docs/cascade.md). With `PYTHONPATH=src`, run 
+`python -m transperth.metrics_example --seed 0 --n-runs 20` to generate
+`results/metrics/` tables and provenance sidecars.
 
 The project uses a local virtual environment; no global packages are required.
 Python 3.14 is the tested version.

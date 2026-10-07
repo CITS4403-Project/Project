@@ -3,8 +3,13 @@
 from __future__ import annotations
 
 import hashlib
+import os
+import stat
+import subprocess
+import sys
 
 import pandas as pd
+import pytest
 
 from transperth import experiments
 from transperth.experiments import RunMeta, load_meta, results_dir, save_table
@@ -29,13 +34,19 @@ def test_run_meta_records_params_and_input_hashes(tmp_path):
     assert payload["experiment"] == "percolation"
     assert payload["seed"] == 7
     assert payload["params"] == {"fraction": 0.5, "measure": "degree"}
-    assert payload["inputs"][str(source)] == hashlib.sha256(source.read_bytes()).hexdigest()
+    assert (
+        payload["inputs"][str(source)]
+        == hashlib.sha256(source.read_bytes()).hexdigest()
+    )
     assert payload["package_version"] == "0.1.0"
 
 
-def test_run_meta_ignores_missing_inputs(tmp_path):
-    meta = RunMeta.create("demo", seed=0, inputs=[tmp_path / "absent.csv"])
-    assert meta.inputs == {}
+def test_run_meta_rejects_missing_inputs(tmp_path):
+    with pytest.raises(FileNotFoundError):
+        RunMeta.create("demo", seed=0, inputs=[tmp_path / "absent.csv"])
+    with pytest.raises(FileNotFoundError):
+        RunMeta.create("demo", seed=0, inputs=[tmp_path])
+    assert RunMeta.create("synthetic", seed=0).inputs == {}
 
 
 def test_save_table_writes_csv_and_sidecar(tmp_path):
@@ -56,3 +67,106 @@ def test_results_dir_creates_experiment_directory(monkeypatch, tmp_path):
     path = results_dir("percolation")
     assert path == tmp_path / "percolation"
     assert path.is_dir()
+
+
+def test_failed_serialization_preserves_previous_pair(tmp_path):
+    path = tmp_path / "result.csv"
+    csv, meta = save_table(
+        pd.DataFrame({"failed": [1]}),
+        path,
+        RunMeta.create("demo", seed=1, params={"alpha": 0.2}),
+    )
+    before = (csv.read_bytes(), meta.read_bytes())
+    with pytest.raises(ValueError):
+        save_table(
+            pd.DataFrame({"failed": [99]}),
+            path,
+            RunMeta.create("demo", seed=2, params={"alpha": float("nan")}),
+        )
+    assert (csv.read_bytes(), meta.read_bytes()) == before
+    assert load_meta(path)["seed"] == 1
+
+
+def test_second_publication_failure_rolls_back(tmp_path, monkeypatch):
+    path = tmp_path / "result.csv"
+    csv, meta = save_table(
+        pd.DataFrame({"value": [1]}), path, RunMeta.create("demo", seed=1)
+    )
+    before = (csv.read_bytes(), meta.read_bytes())
+    replace = experiments.os.replace
+
+    def fail_meta(source, target):
+        if target.suffix == ".json":
+            raise OSError("simulated publication failure")
+        return replace(source, target)
+
+    monkeypatch.setattr(experiments.os, "replace", fail_meta)
+    with pytest.raises(OSError):
+        save_table(pd.DataFrame({"value": [2]}), path, RunMeta.create("demo", seed=2))
+    assert (csv.read_bytes(), meta.read_bytes()) == before
+    assert sorted(p.name for p in tmp_path.iterdir()) == [
+        "result.csv",
+        "result.meta.json",
+    ]
+
+
+def test_runner_and_summary_are_reproducible():
+    run = lambda seed: {"value": seed % 100}
+    first = experiments.run_seeded(run, n_runs=8, seed=9)
+    pd.testing.assert_frame_equal(first, experiments.run_seeded(run, n_runs=8, seed=9))
+    assert first.seed.nunique() == 8
+    summary = experiments.summarize_runs(first, ["value"], n_boot=200, seed=8)
+    pd.testing.assert_frame_equal(
+        summary, experiments.summarize_runs(first, ["value"], n_boot=200, seed=8)
+    )
+    assert summary["mean"].iloc[0] == first.value.mean()
+    with pytest.raises(ValueError):
+        experiments.run_seeded(lambda seed: {"seed": 1}, n_runs=1)
+    with pytest.raises(ValueError):
+        experiments.child_seeds(0, 0)
+
+
+def test_script_import_works_with_only_src_on_pythonpath(tmp_path):
+    source_dir = experiments.Path(experiments.__file__).resolve().parents[1]
+    environment = {**os.environ, "PYTHONPATH": str(source_dir)}
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            'from transperth.experiments import RunMeta; print(RunMeta.create("demo", seed=0).seed)',
+        ],
+        cwd=tmp_path,
+        env=environment,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == "0"
+
+
+@pytest.mark.skipif(os.name == "nt", reason="POSIX file modes")
+def test_save_table_preserves_existing_file_modes(tmp_path):
+    path = tmp_path / "result.csv"
+    csv, meta = save_table(
+        pd.DataFrame({"value": [1]}), path, RunMeta.create("demo", seed=1)
+    )
+    os.chmod(csv, 0o640)
+    os.chmod(meta, 0o640)
+    save_table(pd.DataFrame({"value": [2]}), path, RunMeta.create("demo", seed=2))
+    assert stat.S_IMODE(csv.stat().st_mode) == 0o640
+    assert stat.S_IMODE(meta.stat().st_mode) == 0o640
+
+
+@pytest.mark.skipif(os.name == "nt", reason="POSIX file modes")
+def test_save_table_new_files_follow_the_umask(tmp_path):
+    previous_umask = os.umask(0o077)
+    try:
+        csv, meta = save_table(
+            pd.DataFrame({"value": [3]}),
+            tmp_path / "fresh.csv",
+            RunMeta.create("demo", seed=3),
+        )
+    finally:
+        os.umask(previous_umask)
+    assert stat.S_IMODE(csv.stat().st_mode) == 0o600
+    assert stat.S_IMODE(meta.stat().st_mode) == 0o600

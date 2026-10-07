@@ -127,7 +127,16 @@ The latter two are None in dynamic mode, where routing load is recomputed.
 P1.5 builds a layered graph from the rail graph. Each station gets two nodes: a
 terminal `T:<station_id>`, which persists, and a rail facility
 `R:<station_id>`, which can close. An access edge joins them with a fixed one
-minute time.
+minute time. The layer schema is:
+
+| Object | Attributes |
+|---|---|
+| terminal `T:<station_id>` | `kind="terminal"`, `station_id`, `name` |
+| rail facility `R:<station_id>` | `kind="rail"`, `station_id`, `name` |
+| access edge | `minutes=access_minutes`, `mode="access"` |
+| rail edge | `minutes`, `mode="rail"`, `distance_m` |
+| backup edge | `minutes`, `mode="backup"`, `kind`, `route_or_road`, `source` |
+| walking edge | `minutes`, `mode="walk"`, `kind="walking_transfer"` |
 
 Rail edges join `R:` facilities. Travel time is
 
@@ -135,14 +144,23 @@ Rail edges join `R:` facilities. Travel time is
 
 with `speed_kmh` defaulting to 40. Backup edges join terminals with verified
 effective times, including walking and waiting. Duplicate endpoints keep the
-fastest path. The `kind` column separates existing buses from emergency buses.
-Standby buses activate immediately after the trigger and have unlimited
-capacity in the baseline scenario.
+fastest path. The `kind` column separates existing buses (`existing_bus`),
+emergency buses (`emergency_bus`) and GTFS-derived candidates
+(`gtfs_candidate`); unknown kinds are rejected. `derive_gtfs_candidates`
+derives further candidates from single bus trips in the frozen snapshot, while
+the four pairs in `backup_edges.csv` stay manual ground truth and
+`compare_manual_pairs` lists every disagreement. The Perth (56) to Perth
+Underground (64) pedestrian interchange is added with `add_walking_transfers`
+as an explicit five minute terminal edge (the snapshot `transfers.txt`
+`min_transfer_time`); `build_layers` never adds it. Standby buses activate
+immediately after the trigger and have unlimited capacity in the baseline
+scenario.
 
-Loads in the multilayer model are terminal-subset weighted betweenness over
-`T:` nodes. OD reachability and travel times use the undirected terminal pairs
-of the intact graph as the denominator: pairs that become unreachable count as
-unserved instead of dropping out of the metric.
+Loads in the multilayer model are terminal-subset weighted betweenness whose
+sources and targets are the `T:` nodes, returned per `R:` facility. OD
+reachability and travel times use the undirected terminal pairs of the intact
+graph as the denominator: pairs that become unreachable count as unserved
+instead of dropping out of the metric.
 
 ## 6. Metrics
 
@@ -153,7 +171,7 @@ unserved instead of dropping out of the metric.
 | LCC | second-largest connected component, used for susceptibility peaks |
 | `isolated` | stations with degree 0 |
 | ASPL | mean shortest path length within the largest component; unreachable pairs are excluded |
-| `efficiency` | Latora-Marchiori global efficiency, mean over ordered reachable pairs of 1 / d(i, j); unreachable pairs contribute 0 |
+| `efficiency` | Sum of inverse hop distances over surviving ordered pairs, divided by n_initial * (n_initial - 1); removed and unreachable pairs contribute 0 |
 | `network_damage` | 1 - efficiency / baseline_efficiency of the intact graph |
 | `failed_fraction` | failed stations / n_initial for one cascade |
 | avalanche size | newly failed stations per round |
@@ -202,7 +220,7 @@ initial_loads(graph, mode: LoadMode = "betweenness") -> dict[str, float]
 capacities(loads: Mapping[str, float], alpha: float) -> dict[str, float]
 
 # metrics.py (P1.2)
-compute_metrics(graph, *, baseline_efficiency=None, served_pairs=None, total_pairs=None) -> MetricsBundle
+compute_metrics(graph, *, baseline_efficiency=None, served_pairs=None, total_pairs=None, n_initial=None) -> MetricsBundle
 
 # failure.py (P1.3)
 target_order(graph, measure: str = "degree", *, static: bool = True) -> list[str]
