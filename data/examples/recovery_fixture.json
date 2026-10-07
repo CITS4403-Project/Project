@@ -1,0 +1,12 @@
+{
+  "nodes": ["A", "B", "C", "D"],
+  "edges": [["A", "B"], ["B", "C"], ["C", "D"]],
+  "failed": ["B"],
+  "candidates": [
+    {"station_a": "A", "station_b": "B", "minutes": 2, "kind": "emergency_bus", "source": "synthetic feasible link"},
+    {"station_a": "B", "station_b": "C", "minutes": 2, "kind": "emergency_bus", "source": "synthetic feasible link"},
+    {"station_a": "A", "station_b": "D", "minutes": 8, "kind": "existing_bus", "source": "synthetic existing link"},
+    {"station_a": "C", "station_b": "D", "minutes": 5, "kind": "gtfs_candidate", "source": "synthetic candidate format; not actual GTFS evidence"}
+  ],
+  "demand": [["A", "C", 40], ["A", "D", 80], ["B", "D", 120]]
+}

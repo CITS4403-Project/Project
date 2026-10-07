@@ -7,6 +7,11 @@ in the Perth public transport network.
 
 ## Setup
 
+P1.6 deployment policies and the synthetic comparison are documented in
+[docs/strategies.md](docs/strategies.md). With `PYTHONPATH=src`, run
+`python -m transperth.strategy_example --budget 2 --seed 0` to write results
+and provenance under `results/recovery/`.
+
 The project uses a local virtual environment; no global packages are required.
 Python 3.14 is the tested version.
 
