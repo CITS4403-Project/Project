@@ -7,6 +7,10 @@ in the Perth public transport network.
 
 ## Setup
 
+P1.4 cascade rules and examples are documented in [docs/cascade.md](docs/cascade.md).
+With P1.1/P1.3 available and `PYTHONPATH=src`, run
+`python -m transperth.cascade_example --alpha 0.2 --seed 0`.
+
 The project uses a local virtual environment; no global packages are required.
 Python 3.14 is the tested version.
 

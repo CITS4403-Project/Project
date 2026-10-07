@@ -45,7 +45,7 @@ checksums in `docs/data.md`.
 The initial load of station i is its betweenness centrality on the intact
 graph, computed with networkx `betweenness_centrality(G, normalized=False)`:
 
-    L0_i = sum over ordered pairs (s, t), s != i != t, of sigma_st(i) / sigma_st
+    L0_i = sum over unordered pairs {s, t}, s != i != t, of sigma_st(i) / sigma_st
 
 where sigma_st is the number of shortest paths from s to t and sigma_st(i)
 is the number that pass through i. The values are unnormalised because the
@@ -66,8 +66,9 @@ Load modes (`LoadMode`):
     C_i = (1 + alpha) * L0_i,   alpha >= 0
 
 Capacities are computed once from the intact graph and stay fixed during a
-cascade. A station with L0_i = 0 gets C_i = 0, so it can only fail as the
-explicit trigger; load 0 > 0 is false.
+cascade. A station with L0_i = 0 gets C_i = 0. Zero current load does not
+overload it, but positive redistributed load above tolerance can make it fail
+in static mode. It is not exempt from overload checks.
 
 ## 4. Failure and redistribution
 
@@ -114,6 +115,10 @@ surviving neighbour removes its load from the system.
 
 `CascadeResult` records `n_initial`, `failed`, `gcc`, `gcc_fraction`,
 `failed_fraction`, `avalanche_sizes`, `rounds` and the derived `n_failed`.
+Avalanche sizes count only failures after the trigger; rounds counts those
+failure rounds, excluding the final stability check. Optional additive fields
+`initial_total_load`, `remaining_load` and `lost_load` audit static conservation.
+The latter two are None in dynamic mode, where routing load is recomputed.
 
 ## 5. Multilayer model
 
