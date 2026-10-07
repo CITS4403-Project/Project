@@ -1,0 +1,10 @@
+metric,value
+n_stations,86.0
+spearman_rho,0.5943922220162543
+spearman_p,1.6035709152117096e-09
+top_5_overlap,1.0
+top_5_overlap_fraction,0.2
+top_10_overlap,2.0
+top_10_overlap_fraction,0.2
+top_20_overlap,9.0
+top_20_overlap_fraction,0.45

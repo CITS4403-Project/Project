@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-07T12:14:10+00:00",
+  "experiment": "demand",
+  "inputs": {
+    "/home/foxwhite/Projects/Python/cits4403_project/data/processed/rail_edges.csv": "c6ddabf7ae89f47c58d3b3ef42a16a8a83d8f49b8552a413ba2b3dc4c44bb8e8",
+    "/home/foxwhite/Projects/Python/cits4403_project/data/processed/stations.csv": "b31a1ffa087baeb2e546359367a515747ec4381d229b4b4664f37fe4f1b720b3"
+  },
+  "package_version": "0.1.0",
+  "params": {
+    "alpha_grid": [
+      0.0,
+      2.0
+    ],
+    "alpha_step": 0.025,
+    "capacity_law": "C = (1 + alpha) * K",
+    "capacity_scale": 0.8333333333333334,
+    "default_reference_capacity": "K = L0",
+    "demand_load": "am_peak_stops",
+    "dynamic": false,
+    "n_edges": 85,
+    "n_nodes": 86,
+    "reference_capacity": "frequency-scaled trips_served",
+    "rule": "capacity",
+    "top_k": [
+      5,
+      10,
+      20
+    ],
+    "trigger": "load"
+  },
+  "seed": 0,
+  "versions": {
+    "matplotlib": "3.11.2",
+    "networkx": "3.7",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  }
+}
