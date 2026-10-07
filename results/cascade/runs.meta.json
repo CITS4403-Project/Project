@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-07T15:29:11+00:00",
+  "created_utc": "2026-10-07T15:44:51+00:00",
   "experiment": "cascade",
   "inputs": {
     "data/processed/rail_edges.csv": "c6ddabf7ae89f47c58d3b3ef42a16a8a83d8f49b8552a413ba2b3dc4c44bb8e8",
@@ -10,7 +10,7 @@
     "src/transperth/cascade_figures.py": "b14edd4930d5b5b7fd35634a64b610b4cf787d47f6624c16021d75e1fc338c12",
     "src/transperth/config.py": "04aa9ff71f2623c105b68034e9988594c1f3e8d13fe042648690a38f5636ed6a",
     "src/transperth/experiments.py": "638d23fa0568a8e889fbcc8bea1a0e18eb8cb0ef3414a68c49720424cdcf3038",
-    "src/transperth/failure.py": "3577026f1f1389ef722316d3e00fff288f0c3694984c2fe6f2775b1dccaa26c7",
+    "src/transperth/failure.py": "f730f230d906d98564126c0ec67128474e81d91abc294e07c9eac962811353f8",
     "src/transperth/loads.py": "c75e6e4eb04369f480e2c038916a6f2bf30c8b6aee1d8866ee936839fbaebda3",
     "src/transperth/network.py": "db2a119e8bc2b358a52a8af5a91e6dbec93eb97e15947724bcd2b6efb3d0c771",
     "src/transperth/plotting.py": "6702b0f78a3bac39f142039f5c9af366516bfca94c98d3c7a93c2fbc65f1a1ba"
