@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import stat
 import subprocess
 import sys
 
@@ -141,3 +142,31 @@ def test_script_import_works_with_only_src_on_pythonpath(tmp_path):
     )
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip() == "0"
+
+
+@pytest.mark.skipif(os.name == "nt", reason="POSIX file modes")
+def test_save_table_preserves_existing_file_modes(tmp_path):
+    path = tmp_path / "result.csv"
+    csv, meta = save_table(
+        pd.DataFrame({"value": [1]}), path, RunMeta.create("demo", seed=1)
+    )
+    os.chmod(csv, 0o640)
+    os.chmod(meta, 0o640)
+    save_table(pd.DataFrame({"value": [2]}), path, RunMeta.create("demo", seed=2))
+    assert stat.S_IMODE(csv.stat().st_mode) == 0o640
+    assert stat.S_IMODE(meta.stat().st_mode) == 0o640
+
+
+@pytest.mark.skipif(os.name == "nt", reason="POSIX file modes")
+def test_save_table_new_files_follow_the_umask(tmp_path):
+    previous_umask = os.umask(0o077)
+    try:
+        csv, meta = save_table(
+            pd.DataFrame({"value": [3]}),
+            tmp_path / "fresh.csv",
+            RunMeta.create("demo", seed=3),
+        )
+    finally:
+        os.umask(previous_umask)
+    assert stat.S_IMODE(csv.stat().st_mode) == 0o600
+    assert stat.S_IMODE(meta.stat().st_mode) == 0o600

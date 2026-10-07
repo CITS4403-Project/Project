@@ -47,6 +47,8 @@ Same inputs and seed give identical numerical outputs; UTC timestamps differ.
 Explicit input paths must exist when building `RunMeta`. `save_table` validates
 metadata and serializes the CSV before touching previous outputs, stages both
 files, then publishes with replacement. Ordinary publication errors roll back
-the previous pair. Two separate files cannot provide a single atomic transaction
-to concurrent readers or survive every process/power interruption; use one
-writer per output path. Strict JSON rejects non-finite or unsupported metadata.
+the previous pair. Published files keep the previous file mode; new files
+follow the process umask. Two separate files cannot provide a single atomic
+transaction to concurrent readers or survive every process/power interruption;
+use one writer per output path. Strict JSON rejects non-finite or unsupported
+metadata.

@@ -14,6 +14,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import stat
 import tempfile
 from collections.abc import Callable, Iterable, Mapping
 from dataclasses import dataclass, field
@@ -126,6 +127,13 @@ def results_dir(experiment: str) -> Path:
     return path
 
 
+def _default_file_mode() -> int:
+    """Return the mode a new file gets from ``open`` under the process umask."""
+    current = os.umask(0)
+    os.umask(current)
+    return 0o666 & ~current
+
+
 def save_table(
     table: pd.DataFrame,
     path: str | Path,
@@ -145,16 +153,25 @@ def save_table(
         raise ValueError("CSV and metadata paths must be distinct")
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     paths = (csv_path, meta_path)
-    previous = {
-        target: target.read_bytes() if target.exists() else None for target in paths
-    }
+    previous: dict[Path, bytes | None] = {}
+    previous_modes: dict[Path, int] = {}
+    for target in paths:
+        if target.exists():
+            previous[target] = target.read_bytes()
+            previous_modes[target] = stat.S_IMODE(target.stat().st_mode)
+        else:
+            previous[target] = None
+    default_mode = _default_file_mode()
     staged = []
     published = []
     try:
         for target, content in zip(paths, (csv_text, metadata_text)):
             with tempfile.NamedTemporaryFile(dir=target.parent, delete=False) as handle:
-                staged.append(Path(handle.name))
+                temporary = Path(handle.name)
+                staged.append(temporary)
                 handle.write(content.encode("utf-8"))
+            # Staged files are 0600; keep the previous mode or the umask default.
+            os.chmod(temporary, previous_modes.get(target, default_mode))
             # Both files are staged before either is published.
         for temporary, target in zip(staged, paths):
             os.replace(temporary, target)
