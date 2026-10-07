@@ -17,10 +17,8 @@ and are never replaced by derived rows; the comparison table lists every
 manual pair with ``matched``, ``time_differs`` or ``not_derived``. Generated
 results stay out of git.
 
-The small local rail loader is used because P1.1's
-``transperth.network.load_rail_graph`` is not on this branch; switch to it once
-P1.1 merges. The large snapshot tables are git-ignored; without them the
-runner writes nothing.
+The packaged P1.1 loader is used for the rail graph. The large snapshot tables
+are git-ignored; without them the runner writes nothing.
 """
 from __future__ import annotations
 
@@ -44,6 +42,7 @@ from transperth.multilayer import (
     served_od_fraction,
     terminal_pairs,
 )
+from transperth.network import load_rail_graph as packaged_load_rail_graph
 
 DEFAULT_SNAPSHOT_DIR = PROJECT_ROOT / "data" / "snapshots" / "2026-10-05_0700-0900"
 DEFAULT_TOPOLOGY_PATH = PROJECT_ROOT / "data" / "verified_topology.json"
@@ -51,23 +50,11 @@ SNAPSHOT_INPUTS = ("stops.txt", "stop_times.txt", "bus_trips.csv")
 
 
 def load_rail_graph(data_dir: Path) -> nx.Graph:
-    """Load the frozen rail graph until P1.1's ``load_rail_graph`` lands."""
-    stations = pd.read_csv(data_dir / "stations.csv", dtype={"station_id": str})
-    edges = pd.read_csv(data_dir / "rail_edges.csv", dtype={"station_a": str, "station_b": str})
-    if stations.station_id.isna().any() or not stations.station_id.is_unique:
-        raise ValueError("station IDs must be present and unique")
-    if stations.empty or edges.empty:
-        raise ValueError("the frozen rail tables must not be empty")
-    graph = nx.Graph()
-    for row in stations.itertuples(index=False):
-        graph.add_node(row.station_id, name=row.name)
-    for row in edges.itertuples(index=False):
-        if row.station_a not in graph or row.station_b not in graph or row.station_a == row.station_b:
-            raise ValueError(f"invalid rail edge {row.station_a}-{row.station_b}")
-        graph.add_edge(row.station_a, row.station_b, distance_m=float(row.distance_m))
-    if not nx.is_connected(graph):
-        raise ValueError("the frozen rail graph must be connected")
-    return graph
+    """Load the frozen rail graph through the packaged P1.1 loader."""
+    return packaged_load_rail_graph(
+        stations_csv=Path(data_dir) / "stations.csv",
+        edges_csv=Path(data_dir) / "rail_edges.csv",
+    )
 
 
 def run(

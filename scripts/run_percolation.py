@@ -32,7 +32,6 @@ from collections.abc import Sequence
 from pathlib import Path
 
 import networkx as nx
-import pandas as pd
 
 from transperth.config import DEFAULT_SEED, RAIL_EDGES_CSV, STATIONS_CSV
 from transperth.experiments import RunMeta, results_dir, save_table
@@ -43,6 +42,7 @@ from transperth.failure import (
     critical_fraction,
     percolation_curve,
 )
+from transperth.network import load_rail_graph
 
 DEFAULT_FRACTIONS: tuple[float, ...] = tuple(round(0.05 * step, 2) for step in range(21))
 QUICK_FRACTIONS: tuple[float, ...] = (0.0, 0.2, 0.4, 0.6, 0.8, 1.0)
@@ -51,32 +51,8 @@ QUICK_SEEDS = 10
 
 
 def load_frozen_graph() -> nx.Graph:
-    """Load the frozen rail graph from ``data/processed``.
-
-    This is a small local loader: P1.1's ``transperth.network.load_rail_graph``
-    is not on this branch yet, so switch to it once P1.1 merges. The graph
-    contract matches: nodes carry ``name``, ``lat``, ``lon`` and
-    ``trips_served``; edges carry ``trips`` and ``distance_m``.
-    """
-    stations = pd.read_csv(STATIONS_CSV, dtype={"station_id": str})
-    edges = pd.read_csv(RAIL_EDGES_CSV, dtype={"station_a": str, "station_b": str})
-    graph = nx.Graph()
-    for row in stations.itertuples(index=False):
-        graph.add_node(
-            row.station_id,
-            name=str(row.name),
-            lat=float(row.lat),
-            lon=float(row.lon),
-            trips_served=float(row.trips_served),
-        )
-    for row in edges.itertuples(index=False):
-        graph.add_edge(
-            row.station_a,
-            row.station_b,
-            trips=float(row.trips),
-            distance_m=float(row.distance_m),
-        )
-    return graph
+    """Load the frozen rail graph through the packaged P1.1 loader."""
+    return load_rail_graph(stations_csv=STATIONS_CSV, edges_csv=RAIL_EDGES_CSV)
 
 
 def _parse_args(argv: Sequence[str] | None) -> argparse.Namespace:

@@ -44,7 +44,7 @@ excludes the trigger; its sum equals `n_failed - 1` on a nonempty graph.
 rounds. An empty graph returns zero fractions and no failures. Result dataclass
 audit fields are optional additions, preserving existing construction calls.
 
-After P1.1 (#19) and P1.3 (#20) are available, from the root with `PYTHONPATH=src`:
+From the repository root with `PYTHONPATH=src`:
 
 ```sh
 python -m transperth.cascade_example --alpha 0.2 --seed 0

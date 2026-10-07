@@ -15,9 +15,9 @@ The rail layer is an undirected simple graph G = (V, E).
 
 V is the set of 86 mapped suburban rail stations. 85 of them have scheduled
 weekday service in the frozen window; Showgrounds sits on the mapped corridor
-but has no weekday stop event. Each node carries `station_id` (string), `name`,
-`lat`, `lon`, `modes`, `degree`, `trips_served`, `am_peak_stops`,
-`betweenness` and `lines`.
+but has no weekday stop event. Node keys are `station_id` (string); each node
+carries `name`, `lat`, `lon`, `modes`, `degree`, `trips_served`,
+`am_peak_stops`, `betweenness` and `lines`.
 
 E is the set of 85 verified adjacent segments between consecutive stations on
 the mapped corridors. Each edge carries `trips`, the number of scheduled
@@ -98,10 +98,11 @@ and every failed station forwards the load it carries when it fails. No
 shortest path is recomputed.
 
 Dynamic mode (`dynamic=True`). After each removal round, loads are recomputed
-as betweenness on the surviving graph, which models full shortest-path
-rerouting. The redistribution rules do not apply in this mode. An additive
-``load_function`` may replace this recomputation (and the intact baseline) with
-caller-supplied loads; capacities stay fixed from the initial loads.
+with the selected load mode on the surviving graph, which models full
+shortest-path rerouting. The redistribution rules do not apply in this mode. An
+additive ``load_function`` may replace this recomputation (and the intact
+baseline) with caller-supplied loads; capacities stay fixed from the initial
+loads.
 
 Redistribution rules (`RedistributionRule`):
 
@@ -159,8 +160,9 @@ scenario.
 Loads in the multilayer model are terminal-subset weighted betweenness whose
 sources and targets are the `T:` nodes, returned per `R:` facility. OD
 reachability and travel times use the undirected terminal pairs of the intact
-graph as the denominator: pairs that become unreachable count as unserved
-instead of dropping out of the metric.
+graph as the denominator when callers pass the intact `baseline_pairs`: pairs
+that become unreachable count as unserved instead of dropping out of the
+metric. Without that argument the current graph's pairs are the denominator.
 
 ## 6. Metrics
 
@@ -175,10 +177,10 @@ instead of dropping out of the metric.
 | `network_damage` | 1 - efficiency / baseline_efficiency of the intact graph |
 | `failed_fraction` | failed stations / n_initial for one cascade |
 | avalanche size | newly failed stations per round |
-| avalanche duration | number of cascade rounds up to the stable state |
+| avalanche duration | number of failure rounds, equal to `CascadeResult.rounds`; the final stability check is not counted |
 | `alpha_star` | smallest grid tolerance at which the max-load trigger stays contained, failed_fraction <= 1 / n |
 | `served_od_fraction` | reachable undirected terminal pairs / original pairs |
-| critical fraction | removal fraction where the collapse curve crosses the chosen GCC threshold |
+| critical fraction | removal fraction at the susceptibility peak of the second-largest component (mean(lcc_size**2) / n_initial); falls back to the first fraction at or below the chosen GCC threshold when the peak is degenerate |
 
 `MetricsBundle` carries the matching fields: `n_nodes`, `n_edges`, `gcc_size`,
 `gcc_fraction`, `lcc_size`, `lcc_fraction`, `isolated`, `aspl`, `efficiency`,
@@ -200,9 +202,10 @@ sidecar holds:
 | `inputs` | input path to SHA-256 hex digest |
 | `versions` | installed analysis package versions |
 
-Result directories are fixed per experiment family: `results/percolation/`
+Result directories are fixed per P2.x experiment family: `results/percolation/`
 (P2.1), `results/cascade/` (P2.2), `results/recovery/` (P2.3),
-`results/demand/` (P2.4) and `results/uncertainty/` (P2.5).
+`results/demand/` (P2.4) and `results/uncertainty/` (P2.5). The P1.x examples
+and runners write to `results/metrics/` (P1.2) and `results/multilayer/` (P1.5).
 
 ## 8. Frozen API
 

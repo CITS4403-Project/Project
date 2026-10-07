@@ -5,7 +5,7 @@
 #   make figures    regenerate the figures from saved results
 #   make notebooks  execute the notebooks in place
 #   make reproduce  rebuild data, tests, figures and notebooks in order
-#   make clean      remove caches and generated outputs
+#   make clean      remove Python and pytest caches
 
 PYTHON ?= python3
 export PYTHONPATH := src:$(PYTHONPATH)

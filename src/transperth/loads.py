@@ -145,8 +145,9 @@ def capacities(loads: Mapping[str, float], alpha: float) -> dict[str, float]:
     -------
     dict[str, float]
         Capacity per station, in the input order. A zero load yields a zero
-        capacity (``0.0``, never negative or NaN), so such a station can only
-        fail as an explicit trigger.
+        capacity (``0.0``, never negative or NaN). It is not exempt from
+        overload checks: redistributed or rerouted load above the tolerance
+        can fail it in a cascade.
 
     Raises
     ------
