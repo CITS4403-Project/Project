@@ -146,7 +146,7 @@ unserved instead of dropping out of the metric.
 | LCC | second-largest connected component, used for susceptibility peaks |
 | `isolated` | stations with degree 0 |
 | ASPL | mean shortest path length within the largest component; unreachable pairs are excluded |
-| `efficiency` | Latora-Marchiori global efficiency, mean over ordered reachable pairs of 1 / d(i, j); unreachable pairs contribute 0 |
+| `efficiency` | Sum of inverse hop distances over surviving ordered pairs, divided by n_initial * (n_initial - 1); removed and unreachable pairs contribute 0 |
 | `network_damage` | 1 - efficiency / baseline_efficiency of the intact graph |
 | `failed_fraction` | failed stations / n_initial for one cascade |
 | avalanche size | newly failed stations per round |
@@ -195,7 +195,7 @@ initial_loads(graph, mode: LoadMode = "betweenness") -> dict[str, float]
 capacities(loads: Mapping[str, float], alpha: float) -> dict[str, float]
 
 # metrics.py (P1.2)
-compute_metrics(graph, *, baseline_efficiency=None, served_pairs=None, total_pairs=None) -> MetricsBundle
+compute_metrics(graph, *, baseline_efficiency=None, served_pairs=None, total_pairs=None, n_initial=None) -> MetricsBundle
 
 # failure.py (P1.3)
 target_order(graph, measure: str = "degree", *, static: bool = True) -> list[str]
