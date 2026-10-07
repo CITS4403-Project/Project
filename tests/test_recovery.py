@@ -230,6 +230,37 @@ class TestLayeredCascade:
             "overloaded",
         }
 
+    def test_layered_cascade_matches_the_merged_engine_batch(self):
+        """The port agrees with cascade.simulate_cascade after the P2.2 merge."""
+        from transperth.cascade import simulate_cascade
+        from transperth.config import CascadeConfig
+        from transperth.multilayer import terminal_loads
+
+        ring = nx.cycle_graph([str(index) for index in range(10)])
+        nx.set_edge_attributes(ring, 1000, "distance_m")
+        normal = build_layers(ring)
+        loads0 = terminal_loads(normal)
+        baseline = {node: float(loads0.get(node, 0.0)) for node in normal}
+
+        def engine_loads(graph: nx.Graph) -> dict[str, float]:
+            current = terminal_loads(graph)
+            return {node: float(current.get(node, 0.0)) for node in graph}
+
+        port = layered_cascade(
+            normal, normal, alpha=0.0, initial_failed=["0"], trace=True
+        )
+        engine = simulate_cascade(
+            normal,
+            CascadeConfig(alpha=0.0, dynamic=True),
+            baseline_loads=baseline,
+            load_function=engine_loads,
+            reference_capacities=baseline,
+            initial_failed=["R:0"],
+        )
+        assert port.failed == engine.failed
+        assert port.avalanche_sizes == engine.avalanche_sizes
+        assert port.rounds == engine.rounds
+
     def test_overload_control_ports_the_no_cascade_case(self):
         ring = nx.cycle_graph([str(index) for index in range(10)])
         nx.set_edge_attributes(ring, 1000, "distance_m")

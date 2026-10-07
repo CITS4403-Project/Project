@@ -17,8 +17,11 @@ definitions stay in code rather than in a checked-in scenario file:
 | `random` | seeded failure sets of `--random-size` distinct stations, drawn without replacement with the P1.2 `child_seeds` scheme |
 
 Every scenario removes its stations' `R:` facilities together, before the first
-load check. This is the same batch-trigger semantics the plan shares with P2.2:
-the batch replaces the single trigger and is excluded from the avalanche sizes.
+load check. This is the same batch-trigger semantics `cascade.simulate_cascade`
+gained in P2.2 (`initial_failed`): the batch replaces the single trigger, is
+excluded from the avalanche sizes, and capacities stay fixed from the intact
+baseline. `tests/test_recovery.py` cross-checks the layered port against the
+merged engine on the same batch.
 
 ## Served demand
 
