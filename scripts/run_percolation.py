@@ -21,8 +21,8 @@ Options: ``--attack`` (``random``, ``targeted``, ``random_edge``,
 ``--fractions``, ``--n-seeds``, ``--seed``, ``--dynamic`` (recompute the
 target ranking after every removal), ``--output``.
 
-Percolation results land in ``results/percolation/`` and are generated files,
-not tracked by git.
+Results land in ``results/percolation/`` and figures in ``figures/``; both are
+committed as report evidence, like the other Phase-2 experiment outputs.
 """
 from __future__ import annotations
 
