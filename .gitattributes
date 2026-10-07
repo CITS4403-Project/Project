@@ -1,5 +1,13 @@
-# Experiment fingerprints must refer to identical bytes on Windows and Linux.
-/data/processed/*.csv text eol=lf
-/src/transperth/*.py text eol=lf
-/scripts/*.py text eol=lf
-/results/** text eol=lf
+# The hashed dataset must have the same bytes on Linux and Windows.
+data/** text eol=lf
+scripts/** text eol=lf
+docs/data.md text eol=lf
+Makefile text eol=lf
+# Preserve the original manual evidence and regression inputs byte for byte.
+data/manual/** -text
+data/processed/backup_edges.csv -text
+data/processed/backup_edges_google_maps_evidence.json -text
+investigations/idea2-perth-transport/data/processed/** -text
+# Experiment code and outputs also need stable cross-platform fingerprints.
+src/transperth/*.py text eol=lf
+results/** text eol=lf
