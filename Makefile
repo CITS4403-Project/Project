@@ -4,6 +4,7 @@
 #   make data         rebuild data/processed from the raw GTFS snapshot
 #   make demand       regenerate the P2.4 demand load and capacity results
 #   make percolation  regenerate the P2.1 percolation and critical-node results
+#   make cascade      regenerate the P2.2 cascade, avalanche and closure results
 #   make figures      regenerate the figures from saved results
 #   make notebooks    execute the notebooks in place
 #   make reproduce    rebuild data, tests, figures and notebooks in order
@@ -12,7 +13,7 @@
 PYTHON ?= python3
 export PYTHONPATH := src:$(PYTHONPATH)
 
-.PHONY: check data demand percolation figures notebooks reproduce clean
+.PHONY: check data demand percolation cascade figures notebooks reproduce clean
 
 check:
 	$(PYTHON) -m pytest -q
@@ -26,6 +27,9 @@ demand:
 percolation:
 	$(PYTHON) scripts/run_percolation.py --all
 	$(PYTHON) scripts/run_vulnerability.py
+
+cascade:
+	$(PYTHON) scripts/run_cascades.py
 
 figures:
 	$(PYTHON) -m transperth.plotting

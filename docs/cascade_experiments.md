@@ -6,13 +6,22 @@ Run from the repository root with the pinned `requirements.txt` environment:
 PYTHONPATH=src python scripts/run_cascades.py
 ```
 
+The Makefile target exports the same `PYTHONPATH`:
+
+```bash
+make cascade PYTHON=.venv/bin/python
+```
+
 PowerShell: `$env:PYTHONPATH='src'; python scripts/run_cascades.py`.
 This one command regenerates all `results/cascade/` tables, JSON outcomes,
 sidecars and five `figures/cascade/` PNGs. It uses the committed, frozen
 86-station / 85-edge graph for 2026-10-05, 07:00–09:00 Australia/Perth
 (271 selected morning rail trips). No live download is needed.
 `--quick` writes separate `cascade_quick/` directories and uses a small grid;
-those outputs are a smoke test and are not the report dataset.
+those outputs are a smoke test and are not the report dataset. Runtime on the
+project Linux environment (Python 3.14, pinned packages): the full family takes
+about 1 minute (56 s for 26,368 cached runs and 16,000 avalanche samples,
+including the reduced dynamic grid); `--quick` takes about 2 seconds.
 
 ## Design and definitions
 
