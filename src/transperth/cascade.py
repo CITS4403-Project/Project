@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import math
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Iterable, Mapping
 from numbers import Integral
 
 import networkx as nx
@@ -58,6 +58,7 @@ def simulate_cascade(
     *,
     baseline_loads: Mapping[str, float] | None = None,
     load_function: Callable[[nx.Graph], Mapping[str, float]] | None = None,
+    initial_failed: Iterable[str] | None = None,
 ) -> CascadeResult:
     """Remove a trigger then fail overloaded stations in synchronous rounds.
 
@@ -71,6 +72,9 @@ def simulate_cascade(
     load per current station. ``baseline_loads`` still overrides the initial
     loads, and capacities stay fixed from those initial loads.
     The input graph and baseline mapping remain unchanged.
+    ``initial_failed`` replaces the single trigger with one sorted synchronous
+    initial batch. An explicit empty collection applies no external failure.
+    These initial failures are excluded from subsequent avalanche sizes.
     """
     current = _ordered_graph(graph)
     if config.trigger not in ("load", "degree", "random") or config.rule not in (
@@ -99,8 +103,27 @@ def simulate_cascade(
         raise NotImplementedError(
             "demand loads require the P2.4 inputs or an explicit load_function"
         )
-    if config.target is not None and config.target not in current:
+    if (
+        initial_failed is None
+        and config.target is not None
+        and config.target not in current
+    ):
         raise ValueError(f"unknown target station {config.target!r}")
+    initial_batch = None
+    if initial_failed is not None:
+        if isinstance(initial_failed, (str, bytes)):
+            raise TypeError(
+                "initial_failed must be a collection of station IDs, not a string"
+            )
+        initial_batch = list(initial_failed)
+        if any(not isinstance(node, str) for node in initial_batch):
+            raise ValueError("initial_failed IDs must be strings")
+        if len(set(initial_batch)) != len(initial_batch):
+            raise ValueError("initial_failed contains duplicate IDs")
+        unknown = set(initial_batch) - set(current)
+        if unknown:
+            raise ValueError(f"unknown initial_failed stations: {sorted(unknown)}")
+        initial_batch.sort()
     if baseline_loads is not None:
         base = dict(baseline_loads)
     elif load_function is None:
@@ -163,9 +186,9 @@ def simulate_cascade(
         loads = {node: math.fsum([loads[node], *increments[node]]) for node in current}
 
     if current:
-        if config.target is not None:
+        if initial_batch is None and config.target is not None:
             trigger = config.target
-        else:
+        elif initial_batch is None:
             order = (
                 sorted(loads, key=lambda node: (-loads[node], node))
                 if config.trigger == "load"
@@ -179,7 +202,10 @@ def simulate_cascade(
                 seed=config.seed,
                 order=order,
             )[0]
-        remove_batch([trigger])
+        if initial_batch is None:
+            initial_batch = [trigger]
+        if initial_batch:
+            remove_batch(initial_batch)
         while current:
             overloaded = sorted(
                 node
@@ -205,4 +231,5 @@ def simulate_cascade(
         initial_total_load=total,
         remaining_load=None if config.dynamic else math.fsum(loads.values()),
         lost_load=None if config.dynamic else lost,
+        initial_failed=tuple(initial_batch or ()),
     )

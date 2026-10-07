@@ -79,6 +79,11 @@ runs, `docs/cascade.md` (P1.4) the cascade rules and examples, and
 `docs/strategies.md` (P1.6) the budgeted bus deployment policies. Each
 document includes its own `PYTHONPATH=src` example command.
 
+P2.2's full tolerance, avalanche and line-closure experiments, saved tables and
+five figures regenerate with `PYTHONPATH=src python scripts/run_cascades.py`.
+See [the cascade experiment design](docs/cascade_experiments.md) for seeds,
+grid definitions, provenance and interpretation of the frozen tree.
+
 ## Report
 
 The written report is a LaTeX project kept in the `report/` submodule

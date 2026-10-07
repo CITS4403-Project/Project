@@ -234,7 +234,7 @@ critical_fraction(curve: pandas.DataFrame, *, threshold: float = 0.5,
 
 # cascade.py (P1.4)
 simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None,
-                 load_function=None) -> CascadeResult
+                 load_function=None, initial_failed=None) -> CascadeResult
 
 # multilayer.py (P1.5)
 build_layers(rail, *, speed_kmh: float = 40.0, access_minutes: float = 1.0) -> networkx.Graph
@@ -247,6 +247,7 @@ NoBackup(), ExistingBus(...), ShuttleBridging(...), CorridorReinforcement(...), 
 # experiments.py (P0.1 scaffold, extended by P1.2)
 RunMeta.create(experiment, *, seed, params=None, inputs=())
 save_table(table, path, meta, *, index=False) -> tuple[Path, Path]
+save_json(payload, path, meta) -> tuple[Path, Path]
 results_dir(experiment: str) -> Path
 file_sha256(path: str | Path) -> str
 
@@ -269,6 +270,14 @@ there by the implementation modules; they are not redefined per module.
 
 Experiment scripts do not import from `investigations/`. Prototype material is
 a reference and a regression target only.
+
+P2.2 adds an optional `initial_failed` collection: `None` keeps the single
+trigger, a collection replaces it with one synchronous initial batch, and an
+empty collection applies no external failure. Unknown and duplicate IDs are
+rejected; sorting makes the batch deterministic. Capacities still use the
+intact baseline. `CascadeResult.initial_failed` and `n_initial_failed` record
+the batch, while `avalanche_sizes` and `rounds` count only subsequent overload
+rounds. See [the experiment design](cascade_experiments.md).
 
 ## 9. Change control
 

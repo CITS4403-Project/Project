@@ -37,6 +37,7 @@ __all__ = [
     "package_versions",
     "results_dir",
     "save_table",
+    "save_json",
     "child_seeds",
     "run_seeded",
     "summarize_runs",
@@ -147,6 +148,20 @@ def save_table(
         json.dumps(meta.to_dict(), indent=2, sort_keys=True, allow_nan=False) + "\n"
     )
     csv_text = table.to_csv(index=index, lineterminator="\n")
+    return _save_text_pair(csv_text, Path(path), metadata_text)
+
+
+def save_json(payload: Any, path: str | Path, meta: RunMeta) -> tuple[Path, Path]:
+    """Publish a strict JSON result with the same staged provenance guarantees."""
+    content = json.dumps(payload, sort_keys=True, indent=2, allow_nan=False) + "\n"
+    metadata = (
+        json.dumps(meta.to_dict(), sort_keys=True, indent=2, allow_nan=False) + "\n"
+    )
+    return _save_text_pair(content, Path(path), metadata)
+
+
+def _save_text_pair(content: str, path: Path, metadata_text: str) -> tuple[Path, Path]:
+    """Stage and publish a serialized result and its metadata sidecar."""
     csv_path = Path(path)
     meta_path = csv_path.with_suffix(".meta.json")
     if csv_path == meta_path:
@@ -165,11 +180,11 @@ def save_table(
     staged = []
     published = []
     try:
-        for target, content in zip(paths, (csv_text, metadata_text)):
+        for target, serialized in zip(paths, (content, metadata_text)):
             with tempfile.NamedTemporaryFile(dir=target.parent, delete=False) as handle:
                 temporary = Path(handle.name)
                 staged.append(temporary)
-                handle.write(content.encode("utf-8"))
+                handle.write(serialized.encode("utf-8"))
             # Staged files are 0600; keep the previous mode or the umask default.
             os.chmod(temporary, previous_modes.get(target, default_mode))
             # Both files are staged before either is published.
