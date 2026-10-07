@@ -16,9 +16,9 @@ Nodes:
 ============== =============================================================
 ``degree``     graph degree
 ``betweenness`` unnormalised node betweenness centrality
-``flow``       initial load from :func:`transperth.loads.initial_loads`; the
-               hook the P2.4 demand mode extends. It currently returns the
-               same values as ``betweenness`` for nodes.
+``flow``       initial load from :func:`transperth.loads.initial_loads` in the
+               ``demand`` mode, the shared definition of P2.1's flow attack
+               and RQ4.
 ============== =============================================================
 
 Edges:
@@ -148,8 +148,11 @@ def _node_scores(graph: nx.Graph, measure: str) -> dict[str, float]:
     if measure == "betweenness":
         centrality = nx.betweenness_centrality(graph, normalized=False)
         return {node: float(value) for node, value in centrality.items()}
-    # measure == "flow": the initial load, the hook P2.4 extends.
-    return {node: float(value) for node, value in initial_loads(graph).items()}
+    # measure == "flow": the demand load, the shared P2.1 flow attack and RQ4
+    # definition. Stations without am_peak_stops score zero.
+    return {
+        node: float(value) for node, value in initial_loads(graph, "demand").items()
+    }
 
 
 def _edge_scores(graph: nx.Graph, measure: str) -> dict[tuple[str, str], float]:
@@ -381,8 +384,9 @@ def percolation_curve(
     Parameters
     ----------
     graph:
-        Intact graph. It is never mutated. Attach ``trips`` and
-        ``trips_served`` attributes for the weighted load measures.
+        Intact graph. It is never mutated. Attach ``trips`` for the weighted
+        frequency measure and ``am_peak_stops`` for the demand ``flow``
+        measure.
     attack:
         ``random``, ``targeted``, ``random_edge`` or ``targeted_edge``.
     measure:

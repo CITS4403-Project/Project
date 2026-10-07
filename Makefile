@@ -2,6 +2,7 @@
 #
 #   make check      run the test suite
 #   make data       rebuild data/processed from the raw GTFS snapshot
+#   make demand     regenerate the P2.4 demand load and capacity results
 #   make figures    regenerate the figures from saved results
 #   make notebooks  execute the notebooks in place
 #   make reproduce  rebuild data, tests, figures and notebooks in order
@@ -10,13 +11,16 @@
 PYTHON ?= python3
 export PYTHONPATH := src:$(PYTHONPATH)
 
-.PHONY: check data figures notebooks reproduce clean
+.PHONY: check data demand figures notebooks reproduce clean
 
 check:
 	$(PYTHON) -m pytest -q
 
 data:
 	$(PYTHON) scripts/run_data.py
+
+demand:
+	$(PYTHON) scripts/run_demand.py
 
 figures:
 	$(PYTHON) -m transperth.plotting

@@ -27,10 +27,16 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 |---|---|
 | `make check` | run the pytest suite in `tests/` |
 | `make data` | rebuild `data/processed/` from the raw GTFS snapshot |
+| `make demand` | regenerate the P2.4 demand load and capacity tables and figures |
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |
 | `make clean` | remove Python and pytest caches |
+
+`make demand` runs `scripts/run_demand.py`: it compares the topology and
+AM-peak demand load rankings and sweeps the frozen tolerance grid with the
+frequency-scaled reference capacity, writing `results/demand/` tables with
+sidecars and the two `figures/fig_demand_*.png` figures.
 
 `make reproduce` is the documented path from raw data to the figures and
 notebooks used in the report. The `data` stage reads the Transperth GTFS feed

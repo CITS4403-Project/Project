@@ -59,11 +59,33 @@ Load modes (`LoadMode`):
 | `betweenness` | L0_i on the unweighted rail graph |
 | `betweenness_freq` | betweenness with edge length 1 / trips, so frequent services carry shorter paths |
 | `betweenness_plus_trips` | L0_i + 0.1 * trips_served, a throughput proxy that gives leaf stations a positive baseline |
-| `demand` | GTFS AM-peak boardings proxy as flow, service frequency as capacity (P2.4) |
+| `demand` | GTFS AM-peak boardings proxy: `am_peak_stops`_i, the scheduled departure events at station i inside the frozen [07:00, 09:00) window (P2.4) |
+
+The demand proxy counts one potential boarding per scheduled departure event at
+the station, not observed passengers. It ignores alighting, pass-through
+occupancy and OD pairing, and it is not an estimate of crowding or of demand
+for any particular trip. `trips_served` counts the station's full-sequence
+stop visits and measures service frequency instead. Both columns are frozen
+GTFS attributes of `stations.csv`; P2.4 uses the first as the demand load and
+the second to derive the reference capacity below.
 
 ## 3. Capacity
 
-    C_i = (1 + alpha) * L0_i,   alpha >= 0
+    C_i = (1 + alpha) * K_i,   alpha >= 0
+
+`K_i` is the reference capacity. The default is `K_i = L0_i`, which is the
+frozen law `C_i = (1 + alpha) * L0_i`. The demand experiment of P2.4 replaces
+it with a capacity derived from GTFS service frequency. With the frequency
+`f_i = trips_served`_i and the uniform peak-share scale
+
+    c = max_i (L0_i / f_i) over stations with f_i > 0,
+    K_i = c * f_i,
+
+`K_i >= L0_i` holds by construction on the frozen graph, with equality only at
+the station that attains the maximum. This is the smallest uniform frequency
+scaling that avoids an initial overload at `alpha = 0`; it is a scenario
+assumption, not a measured boarding capacity, and the scale `c` is recorded
+with the demand results.
 
 Capacities are computed once from the intact graph and stay fixed during a
 cascade. A station with L0_i = 0 gets C_i = 0. Zero current load does not
@@ -101,8 +123,15 @@ Dynamic mode (`dynamic=True`). After each removal round, loads are recomputed
 with the selected load mode on the surviving graph, which models full
 shortest-path rerouting. The redistribution rules do not apply in this mode. An
 additive ``load_function`` may replace this recomputation (and the intact
-baseline) with caller-supplied loads; capacities stay fixed from the initial
-loads.
+baseline) with caller-supplied loads; capacities stay fixed from the intact
+baseline or from ``reference_capacities`` when supplied.
+
+The additive ``reference_capacities`` hook replaces ``L0`` in the capacity law
+only: with a mapping ``K`` the limits are ``C_i = (1 + alpha) * K_i`` while the
+loads keep the mode, ``baseline_loads`` or ``load_function`` that produced them.
+The default ``None`` uses ``K = L0``, so existing runs are unchanged. It is a
+function-level argument, like ``load_function``, and is validated to cover
+exactly the graph station IDs.
 
 Redistribution rules (`RedistributionRule`):
 
@@ -220,6 +249,7 @@ load_bus_coverage(*, coverage_csv=BUS_COVERAGE_CSV) -> pandas.DataFrame
 
 # loads.py (P1.3)
 initial_loads(graph, mode: LoadMode = "betweenness") -> dict[str, float]
+demand_reference_capacities(graph) -> dict[str, float]
 capacities(loads: Mapping[str, float], alpha: float) -> dict[str, float]
 
 # metrics.py (P1.2)
@@ -234,7 +264,7 @@ critical_fraction(curve: pandas.DataFrame, *, threshold: float = 0.5,
 
 # cascade.py (P1.4)
 simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None,
-                 load_function=None) -> CascadeResult
+                 load_function=None, reference_capacities=None) -> CascadeResult
 
 # multilayer.py (P1.5)
 build_layers(rail, *, speed_kmh: float = 40.0, access_minutes: float = 1.0) -> networkx.Graph

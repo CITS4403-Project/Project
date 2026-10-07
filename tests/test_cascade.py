@@ -128,9 +128,13 @@ def test_invalid_configuration(kwargs):
         simulate_cascade(path(), CascadeConfig(**kwargs))
 
 
-def test_demand_is_not_silently_substituted():
-    with pytest.raises(NotImplementedError):
-        simulate_cascade(path(), CascadeConfig(load_mode="demand"))
+def test_demand_mode_runs_without_a_load_function():
+    graph = path()
+    for node, stops in (("0", 1), ("1", 9), ("2", 2)):
+        graph.nodes[node]["am_peak_stops"] = stops
+    result = simulate_cascade(graph, CascadeConfig(load_mode="demand", alpha=1e9))
+    assert result.failed == ("1",)  # the largest demand load is the trigger
+    assert result.rounds == 0
 
 
 def test_empty_graph():
@@ -214,4 +218,56 @@ def test_load_function_must_be_callable_and_return_a_mapping():
     with pytest.raises(TypeError):
         simulate_cascade(
             path(), CascadeConfig(), load_function=lambda current: [1.0, 2.0, 3.0]
+        )
+
+
+# ---------------------------------------------------------------------------
+# reference capacities: C = (1 + alpha) * K, default K = L0 (P2.4)
+# ---------------------------------------------------------------------------
+def test_reference_capacities_default_equals_the_explicit_initial_capacities():
+    graph = path()
+    baseline = {"0": 1.0, "1": 2.0, "2": 0.5}
+    config = CascadeConfig(target="1", alpha=0.0, rule="equal")
+    default = simulate_cascade(graph, config, baseline_loads=baseline)
+    explicit = simulate_cascade(
+        graph, config, baseline_loads=baseline, reference_capacities=baseline
+    )
+    assert default == explicit
+
+
+def test_reference_capacities_change_the_containment():
+    graph = path()
+    baseline = {"0": 1.0, "1": 1.0, "2": 1.0}
+    config = CascadeConfig(target="1", alpha=0.0, rule="equal")
+    default = simulate_cascade(graph, config, baseline_loads=baseline)
+    assert default.failed == ("1", "0", "2")
+    raised = simulate_cascade(
+        graph,
+        config,
+        baseline_loads=baseline,
+        reference_capacities={"0": 2.0, "1": 2.0, "2": 2.0},
+    )
+    assert raised.failed == ("1",)
+    assert raised.remaining_load + raised.lost_load == pytest.approx(
+        raised.initial_total_load
+    )
+
+
+@pytest.mark.parametrize(
+    "reference",
+    [
+        {"0": 1.0, "1": 1.0},  # missing station
+        {"0": 1.0, "1": 1.0, "2": math.nan},
+        {"0": 1.0, "1": 1.0, "2": -1.0},
+    ],
+)
+def test_invalid_reference_capacities(reference):
+    with pytest.raises(ValueError):
+        simulate_cascade(path(), CascadeConfig(), reference_capacities=reference)
+
+
+def test_reference_capacities_must_be_a_mapping():
+    with pytest.raises(TypeError):
+        simulate_cascade(
+            path(), CascadeConfig(), reference_capacities=[1.0, 2.0, 3.0]
         )

@@ -1,4 +1,8 @@
-"""Synchronous rail cascades with fixed capacities and explicit lost load."""
+"""Synchronous rail cascades with fixed capacities and explicit lost load.
+
+Capacities follow ``C_i = (1 + alpha) * K_i``. ``K`` defaults to the initial
+loads; the optional ``reference_capacities`` hook replaces it.
+"""
 
 from __future__ import annotations
 
@@ -33,9 +37,9 @@ def _ordered_graph(graph: nx.Graph) -> nx.Graph:
 def _checked_loads(
     values: Mapping[str, float], graph: nx.Graph, *, label: str
 ) -> dict[str, float]:
-    """Return ``values`` as finite non-negative loads covering exactly ``graph``."""
+    """Return ``values`` as finite non-negative numbers covering exactly ``graph``."""
     if not isinstance(values, Mapping):
-        raise TypeError(f"{label} must return a mapping of station loads")
+        raise TypeError(f"{label} must be a mapping of station values")
     loads: dict[str, float] = {}
     for node, raw in values.items():
         try:
@@ -58,6 +62,7 @@ def simulate_cascade(
     *,
     baseline_loads: Mapping[str, float] | None = None,
     load_function: Callable[[nx.Graph], Mapping[str, float]] | None = None,
+    reference_capacities: Mapping[str, float] | None = None,
 ) -> CascadeResult:
     """Remove a trigger then fail overloaded stations in synchronous rounds.
 
@@ -69,8 +74,15 @@ def simulate_cascade(
     intact baseline and for every dynamic recomputation; it receives the
     current graph, must not modify it, and must return one finite non-negative
     load per current station. ``baseline_loads`` still overrides the initial
-    loads, and capacities stay fixed from those initial loads.
-    The input graph and baseline mapping remain unchanged.
+    loads.
+
+    ``reference_capacities`` is the additive capacity hook: when given it
+    supplies ``K_i`` for the general law ``C_i = (1 + alpha) * K_i`` while the
+    loads keep their source. The default ``None`` uses ``K = L0``, so the
+    frozen law ``C_i = (1 + alpha) * L0_i`` is reproduced exactly. Both
+    mappings must cover exactly the graph station IDs, and capacities stay
+    fixed from the intact graph.
+    The input graph and the supplied mappings remain unchanged.
     """
     current = _ordered_graph(graph)
     if config.trigger not in ("load", "degree", "random") or config.rule not in (
@@ -95,10 +107,6 @@ def simulate_cascade(
         "demand",
     ):
         raise ValueError("unknown cascade load mode")
-    if config.load_mode == "demand" and load_function is None:
-        raise NotImplementedError(
-            "demand loads require the P2.4 inputs or an explicit load_function"
-        )
     if config.target is not None and config.target not in current:
         raise ValueError(f"unknown target station {config.target!r}")
     if baseline_loads is not None:
@@ -109,7 +117,12 @@ def simulate_cascade(
         base = _checked_loads(load_function(current), current, label="load_function")
     if set(base) != set(current):
         raise ValueError("baseline_loads must contain exactly the graph station IDs")
-    limits = capacities(base, config.alpha)
+    reference = (
+        _checked_loads(reference_capacities, current, label="reference_capacities")
+        if reference_capacities is not None
+        else dict(base)
+    )
+    limits = capacities(reference, config.alpha)
     if not all(math.isfinite(value) for value in limits.values()):
         raise ValueError(
             "capacity overflow: loads and alpha must give finite capacities"
