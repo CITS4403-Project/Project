@@ -7,6 +7,11 @@ in the Perth public transport network.
 
 ## Setup
 
+P1.2 metrics and seeded bootstrap examples are documented in
+[docs/metrics.md](docs/metrics.md). With `PYTHONPATH=src`, run
+`python -m transperth.metrics_example --seed 0 --n-runs 20` to generate
+`results/metrics/` tables and provenance sidecars.
+
 The project uses a local virtual environment; no global packages are required.
 Python 3.14 is the tested version.
 
