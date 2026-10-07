@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import hashlib
+import os
+import subprocess
+import sys
 
 import pandas as pd
 import pytest
@@ -120,3 +123,21 @@ def test_runner_and_summary_are_reproducible():
         experiments.run_seeded(lambda seed: {"seed": 1}, n_runs=1)
     with pytest.raises(ValueError):
         experiments.child_seeds(0, 0)
+
+
+def test_script_import_works_with_only_src_on_pythonpath(tmp_path):
+    source_dir = experiments.Path(experiments.__file__).resolve().parents[1]
+    environment = {**os.environ, "PYTHONPATH": str(source_dir)}
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            'from transperth.experiments import RunMeta; print(RunMeta.create("demo", seed=0).seed)',
+        ],
+        cwd=tmp_path,
+        env=environment,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == "0"

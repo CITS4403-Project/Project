@@ -25,7 +25,7 @@ from typing import Any
 import pandas as pd
 import numpy as np
 
-from utils.stats import bootstrap_ci, validate_count
+from transperth.stats import bootstrap_ci, validate_count
 
 from transperth.config import PACKAGE_VERSION, RESULTS_DIR
 

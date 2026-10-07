@@ -25,7 +25,8 @@ station pairs over the original pair total. Supply both `served_pairs` and
 `total_pairs` for a terminal subset; counts must be nonnegative integers and
 served cannot exceed total. An empty OD universe is fully served (1).
 
-`utils.stats.bootstrap_ci` implements an independent-observation percentile
+`utils.stats.bootstrap_ci` exposes the packaged `transperth.stats` implementation,
+so existing script imports work with only `PYTHONPATH=src`. It implements an independent-observation percentile
 bootstrap with a local NumPy generator. `run_seeded` spawns independent child
 seeds with `SeedSequence` and records `run`/`seed` for each row. The callback
 returns a mapping without these reserved columns. `summarize_runs` produces
