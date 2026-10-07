@@ -30,7 +30,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |
-| `make clean` | remove caches and generated outputs |
+| `make clean` | remove Python and pytest caches |
 
 `make reproduce` is the documented path from raw data to the figures and
 notebooks used in the report. The `data` stage reads the Transperth GTFS feed
