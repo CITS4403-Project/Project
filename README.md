@@ -7,6 +7,12 @@ in the Perth public transport network.
 
 ## Setup
 
+P1.2 metrics and seeded bootstrap examples are documented in
+[docs/metrics.md](docs/metrics.md). P1.4 cascade rules and examples are documented in
+[docs/cascade.md](docs/cascade.md). With `PYTHONPATH=src`, run
+`python -m transperth.metrics_example --seed 0 --n-runs 20` to generate
+`results/metrics/` tables and provenance sidecars.
+
 P1.6 deployment policies and the synthetic comparison are documented in
 [docs/strategies.md](docs/strategies.md). With `PYTHONPATH=src`, run
 `python -m transperth.strategy_example --budget 2 --seed 0` to write results

@@ -45,7 +45,7 @@ checksums in `docs/data.md`.
 The initial load of station i is its betweenness centrality on the intact
 graph, computed with networkx `betweenness_centrality(G, normalized=False)`:
 
-    L0_i = sum over ordered pairs (s, t), s != i != t, of sigma_st(i) / sigma_st
+    L0_i = sum over unordered pairs {s, t}, s != i != t, of sigma_st(i) / sigma_st
 
 where sigma_st is the number of shortest paths from s to t and sigma_st(i)
 is the number that pass through i. The values are unnormalised because the
@@ -66,8 +66,9 @@ Load modes (`LoadMode`):
     C_i = (1 + alpha) * L0_i,   alpha >= 0
 
 Capacities are computed once from the intact graph and stay fixed during a
-cascade. A station with L0_i = 0 gets C_i = 0, so it can only fail as the
-explicit trigger; load 0 > 0 is false.
+cascade. A station with L0_i = 0 gets C_i = 0. Zero current load does not
+overload it, but positive redistributed load above tolerance can make it fail
+in static mode. It is not exempt from overload checks.
 
 ## 4. Failure and redistribution
 
@@ -98,7 +99,9 @@ shortest path is recomputed.
 
 Dynamic mode (`dynamic=True`). After each removal round, loads are recomputed
 as betweenness on the surviving graph, which models full shortest-path
-rerouting. The redistribution rules do not apply in this mode.
+rerouting. The redistribution rules do not apply in this mode. An additive
+``load_function`` may replace this recomputation (and the intact baseline) with
+caller-supplied loads; capacities stay fixed from the initial loads.
 
 Redistribution rules (`RedistributionRule`):
 
@@ -114,6 +117,10 @@ surviving neighbour removes its load from the system.
 
 `CascadeResult` records `n_initial`, `failed`, `gcc`, `gcc_fraction`,
 `failed_fraction`, `avalanche_sizes`, `rounds` and the derived `n_failed`.
+Avalanche sizes count only failures after the trigger; rounds counts those
+failure rounds, excluding the final stability check. Optional additive fields
+`initial_total_load`, `remaining_load` and `lost_load` audit static conservation.
+The latter two are None in dynamic mode, where routing load is recomputed.
 
 ## 5. Multilayer model
 
@@ -164,7 +171,7 @@ instead of dropping out of the metric.
 | LCC | second-largest connected component, used for susceptibility peaks |
 | `isolated` | stations with degree 0 |
 | ASPL | mean shortest path length within the largest component; unreachable pairs are excluded |
-| `efficiency` | Latora-Marchiori global efficiency, mean over ordered reachable pairs of 1 / d(i, j); unreachable pairs contribute 0 |
+| `efficiency` | Sum of inverse hop distances over surviving ordered pairs, divided by n_initial * (n_initial - 1); removed and unreachable pairs contribute 0 |
 | `network_damage` | 1 - efficiency / baseline_efficiency of the intact graph |
 | `failed_fraction` | failed stations / n_initial for one cascade |
 | avalanche size | newly failed stations per round |
@@ -213,7 +220,7 @@ initial_loads(graph, mode: LoadMode = "betweenness") -> dict[str, float]
 capacities(loads: Mapping[str, float], alpha: float) -> dict[str, float]
 
 # metrics.py (P1.2)
-compute_metrics(graph, *, baseline_efficiency=None, served_pairs=None, total_pairs=None) -> MetricsBundle
+compute_metrics(graph, *, baseline_efficiency=None, served_pairs=None, total_pairs=None, n_initial=None) -> MetricsBundle
 
 # failure.py (P1.3)
 target_order(graph, measure: str = "degree", *, static: bool = True) -> list[str]
@@ -223,7 +230,8 @@ critical_fraction(curve: pandas.DataFrame, *, threshold: float = 0.5,
                   column: str = "gcc_fraction") -> float
 
 # cascade.py (P1.4)
-simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None) -> CascadeResult
+simulate_cascade(graph, config: CascadeConfig, *, baseline_loads=None,
+                 load_function=None) -> CascadeResult
 
 # multilayer.py (P1.5)
 build_layers(rail, *, speed_kmh: float = 40.0, access_minutes: float = 1.0) -> networkx.Graph
