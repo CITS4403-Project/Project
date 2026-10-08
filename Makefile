@@ -7,7 +7,7 @@
 #   make cascade      regenerate the P2.2 cascade, avalanche and closure results
 #   make recovery     regenerate the P2.3 recovery and bus strategy results
 #   make uncertainty  regenerate the P2.5 uncertainty and sensitivity results
-#   make figures      regenerate the figures from saved results
+#   make figures      regenerate the figures and report evidence from saved results
 #   make notebooks    execute the notebooks in place
 #   make reproduce    rebuild data, tests, figures and notebooks in order
 #   make clean        remove Python and pytest caches
@@ -41,6 +41,7 @@ uncertainty:
 
 figures:
 	$(PYTHON) -m transperth.plotting
+	$(PYTHON) report/generate_figures.py
 
 notebooks:
 	$(PYTHON) -m jupyter nbconvert --to notebook --execute --inplace notebooks/*.ipynb

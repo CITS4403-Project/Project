@@ -59,9 +59,9 @@ specification, experimental design, results, and discussion/conclusions.
 
 ## Formatting requirements
 
-From the project root, run `python report/generate_figures.py` before building
-the report. It reads the committed full experiment tables, checks their graph
-provenance and available family manifests, and writes three selected figures,
+Before building the report, run `make figures` from the project root. It reads
+the committed full experiment tables, checks their graph provenance and
+available family manifests, and writes three selected figures,
 `sections/00-results-values.tex`, `figures/report_values.json` and an evidence
 manifest. The abstract/results use generated numeric macros so rounded claims
 come from the same evidence as the figures. It does not rerun experiments.

@@ -30,10 +30,10 @@ Every source has a metadata sidecar. The selected-figure manifest additionally
 records table, sidecar, generator and output hashes.
 \par\endgroup
 
-From the repository root, \texttt{python} \path{report/generate_figures.py}
-regenerates the three selected images and the numeric macros used in the
-abstract and results. Then run \texttt{make} inside \texttt{report/}, or use
-the documented Tectonic command in \texttt{report/README.md}. The P2 runners
+From the repository root, \texttt{make figures} regenerates the three selected
+images and the numeric macros used in the abstract and results. Then run
+\texttt{make} inside \texttt{report/}, or use the documented Tectonic command in
+\texttt{report/README.md}. The P2 runners
 reproduce full experiments; the figure generator only reads their frozen
 outputs. Bootstrap intervals quantify pointwise Monte Carlo error; they do
 not cover different dates, measured demand or model misspecification.
