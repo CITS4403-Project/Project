@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable, Sequence
 from pathlib import Path
 
 import numpy as np
@@ -17,7 +18,9 @@ from transperth.stats import bootstrap_ci, validate_count
 from transperth.tail_fit import power_law_gof
 
 
-def mean_interval(values, *, seed: int, n_boot: int) -> dict:
+def mean_interval(
+    values: Iterable[float], *, seed: int, n_boot: int
+) -> dict[str, int | float]:
     values = np.asarray(values, dtype=float)
     low, high = bootstrap_ci(values, statistic=np.mean, n_boot=n_boot, seed=seed)
     return {
@@ -30,7 +33,14 @@ def mean_interval(values, *, seed: int, n_boot: int) -> dict:
     }
 
 
-def grouped_intervals(table, groups, metrics, *, seed=0, n_boot=2000):
+def grouped_intervals(
+    table: pd.DataFrame,
+    groups: Sequence[str],
+    metrics: Sequence[str],
+    *,
+    seed: int = 0,
+    n_boot: int = 2000,
+) -> pd.DataFrame:
     """One interval per fixed condition; never resample dependent rounds."""
     rows = []
     collections = list(table.groupby(groups, sort=True))
@@ -50,14 +60,14 @@ def grouped_intervals(table, groups, metrics, *, seed=0, n_boot=2000):
 
 
 def seed_convergence(
-    table,
-    groups,
-    metrics,
+    table: pd.DataFrame,
+    groups: Sequence[str],
+    metrics: Sequence[str],
     *,
-    seed=0,
-    n_boot=2000,
-    counts=(25, 50, 100, 200, 300, 500, 1000, 2000),
-):
+    seed: int = 0,
+    n_boot: int = 2000,
+    counts: Sequence[int] = (25, 50, 100, 200, 300, 500, 1000, 2000),
+) -> pd.DataFrame:
     """Nested prefixes compared with the complete stored sample (not true means)."""
     counts = tuple(validate_count(count, "prefix count", minimum=1) for count in counts)
     if not counts or len(set(counts)) != len(counts):
@@ -102,7 +112,14 @@ def seed_convergence(
     return pd.DataFrame(rows)
 
 
-def paired_difference(left, right, metric, *, seed=0, n_boot=2000):
+def paired_difference(
+    left: pd.DataFrame,
+    right: pd.DataFrame,
+    metric: str,
+    *,
+    seed: int = 0,
+    n_boot: int = 2000,
+) -> dict[str, int | float]:
     """Right minus left on exactly matched seed/target replicates."""
     keys = ["replicate", "seed", "target"]
     if left.replicate.duplicated().any() or right.replicate.duplicated().any():
@@ -121,7 +138,7 @@ def paired_difference(left, right, metric, *, seed=0, n_boot=2000):
     )
 
 
-def grid_sensitivity(full):
+def grid_sensitivity(full: pd.DataFrame) -> pd.DataFrame:
     """Coarsen an existing fine sweep; no interpolation of the trigger RNG."""
     rows = []
     for rule, group in full.groupby("rule"):
@@ -195,11 +212,11 @@ def run_uncertainty(
     output_dir: Path,
     figures_dir: Path,
     cascade_dir: Path,
-    n_seeds=1000,
-    n_boot=2000,
-    n_tail_boot=500,
-    seed=0,
-    quick=False,
+    n_seeds: int = 1000,
+    n_boot: int = 2000,
+    n_tail_boot: int = 500,
+    seed: int = 0,
+    quick: bool = False,
 ) -> dict:
     from transperth.uncertainty_figures import render_uncertainty_figures
 

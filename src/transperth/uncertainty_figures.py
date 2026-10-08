@@ -2,16 +2,28 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
+from pathlib import Path
+from typing import Any
+
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 from transperth.plotting import apply_style, save_figure
 from transperth.tail_fit import discrete_pmf
 
 
 def render_uncertainty_figures(
-    failure, collapse, convergence, paired, avalanche, fits, grid, directory
-):
+    failure: pd.DataFrame,
+    collapse: pd.DataFrame,
+    convergence: pd.DataFrame,
+    paired: pd.DataFrame,
+    avalanche: pd.DataFrame,
+    fits: Sequence[Mapping[str, Any]],
+    grid: pd.DataFrame,
+    directory: str | Path,
+) -> list[Path]:
     apply_style()
     paths = []
     fig, ax = plt.subplots(figsize=(7, 4))
