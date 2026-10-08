@@ -8,6 +8,7 @@ or regenerate the full experiment grid. Map assets are embedded and work offline
 | Notebook | Demonstration |
 | --- | --- |
 | `01_network.ipynb` | Frozen morning timetable, audited railway, terminal/facility layers, verified buses, offline map and line/frequency summaries |
+| `02-robustness-percolation.ipynb` | Random and targeted removal curves, frozen collapse estimates replayed with the packaged engine, single-station vulnerability ranking, interactive collapse viewer |
 | `03_cascades.ipynb` | Tolerance/rule curves with P2.5 intervals, avalanche size/duration distributions, trigger controls and a map revealing secondary failure rounds |
 
 Notebook 01 locates the repository from either the project root or `notebooks/`.
@@ -15,6 +16,13 @@ Its opening cells verify the processed-file hashes. The line filter needs a live
 kernel; the embedded map provides drag, wheel zoom, layer toggles and station
 details. Shared stations appear in each line's summary, so line counts must not
 be summed. Scheduled trip counts are not passenger counts.
+
+Notebook 02 reads the committed P2.1 and P2.5 tables, replays the frozen
+collapse estimates through `transperth.failure`, and ranks single-station
+triggers by containment tolerance. Its viewer selects a component, attack,
+target measure and removal fraction; the left panel reports the seed mean and
+envelope for the selected curve, and the map shows all 86 triggers. It writes
+PNG copies of its charts to `figures/notebook02/`.
 
 Execute in place from the project root:
 
