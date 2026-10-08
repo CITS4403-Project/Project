@@ -69,9 +69,11 @@ come from the same evidence as the figures. It does not rerun experiments.
 The main body ends after discussion/conclusions. Selected figures occupy
 dedicated pages, followed by references and an appendix with the Airport
 comparison table. This makes the five-page body budget directly visible;
-the additional pages contain no extra results interpretation. Recheck the
-combined pagination when P3.6 replaces its model/design placeholders. The
-writing review records self-checks and leaves teammate co-signs pending.
+the additional pages contain no extra results interpretation. The P3.6 model
+and design sections are in place, and the integrated main body currently ends
+within the five-page budget; recompile and recheck the combined pagination
+after any section change. The writing review records self-checks and leaves
+teammate co-signs pending.
 
 From the unit specification:
 
