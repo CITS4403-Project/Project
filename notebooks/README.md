@@ -19,10 +19,9 @@ Execute in place from the project root:
 
 ```sh
 make notebooks
-# or
-python -m jupyter nbconvert --to notebook --execute --inplace notebooks/01_network.ipynb
 ```
 
-Notebook 01 must finish within one minute. Saved outputs support reading on
-GitHub; interactive controls require trusted JupyterLab. See `docs/data.md`
-for raw-feed reproduction and `docs/model.md` for model assumptions.
+Notebook 01 must finish within one minute. It writes a PNG copy of its chart to
+`figures/notebook01/`. Saved outputs support reading on GitHub; interactive
+controls require trusted JupyterLab. See `docs/data.md` for raw-feed reproduction
+and `docs/model.md` for model assumptions.
