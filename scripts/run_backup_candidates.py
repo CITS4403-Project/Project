@@ -14,16 +14,18 @@ through :mod:`transperth.experiments` with input hashes and run parameters:
 
 The four pairs in ``data/processed/backup_edges.csv`` are manual ground truth
 and are never replaced by derived rows; the comparison table lists every
-manual pair with ``matched``, ``time_differs`` or ``not_derived``. Generated
-results stay out of git.
+manual pair with ``matched``, ``time_differs`` or ``not_derived``. The derived
+candidate table is committed as the standby pool for notebook 04, so the
+notebook and the recovery runner's fallback do not need the snapshot tables.
 
 The packaged P1.1 loader is used for the rail graph. The large snapshot tables
-are git-ignored; without them the runner writes nothing.
+are git-ignored; rerunning the runner without them writes nothing.
 """
 from __future__ import annotations
 
 import argparse
 import json
+from dataclasses import replace
 from pathlib import Path
 
 import networkx as nx
@@ -57,6 +59,34 @@ def load_rail_graph(data_dir: Path) -> nx.Graph:
     )
 
 
+def _portable_path(path: Path) -> str:
+    """Return a repository-relative path when ``path`` is inside the project."""
+    try:
+        return Path(path).resolve().relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def _portable_meta(
+    experiment: str,
+    *,
+    seed: int,
+    params: dict[str, object],
+    inputs: list[Path],
+) -> RunMeta:
+    """Create a sidecar with repository-relative input paths for portability."""
+    meta = RunMeta.create(experiment, seed=seed, params=params, inputs=inputs)
+    portable: dict[str, str] = {}
+    for filename, digest in meta.inputs.items():
+        path = Path(filename)
+        try:
+            key = path.relative_to(PROJECT_ROOT).as_posix()
+        except ValueError:
+            key = str(path)
+        portable[key] = digest
+    return replace(meta, inputs=portable)
+
+
 def run(
     *,
     snapshot_dir: Path = DEFAULT_SNAPSHOT_DIR,
@@ -88,11 +118,11 @@ def run(
     check = compare_manual_pairs(manual, derived, tolerance_minutes=tolerance_minutes)
 
     experiment = "multilayer"
-    meta = RunMeta.create(
+    meta = _portable_meta(
         experiment,
         seed=0,
         params={
-            "snapshot_dir": str(Path(snapshot_dir).resolve()),
+            "snapshot_dir": _portable_path(snapshot_dir),
             "radius_m": radius_m,
             "walking_transfer_minutes": walk_minutes,
             "match_tolerance_minutes": tolerance_minutes,
