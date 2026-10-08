@@ -2,8 +2,53 @@
 % Use this for supplementary material such as extra parameter scans,
 % derivations, or links to simulations and notebooks.
 
-\section{Supplementary material}
+\section{Reproducibility and supplementary evidence}
 \label{app:supplementary}
 
-Optional supporting figures, tables or links (for example, to the committed
-notebooks and results in the main project repository).
+The repository is
+\url{https://github.com/CITS4403-Project/Project}. The live demonstration uses
+\path{notebooks/01_network.ipynb} and
+\path{notebooks/03_cascades.ipynb}, alongside the P3.2/P3.4 notebooks.
+These run from committed inputs and do not require a live timetable download.
+Full model definitions and raw-feed reconstruction are in
+\texttt{docs/model.md} and \texttt{docs/data.md}.
+
+\begingroup
+\raggedright
+The RQ1 crossing table is \path{percolation_critical_fractions.csv} in
+\path{results/percolation/}; susceptibility peaks and GCC crossings occupy
+separate columns.
+RQ2 uses \path{results/cascade/runs.csv} and
+\path{avalanche_samples.csv}. RQ3 uses
+\path{results/recovery/bus_cascade_scan.csv},
+\path{bus_cascade_loads.csv} and
+\path{strategy_comparison.csv}. RQ4 uses
+\path{results/uncertainty/recommendations.json},
+\path{power_law_fits.json} and
+\path{results/demand/demand_alpha_star.csv}.
+Every source has a metadata sidecar. The selected-figure manifest additionally
+records table, sidecar, generator and output hashes.
+\par\endgroup
+
+From the repository root, \texttt{make figures} regenerates the three selected
+images and the numeric macros used in the abstract and results. Then run
+\texttt{make} inside \texttt{report/}, or use the documented Tectonic command in
+\texttt{report/README.md}. The P2 runners
+reproduce full experiments; the figure generator only reads their frozen
+outputs. Bootstrap intervals quantify pointwise Monte Carlo error; they do
+not cover different dates, measured demand or model misspecification.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Airport Line exclusive-station closure, $\alpha=0.2$. The policy
+  budget is two selected links. Fractions use common intact denominators.}
+  \label{tab:airport}
+  \begin{tabular}{lrrr}
+    \toprule
+    Policy & Secondary closures & Served OD (\%) & Served weight (\%) \\
+    \midrule
+    No backup & 0 & \AirportRailServicePercent & \AirportRailDemandPercent \\
+    Existing bus & 1 & \AirportBusServicePercent & \AirportBusDemandPercent \\
+    \bottomrule
+  \end{tabular}
+\end{table}

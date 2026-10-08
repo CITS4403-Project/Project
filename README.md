@@ -32,7 +32,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make cascade` | regenerate the P2.2 cascade, avalanche and line-closure tables and figures |
 | `make recovery` | regenerate the P2.3 recovery and bus strategy tables and figures |
 | `make uncertainty` | regenerate the P2.5 uncertainty, sensitivity and tail tables and figures |
-| `make figures` | regenerate the figures from the frozen inputs and results |
+| `make figures` | regenerate the figures and report evidence from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |
 | `make clean` | remove Python and pytest caches |

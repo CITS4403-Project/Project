@@ -24,8 +24,11 @@ __all__ = [
     "STYLE",
     "apply_style",
     "main",
+    "plot_bus_service_mechanism",
     "plot_network",
+    "plot_robustness_cascade",
     "plot_series",
+    "plot_uncertainty_avalanche",
     "save_figure",
 ]
 
@@ -107,6 +110,122 @@ def plot_network(
     ax.set_ylabel("latitude")
     ax.set_aspect("equal", adjustable="datalim")
     return ax
+
+
+def plot_robustness_cascade(removal, runs, ci):
+    """Report RQ1/RQ2: removal curves and static secondary failure with intervals.
+
+    ``removal`` maps curve names to their per-seed result tables, ``runs`` holds
+    the deterministic triggers and ``ci`` the random-trigger confidence rows.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 3.0))
+    for name, label in [
+        ("random_degree", "Random (100 trials)"),
+        ("targeted_degree", "Fixed degree rank"),
+        ("targeted_betweenness", "Fixed betweenness rank"),
+    ]:
+        curve = removal[name].groupby("fraction").gcc_fraction.mean()
+        axes[0].plot(curve.index, curve.values, label=label)
+    axes[0].axhline(0.5, color="0.5", ls=":", lw=1)
+    axes[0].set(
+        xlim=(0, 0.2),
+        ylim=(0, 1.02),
+        xlabel="Removed station fraction",
+        ylabel="GCC / 86",
+        title="(a) Structural fragmentation",
+    )
+    axes[0].legend()
+    for rule in ["capacity", "equal"]:
+        rows = runs[(runs.rule == rule) & (runs.trigger == "load")].sort_values("alpha")
+        axes[1].plot(rows.alpha, rows.failed_fraction, label=f"Max load: {rule}")
+    random = ci[(ci.rule == "capacity") & (ci.metric == "failed_fraction")].sort_values(
+        "alpha"
+    )
+    axes[1].plot(
+        random.alpha, random["mean"], "--", color="C2", label="Random capacity mean"
+    )
+    axes[1].fill_between(random.alpha, random.low, random.high, color="C2", alpha=0.18)
+    axes[1].set(
+        xlim=(0, 0.8),
+        ylim=(0, 1.02),
+        xlabel="Capacity tolerance alpha",
+        ylabel="Failed stations / 86",
+        title="(b) Static secondary failure",
+    )
+    axes[1].legend()
+    fig.tight_layout()
+    return fig
+
+
+def plot_bus_service_mechanism(bay, ratios):
+    """Report RQ3: Bayswater service fraction and Fremantle load ratio.
+
+    ``bay`` and ``ratios`` are the scenario-indexed slices prepared from the
+    frozen recovery tables.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 3.0))
+    labels = ["Rail only", "4 manual\npairs", "Full bus\npool"]
+    colours = ["#64748b", "#08916b", "#2563eb"]
+    served = 1 - bay.unmet_fraction
+    bars = axes[0].bar(labels, served, color=colours)
+    for bar, failures in zip(bars, bay.n_failed):
+        axes[0].text(
+            bar.get_x() + bar.get_width() / 2,
+            bar.get_height() + 0.025,
+            f"{failures} rail failed",
+            ha="center",
+            fontsize=7.5,
+        )
+    axes[0].set(
+        ylim=(0, 1.16),
+        ylabel="Served terminal-pair fraction",
+        title="(a) Bayswater closure, alpha=0.2",
+    )
+    axes[1].bar(labels, ratios.load_ratio, color=colours)
+    axes[1].axhline(1, color="#dc2626", ls="--", label="Fixed-capacity limit")
+    axes[1].set(
+        ylim=(0, 1.55),
+        ylabel="Load / fixed capacity",
+        title="(b) Fremantle, first load check",
+    )
+    axes[1].legend(loc="upper left")
+    fig.tight_layout()
+    return fig
+
+
+def plot_uncertainty_avalanche(recommendations, avalanche):
+    """Report RQ4: seed-count resolution and finite avalanche outcome masses."""
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 3.0))
+    evidence = recommendations["seed_candidates"]
+    available = [e for e in evidence if e["all_condition_prefixes_available"]]
+    axes[0].plot(
+        [e["n"] for e in available],
+        [e["worst_ci_half_width"] for e in available],
+        "o-",
+        label="Worst 95% CI half width",
+    )
+    axes[0].axhline(0.03, color="#dc2626", ls="--", label="Chosen error tolerance")
+    axes[0].set(
+        xlabel="Random-trigger trials",
+        ylabel="Fraction scale",
+        title="(a) Sampling resolution",
+    )
+    axes[0].legend()
+    for alpha, group in avalanche[~avalanche.dynamic].groupby("alpha"):
+        counts = group.post_trigger_size.value_counts().sort_index()
+        axes[1].scatter(
+            counts.index, counts / len(group), s=16, label=f"alpha={alpha:g}"
+        )
+    axes[1].set(
+        xlabel="Secondary failures S",
+        ylabel="Probability mass",
+        xlim=(-2, 87),
+        ylim=(0, 1.05),
+        title="(b) Finite avalanche outcomes",
+    )
+    axes[1].legend(loc="upper left")
+    fig.tight_layout()
+    return fig
 
 
 def main(argv: Sequence[str] | None = None) -> int:

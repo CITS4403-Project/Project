@@ -1,0 +1,23 @@
+{
+  "RandomCrossPercent": 6.31586826347305,
+  "DegreeCrossPercent": 1.675,
+  "BetweenCrossPercent": 1.23529411764705,
+  "CapacityAlphaStar": 0.525,
+  "EqualAlphaStar": 0.625,
+  "CoarseAlphaStar": 0.6,
+  "DemandAlphaStar": 0.75,
+  "MaxLoadFailed": 86,
+  "MaxLoadRounds": 31,
+  "BayRailServicePercent": 67.00410396716826,
+  "BayBusServicePercent": 100.0,
+  "FremantleRailRatio": 0.6764705882352942,
+  "FremantleBusRatio": 1.3137254901960784,
+  "AirportRailServicePercent": 93.10533515731873,
+  "AirportBusServicePercent": 66.67578659370726,
+  "AirportRailDemandPercent": 94.50180072028812,
+  "AirportBusDemandPercent": 69.65186074429772,
+  "RecommendedSeeds": 1000,
+  "WorstHalfWidth": 0.02201867647058825,
+  "WorstMeanChange": 0.003041176470588214,
+  "TailPValue": 0.001996007984031936
+}
