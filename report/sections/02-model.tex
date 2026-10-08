@@ -27,7 +27,8 @@ $t_e = \max(0.1,\ d_e/(1000\,v)\cdot 60)$ minutes at an assumed $v = 40$ km/h.
 Backup terminal links use four manual effective times (walking, waiting and
 transfers) from \texttt{backup\_edges.csv} and GTFS candidates' fastest scheduled
 ride times, with no added walking or waiting. Manual rows override overlapping
-candidates; the Perth--Perth Underground transfer takes five minutes. Standby
+candidates even when slower, and duplicates within one table keep the fastest
+time; the Perth and Perth Underground transfer takes five minutes. Standby
 buses activate immediately after the initial closure with unlimited capacity;
 multilayer loads are terminal-subset betweenness over the intact terminal-pair
 denominator.
