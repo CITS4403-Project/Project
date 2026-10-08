@@ -1,0 +1,66 @@
+{
+  "artifact_sha256": {
+    "alpha_grid_sensitivity.csv": "50ca06f6cb59aa044d9dbfe99d9642da7c89beaf1f69db6e743c03eef0a59f3e",
+    "avalanche_ci.csv": "e03439660403eda0423071af95aba98ecace971eec501f1a194f1a7bbe801e29",
+    "bootstrap_resolution.csv": "cb134b4ee663314ccacba81195b8e3f3794ba3800744e1d6f86600a9788f36ce",
+    "cascade_ci.csv": "9c18efae844bf729cd7cecbff9234a9e5611387840b61f99a4f283a82ebe6022",
+    "figures/alpha_grid_sensitivity.png": "b2665298ec1985e9ee4ee5b7e0b543885dde97bc62d84a9df25e45efabc53d56",
+    "figures/cascade_ci.png": "e5ef71fffb40c0954c132d3c1e269a6d78d892ab9144aea06a23bdb0c8620ca8",
+    "figures/paired_sensitivity.png": "dce2c5192f8d3455abd4a8a6660bdf2faa455c3ed823c0ed3cf61ccde7740477",
+    "figures/random_failure_ci.png": "f0b00e5c4bae9c2f985e50141a185aedfb7d31d703c32f4f55a217a9289492d2",
+    "figures/seed_convergence.png": "28b21b8816eac3e31ef84f831cee21b72d6b08ab86f6ad1e1735aa127870a1b1",
+    "figures/tail_diagnostics.png": "b9a03012230b0968d5901e9a8cfcd19f5c415d3920569cd01df694c673933091",
+    "paired_sensitivity.csv": "1568ca0725c97ba4e173fa2d3b6e1bd15bafb712c82e6b07873a738b4fde66db",
+    "power_law_fits.json": "1110d68d3509eb85b2250a6c363c1617d91cb70bd41c38d0cd493988f0450d33",
+    "random_failure_ci.csv": "ee51672bf0df568aa62cef356525a57b3226d72b5678df8b4c9baf6b371a6d7f",
+    "random_failure_samples.csv": "2fe197beea829c9faf104876a9659823830288b3c4953f9248696b43984485f5",
+    "recommendations.json": "76c22825402ac8e949a08abe1a7999aca65c5dd7d4fb93009f17afba09216975",
+    "seed_convergence.csv": "c44c0f4da62444434aa5cc2fa253079981b8dec159f4fbaa392eaed9e484e9f6"
+  },
+  "params": {
+    "bootstrap_replicates": 2000,
+    "ci_scope": "Monte Carlo trigger sampling conditional on the fixed graph/model; not GTFS or structural uncertainty",
+    "confidence": 0.95,
+    "percolation_fractions": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "percolation_seeds": 1000,
+    "quick": false,
+    "recommendation_limits": {
+      "ci_half_width": 0.03,
+      "mean_fraction_change": 0.02
+    },
+    "seed": 0,
+    "seed_design": "P1.3 derived seed per fraction/replicate; nested prefixes; P2.2 matched child seeds across cascade settings",
+    "tail_alphas": [
+      0.1,
+      0.15,
+      0.2,
+      0.3
+    ],
+    "tail_bootstrap_replicates": 500,
+    "tail_min_distinct_sizes": 3,
+    "tail_min_observations": 50,
+    "tail_upper": 85
+  }
+}

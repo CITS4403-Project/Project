@@ -30,6 +30,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make demand` | regenerate the P2.4 demand load and capacity tables and figures |
 | `make percolation` | regenerate the P2.1 percolation and critical-node tables and figures |
 | `make cascade` | regenerate the P2.2 cascade, avalanche and line-closure tables and figures |
+| `make uncertainty` | regenerate the P2.5 uncertainty, sensitivity and tail tables and figures |
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |
@@ -102,6 +103,12 @@ P2.2's full tolerance, avalanche and line-closure experiments, saved tables and
 five figures regenerate with `PYTHONPATH=src python scripts/run_cascades.py`.
 See [the cascade experiment design](docs/cascade_experiments.md) for seeds,
 grid definitions, provenance and interpretation of the frozen tree.
+
+P2.5's bootstrap intervals, seed convergence, paired model sensitivity and
+discrete tail diagnostics regenerate with
+`PYTHONPATH=src python scripts/run_uncertainty.py`, using the saved full P2.2
+samples. See [the uncertainty analysis](docs/uncertainty.md) for recommended
+defaults and the limits of the power-law hypothesis.
 
 ## Report
 

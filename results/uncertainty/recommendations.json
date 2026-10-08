@@ -1,0 +1,265 @@
+{
+  "alpha_grid_evidence": [
+    {
+      "alpha_star": 0.525,
+      "max_interpolation_error": 0.0,
+      "points": 81,
+      "rule": "capacity",
+      "status": "observed_on_grid",
+      "step": 0.025
+    },
+    {
+      "alpha_star": 0.55,
+      "max_interpolation_error": 0.3382170542635659,
+      "points": 41,
+      "rule": "capacity",
+      "status": "observed_on_grid",
+      "step": 0.05
+    },
+    {
+      "alpha_star": 0.6,
+      "max_interpolation_error": 0.5139147286821704,
+      "points": 21,
+      "rule": "capacity",
+      "status": "observed_on_grid",
+      "step": 0.1
+    },
+    {
+      "alpha_star": 0.6,
+      "max_interpolation_error": 0.30596899224806196,
+      "points": 11,
+      "rule": "capacity",
+      "status": "observed_on_grid",
+      "step": 0.2
+    },
+    {
+      "alpha_star": 0.75,
+      "max_interpolation_error": 0.6193333333333333,
+      "points": 9,
+      "rule": "capacity",
+      "status": "observed_on_grid",
+      "step": 0.25
+    },
+    {
+      "alpha_star": 1.0,
+      "max_interpolation_error": 0.6544728682170543,
+      "points": 5,
+      "rule": "capacity",
+      "status": "observed_on_grid",
+      "step": 0.5
+    },
+    {
+      "alpha_star": 0.625,
+      "max_interpolation_error": 0.0,
+      "points": 81,
+      "rule": "equal",
+      "status": "observed_on_grid",
+      "step": 0.025
+    },
+    {
+      "alpha_star": 0.65,
+      "max_interpolation_error": 0.048313953488372086,
+      "points": 41,
+      "rule": "equal",
+      "status": "observed_on_grid",
+      "step": 0.05
+    },
+    {
+      "alpha_star": 0.7,
+      "max_interpolation_error": 0.06433139534883725,
+      "points": 21,
+      "rule": "equal",
+      "status": "observed_on_grid",
+      "step": 0.1
+    },
+    {
+      "alpha_star": 0.8,
+      "max_interpolation_error": 0.1936240310077519,
+      "points": 11,
+      "rule": "equal",
+      "status": "observed_on_grid",
+      "step": 0.2
+    },
+    {
+      "alpha_star": 0.75,
+      "max_interpolation_error": 0.2293798449612403,
+      "points": 9,
+      "rule": "equal",
+      "status": "observed_on_grid",
+      "step": 0.25
+    },
+    {
+      "alpha_star": 1.0,
+      "max_interpolation_error": 0.38798449612403096,
+      "points": 5,
+      "rule": "equal",
+      "status": "observed_on_grid",
+      "step": 0.5
+    }
+  ],
+  "bootstrap_resolution_evidence": [
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.0026436046511627703,
+      "high": 0.13587674418604648,
+      "low": 0.13058953488372094,
+      "max_endpoint_change": 6.279069767439749e-05,
+      "mean": 0.1332093023255814,
+      "n": 1000,
+      "reference_resamples": 2000,
+      "resamples": 200,
+      "scenario": "random_failure_f0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.002529941860465096,
+      "high": 0.13564680232558138,
+      "low": 0.1305869186046512,
+      "max_endpoint_change": 0.00016715116279070186,
+      "mean": 0.1332093023255814,
+      "n": 1000,
+      "reference_resamples": 2000,
+      "resamples": 500,
+      "scenario": "random_failure_f0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.002558720930232558,
+      "high": 0.13569883720930234,
+      "low": 0.13058139534883723,
+      "max_endpoint_change": 0.00011511627906973798,
+      "mean": 0.1332093023255814,
+      "n": 1000,
+      "reference_resamples": 2000,
+      "resamples": 1000,
+      "scenario": "random_failure_f0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.002616279069767427,
+      "high": 0.13581395348837208,
+      "low": 0.13058139534883723,
+      "max_endpoint_change": 0.0,
+      "mean": 0.1332093023255814,
+      "n": 1000,
+      "reference_resamples": 2000,
+      "resamples": 2000,
+      "scenario": "random_failure_f0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.015500220588235247,
+      "high": 0.8721588235294118,
+      "low": 0.8411583823529413,
+      "max_endpoint_change": 0.0014761764705881752,
+      "mean": 0.8561823529411765,
+      "n": 2000,
+      "reference_resamples": 2000,
+      "resamples": 200,
+      "scenario": "static_avalanche_a0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.014862058823529423,
+      "high": 0.8713269117647059,
+      "low": 0.841602794117647,
+      "max_endpoint_change": 0.0014573529411765485,
+      "mean": 0.8561823529411765,
+      "n": 2000,
+      "reference_resamples": 2000,
+      "resamples": 500,
+      "scenario": "static_avalanche_a0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.014912794117647121,
+      "high": 0.8710827941176471,
+      "low": 0.8412572058823529,
+      "max_endpoint_change": 0.0011117647058823676,
+      "mean": 0.8561823529411765,
+      "n": 2000,
+      "reference_resamples": 2000,
+      "resamples": 1000,
+      "scenario": "static_avalanche_a0.3"
+    },
+    {
+      "bootstrap_seed": 6,
+      "half_width": 0.015268602941176546,
+      "high": 0.8706826470588236,
+      "low": 0.8401454411764705,
+      "max_endpoint_change": 0.0,
+      "mean": 0.8561823529411765,
+      "n": 2000,
+      "reference_resamples": 2000,
+      "resamples": 2000,
+      "scenario": "static_avalanche_a0.3"
+    }
+  ],
+  "demand_scope": "Includes P2.4 AM-peak-stop demand proxy and fixed frequency-scaled reference capacities alongside the three betweenness-based models. Differences jointly change load and capacity assumptions; stop counts are not passenger observations.",
+  "quick": false,
+  "recommendation_scope": "Fixed graph/model and tested fractions/alphas; larger full samples serve as estimates, not exact population means. Require all tested normalized means to change <=0.02 and all 95% CI half widths <=0.03. Data/model uncertainty is not measured.",
+  "recommended_alpha_step": 0.025,
+  "recommended_bootstrap_replicates": 2000,
+  "recommended_random_seeds": 1000,
+  "seed_candidates": [
+    {
+      "all_condition_prefixes_available": true,
+      "n": 25,
+      "passes": false,
+      "worst_ci_half_width": 0.14,
+      "worst_mean_change": 0.056430232558139504
+    },
+    {
+      "all_condition_prefixes_available": true,
+      "n": 50,
+      "passes": false,
+      "worst_ci_half_width": 0.08999999999999997,
+      "worst_mean_change": 0.028755813953488474
+    },
+    {
+      "all_condition_prefixes_available": true,
+      "n": 100,
+      "passes": false,
+      "worst_ci_half_width": 0.054941176470588216,
+      "worst_mean_change": 0.0528764705882353
+    },
+    {
+      "all_condition_prefixes_available": true,
+      "n": 200,
+      "passes": false,
+      "worst_ci_half_width": 0.04470735294117645,
+      "worst_mean_change": 0.02300000000000002
+    },
+    {
+      "all_condition_prefixes_available": true,
+      "n": 300,
+      "passes": false,
+      "worst_ci_half_width": 0.03819656862745102,
+      "worst_mean_change": 0.016209803921568677
+    },
+    {
+      "all_condition_prefixes_available": true,
+      "n": 500,
+      "passes": false,
+      "worst_ci_half_width": 0.03097852941176471,
+      "worst_mean_change": 0.0045465116279069795
+    },
+    {
+      "all_condition_prefixes_available": true,
+      "n": 1000,
+      "passes": true,
+      "worst_ci_half_width": 0.02201867647058825,
+      "worst_mean_change": 0.003041176470588214
+    },
+    {
+      "all_condition_prefixes_available": false,
+      "n": 2000,
+      "passes": true,
+      "worst_ci_half_width": 0.015180000000000027,
+      "worst_mean_change": 0.0
+    }
+  ],
+  "tail_bootstrap_replicates": 500,
+  "tail_conclusion": "Do not claim a power law: inspect per-setting identifiability and refitted goodness-of-fit; non-rejection alone is insufficient.",
+  "tail_p_resolution": 0.001996007984031936
+}
