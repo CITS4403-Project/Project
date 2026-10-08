@@ -251,11 +251,19 @@ class _Candidates:
         def lines(station: str) -> set[str]:
             if station not in self.rail:
                 raise ValueError(f"unknown intact rail station {station!r}")
-            return {
-                value.strip()
-                for value in str(self.rail.nodes[station].get("lines", "")).split(";")
-                if value.strip()
-            }
+            raw = self.rail.nodes[station].get("lines", "")
+            if isinstance(raw, str):
+                values = raw.split(";")
+            else:
+                # The frozen loader stores lines as a list; fixtures may keep
+                # the CSV's semicolon string.
+                try:
+                    values = list(raw)
+                except TypeError as error:
+                    raise ValueError(
+                        f"station {station!r} lines must be a semicolon string or a list"
+                    ) from error
+            return {str(value).strip() for value in values if str(value).strip()}
 
         disrupted = set().union(*(lines(_id(station)) for station in failed))
         loads: dict[str, float] = {line: 0 for line in disrupted}

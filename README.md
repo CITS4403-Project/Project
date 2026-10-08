@@ -30,6 +30,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make demand` | regenerate the P2.4 demand load and capacity tables and figures |
 | `make percolation` | regenerate the P2.1 percolation and critical-node tables and figures |
 | `make cascade` | regenerate the P2.2 cascade, avalanche and line-closure tables and figures |
+| `make recovery` | regenerate the P2.3 recovery and bus strategy tables and figures |
 | `make uncertainty` | regenerate the P2.5 uncertainty, sensitivity and tail tables and figures |
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
@@ -51,6 +52,13 @@ the tolerance grid, writing `results/percolation/` tables with sidecars and the
 grid with maximum-load, maximum-degree and seeded random triggers, runs the
 avalanche and line-closure scenarios, and writes `results/cascade/` tables and
 JSON outcomes with sidecars plus the five `figures/cascade/*.png` figures.
+
+`make recovery` runs `scripts/run_recovery.py` for the RQ3 multilayer
+recovery results: the five P1.6 strategies on line-closure, interchange and
+random-failure scenarios, and the ported layered cascade comparing rail-only,
+manual-bus and full-candidate standby, writing `results/recovery/` tables with
+sidecars and the `figures/fig_recovery_*.png` figures. See
+[docs/recovery.md](docs/recovery.md).
 
 `make reproduce` is the documented path from raw data to the figures and
 notebooks used in the report. The `data` stage reads the Transperth GTFS feed
@@ -95,9 +103,10 @@ the frozen API that the implementation issues code against. `docs/data.md`
 (P0.2) holds the column dictionary and checksums of the frozen inputs.
 
 Phase notes: `docs/metrics.md` (P1.2) covers the damage metrics and seeded
-runs, `docs/cascade.md` (P1.4) the cascade rules and examples, and
-`docs/strategies.md` (P1.6) the budgeted bus deployment policies. Each
-document includes its own `PYTHONPATH=src` example command.
+runs, `docs/cascade.md` (P1.4) the cascade rules and examples,
+`docs/strategies.md` (P1.6) the budgeted bus deployment policies and
+`docs/recovery.md` (P2.3) the recovery scenarios and the layered bus-cascade
+model. Each document includes its own `PYTHONPATH=src` example command.
 
 P2.2's full tolerance, avalanche and line-closure experiments, saved tables and
 five figures regenerate with `PYTHONPATH=src python scripts/run_cascades.py`.

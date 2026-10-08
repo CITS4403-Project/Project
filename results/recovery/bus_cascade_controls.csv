@@ -1,0 +1,10 @@
+trigger,trigger_name,scenario,n_failed,n_secondary,rounds,failed_ids,reachable_pairs,original_pairs,unmet_fraction,mean_time_change_reachable_min
+56,Perth Stn,rail_only,1,0,0,56,2535,3655,0.3064295485636115,14.464415312771962
+56,Perth Stn,manual_bus,1,0,0,56,2535,3655,0.3064295485636115,9.032868367727312
+56,Perth Stn,candidate_bus,1,0,0,56,3655,3655,0.0,-3.835200277519757
+23,Bayswater Stn,rail_only,1,0,0,23,2449,3655,0.3299589603283174,0.0
+23,Bayswater Stn,manual_bus,1,0,0,23,2519,3655,0.31080711354309165,0.8095546912896942
+23,Bayswater Stn,candidate_bus,1,0,0,23,3655,3655,0.0,-1.5480186024648683
+28,Beckenham Stn,rail_only,1,0,0,28,2886,3655,0.21039671682626537,1.7821572581411682
+28,Beckenham Stn,manual_bus,1,0,0,28,2886,3655,0.21039671682626537,1.7821572581411682
+28,Beckenham Stn,candidate_bus,1,0,0,28,3655,3655,0.0,-2.44583269122351

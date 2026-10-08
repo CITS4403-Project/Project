@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-10-07T16:25:41+00:00",
+  "experiment": "recovery",
+  "inputs": {
+    "data/processed/backup_edges.csv": "f75ad5336e5f9d18d6f4b4288df46febaaf36c6c70c9f99f239f07ed65ff0a4d",
+    "data/processed/rail_edges.csv": "c6ddabf7ae89f47c58d3b3ef42a16a8a83d8f49b8552a413ba2b3dc4c44bb8e8",
+    "data/processed/stations.csv": "b31a1ffa087baeb2e546359367a515747ec4381d229b4b4664f37fe4f1b720b3",
+    "data/snapshots/2026-10-05_0700-0900/bus_trips.csv": "40aed757faf849d02d9f66da6bfb3371b817dc0bc64d6604be4ec0a2bdb911c6",
+    "data/snapshots/2026-10-05_0700-0900/stop_times.txt": "b6583303ef28981abaeb45b401e5fa9f326754fac49406887dfb84f7bb6357ab",
+    "data/snapshots/2026-10-05_0700-0900/stops.txt": "370d67c70e27080567279f2f3d12118d97f96d5763a6e373df2c7a47ce5ecc92",
+    "data/verified_topology.json": "72dc427f61e352d2c3af105b91593dbc97cad84b48ae4fbaa43a37fc25efb21b"
+  },
+  "package_version": "0.1.0",
+  "params": {
+    "alpha": 0.2,
+    "assumptions": [
+      "manual bus pairs are ground truth and win duplicate candidate pairs",
+      "GTFS candidates are single-trip co-occurrence evidence within 400 m",
+      "standby buses activate immediately after the initial closures",
+      "standby bus capacity is unlimited in this scenario model",
+      "rounds are algorithmic updates, not elapsed minutes"
+    ],
+    "budgets": [
+      2
+    ],
+    "candidate_count": 266,
+    "candidate_source": "frozen snapshot derivation",
+    "capacity_law": "C = (1 + alpha) * L0",
+    "cascade_alphas": [
+      0.0,
+      2.0,
+      0.05
+    ],
+    "demand_weight": "endpoint-sum: sum of endpoint am_peak_stops (P2.4 boarding proxy)",
+    "focus_alphas": [
+      0.0,
+      0.2
+    ],
+    "min_interchange_lines": 3,
+    "model": "P1.5 terminal/facility layers; terminal-subset weighted betweenness; synchronous irreversible rail closures; capacities fixed from the intact rail-only baseline",
+    "n_random": 5,
+    "random_size": 5,
+    "scenario_kinds": {
+      "interchange": 8,
+      "line_closure": 8,
+      "random": 5
+    },
+    "scenarios": 21,
+    "travel_time_unit": "minutes; penalties and changes are conditional on reachable pairs",
+    "triggers": [
+      "56",
+      "23",
+      "28"
+    ],
+    "walking_transfer_minutes": 5.0
+  },
+  "seed": 0,
+  "versions": {
+    "matplotlib": "3.11.2",
+    "networkx": "3.7",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  }
+}

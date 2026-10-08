@@ -208,3 +208,20 @@ def test_corridor_uses_disrupted_flow_proxy():
     assert CorridorReinforcement(table, rail=rail).deploy(
         graph, budget=1, failed=["A", "C"]
     ) == [("A", "B")]
+
+
+def test_corridor_accepts_the_frozen_loader_lines_list():
+    rail = nx.Graph()
+    for station, lines, trips in [
+        ("A", ["red", "blue"], 100),
+        ("B", ["red"], 50),
+        ("C", ["red"], 50),
+    ]:
+        rail.add_node(station, lines=lines, trips_served=trips)
+    graph = build_layers(rail)
+    table = pd.DataFrame(
+        [{"station_a": "B", "station_b": "C", "minutes": 5, "kind": "emergency_bus"}]
+    )
+    assert CorridorReinforcement(table, rail=rail).deploy(
+        graph, budget=1, failed=["A"]
+    ) == [("B", "C")]

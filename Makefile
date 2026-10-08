@@ -5,6 +5,7 @@
 #   make demand       regenerate the P2.4 demand load and capacity results
 #   make percolation  regenerate the P2.1 percolation and critical-node results
 #   make cascade      regenerate the P2.2 cascade, avalanche and closure results
+#   make recovery     regenerate the P2.3 recovery and bus strategy results
 #   make uncertainty  regenerate the P2.5 uncertainty and sensitivity results
 #   make figures      regenerate the figures from saved results
 #   make notebooks    execute the notebooks in place
@@ -14,7 +15,7 @@
 PYTHON ?= python3
 export PYTHONPATH := src:$(PYTHONPATH)
 
-.PHONY: check data demand percolation cascade uncertainty figures notebooks reproduce clean
+.PHONY: check data demand percolation cascade recovery uncertainty figures notebooks reproduce clean
 
 check:
 	$(PYTHON) -m pytest -q
@@ -31,6 +32,9 @@ percolation:
 
 cascade:
 	$(PYTHON) scripts/run_cascades.py
+
+recovery:
+	$(PYTHON) scripts/run_recovery.py
 
 uncertainty:
 	$(PYTHON) scripts/run_uncertainty.py
