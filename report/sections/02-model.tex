@@ -6,34 +6,31 @@
 \section{Model specification}
 \label{sec:model}
 
-The model represents the transport network as a graph of entities that carry a
-load and fail above a fixed capacity. Entity $i$ has an open or closed status
-$s_i(t)$ and a carried load $L_i(t)$, and it interacts with its neighbours
-$\mathcal{N}_i$. With the state $x_i(t) = (s_i(t), L_i(t))$, the generic
-update rule is
+Entity $i$ has state $x_i(t)=(s_i(t),L_i(t))$: open or closed status and carried
+load. With neighbours $\mathcal{N}_i$, its generic update is
 \begin{equation}
   x_i(t+1) = f\bigl(x_i(t), \{x_j(t)\}_{j \in \mathcal{N}_i}; \theta\bigr),
   \label{eq:update}
 \end{equation}
-where $\theta$ collects the capacity, tolerance, redistribution and rerouting
-parameters. In the transport case $f$ closes every open entity above capacity,
-removes the round's overloads together, and forwards their load to surviving
-neighbours, following \citet{motter2002cascade} with the local-redistribution
-variant below. A round is algorithmic and carries no wall-clock meaning.
+where $\theta$ collects capacities, numerical tolerance and update-mode
+parameters. Transport overloads are removed synchronously, then loads are
+redistributed or recomputed. The intact-capacity construction follows
+\citet{motter2002cascade}; the local variant is specified below. Rounds are
+algorithmic, not elapsed time.
 
 \subsection{Components, loads and failure}
-The rail layer is an undirected simple tree of 86 mapped stations and 85
-verified adjacent segments, frozen for 5 October 2026, 07:00 to 09:00
-Australia/Perth. The multilayer experiments split each station into a
+The frozen rail layer is an undirected simple tree: 86 stations and 85 adjacent
+segments. Multilayer experiments split each station into a
 persistent terminal $T{:}i$ and a closable rail facility $R{:}i$ with a
 one-minute access edge. Rail edges take
 $t_e = \max(0.1,\ d_e/(1000\,v)\cdot 60)$ minutes at an assumed $v = 40$ km/h.
-Backup edges join terminals with effective times including walking and waiting,
-using the four manual pairs in \texttt{backup\_edges.csv} as ground truth and
-extending the pool with GTFS candidates; a five-minute transfer joins the Perth
-and Perth Underground terminals. Standby buses activate immediately after the
-initial closure with unlimited capacity in the baseline scenario, and multilayer
-loads are terminal-subset betweenness over the intact terminal-pair denominator.
+Backup terminal links use four manual effective times (walking, waiting and
+transfers) from \texttt{backup\_edges.csv} and GTFS candidates' fastest scheduled
+ride times, with no added walking or waiting. Manual rows override overlapping
+candidates; the Perth--Perth Underground transfer takes five minutes. Standby
+buses activate immediately after the initial closure with unlimited capacity;
+multilayer loads are terminal-subset betweenness over the intact terminal-pair
+denominator.
 
 The initial load of station $i$ is its unnormalised betweenness on the intact
 graph, $L0_i = \sum \sigma_{st}(i) / \sigma_{st}$, summed over station pairs
@@ -51,13 +48,13 @@ Capacities follow
   C_i = (1+\alpha) K_i, \qquad \alpha \ge 0,
   \label{eq:capacity}
 \end{equation}
-with default reference capacity $K_i = L0_i$, fixed from the intact graph. A
-station with $L0_i = 0$ gets $C_i = 0$ and can still fail under positive
-redistributed load in the static mode. The demand experiment uses
-$K_i = c f_i$, where $f_i = \text{trips\_served}_i$ and
-$c = \max_i L0_i / f_i$ is the smallest uniform scaling that keeps
-$K_i \ge L0_i$ on the frozen graph; the scale $c$ is a scenario assumption
-recorded with the demand results.
+with intact reference $K_i = L0_i$ by default, fixed throughout the cascade.
+Zero initial load gives zero capacity, but positive static redistribution can
+still overload it. For the demand experiment, $L0_i = \text{am\_peak\_stops}_i$,
+$f_i = \text{trips\_served}_i$, and $K_i = c f_i$ with
+$c = \max_{i:f_i>0}(L0_i/f_i)$. This smallest uniform scale covering demand is
+a recorded scenario assumption. Zero frequency with zero demand gives $K_i=0$;
+positive demand with zero frequency is rejected.
 
 At each round every surviving station with $L_i > C_i + \delta$ fails, where
 the numerical tolerance $\delta$ defaults to $10^{-12}$; all overloads of a
@@ -83,14 +80,11 @@ model assumes undirected adjacent links, scheduled services as load proxies,
 hop distances for load concentration, minutes only in the multilayer layer,
 symmetric bus times, unlimited immediate standby, and one service date. An
 empty initial batch closes nothing; an
-$\alpha$ of zero adds no headroom and can fail a station immediately; duplicate
-backup endpoints keep the fastest connection; zero capacity does not exempt a
-station from overload checks.
+$\alpha$ of zero adds no headroom and can fail a station immediately; zero
+capacity does not exempt a station from overload checks.
 
-The defaults in \texttt{src/transperth/config.py} are $\alpha = 0.2$, master
-seed 0, tolerance $10^{-12}$, and the 81-point grid
-$\alpha = 0, 0.025, \ldots, 2$. The tolerance only guards floating-point
-comparisons. The grid starts at zero and reaches twice the $L0$ reference; it
-brackets the sampled containment tolerances near 0.5 and 0.75, and the 0.025
-step resolves the abrupt static transition, as the uncertainty experiment
-confirms.
+\texttt{src/transperth/config.py} defaults to $\alpha=0.2$, master seed 0,
+tolerance $10^{-12}$ and the 81-point grid $\alpha=0,0.025,\ldots,2$.
+The tolerance guards floating-point comparisons. The grid brackets containment
+near 0.5 and 0.75; its fine step distinguishes abrupt static transitions from
+coarser sampling (RQ4).
