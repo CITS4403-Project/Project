@@ -1,0 +1,71 @@
+% =========================================================================
+% CITS4403 Computational Modelling -- Research Project Report
+%
+% Build with:   make            (output: build/report.pdf)
+% Live rebuild: make watch
+% Clean up:     make clean
+%
+% Requirements from the unit specification (RUBICS.md):
+%   * maximum five A4 pages, excluding figures, references and appendices
+%   * 11pt font and 1-inch margins on all sides
+% =========================================================================
+\documentclass[11pt,a4paper]{article}
+
+% --- Page layout: 11pt font with 1-inch margins (unit requirement) --------
+\usepackage[a4paper,margin=1in]{geometry}
+
+% --- Encoding and fonts ---------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% --- Mathematics ----------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% --- Figures, tables and captions -----------------------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- References (BibTeX) --------------------------------------------------
+\usepackage[round]{natbib}
+
+% --- Hyperlinks (kept near the end of the preamble) -----------------------
+\usepackage[hidelinks]{hyperref}
+
+% --- Title metadata -------------------------------------------------------
+\title{Project Title}
+\author{Author One \quad\textbullet\quad Author Two\\[2pt]
+        \small CITS4403 Computational Modelling, The University of Western Australia}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent
+% One paragraph: the problem, the modelling approach, the headline result and
+% why it matters. Replace this placeholder text.
+Brief summary of the problem, the modelling approach and the main findings.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/02-model}
+\input{sections/03-experiments}
+\input{sections/04-results}
+\input{sections/05-discussion}
+
+% --- References (excluded from the five-page limit) -----------------------
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% --- Appendices (excluded from the five-page limit) -----------------------
+\appendix
+\input{sections/06-appendix}
+
+\end{document}

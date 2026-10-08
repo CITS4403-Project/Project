@@ -1,0 +1,42 @@
+# LaTeX build artefacts ------------------------------------------------------
+# Everything is built into build/, but editors and manual latex runs can
+# scatter these files through the tree.
+build/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Compiled output ------------------------------------------------------------
+# report.pdf in the root is committed; keep figure PDFs tracked and ignore
+# any other stray PDFs.
+*.pdf
+!report.pdf
+!figures/**/*.pdf
+
+# Editors and operating systems ----------------------------------------------
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Python (scripts that generate report figures) ------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/

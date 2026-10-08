@@ -1,0 +1,23 @@
+% Rubric: Model Specification and Justification.
+% Define components, variables, interactions, equations or update rules;
+% state assumptions and initialisation; justify model-design and parameter
+% choices.
+
+\section{Model specification}
+\label{sec:model}
+
+Define the entities, state variables and interactions of the model. The
+update rule for a generic entity is
+
+\begin{equation}
+  x_i(t+1) = f\bigl(x_i(t), \{x_j(t)\}_{j \in \mathcal{N}_i}; \theta\bigr),
+  \label{eq:update}
+\end{equation}
+
+where $\mathcal{N}_i$ is the neighbourhood of entity $i$ and $\theta$ collects
+the model parameters. Explain each term and justify the form of $f$, referring
+to the implementation in \texttt{src/} of the main repository.
+
+\subsection{Assumptions and initialisation}
+State the modelling assumptions, boundary cases and initialisation rules, and
+justify the parameter ranges that are used in the experiments.

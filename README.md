@@ -90,7 +90,7 @@ project-root/
 +-- results/         % Experiment outputs (CSV plus JSON provenance sidecars)
 +-- figures/         % Regenerated figures
 +-- investigations/  % Investigation-phase material, one directory per candidate idea
-+-- report/          % Report LaTeX sources (git submodule)
++-- report/          % Report LaTeX sources and compiled report.pdf
 +-- requirements.txt
 +-- README.md
 ```
@@ -121,13 +121,14 @@ defaults and the limits of the power-law hypothesis.
 
 ## Report
 
-The written report is a LaTeX project kept in the `report/` submodule
-([CITS4403-Project/report](https://github.com/CITS4403-Project/report)).
+The written report is a LaTeX project kept in the `report/` directory
+(`report.tex`, one file per section, `references.bib` and the compiled
+`report.pdf`). It used to live in the separate `CITS4403-Project/report`
+repository; sources and the compiled PDF are now tracked in this repository.
 
 ```bash
-git submodule update --init report   # after cloning this repository
 cd report
-make                                 # builds build/report.pdf
+make                                 # builds build/report.pdf, refreshes report.pdf
 ```
 
 See `report/README.md` for the template layout and contribution workflow.
