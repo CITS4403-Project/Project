@@ -25,23 +25,24 @@ persistent terminal $T{:}i$ and a closable rail facility $R{:}i$ with a
 one-minute access edge. Rail edges take
 $t_e = \max(0.1,\ d_e/(1000\,v)\cdot 60)$ minutes at an assumed $v = 40$ km/h.
 Backup terminal links use four manual effective times (walking, waiting and
-transfers) from \texttt{backup\_edges.csv} and GTFS candidates' fastest scheduled
-ride times, with no added walking or waiting. Manual rows override overlapping
-candidates; the Perth--Perth Underground transfer takes five minutes. Standby
-buses activate immediately after the initial closure with unlimited capacity;
-multilayer loads are terminal-subset betweenness over the intact terminal-pair
-denominator.
+transfers) from \texttt{backup\_edges.csv} and GTFS candidates' fastest
+scheduled ride times, with no added walking or waiting. Manual rows override
+overlapping candidates even when slower, and duplicates within one table keep
+the fastest time; the Perth and Perth Underground transfer takes five minutes.
+Standby buses activate immediately after the initial closure with unlimited
+capacity; multilayer loads are terminal-subset betweenness over the intact
+terminal-pair denominator.
 
 The initial load of station $i$ is its unnormalised betweenness on the intact
-graph, $L0_i = \sum \sigma_{st}(i) / \sigma_{st}$, summed over station pairs
-with $s \neq i \neq t$; the ratio is the share of shortest paths through $i$. The values stay unnormalised because the graph shrinks
-during a cascade: normalised loads would rise with the shrinking node set and
-rounds would not be comparable. The load modes are \texttt{betweenness} as
-above; \texttt{betweenness\_freq} with edge length $1/\text{trips}$;
+graph, $L0_i = \sum \sigma_{st}(i) / \sigma_{st}$ over station pairs with
+$s \neq i \neq t$, the share of shortest paths through $i$. Unnormalised values
+keep rounds comparable as the graph shrinks; normalised loads would rise with
+the shrinking node set. The load modes are \texttt{betweenness} as above;
+\texttt{betweenness\_freq} with edge length $1/\text{trips}$;
 \texttt{betweenness\_plus\_trips} with $0.1\,\text{trips served}_i$ added to
 give leaf stations a positive baseline; and \texttt{demand}, the AM-peak
-scheduled departure count \texttt{am\_peak\_stops}, a proxy for boardings
-rather than observed passengers.
+scheduled departure count \texttt{am\_peak\_stops}, a boardings proxy rather
+than passenger counts.
 
 Capacities follow
 \begin{equation}
@@ -57,21 +58,20 @@ a recorded scenario assumption. Zero frequency with zero demand gives $K_i=0$;
 positive demand with zero frequency is rejected.
 
 At each round every surviving station with $L_i > C_i + \delta$ fails, where
-the numerical tolerance $\delta$ defaults to $10^{-12}$; all overloads of a
-round are collected before any station is removed, and the cascade stops at the
-first clear round. The first failure is an explicit \texttt{target} when one is
-named, otherwise the \texttt{load}, \texttt{degree} or \texttt{random} trigger
-takes the largest initial load, the highest degree with station-ID ties, or a
-uniform seeded draw. A line closure replaces the trigger with one initial
-batch, removed before the first check and excluded from the secondary avalanche
-size. In the static mode each closed station forwards its load equally over
-survivors or in proportion to their capacities, falling back to equal shares
-when all have zero; a station with no survivor removes its load, and otherwise
-load is conserved. The dynamic mode recomputes loads on
-the surviving graph each round and ignores redistribution; on a tree this
-cannot raise a survivor's betweenness, so containment reflects dropped journeys
-rather than headroom. The containment tolerance $\alpha^*$ is the smallest
-sampled $\alpha$ at which the maximum-load trigger causes no secondary failure.
+the numerical tolerance $\delta$ defaults to $10^{-12}$; the round's overloads
+are collected before any removal, and the cascade stops at the first clear
+round. The first failure is an explicit \texttt{target} if named, otherwise the
+largest initial load (\texttt{load}), the highest degree with station-ID ties
+(\texttt{degree}), or a uniform seeded draw (\texttt{random}). A line closure
+replaces the trigger with one initial batch, removed before the first check and
+excluded from the secondary avalanche size. In the static mode a closed station
+forwards its load equally over survivors or in proportion to their capacities,
+with equal shares when all have zero; a station with no survivor removes its
+load, and otherwise load is conserved. The dynamic mode recomputes loads on the
+surviving graph each round and ignores redistribution; on a tree this cannot
+raise a survivor's betweenness, so containment reflects dropped journeys rather
+than headroom. The containment tolerance $\alpha^*$ is the smallest sampled
+$\alpha$ at which the maximum-load trigger causes no secondary failure.
 
 \subsection{Assumptions and initialisation}
 All facilities start open; loads and capacities come from the intact graph, and
@@ -85,6 +85,7 @@ capacity does not exempt a station from overload checks.
 
 \texttt{src/transperth/config.py} defaults to $\alpha=0.2$, master seed 0,
 tolerance $10^{-12}$ and the 81-point grid $\alpha=0,0.025,\ldots,2$.
-The tolerance guards floating-point comparisons. The grid brackets containment
-near 0.5 and 0.75; its fine step distinguishes abrupt static transitions from
-coarser sampling (RQ4).
+The tolerance guards floating-point comparisons. The grid starts at zero,
+reaches twice the $L0$ reference, and brackets the sampled containment
+tolerances near 0.5 and 0.75; its 0.025 step resolves the abrupt static
+transition (RQ4).

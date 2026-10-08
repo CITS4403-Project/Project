@@ -7,9 +7,8 @@
 \label{sec:experiments}
 
 Five runner families produce the evidence, each from one command in the
-repository root. They load the frozen graph through the model of
-Section~\ref{sec:model} and write their tables and figures under
-\texttt{results/} and \texttt{figures/}; Table~\ref{tab:design} lists the
+repository root. They load the frozen graph and write their tables and figures
+under \texttt{results/} and \texttt{figures/}; Table~\ref{tab:design} lists the
 scenarios, runner defaults and outcome measures.
 
 \begin{table}[t]
@@ -69,7 +68,7 @@ row per replicate through \texttt{experiments.save\_table}, with a
 SHA-256 input hashes; \texttt{--quick} variants are smoke tests in separate
 directories.
 
-The pipeline is runner, stored rows, statistics, report. The runners call the
+The runners call the
 packaged engines and store raw per-seed rows under \texttt{results/<family>/};
 the P1.2 helpers summarise them; \texttt{make figures} checks the tables
 against their sidecars, then writes the report figures and the macros in
