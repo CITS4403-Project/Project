@@ -59,6 +59,20 @@ specification, experimental design, results, and discussion/conclusions.
 
 ## Formatting requirements
 
+From the project root, run `python report/generate_figures.py` before building
+the report. It reads the committed full experiment tables, checks their graph
+provenance and available family manifests, and writes three selected figures,
+`sections/00-results-values.tex`, `figures/report_values.json` and an evidence
+manifest. The abstract/results use generated numeric macros so rounded claims
+come from the same evidence as the figures. It does not rerun experiments.
+
+The main body ends after discussion/conclusions. Selected figures occupy
+dedicated pages, followed by references and an appendix with the Airport
+comparison table. This makes the five-page body budget directly visible;
+the additional pages contain no extra results interpretation. Recheck the
+combined pagination when P3.6 replaces its model/design placeholders. The
+writing review records self-checks and leaves teammate co-signs pending.
+
 From the unit specification:
 
 - maximum **five A4 pages**, excluding figures, references and appendices;

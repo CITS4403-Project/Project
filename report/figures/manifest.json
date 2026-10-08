@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "results/percolation/percolation_critical_fractions.csv": "4acd733a612f0be31d6b5ead3d987dab88d5af97f31e8a52227d8c3b2701f344",
+    "results/percolation/percolation_critical_fractions.meta.json": "ea65c5c027be3ec4b218cdf6db241ac22cc3c813f8c0cd31435bf7d3c5745d5f",
+    "results/percolation/percolation_random_degree.csv": "e6b86018eabe05093d057efe58d0751c7ba1b63d4fbdbc98e25692453a077b71",
+    "results/percolation/percolation_random_degree.meta.json": "33bcb1f81364de3d391f745cb4b16e9fbdfdd1c5f1935035ab505cef884910a0",
+    "results/percolation/percolation_targeted_degree.csv": "9486f20fbe24ccbd358342e327f096f95bdab8977d48c9441271282f8eaae339",
+    "results/percolation/percolation_targeted_degree.meta.json": "66937a8dca67acb6924893e71760faa73c3f48e0690fe94bd5936fba20c4589a",
+    "results/percolation/percolation_targeted_betweenness.csv": "ba982d76de9dedcf233a02632ff99608f4080efa4b7e9ed5c4aa8dbd1da9cfbb",
+    "results/percolation/percolation_targeted_betweenness.meta.json": "4806f30537251abb501afb004f30cc5f8542560da70cc7456e3fc33ac89c7e3d",
+    "results/cascade/runs.csv": "6af2e065a1a0ba0d6674de3fc92c11a125f742a020ba5a666ae53d5523ea2b9b",
+    "results/cascade/runs.meta.json": "8cd6faf5dbed707fe00c479e184435debbebe8f727b560a873a0f97f68d298fb",
+    "results/uncertainty/cascade_ci.csv": "9c18efae844bf729cd7cecbff9234a9e5611387840b61f99a4f283a82ebe6022",
+    "results/uncertainty/cascade_ci.meta.json": "50a71760e3590d46666923ab85e2418ba5b2f63d0dff50a95badf0ac074201a6",
+    "results/recovery/bus_cascade_scan.csv": "ca1ef9393e52f77207ef6adac5c84a4f9b21b8766158c1b82e6dfd74d79656bb",
+    "results/recovery/bus_cascade_scan.meta.json": "c178d96eb2f0f891ee614f66105befb024901fa8e2183279a107c053d7e0ee9a",
+    "results/recovery/bus_cascade_loads.csv": "3e4fe50fb2d207ece5bae40915e7dcc44503d1b6eb92803f59f35175510f81c3",
+    "results/recovery/bus_cascade_loads.meta.json": "c178d96eb2f0f891ee614f66105befb024901fa8e2183279a107c053d7e0ee9a",
+    "results/recovery/strategy_comparison.csv": "ccdf96dfbb03c343c9e14165af3d885145a22c6a321e52c8d072715c2accef98",
+    "results/recovery/strategy_comparison.meta.json": "c178d96eb2f0f891ee614f66105befb024901fa8e2183279a107c053d7e0ee9a",
+    "results/cascade/avalanche_samples.csv": "630ffcbecaa69e6aea0986f22358d4d27bf373022eb16987b9110ba3485973db",
+    "results/cascade/avalanche_samples.meta.json": "8cd6faf5dbed707fe00c479e184435debbebe8f727b560a873a0f97f68d298fb",
+    "results/uncertainty/recommendations.json": "76c22825402ac8e949a08abe1a7999aca65c5dd7d4fb93009f17afba09216975",
+    "results/uncertainty/recommendations.meta.json": "50a71760e3590d46666923ab85e2418ba5b2f63d0dff50a95badf0ac074201a6",
+    "results/uncertainty/power_law_fits.json": "1110d68d3509eb85b2250a6c363c1617d91cb70bd41c38d0cd493988f0450d33",
+    "results/uncertainty/power_law_fits.meta.json": "50a71760e3590d46666923ab85e2418ba5b2f63d0dff50a95badf0ac074201a6",
+    "results/demand/demand_alpha_star.csv": "4d6d59cc8bf23530690ca740baa6ffff40b0f4c049de52fff29869e39f61c2ab",
+    "results/demand/demand_alpha_star.meta.json": "472263cf245e5e2408be3689d4723df2f277fdd2d1ce48e2e1bf232a209c69f8",
+    "report/generate_figures.py": "3223a6754688981d433642f442734962ef0054a5ab7ecd7c242a37410a65471b"
+  },
+  "artifacts": {
+    "report/figures/robustness_cascade.png": "fc6f63c707327ae6cd89ba3c07d585a6bd355ee36eccd12944f5615aada91785",
+    "report/figures/bus_service_mechanism.png": "cae5aee8c7f18d4a678ee11963e1413c8576b5fe2aab07811ae30af12adb546e",
+    "report/figures/uncertainty_avalanche.png": "05e261115a0e5812ae911d9a529bbb7ae5d33a699962083fcef5f1762132fd1d",
+    "report/sections/00-results-values.tex": "bc5e5d48da5a07434cdb3adef0af81cf6f9e2f39098718928f1cef279b5f80c3",
+    "report/figures/report_values.json": "074813ec0982add7999f92e75b233dbada833d34662e313deb9add19f62efd93"
+  },
+  "selection": {
+    "robustness_cascade.png": "RQ1 removal and RQ2 tolerance; 95% intervals for random cascade means",
+    "bus_service_mechanism.png": "RQ3 Bayswater example: service and facility load ratio",
+    "uncertainty_avalanche.png": "RQ4 seed-count resolution and finite avalanche support"
+  },
+  "assumptions": "Fixed 86-station graph; algorithmic rounds; scheduled-stop proxy, not passengers."
+}

@@ -19,6 +19,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\setlength{\emergencystretch}{1em}
 
 % --- Mathematics ----------------------------------------------------------
 \usepackage{amsmath}
@@ -40,7 +41,8 @@
 \title{Robustness, Cascades and Bus Recovery\\in the Transperth Network}
 \author{CITS4403 Project Team\\[2pt]
         \small CITS4403 Computational Modelling, The University of Western Australia}
-\date{\today}
+\date{8 October 2026}
+\input{sections/00-results-values}
 
 \begin{document}
 
@@ -48,10 +50,19 @@
 \thispagestyle{empty}
 
 \begin{abstract}
+\normalsize
 \noindent
-% One paragraph: the problem, the modelling approach, the headline result and
-% why it matters. Replace this placeholder text.
-Brief summary of the problem, the modelling approach and the main findings.
+We model robustness, overload cascades and bus recovery on an audited
+86-station Transperth railway. Targeted removal fragments the network sooner
+than random station loss. Local load redistribution produces abrupt secondary
+failure, whereas shortest-path recomputation on the rail tree contains overload
+by dropping unreachable journeys. Bus links can restore service while increasing
+rail failures; with a two-link policy after an Airport Line closure, served
+terminal pairs fall from \AirportRailServicePercent\% to
+\AirportBusServicePercent\%. Sampling and grid checks qualify the tolerance
+thresholds, and the finite avalanche samples do not support a power-law claim.
+These findings concern specified routing and capacity proxies, rather than
+measured passenger behaviour or operational deployment advice.
 \end{abstract}
 
 \input{sections/01-introduction}
@@ -60,12 +71,18 @@ Brief summary of the problem, the modelling approach and the main findings.
 \input{sections/04-results}
 \input{sections/05-discussion}
 
+% Figure pages are excluded from the five-page main-body limit.
+\clearpage
+\input{sections/07-figures}
+\clearpage
+
 % --- References (excluded from the five-page limit) -----------------------
 \bibliographystyle{plainnat}
 \bibliography{references}
 
 % --- Appendices (excluded from the five-page limit) -----------------------
 \appendix
+\clearpage
 \input{sections/06-appendix}
 
 \end{document}
