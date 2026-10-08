@@ -27,6 +27,20 @@ Intermediate files are written to `build/`. The finished report is copied to
 version is always available. Run `make` and commit `report.pdf` alongside any
 source changes before merging.
 
+Alternatively, with the official portable Tectonic compiler:
+
+```powershell
+New-Item -ItemType Directory -Force build | Out-Null
+tectonic --keep-logs --outdir build report.tex
+Copy-Item -LiteralPath build/report.pdf -Destination report.pdf
+```
+
+Tectonic includes the bibliography pass and downloads missing TeX resources on
+its first build. Subsequent builds reuse its cache. The source also retains the
+existing `latexmk`/`pdflatex` build path. A draft can compile while another
+member's sections are still placeholders; successful compilation alone does
+not certify completion of the report or M3.
+
 ## Structure
 
 ```
