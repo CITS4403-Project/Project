@@ -10,17 +10,17 @@
 A station closure can sever a railway corridor before any further facility
 fails. Substitute buses may reconnect journeys, but the paths they restore can
 also concentrate traffic at surviving rail facilities. We investigate these
-competing effects in the Transperth network, distinguishing infrastructure
-connectivity, secondary overload failures and the fraction of terminal pairs
-that remain served. Fewer open rail facilities need not imply less service
-when another transport layer is available.
+competing effects in the Transperth network: infrastructure connectivity,
+secondary overload failures and the fraction of terminal pairs that remain
+served. Fewer open rail facilities need not imply less service when another
+transport layer is available.
 
 \citet{albert2000error} established the distinction between random errors and
-targeted removal in heterogeneous networks. Their scale-free-network results
-motivate a comparison of failure strategies here; they do not establish that
-Transperth has the same degree distribution or resilience. Our audited railway
-has 86 mapped stations and 85 adjacent segments and is a tree. It therefore
-lacks alternative rail paths around a removed station. Its inputs represent
+targeted removal in heterogeneous networks. Their results motivate the
+random-versus-targeted comparison here; they do not establish that Transperth
+shares their degree distribution or resilience. Our audited railway
+has 86 mapped stations and 85 adjacent segments and is a tree, so it lacks
+alternative rail paths around a removed station. Its inputs represent
 Monday 5 October 2026, 07:00--09:00 in Australia/Perth, with 271 selected rail
 trips and 4,324 selected bus trips. These are scheduled services, not measured
 passenger journeys. Showgrounds remains a mapped station although it has no
@@ -28,11 +28,10 @@ weekday stop event in this window.
 
 \citet{motter2002cascade} showed how a local attack can cause further overload
 failures when shortest-path loads are recomputed against capacities fixed from
-the intact network. We use that capacity construction and compare it with a
-local redistribution scenario in which a failed facility forwards its carried
-load to surviving neighbours. These rules represent different assumptions
-about disrupted travel. Their comparison tests whether an apparent tolerance
-transition depends on the update mechanism. In the bus layer, restored paths
+the intact network. We use that capacity construction and compare it with local
+redistribution, in which a failed facility forwards its carried load to
+survivors; the comparison tests whether an apparent tolerance transition
+depends on the update mechanism. In the bus layer, restored paths
 can increase surviving rail loads even while improving terminal reachability.
 Apparent avalanche scaling requires a separate statistical test: following
 \citet{clauset2009power}, a visual slope alone is not evidence for a power law.

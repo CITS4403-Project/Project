@@ -7,23 +7,21 @@
 \label{sec:discussion}
 
 The tree topology explains RQ1's vulnerability: removing a station can cut the
-only rail path between corridors. Extra capacity cannot restore a deleted edge.
-RQ2 instead concerns whether surviving facilities acquire further overloads.
-Static redistribution keeps forwarding a proxy quantity locally; dynamic
-betweenness removes contributions from unreachable pairs. Interpreting the
-dynamic result as uninterrupted operation would confuse disappearing load with
-preserved service. Likewise, the static all-station cascade is conditional
-on the forwarding rule, not evidence that a single real closure would destroy
-Perth's railway.
+only rail path between corridors, and extra capacity cannot restore a deleted
+edge. RQ2 concerns whether surviving facilities acquire further overloads.
+Dynamic containment therefore reflects disappearing load rather than preserved
+service, and the static all-station cascade
+is conditional on the forwarding rule; it is not evidence that a single real
+closure would destroy Perth's railway.
 
 RQ3 shows why recovery needs both service and facility metrics. Backup paths
 can reconnect terminals while increasing load at particular rail facilities;
-the Fremantle case supplies a traced overload mechanism. Enough substitute
-connectivity can maintain travel despite that extra closure, whereas a limited
-selection can leave the network worse after secondary failures. Policies should
+the Fremantle case traces that overload. Enough substitute connectivity can
+maintain travel despite the extra closure, while a limited selection can leave
+the network worse after secondary failures. Policies should
 therefore be compared after the cascade stabilises, with a common intact OD
 denominator and the reachable population reported beside travel times. Our
-two-link budget counts selected connections, not physical buses or fleet cost.
+two-link budget counts selected connections, not fleet size.
 
 Uncertainty remains broader than the Monte Carlo intervals in RQ4. We study
 one service date and window, mapped undirected links, approximate rail speeds,
@@ -31,17 +29,14 @@ proxy capacities, symmetric effective bus times and immediate unlimited bus
 standby. The model omits measured boarding/alighting, vehicle occupancy,
 directional timetables, congestion, dispatch delay and finite substitute
 capacity. Terminal-pair reachability is not proof of a feasible scheduled
-journey. The finite 86-station support also limits avalanche-tail inference;
-the rejected bounded hypothesis cannot establish the absence of scaling in a
-larger or different transport system.
+journey, and the finite 86-station support limits avalanche-tail inference: the
+rejected hypothesis cannot establish the absence of scaling in a larger
+system.
 
-The most useful next tests would introduce observed OD demand and vehicle
-capacity, directional time-dependent routing, delayed finite bus deployment,
-and several service-day snapshots. Enumerating all 86 triggers would remove
-trigger-sampling error, and intervals across dates would cover a different
-uncertainty. The conclusions
-are narrower: targeted corridor removal is structurally damaging; overload
-containment depends on the update rule and tolerance grid; and substitute
-connectivity can improve service while aggravating rail overload. These are
-reproducible mechanisms to test against operational evidence, rather than a
-recommendation to deploy a particular bus policy.
+Next tests would add observed OD demand and vehicle capacity, directional
+time-dependent routing, delayed finite bus deployment, and several service-day
+snapshots; enumerating all 86 triggers would remove trigger-sampling error. The
+conclusions are narrower: targeted corridor removal is structurally damaging;
+overload containment depends on the update rule and tolerance grid; and
+substitute connectivity can improve service while aggravating rail overload.
+These mechanisms are testable against operational evidence.

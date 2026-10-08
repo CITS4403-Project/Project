@@ -25,6 +25,26 @@ Status: self-check complete; teammate co-sign pending. Model/design sections
 (P3.6, #47) and results/discussion (P3.7, #52) are separately owned. This file
 does not certify gate M3 or authorize submission.
 
+## P3.6 - model specification and experimental design (issue #47)
+
+- [x] The generic entity update rule comes before the transport-specific
+  synchronous rule; loads, the capacity law and the failure rule match
+  `docs/model.md` and the `config.py` defaults.
+- [x] The design table matches the runner defaults (alpha step 0.025 over 0 to
+  2, fractions 0.00 to 0.90 step 0.01 plus 1.00, 100/300/2,000/1,000 seed
+  counts, two-link budget) and each row cites its `make` command.
+- [x] Outcome measures trace to the packaged engines, the committed
+  `results/` tables and the analysis pipeline (`make figures`, notebooks 01 to
+  04).
+- [x] The main body fits five pages with the model and design text in place;
+  the figures, references and appendix follow on separate pages.
+- [x] General fixing round trimmed `01-introduction`, `04-results` and
+  `05-discussion` for the page budget.
+- [ ] Other member co-sign: name/handle, reviewed commit and comments resolved.
+
+Status: self-check complete; teammate co-sign pending. A compiled partial
+draft does not satisfy M3 while the co-sign is missing.
+
 ## P3.7 - results, discussion, conclusions and abstract (issue #52)
 
 - [x] Answers RQ1-RQ4 in order, then interprets mechanisms and limitations.

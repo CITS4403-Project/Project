@@ -7,10 +7,10 @@
 \label{sec:experiments}
 
 Five runner families produce the evidence, each from one command in the
-repository root. They load the frozen graph, apply the model of
-Section~\ref{sec:model}, and write their tables and figures under
-\texttt{results/} and \texttt{figures/}. Table~\ref{tab:design} lists each
-family's scenarios, runner defaults and outcome measures.
+repository root. They load the frozen graph through the model of
+Section~\ref{sec:model} and write their tables and figures under
+\texttt{results/} and \texttt{figures/}; Table~\ref{tab:design} lists the
+scenarios, runner defaults and outcome measures.
 
 \begin{table}[t]
   \centering
@@ -18,71 +18,65 @@ family's scenarios, runner defaults and outcome measures.
   \setlength{\tabcolsep}{4pt}
   \caption{Scenarios, runner defaults and outcome measures.}
   \label{tab:design}
-  \begin{tabular}{@{}p{0.15\linewidth} p{0.49\linewidth} p{0.33\linewidth}@{}}
+  \begin{tabular}{@{}p{0.16\linewidth} p{0.48\linewidth} p{0.32\linewidth}@{}}
     \toprule
     Command & Scenarios and runner defaults & Outcome measures \\
     \midrule
     RQ1: \texttt{make percolation} &
-    Random and targeted node and edge removal ranked by degree, betweenness
-    and demand flow; fractions 0.00 to 0.90 in 0.01 steps plus 1.00, 100 seeds
-    each; every station once as trigger over 81 tolerances ($\alpha = 0$ to
-    $2$, step 0.025), static capacity rule &
-    Seed-mean GCC fraction and isolates; susceptibility peak; GCC $= 0.5$
-    crossing; containment tolerance; predictor strength and rank stability \\
+    Random and targeted station and edge removal (degree, betweenness, demand
+    flow); fractions 0.00 to 0.90 in 0.01 steps plus 1.00, 100 seeds each;
+    every station as trigger over 81 tolerances (0 to 2, step 0.025), static
+    rule &
+    GCC fraction and isolates; susceptibility peak; GCC 0.5 crossing;
+    containment tolerance; predictor strength; rank stability \\
     \addlinespace
     RQ2: \texttt{make cascade} &
-    Static sweep $\alpha = 0$ to $2$ in 0.025 steps with \texttt{equal} and
-    \texttt{capacity} rules; maximum-load, maximum-degree and 300 seeded
-    random triggers. A reduced 10-point grid adds the frequency and demand
-    load modes and dynamic rerouting. 2{,}000 random triggers at
-    $\alpha = 0.1, 0.15, 0.2, 0.3$; line closures as one batch &
+    Static sweep (0 to 2, step 0.025) with equal and capacity rules;
+    maximum-load, maximum-degree and 300 seeded random triggers. Reduced
+    10-point grid with four load modes and dynamic rerouting; 2{,}000 random
+    triggers at 0.1, 0.15, 0.2, 0.3; line-closure batches &
     Failed fraction; avalanche size, duration and span; containment
     $\alpha^*$; paired rule, load-mode and rerouting differences \\
     \addlinespace
     RQ3: \texttt{make recovery} &
-    21 closures: 8 exclusive-station lines, 8 interchanges, 5 seeded random
-    sets of 5. Five strategies with a 2-link budget over 4 manual and 266
-    GTFS-derived candidate pairs; layered cascade $\alpha = 0$ to $2$ in 0.05
-    steps; focus checks at 0 and 0.2 &
-    Served OD fraction and endpoint-sum demand over 3{,}655 terminal pairs;
-    secondary rail closures and recovery rounds; travel-time penalty
-    conditional on reachable pairs \\
+    21 closures (8 lines, 8 interchanges, 5 random sets of 5); five strategies,
+    2-link budget, 4 manual + 266 GTFS candidate pairs; layered cascade (0 to
+    2, step 0.05); focus checks at 0 and 0.2 &
+    Served OD and endpoint-sum demand over 3{,}655 pairs; secondary closures
+    and recovery rounds; conditional travel-time penalty \\
     \addlinespace
     RQ4: \texttt{make demand} &
-    Topology (betweenness loads, $K = L0$) against demand
-    (\texttt{am\_peak\_stops} loads, frequency-scaled $K$); 81 tolerances
-    from 0 to 2 in 0.025 steps; maximum-load trigger; capacity rule &
-    Load and rank changes; Spearman correlation; top-5, top-10 and top-20
-    overlap; containment-tolerance shift \\
+    Topology (betweenness, $K=L0$) against demand (\texttt{am\_peak\_stops},
+    frequency-scaled $K$); 81 tolerances (0 to 2, step 0.025); maximum-load
+    trigger; capacity rule &
+    Load and rank changes; Spearman correlation; top-5/10/20 overlap;
+    containment-tolerance shift \\
     \addlinespace
     RQ4: \texttt{make uncertainty} &
-    1{,}000 random draws per removal fraction (0 to 1, step 0.05); 95\%
-    percentile bootstrap with 2{,}000 resamples; nested seed prefixes 25 to
-    2{,}000; alpha grids from 0.5 to 0.025; power-law test with 500 refitted
-    simulations at $\alpha = 0.1, 0.15, 0.2, 0.3$ &
-    Pointwise interval half widths; seed convergence; grid-induced
-    containment shift; tail eligibility and rejection probability \\
+    1{,}000 random draws per fraction (0 to 1, step 0.05); 2{,}000-resample
+    95\% bootstrap; nested prefixes 25 to 2{,}000; alpha grids 0.5 to 0.025;
+    power-law test, 500 refits &
+    Interval half widths; seed convergence; grid-induced containment shift;
+    tail eligibility and rejection \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-All runs use master seed 0 and derived child seeds, so paired conditions share
-random draws while repeated draws remain separate observations. Each runner
-writes one row per replicate through \texttt{experiments.save\_table}, with a
+All runs use master seed 0 and derived child seeds: paired conditions share
+draws and repeated draws stay separate observations. Each runner writes one
+row per replicate through \texttt{experiments.save\_table}, with a
 \texttt{.meta.json} sidecar holding the seed, parameters, package versions and
-SHA-256 hashes of inputs and code, plus a family manifest that hashes the
-artifacts; \texttt{--quick} variants are smoke tests in separate directories.
+SHA-256 input hashes; \texttt{--quick} variants are smoke tests in separate
+directories.
 
 The pipeline is runner, stored rows, statistics, report. The runners call the
 packaged engines and store raw per-seed rows under \texttt{results/<family>/};
-the P1.2 helpers summarise them as means and percentile intervals;
-\texttt{make figures} checks the tables against their sidecars and manifests,
-then writes the report figures and the macros in
+the P1.2 helpers summarise them; \texttt{make figures} checks the tables
+against their sidecars, then writes the report figures and the macros in
 \texttt{sections/00-results-values.tex}; and Section~\ref{sec:results} cites
-those frozen files. Notebooks 01 to 04 (issues P3.1 to P3.4) re-execute the
-same calls interactively. \texttt{make check} runs the test suite and
-\texttt{make reproduce} chains \texttt{data}, \texttt{check},
-\texttt{figures} and \texttt{notebooks}; each family regenerates with its
-command in Table~\ref{tab:design}. \path{run_uncertainty.py} verifies the
-committed P2.2 manifest before running, so P2.2 is regenerated first if its
-inputs change.
+those frozen files. Notebooks 01 to 04 re-execute the same calls interactively.
+\texttt{make check} runs the test suite and \texttt{make reproduce} chains
+\texttt{data}, \texttt{check}, \texttt{figures} and \texttt{notebooks}; each
+family regenerates with its command in Table~\ref{tab:design}.
+\path{run_uncertainty.py} verifies the committed P2.2 manifest first, so P2.2
+is regenerated before it if its inputs change.

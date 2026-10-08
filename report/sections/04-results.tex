@@ -13,13 +13,13 @@ station removal. The interpolated removal fraction at which the mean largest
 component reaches half of the intact 86 stations is
 \RandomCrossPercent\% for random removal, \DegreeCrossPercent\% for a fixed
 degree ranking and \BetweenCrossPercent\% for a fixed betweenness ranking.
-These crossing estimates are distinct from the corresponding
-second-largest-component susceptibility
-peaks at 6\%, 2\% and 1\%. They also depend on integer station-count rounding
-and grid resolution. On this small tree, neither diagnostic establishes a
-thermodynamic phase transition. Betweenness identifies corridor-separating
-positions that degree alone cannot distinguish: many internal stations have
-degree two but sit between different amounts of the network.
+These estimates are distinct from the susceptibility peaks of the
+second-largest component at 6\%, 2\% and 1\%, and depend on station-count
+rounding and grid resolution; on this small tree, neither diagnostic
+establishes a thermodynamic phase transition. Betweenness identifies
+corridor-separating positions that degree alone cannot distinguish: many
+internal stations have degree two but sit between different amounts of the
+network.
 
 \subsection{RQ2: tolerance depends on the load-update assumption}
 For the maximum-load trigger, Oats Street, static capacity-weighted
@@ -30,10 +30,9 @@ equal redistribution requires $\alpha=\EqualAlphaStar$
 (Figure~\ref{fig:robustness-cascade}b). These are sampled thresholds for the
 specified trigger and rule, not universal station-capacity requirements.
 Dynamic unweighted betweenness produces no secondary failures on the frozen
-tree: deletion cannot create a new rail route, so surviving path loads cannot
-increase. The resulting disconnected graph can still lose service.
-The 2,000 random-trigger observations include zero secondary failures, and
-rounds within one cascade are not separate trials. The observed size
+tree (Section~\ref{sec:model}): the disconnected graph can still lose service.
+The 2,000 random-trigger observations include zero secondary failures; cascade
+rounds are not separate trials. The observed size
 distribution is concentrated at a few finite outcomes
 (Figure~\ref{fig:uncertainty}b).
 
@@ -44,11 +43,11 @@ bus standby serves \BayBusServicePercent\%, but closes two rail facilities
 instead of one (Figure~\ref{fig:bus-mechanism}a). At the first load check,
 Fremantle's load-to-capacity ratio rises from \FremantleRailRatio{} without
 buses to \FremantleBusRatio{} with the full pool
-(Figure~\ref{fig:bus-mechanism}b). It exceeds the fixed rail-only capacity and
-fails next. Bus paths still keep its terminal and the other terminals connected.
-At $\alpha=1.0$, the full-pool Bayswater case serves all pairs with only the
-trigger closed. Additional capacity can therefore contain this rerouting
-overload without being responsible for the restored paths themselves.
+(Figure~\ref{fig:bus-mechanism}b), above the fixed rail-only capacity, so it
+fails next; bus paths still keep its terminal connected. At $\alpha=1.0$, the
+full-pool Bayswater case serves all pairs with only the trigger closed, so
+extra capacity can contain the rerouting overload that the restored paths
+created.
 
 The complete candidate pool does not worsen served service in the stored scan;
 a budgeted strategy can. After the three exclusive Airport Line facilities
@@ -57,10 +56,10 @@ closes West Leederville. Served terminal pairs fall from
 \AirportRailServicePercent\% with no backup to \AirportBusServicePercent\%.
 Endpoint-weighted served demand likewise falls from
 \AirportRailDemandPercent\% to \AirportBusDemandPercent\%
-(Table~\ref{tab:airport}). These weights are sums of scheduled stop counts at
-pair endpoints, not observed OD demand. Travel-time penalties are conditional
-on reachable pairs; comparing their means alone could mistake loss of long
-journeys for faster service.
+(Table~\ref{tab:airport}). These weights sum scheduled stop counts at pair
+endpoints, not observed OD demand. Travel-time penalties are conditional on
+reachable pairs; comparing means alone could mistake lost long journeys for
+faster service.
 
 \subsection{RQ4: numerical uncertainty and model sensitivity}
 The tested nested-prefix criteria recommend \RecommendedSeeds{} random trials:
@@ -71,12 +70,11 @@ conditions, not every transport model. Coarsening the capacity-rule alpha grid
 from 0.025 to 0.1 shifts first sampled containment from
 \CapacityAlphaStar{} to \CoarseAlphaStar{}. The demand/frequency-capacity
 scenario gives \DemandAlphaStar{}; it changes the load proxy, capacity
-reference and maximum-load trigger, so it is a model comparison rather than
-an isolated effect of passenger demand. Frequency weighting alone leaves
-unique tree paths unchanged.
+reference and trigger, so it is a model comparison, not an isolated demand
+effect. Frequency weighting alone leaves unique tree paths unchanged.
 
-The bounded decreasing power-law test follows maximum-likelihood fitting,
-cutoff selection and refitted simulation, rather than log-log regression
+The bounded power-law test uses maximum-likelihood fitting, cutoff selection
+and refitted simulation, not log-log regression
 \citep{clauset2009power}. At static alpha 0.1--0.2 there are only two distinct
 positive secondary sizes, making the tail ineligible under the three-size
 requirement. At 0.3 the fitted hypothesis is rejected

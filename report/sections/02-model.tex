@@ -7,10 +7,10 @@
 \label{sec:model}
 
 The model represents the transport network as a graph of entities that carry a
-load and fail when the load exceeds a fixed capacity. Entity $i$ has an open or
-closed status $s_i(t)$ and a carried load $L_i(t)$, and it interacts with its
-neighbours $\mathcal{N}_i$. With the state $x_i(t) = \bigl(s_i(t), L_i(t)
-\bigr)$, the generic update rule is
+load and fail above a fixed capacity. Entity $i$ has an open or closed status
+$s_i(t)$ and a carried load $L_i(t)$, and it interacts with its neighbours
+$\mathcal{N}_i$. With the state $x_i(t) = (s_i(t), L_i(t))$, the generic
+update rule is
 \begin{equation}
   x_i(t+1) = f\bigl(x_i(t), \{x_j(t)\}_{j \in \mathcal{N}_i}; \theta\bigr),
   \label{eq:update}
@@ -18,9 +18,8 @@ neighbours $\mathcal{N}_i$. With the state $x_i(t) = \bigl(s_i(t), L_i(t)
 where $\theta$ collects the capacity, tolerance, redistribution and rerouting
 parameters. In the transport case $f$ closes every open entity above capacity,
 removes the round's overloads together, and forwards their load to surviving
-neighbours, following the synchronous rule and capacity construction of
-\citet{motter2002cascade} with the local-redistribution variant below. A round
-is an algorithmic update and carries no wall-clock meaning.
+neighbours, following \citet{motter2002cascade} with the local-redistribution
+variant below. A round is algorithmic and carries no wall-clock meaning.
 
 \subsection{Components, loads and failure}
 The rail layer is an undirected simple tree of 86 mapped stations and 85
@@ -28,19 +27,17 @@ verified adjacent segments, frozen for 5 October 2026, 07:00 to 09:00
 Australia/Perth. The multilayer experiments split each station into a
 persistent terminal $T{:}i$ and a closable rail facility $R{:}i$ with a
 one-minute access edge. Rail edges take
-$t_e = \max(0.1,\ d_e/(1000\,v)\cdot 60)$ minutes at an assumed $v = 40$ km/h;
-backup edges join terminals with effective times including walking and waiting,
-with the four manual pairs in \texttt{backup\_edges.csv} as ground truth and
-GTFS candidates extending the pool; a five-minute transfer joins the Perth and
-Perth Underground terminals. Standby buses activate immediately after the
-initial closure with unlimited capacity in the baseline scenario. Multilayer
-loads are terminal-subset betweenness with terminals as sources and targets,
-and served travel keeps the intact terminal-pair denominator.
+$t_e = \max(0.1,\ d_e/(1000\,v)\cdot 60)$ minutes at an assumed $v = 40$ km/h.
+Backup edges join terminals with effective times including walking and waiting,
+using the four manual pairs in \texttt{backup\_edges.csv} as ground truth and
+extending the pool with GTFS candidates; a five-minute transfer joins the Perth
+and Perth Underground terminals. Standby buses activate immediately after the
+initial closure with unlimited capacity in the baseline scenario, and multilayer
+loads are terminal-subset betweenness over the intact terminal-pair denominator.
 
 The initial load of station $i$ is its unnormalised betweenness on the intact
 graph, $L0_i = \sum \sigma_{st}(i) / \sigma_{st}$, summed over station pairs
-with $s \neq i \neq t$, where the ratio is the share of shortest paths from $s$
-to $t$ through $i$. The values stay unnormalised because the graph shrinks
+with $s \neq i \neq t$; the ratio is the share of shortest paths through $i$. The values stay unnormalised because the graph shrinks
 during a cascade: normalised loads would rise with the shrinking node set and
 rounds would not be comparable. The load modes are \texttt{betweenness} as
 above; \texttt{betweenness\_freq} with edge length $1/\text{trips}$;
@@ -71,9 +68,9 @@ takes the largest initial load, the highest degree with station-ID ties, or a
 uniform seeded draw. A line closure replaces the trigger with one initial
 batch, removed before the first check and excluded from the secondary avalanche
 size. In the static mode each closed station forwards its load equally over
-surviving neighbours or in proportion to their capacities, falling back to
-equal shares when all have zero capacity; a station with no survivor removes
-its load, and otherwise load is conserved. The dynamic mode recomputes loads on
+survivors or in proportion to their capacities, falling back to equal shares
+when all have zero; a station with no survivor removes its load, and otherwise
+load is conserved. The dynamic mode recomputes loads on
 the surviving graph each round and ignores redistribution; on a tree this
 cannot raise a survivor's betweenness, so containment reflects dropped journeys
 rather than headroom. The containment tolerance $\alpha^*$ is the smallest
@@ -83,9 +80,9 @@ sampled $\alpha$ at which the maximum-load trigger causes no secondary failure.
 All facilities start open; loads and capacities come from the intact graph, and
 the trigger or initial batch is applied before the first overload check. The
 model assumes undirected adjacent links, scheduled services as load proxies,
-hop distances for load concentration, minute travel times only in the
-multilayer layer, symmetric effective bus times, immediate unlimited standby,
-and a single service date and window. An empty initial batch closes nothing; an
+hop distances for load concentration, minutes only in the multilayer layer,
+symmetric bus times, unlimited immediate standby, and one service date. An
+empty initial batch closes nothing; an
 $\alpha$ of zero adds no headroom and can fail a station immediately; duplicate
 backup endpoints keep the fastest connection; zero capacity does not exempt a
 station from overload checks.
