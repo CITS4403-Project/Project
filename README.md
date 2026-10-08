@@ -30,6 +30,7 @@ interpreter explicitly as `make PYTHON=.venv/bin/python <target>`.
 | `make demand` | regenerate the P2.4 demand load and capacity tables and figures |
 | `make percolation` | regenerate the P2.1 percolation and critical-node tables and figures |
 | `make cascade` | regenerate the P2.2 cascade, avalanche and line-closure tables and figures |
+| `make uncertainty` | regenerate the P2.5 uncertainty, sensitivity and tail tables and figures |
 | `make figures` | regenerate the figures from the frozen inputs and results |
 | `make notebooks` | execute the notebooks in `notebooks/` in place |
 | `make reproduce` | run data, tests, figures and notebooks in order |

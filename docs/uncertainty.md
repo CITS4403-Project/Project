@@ -5,6 +5,7 @@ PYTHONPATH=src python scripts/run_uncertainty.py
 ```
 
 PowerShell: `$env:PYTHONPATH='src'; python scripts/run_uncertainty.py`.
+`make uncertainty` runs the same full command from the project root.
 This command regenerates `results/uncertainty/` CSV/JSON files, sidecars and
 six `figures/uncertainty/` figures. It consumes the committed **full** P2.2
 results and checks their manifest and graph/model source hashes. If P2.2 inputs
