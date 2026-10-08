@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-08T10:31:41+00:00",
+  "experiment": "multilayer",
+  "inputs": {
+    "data/processed/backup_edges.csv": "f75ad5336e5f9d18d6f4b4288df46febaaf36c6c70c9f99f239f07ed65ff0a4d",
+    "data/processed/rail_edges.csv": "c6ddabf7ae89f47c58d3b3ef42a16a8a83d8f49b8552a413ba2b3dc4c44bb8e8",
+    "data/processed/stations.csv": "b31a1ffa087baeb2e546359367a515747ec4381d229b4b4664f37fe4f1b720b3",
+    "data/snapshots/2026-10-05_0700-0900/bus_trips.csv": "40aed757faf849d02d9f66da6bfb3371b817dc0bc64d6604be4ec0a2bdb911c6",
+    "data/snapshots/2026-10-05_0700-0900/stop_times.txt": "b6583303ef28981abaeb45b401e5fa9f326754fac49406887dfb84f7bb6357ab",
+    "data/snapshots/2026-10-05_0700-0900/stops.txt": "370d67c70e27080567279f2f3d12118d97f96d5763a6e373df2c7a47ce5ecc92",
+    "data/verified_topology.json": "72dc427f61e352d2c3af105b91593dbc97cad84b48ae4fbaa43a37fc25efb21b"
+  },
+  "package_version": "0.1.0",
+  "params": {
+    "baseline_terminal_pairs": 3655,
+    "derived_candidates": 263,
+    "intact_served_od_fraction": 1.0,
+    "manual_pairs": 4,
+    "match_tolerance_minutes": 5.0,
+    "radius_m": 400.0,
+    "rail_edges": 85,
+    "rail_stations": 86,
+    "snapshot_dir": "data/snapshots/2026-10-05_0700-0900",
+    "walking_transfer_minutes": 5.0
+  },
+  "seed": 0,
+  "versions": {
+    "matplotlib": "3.11.2",
+    "networkx": "3.7",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  }
+}

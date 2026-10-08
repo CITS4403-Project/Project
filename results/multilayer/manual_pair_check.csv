@@ -1,0 +1,5 @@
+station_a,station_b,manual_minutes,derived_minutes,delta_minutes,status,note,manual_kind
+23,56,38.0,17.0,-21.0,time_differs,"manual ground truth; derived minutes are scheduled ride time while the manual time includes walking, waiting and transfers",existing_bus
+48,56,38.0,,,not_derived,manual ground truth; no single selected bus trip links both stations within radius_m in the frozen window,existing_bus
+56,88,38.0,,,not_derived,manual ground truth; no single selected bus trip links both stations within radius_m in the frozen window,existing_bus
+73,83,42.0,,,not_derived,manual ground truth; no single selected bus trip links both stations within radius_m in the frozen window,existing_bus
