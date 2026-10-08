@@ -20,13 +20,12 @@ Execute in place from the project root:
 
 ```sh
 make notebooks
-# or
-python -m jupyter nbconvert --to notebook --execute --inplace notebooks/01_network.ipynb
 ```
 
-Notebook 01 must finish within one minute. Saved outputs support reading on
-GitHub; interactive controls require trusted JupyterLab. See `docs/data.md`
-for raw-feed reproduction and `docs/model.md` for model assumptions.
+Notebook 01 must finish within one minute. It writes a PNG copy of its chart to
+`figures/notebook01/`. Saved outputs support reading on GitHub; interactive
+controls require trusted JupyterLab. See `docs/data.md` for raw-feed reproduction
+and `docs/model.md` for model assumptions.
 
 Notebook 03 reads the full committed cascade/uncertainty tables and validates
 their graph-input hashes and family manifests. Its controls run one cached
@@ -34,7 +33,8 @@ production-engine scenario, not a new statistical sweep. The rule selector is
 disabled for dynamic routing; station and seed inputs are enabled only for their
 matching trigger type. The reveal slider changes the displayed round, while the
 summary reports the final stable outcome. All fractions use the original 86
-stations. Update rounds are not minutes and scheduled stops are not passengers.
+stations. It writes PNG copies of its charts to `figures/notebook03/`. Update
+rounds are not minutes and scheduled stops are not passengers.
 
 Suggested handoff: compare max-load alpha 0.2 with 0.525, switch to dynamic
 routing, then choose a station and reveal round 0 onward. Dynamic containment on
