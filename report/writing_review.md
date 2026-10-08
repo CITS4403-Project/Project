@@ -42,8 +42,8 @@ does not certify gate M3 or authorize submission.
   `05-discussion` for the page budget.
 - [ ] Other member co-sign: name/handle, reviewed commit and comments resolved.
 
-Status: self-check complete; teammate co-sign pending. A compiled partial
-draft does not satisfy M3 while the co-sign is missing.
+Status: self-check complete; teammate co-sign pending. A compiled draft does
+not satisfy M3 while the co-sign is missing.
 
 ## P3.7 - results, discussion, conclusions and abstract (issue #52)
 
@@ -61,12 +61,12 @@ draft does not satisfy M3 while the co-sign is missing.
   eligibility/rejection and uncertainty outside Monte Carlo error.
 - [x] Numeric macros and figures are generated from frozen tables, with hashes
   for the sources, sidecars, generator and outputs.
-- [x] Compiled PDF: all eight pages rendered and visually checked. The current
-  draft has four main-body pages, two figure pages, one reference page and one
-  appendix page. Sources use 11pt on A4 with 1-inch margins. Model/design still
-  contain P3.6 placeholders, so pagination must be rechecked after #47.
+- [x] Compiled PDF: all nine pages rendered and visually checked. The current
+  draft has five main-body pages, two figure pages, one reference page and one
+  appendix page. Sources use 11pt on A4 with 1-inch margins; the main body
+  stays within five pages with the P3.6 prose in place.
 - [ ] Other member co-sign: name/handle, reviewed commit and comments resolved.
 
-P3.7 co-sign is pending. P3.6 (#47) still supplies model/design prose. Keep
-reviewing the combined page allocation after it lands; a compiled partial draft
-does not satisfy M3 while those placeholders or either writing co-sign remain.
+P3.7 co-sign is pending. P3.6 (#47) landed in #59 and the main body stays within
+five pages; the compiled draft is complete apart from the pending writing
+co-signs. M3 needs those sign-offs.

@@ -22,17 +22,17 @@ internal stations have degree two but sit between different amounts of the
 network.
 
 \subsection{RQ2: tolerance depends on the load-update assumption}
-For the maximum-load trigger, Oats Street, static capacity-weighted
+For the maximum-load trigger, Claisebrook, static capacity-weighted
 redistribution at $\alpha=0.2$ closes all \MaxLoadFailed{} stations, including
 the trigger, in \MaxLoadRounds{} secondary rounds. On the 0.025 grid, the first
-sampled tolerance containing the closure is $\alpha=\CapacityAlphaStar$;
+sampled containment tolerance is $\alpha=\CapacityAlphaStar$;
 equal redistribution requires $\alpha=\EqualAlphaStar$
 (Figure~\ref{fig:robustness-cascade}b). These are sampled thresholds for the
 specified trigger and rule, not universal station-capacity requirements.
 Dynamic unweighted betweenness produces no secondary failures on the frozen
 tree (Section~\ref{sec:model}): the disconnected graph can still lose service.
-The 2,000 random-trigger observations include zero secondary failures; cascade
-rounds are not separate trials. The observed size
+The 2,000 random-trigger observations include some with zero secondary
+failures; cascade rounds are not separate trials. The observed size
 distribution is concentrated at a few finite outcomes
 (Figure~\ref{fig:uncertainty}b).
 
