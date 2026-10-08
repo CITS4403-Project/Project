@@ -43,7 +43,8 @@ manual row wins, so a scheduled ride time never replaces the verified effective
 time. The derived candidates are regenerated from the frozen snapshot so the
 committed sidecars can hash the snapshot tables; when the snapshot is absent
 the runner reads `results/multilayer/gtfs_backup_candidates.csv` instead and
-hashes that file.
+hashes that file. The 263-row candidate table is committed, so notebook 04
+draws the standby pool without the snapshot tables.
 
 For every scenario and every budget the runner calls
 `Strategy.deploy(failed=...)` on the intact layered graph, applies the selected
